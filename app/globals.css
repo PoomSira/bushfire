@@ -6,6 +6,7 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --pixel-size: 6;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -29,5 +30,46 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+.Character {
+  width: calc(32px * var(--pixel-size));
+  height: calc(32px * var(--pixel-size));
+  overflow: hidden;
+  margin: 4em auto;
+}
+
+.Character_spritesheet {
+  position: absolute;
+  animation: moveSpritesheet 1s steps(4) infinite;
+  width: calc(128px * var(--pixel-size));
+}
+.Character_shadow {
+  position: absolute;
+  width: calc(32px * var(--pixel-size));
+  height: calc(32px * var(--pixel-size));
+}
+
+.pixelart {
+  image-rendering: pixelated;
+}
+
+.face-right {
+  top: calc(-32px * var(--pixel-size));
+}
+.face-up {
+  top: calc(-64px * var(--pixel-size));
+}
+.face-left {
+  top: calc(-96px * var(--pixel-size));
+}
+
+@keyframes moveSpritesheet {
+  from {
+    transform: translate3d(0px, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
   }
 }
