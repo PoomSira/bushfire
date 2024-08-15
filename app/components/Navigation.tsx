@@ -23,7 +23,7 @@ function NavList() {
       </Link>
 
       <Link
-        href="/"
+        href="/map"
         className="nes-btn flex items-center justify-center w-28 h-12"
       >
         Map
