@@ -24,7 +24,10 @@ export default function Home() {
       <div className="grid grid-cols-1 gap-4 p-4">
         <div className="relative min-w-full min-h-80 bg-[#FFAD4D] bg-opacity-60 rounded-lg"></div>
       </div>
-      <div className="grid grid-cols-1 gap-4 p-4">
+
+      <div className="grid grid-cols-3 gap-4 p-4">
+        <div className="relative min-w-full min-h-80 bg-[#FFAD4D] bg-opacity-60 rounded-lg"></div>
+        <div className="relative min-w-full min-h-80 bg-[#FFAD4D] bg-opacity-60 rounded-lg"></div>
         <div className="relative min-w-full min-h-80 bg-[#FFAD4D] bg-opacity-60 rounded-lg"></div>
       </div>
     </div>

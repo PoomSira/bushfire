@@ -13,26 +13,32 @@ function NavList() {
         href="/"
         className="flex text-2xl items-center justify-center w-28 h-12"
       >
-        Game
+        Learn
       </Link>
       <Link
         href="/quiz"
         className="flex text-2xl items-center justify-center w-28 h-12"
       >
-        Quiz
+        Prepare
       </Link>
 
       <Link
         href="/"
-        className="nes-btn flex items-center justify-center w-28 h-12"
+        className="flex text-2xl items-center justify-center w-28 h-12"
       >
-        Map
+        Recover
       </Link>
       <Link
         href="/"
         className="flex text-2xl items-center justify-center w-28 h-12"
       >
-        About
+        Quiz
+      </Link>
+      <Link
+        href="/"
+        className="flex text-2xl items-center justify-center w-28 h-12"
+      >
+        Help
       </Link>
     </ul>
   );
