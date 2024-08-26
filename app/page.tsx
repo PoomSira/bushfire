@@ -8,7 +8,7 @@ import AusFire from "@/public/aus-fire.webp";
 export default function Home() {
   return (
     <div>
-      <main className="h-[70vh] w-full bg-[url('/home-landing.webp')] bg-center bg-cover bg-no-repeat">
+      <main className="h-[100vh] w-full bg-[url('/home-landing.webp')] bg-center bg-cover bg-no-repeat">
         <Navigation />
         <Hero />
       </main>

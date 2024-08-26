@@ -6,7 +6,7 @@ function NavList() {
     <ul className="my-2 flex flex-col gap-4 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
       <a
         className="flex text-2xl items-center justify-center w-28 h-12"
-        href="#"
+        href="/"
       >
         Home
       </a>
