@@ -24,7 +24,7 @@ function NavList() {
 
       <Link
         href="/"
-        className="flex text-2xl items-center justify-center w-28 h-12"
+        className="nes-btn flex items-center justify-center w-28 h-12"
       >
         Map
       </Link>
