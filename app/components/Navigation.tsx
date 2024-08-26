@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 function NavList() {
@@ -48,8 +49,13 @@ export default function Navigation() {
   return (
     <div className="bg-[#FFFBF2] mx-auto max-w-screen px-6 py-3">
       <div className="flex items-center justify-between w-full">
-        <div className="mr-6 py-1.5 font-bold text-3xl text-black">
-          Bushfire
+        <div className="mr-6 py-1.5">
+          <Image
+            src="/public/logo.png"
+            alt="Bushfire Logo"
+            width={150}
+            height={50}
+          />
         </div>
         <NavList />
       </div>
