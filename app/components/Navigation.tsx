@@ -10,32 +10,32 @@ function NavList() {
         Home
       </a>
       <Link
-        href="/"
+        href="/learn"
         className="flex text-2xl items-center justify-center w-28 h-12"
       >
         Learn
       </Link>
       <Link
-        href="/quiz"
+        href="/prepare"
         className="flex text-2xl items-center justify-center w-28 h-12"
       >
         Prepare
       </Link>
 
       <Link
-        href="/"
+        href="/recover"
         className="flex text-2xl items-center justify-center w-28 h-12"
       >
         Recover
       </Link>
       <Link
-        href="/"
+        href="/quiz"
         className="flex text-2xl items-center justify-center w-28 h-12"
       >
         Quiz
       </Link>
       <Link
-        href="/"
+        href="/help"
         className="flex text-2xl items-center justify-center w-28 h-12"
       >
         Help
