@@ -5,54 +5,43 @@ import Link from "next/link";
 function NavList() {
   return (
     <ul className="my-2 flex flex-col gap-4 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
-      <li>
-        <a
-          className="flex text-2xl items-center justify-center w-28 h-12 text-gray-900 hover:text-orange-400"
-          href="#"
-        >
-          Home
-        </a>
-      </li>
-      <li>
-        <Link
-          href="/learn"
-          className="flex text-2xl items-center justify-center w-28 h-12 text-gray-900 hover:text-orange-400"
-        >
-          Learn
-        </Link>
-      </li>
-      <li>
-        <Link
-          href="/prepare"
-          className="flex text-2xl items-center justify-center w-28 h-12 text-gray-900 hover:text-orange-400"
-        >
-          Prepare
-        </Link>
-      </li>
-      <li>
-        <Link
-          href="/recover"
-          className="flex text-2xl items-center justify-center w-28 h-12 text-gray-900 hover:text-orange-400"
-        >
-          Recover
-        </Link>
-      </li>
-      <li>
-        <Link
-          href="/quiz"
-          className="flex text-2xl items-center justify-center w-28 h-12 text-gray-900 hover:text-orange-400"
-        >
-          Quiz
-        </Link>
-      </li>
-      <li>
-        <Link
-          href="/help"
-          className="flex text-2xl items-center justify-center w-28 h-12 text-gray-900 hover:text-orange-400"
-        >
-          Help
-        </Link>
-      </li>
+      <a
+        className="flex text-2xl items-center justify-center w-28 h-12"
+        href="#"
+      >
+        Home
+      </a>
+      <Link
+        href="/learn"
+        className="flex text-2xl items-center justify-center w-28 h-12"
+      >
+        Learn
+      </Link>
+      <Link
+        href="/prepare"
+        className="flex text-2xl items-center justify-center w-28 h-12"
+      >
+        Prepare
+      </Link>
+
+      <Link
+        href="/recover"
+        className="flex text-2xl items-center justify-center w-28 h-12"
+      >
+        Recover
+      </Link>
+      <Link
+        href="/quiz"
+        className="flex text-2xl items-center justify-center w-28 h-12"
+      >
+        Quiz
+      </Link>
+      <Link
+        href="/help"
+        className="flex text-2xl items-center justify-center w-28 h-12"
+      >
+        Help
+      </Link>
     </ul>
   );
 }

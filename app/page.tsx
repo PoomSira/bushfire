@@ -70,9 +70,9 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="bg-[#FFFBF2]">
-      <main className="h-[100vh] w-full bg-[url('/home-landing.webp')] bg-center bg-cover bg-no-repeat">
-        <Navigation />
+    <div className="bg-[#FFFBF2] mx-auto max-w-screen">
+      <Navigation />
+      <main className="h-[70vh] w-full bg-[url('/home-landing.webp')] bg-center bg-cover bg-no-repeat">
         <Hero />
       </main>
       <div className="py-8 flex flex-col items-center justify-center">
