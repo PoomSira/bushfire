@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import { Press_Start_2P } from "next/font/google";
+import { Fresca } from "next/font/google";
 import "./globals.css";
-import "nes.css/css/nes.min.css";
 
-const pressStart2P = Press_Start_2P({ weight: "400", subsets: ["latin"] });
+const fresca = Fresca({ weight: "400", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={pressStart2P.className}>{children}</body>
+      <body className={fresca.className}>{children}</body>
     </html>
   );
 }
