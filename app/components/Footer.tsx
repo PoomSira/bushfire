@@ -5,46 +5,70 @@ import Link from "next/link";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#FFFBF2] rounded-lg dark:bg-gray-900">
-      <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-      <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
-        <div className="sm:flex sm:items-center sm:justify-between">
-          <Link href="/">
+    <footer className="bg-[#FFFBF2] ">
+      <hr className="my-8 border-gray-200 sm:mx-auto lg:my-8" />
+      <div className="w-full max-w-screen-xl mx-auto p-2 md:py-8">
+        <div className="flex flex-col items-center sm:flex-row sm:items-center sm:justify-between">
+          <Link href="/" aria-label="Homepage">
             <Image
               src="/logo.png"
-              alt="Logo"
+              alt="Bushfire Brigade Logo"
               width={120}
               height={100}
               layout="intrinsic"
               quality={100}
             />
           </Link>
-          <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
+          <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0">
             <li>
-              <Link href="#" className="hover:underline me-4 md:me-6">
-                About
+              <Link
+                href="/learn"
+                aria-label="Learn"
+                className="hover:underline me-4 md:me-6 hover:text-orange-400"
+              >
+                Learn
               </Link>
             </li>
             <li>
-              <Link href="#" className="hover:underline me-4 md:me-6">
-                Privacy Policy
+              <Link
+                href="/prepare"
+                aria-label="Prepare"
+                className="hover:underline me-4 md:me-6 hover:text-orange-400"
+              >
+                Prepare
               </Link>
             </li>
             <li>
-              <Link href="#" className="hover:underline me-4 md:me-6">
-                Licensing
+              <Link
+                href="/recover"
+                aria-label="Recover"
+                className="hover:underline me-4 md:me-6 hover:text-orange-400"
+              >
+                Recover
               </Link>
             </li>
             <li>
-              <Link href="#" className="hover:underline">
-                Contact
+              <Link
+                href="/quiz"
+                aria-label="Quiz"
+                className="hover:underline me-4 md:me-6 hover:text-orange-400"
+              >
+                Quiz
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/help"
+                aria-label="Help"
+                className="hover:underline me-4 md:me-6 hover:text-orange-400"
+              >
+                Help
               </Link>
             </li>
           </ul>
         </div>
-        <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-
-        <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
+        <hr className="border-gray-200 sm:mx-auto lg:my-8" />
+        <div className="text-sm text-gray-500 text-center">
           <p className="mb-6">
             Bushfire Brigade respectfully acknowledges the Traditional Owners of
             the land we govern, the Wurundjeri Woi-wurrung and Bunurong / Boon
@@ -55,8 +79,8 @@ const Footer: React.FC = () => {
             invitation in the Uluru Statement from the Heart and are committed
             to walking together to build a better future.
           </p>
-          © 2024 Bushfire Brigade. All Rights Reserved.
-        </span>
+          <p>© 2024 Bushfire Brigade. All Rights Reserved.</p>
+        </div>
       </div>
     </footer>
   );
