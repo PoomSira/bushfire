@@ -50,12 +50,9 @@ export default function Navigation() {
     <div className="bg-[#FFFBF2] mx-auto max-w-screen px-6 py-3">
       <div className="flex items-center justify-between w-full">
         <div className="mr-6 py-1.5">
-          <Image
-            src="/public/logo.png"
-            alt="Bushfire Logo"
-            width={150}
-            height={50}
-          />
+          <Link href="/">
+            <Image src="/logo.png" alt="Logo" width={150} height={50} />
+          </Link>
         </div>
         <NavList />
       </div>
