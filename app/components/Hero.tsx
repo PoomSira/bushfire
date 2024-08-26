@@ -2,7 +2,6 @@
 
 import React from "react";
 import Typewriter from "typewriter-effect";
-import CharacterWalk from "./CharacterWalk";
 
 export default function Hero() {
   return (
@@ -12,12 +11,9 @@ export default function Hero() {
           <div className="relative inline-flex items-center mx-auto align-middle">
             <div className="text-center">
               <h1 className="max-w-5xl p-3 text-2xl font-bold tracking-tighter text-black md:text-4xl lg:text-5xl lg:max-w-7xl"></h1>
-              
 
               <div className="flex justify-center w-full max-w-2xl gap-2 mx-auto mt-6">
-                <div className="mt-3 rounded-lg sm:mt-0">
-                  
-                </div>
+                <div className="mt-3 rounded-lg sm:mt-0"></div>
               </div>
             </div>
           </div>
