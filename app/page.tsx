@@ -254,22 +254,25 @@ export default function Home() {
       <Navigation />
       {/* <main className="h-[100vh] w-full bg-[url('/home-landing.webp')] bg-center bg-cover bg-no-repeat"></main> */}
       {/* Hero Section */}
-      <div className="relative isolate h-[95vh] px-6 pt-14 lg:px-8 flex-grow bg-[url('/home-landing.webp')] bg-cover bg-center back backdrop-blur-50">
+      <div className="relative isolate h-[95vh] px-6 pt-14 lg:px-8 flex-grow bg-[url('/home-landing.webp')] bg-cover bg-center">
+        {/* Blur Overlay */}
+        <div className="absolute inset-0 bg-black bg-opacity-10 backdrop-filter backdrop-blur-sm"></div>
+
         {/* Content Overlay */}
         <div className="relative mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
           <div className="text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-black sm:text-6xl">
+            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
               Bushfire Brigade
               <br />
               Safety Starts with You
             </h1>
-            <p className="mt-6 text-lg leading-8 text-black">
+            <p className="mt-6 text-lg leading-8 text-white">
               Inspiring a new generation to be fire-smart and prepared for
               bushfire challenges.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a href="/" className="inline-block">
-                <button className="px-4 py-2 text-lg font-semibold text-gray-700 border-2 border-gray-700 hover:bg-black hover:text-white transition-colors duration-300">
+                <button className="px-4 py-2 text-lg font-semibold text-white bg-black  hover:bg-white hover:text-black transition-colors duration-300">
                   Explore
                 </button>
               </a>
