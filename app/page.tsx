@@ -272,7 +272,7 @@ export default function Home() {
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a href="/" className="inline-block">
-                <button className="px-4 py-2 text-lg font-semibold text-white bg-black  hover:bg-white hover:text-black transition-colors duration-300">
+                <button className="px-4 py-2 text-lg font-semibold  text-white bg-black  hover:bg-white hover:text-black transition-colors duration-300 rounded-md">
                   Explore
                 </button>
               </a>
@@ -310,7 +310,7 @@ export default function Home() {
             natural events.
           </p>
           <a href="/learn" className="inline-block">
-            <button className="px-6 py-2 text-lg font-semibold text-gray-700 border-2 border-gray-700 hover:bg-black hover:text-white transition-colors duration-300">
+            <button className="px-6 py-2 text-lg font-semibold text-gray-700 border-2 border-gray-700 hover:bg-black hover:text-white transition-colors duration-300 rounded-md">
               Learn More
             </button>
           </a>
@@ -330,7 +330,7 @@ export default function Home() {
             precautions and safety tips to stay safe during a bushfire.
           </p>
           <a href="/prepare" className="inline-block">
-            <button className="px-6 py-2 text-lg font-semibold text-gray-700 border-2 border-gray-700 hover:bg-black hover:text-white transition-colors duration-300">
+            <button className="px-6 py-2 text-lg font-semibold text-gray-700 border-2 border-gray-700 hover:bg-black hover:text-white transition-colors duration-300 rounded-md">
               Learn More
             </button>
           </a>
@@ -368,7 +368,7 @@ export default function Home() {
             and long-term rebuilding efforts.
           </p>
           <a href="/recover" className="inline-block">
-            <button className="px-6 py-2 text-lg font-semibold text-gray-700 border-2 border-gray-700 hover:bg-black hover:text-white transition-colors duration-300">
+            <button className="px-6 py-2 text-lg font-semibold text-gray-700 border-2 border-gray-700 hover:bg-black hover:text-white transition-colors duration-300 rounded-md">
               Learn More
             </button>
           </a>
@@ -395,13 +395,13 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="w-1/2 flex flex-col h-1/2 items-center justify-center p-12 my-auto bg-[#FFE6C5] rounded-lg shadow-md">
+          <div className="w-1/2 flex flex-col h-1/2 items-center justify-center p-12 my-auto bg-[#FFE6C5] rounded-lg shadow-md ">
             <p className="text-2xl font-medium text-gray-800 text-center mb-4">
               Select a path to begin your storytelling journey and learn about
               bushfire safety.
             </p>
             <a href="/prepare" className="inline-block">
-              <button className="px-4 py-2 text-lg font-semibold text-gray-700 border-2 border-gray-700 hover:bg-black hover:text-white transition-colors duration-300">
+              <button className="px-4 py-2 text-lg font-semibold text-gray-700 border-2 border-gray-700 hover:bg-black hover:text-white transition-colors duration-300 rounded-md">
                 Begin
               </button>
             </a>
@@ -423,7 +423,7 @@ export default function Home() {
               bushfire safety.
             </p>
             <a href="/prepare" className="inline-block">
-              <button className="px-4 py-2 text-lg font-semibold text-gray-700 border-2 border-gray-700 hover:bg-black hover:text-white transition-colors duration-300">
+              <button className="px-4 py-2 text-lg font-semibold text-gray-700 border-2 border-gray-700 hover:bg-black hover:text-white transition-colors duration-300 rounded-md">
                 Begin
               </button>
             </a>
