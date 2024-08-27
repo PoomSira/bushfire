@@ -8,7 +8,7 @@ function NavList() {
       <li>
         <a
           className="flex text-2xl items-center justify-center w-28 h-12 text-gray-900 hover:text-orange-400"
-          href="#"
+          href="/"
         >
           Home
         </a>
@@ -67,7 +67,7 @@ export default function Navigation() {
               src="/logo.png"
               alt="Logo"
               width={120}
-              height={60}
+              height={80}
               layout="intrinsic"
               quality={100}
             />

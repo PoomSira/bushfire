@@ -96,10 +96,10 @@ export default function Home() {
           />
         </div>
         <div className="p-6 flex flex-col justify-center">
-          <h6 className="block mb-4 font-sans text-base antialiased font-semibold leading-relaxed tracking-normal text-gray-700 uppercase">
+          <h6 className="block mb-4 font-sans text-xl antialiased font-semibold leading-relaxed tracking-normal text-gray-700 uppercase">
             Learning About Bushfires
           </h6>
-          <p className="block mb-4 font-sans text-base antialiased font-normal leading-relaxed text-gray-700">
+          <p className="block mb-4 font-sans text-lg antialiased font-normal leading-relaxed text-gray-700">
             Students will explore the scientific causes and effects of bushfires
             in the Victorian region, gaining a deeper understanding of these
             natural events.
@@ -116,10 +116,10 @@ export default function Home() {
         className="relative flex border-2 rounded-xl bg-[#FFE6C5] text-gray-700 shadow-md w-full max-w-screen-xl mx-auto flex-row my-4 transition-transform duration-300 hover:scale-105 hover:shadow-lg"
       >
         <div className="p-6 flex flex-col justify-center">
-          <h6 className="block mb-4 font-sans text-base antialiased font-semibold leading-relaxed tracking-normal text-gray-700 uppercase">
+          <h6 className="block mb-4 font-sans text-xl antialiased font-semibold leading-relaxed tracking-normal text-gray-700 uppercase">
             Preparation for Bushfires
           </h6>
-          <p className="block mb-8 font-sans text-base antialiased font-normal leading-relaxed text-gray-700">
+          <p className="block mb-8 font-sans text-lg antialiased font-normal leading-relaxed text-gray-700">
             Students will learn how to assess bushfire risks and recognize when
             to be cautious. They will also gain knowledge on emergency
             precautions and safety tips to stay safe during a bushfire.
@@ -154,10 +154,10 @@ export default function Home() {
           />
         </div>
         <div className="p-6 flex flex-col justify-center">
-          <h6 className="block mb-4 font-sans text-base antialiased font-semibold leading-relaxed tracking-normal text-gray-700 uppercase">
+          <h6 className="block mb-4 font-sans text-xl antialiased font-semibold leading-relaxed tracking-normal text-gray-700 uppercase">
             Recovery from Bushfires
           </h6>
-          <p className="block mb-8 font-sans text-base antialiased font-normal leading-relaxed text-gray-700">
+          <p className="block mb-8 font-sans text-lg antialiased font-normal leading-relaxed text-gray-700">
             Students will learn how individuals and communities recover from
             bushfire impacts, focusing on immediate response, community support,
             and long-term rebuilding efforts.
@@ -179,19 +179,19 @@ export default function Home() {
       <div className="flex items-center justify-center w-full max-w-screen-xl mx-auto mb-8">
         <div className="flex w-full">
           <div className="w-1/2 p-12">
-            <div className="aspect-square bg-[#FFE6C5] rounded-full overflow-hidden">
+            <div className="aspect-square bg-[#FFE6C5] rounded-full overflow-visible">
               <Image
                 src="/koala.png"
                 alt="Koala doctor with presentation"
                 width={400} // Specify width
                 height={400} // Specify height
-                className="object-cover"
+                className="object-cover animate-moveSideways"
               />
             </div>
           </div>
 
-          <div className="w-1/2 flex flex-col justify-center p-6 bg-[#FFE6C5] rounded-lg shadow-md">
-            <p className="text-lg font-medium text-gray-800 mb-4">
+          <div className="w-1/2 flex flex-col h-1/2 items-center justify-center p-12 my-auto bg-[#FFE6C5] rounded-lg shadow-md">
+            <p className="text-2xl font-medium text-gray-800 text-center mb-4">
               Select a path to begin your storytelling journey and learn about
               bushfire safety.
             </p>
@@ -212,8 +212,8 @@ export default function Home() {
       {/* Knowledge Section */}
       <div className="flex items-center justify-center w-full max-w-screen-xl mx-auto mb-8">
         <div className="flex w-full">
-          <div className="w-1/2 flex flex-col justify-center p-6 bg-[#FFE6C5] rounded-lg shadow-md">
-            <p className="text-lg font-medium text-gray-800 mb-4">
+          <div className="w-1/2 flex flex-col h-1/2 items-center justify-center p-12 my-auto bg-[#FFE6C5] rounded-lg shadow-md">
+            <p className="text-2xl font-medium text-gray-800 text-center mb-4">
               Select a path to begin your storytelling journey and learn about
               bushfire safety.
             </p>
@@ -224,24 +224,18 @@ export default function Home() {
             </a>
           </div>
           <div className="w-1/2 p-12">
-            <div className="aspect-square bg-[#FFE6C5] rounded-full overflow-hidden">
+            <div className="aspect-square bg-[#FFE6C5] rounded-full overflow-visible">
               <Image
                 src="/kangaroo.png"
                 alt="Koala doctor with presentation"
                 width={400} // Specify width
                 height={400} // Specify height
-                className="object-cover"
+                className="object-cover animate-moveSideways"
               />
             </div>
           </div>
         </div>
       </div>
-      {/* Journ
-      {/* <div className="grid grid-cols-3 gap-4 p-4">
-        <div className="relative min-w-full min-h-80 bg-[#FFE6C5] bg-opacity-60 rounded-lg"></div>
-        <div className="relative min-w-full min-h-80 bg-[#FFE6C5] bg-opacity-60 rounded-lg"></div>
-        <div className="relative min-w-full min-h-80 bg-[#FFE6C5] bg-opacity-60 rounded-lg"></div>
-      </div> */}
          
       <Footer />
     </div>

@@ -7,8 +7,8 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-[#FFFBF2] ">
       <hr className="my-8 border-gray-200 sm:mx-auto lg:my-8" />
-      <div className="w-full max-w-screen-xl mx-auto p-2 md:py-8">
-        <div className="flex flex-col items-center sm:flex-row sm:items-center sm:justify-between">
+      <div className="w-full pl-10 pr-10 mx-auto p-4 md:py-4">
+        <div className="flex justify-between">
           <Link href="/" aria-label="Homepage">
             <Image
               src="/logo.png"
@@ -19,7 +19,7 @@ const Footer: React.FC = () => {
               quality={100}
             />
           </Link>
-          <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0">
+          <ul className="flex flex-wrap items-center mb-2 text-xl font-medium text-gray-500 sm:mb-0">
             <li>
               <Link
                 href="/learn"
@@ -68,8 +68,8 @@ const Footer: React.FC = () => {
           </ul>
         </div>
         <hr className="border-gray-200 sm:mx-auto lg:my-8" />
-        <div className="text-sm text-gray-500 text-center">
-          <p className="mb-6">
+        <div className="text-xl text-gray-500 text-center">
+          <p className="mb-4">
             Bushfire Brigade respectfully acknowledges the Traditional Owners of
             the land we govern, the Wurundjeri Woi-wurrung and Bunurong / Boon
             Wurrung peoples of the Kulin and pays respect to their Elders past
