@@ -57,9 +57,7 @@ const page = () => {
           <div className="p-6">
             <CauseBushfire />
           </div>
-          <div className="bg-[#FFFBF2] px-10 rounded-lg">
-            <BushfireVideo />
-          </div>
+        
         </div>
       </div>
 
