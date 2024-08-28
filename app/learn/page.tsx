@@ -11,15 +11,9 @@ import CauseBushfire from "../components/CauseBushfire";
 const page = () => {
   return (
     <div className="bg-[#FFFBF2] mx-auto max-w-screen">
-<<<<<<< HEAD
-      <main className="h-[70vh] w-full bg-[url('/learning-landing.webp')] bg-center bg-cover bg-no-repeat">
-        <Navigation />
-        <Hero />
-      </main>
-=======
       <Navigation />
       {/* Hero Section */}
-      <div className="relative isolate h-[75vh] px-6 pt-14 lg:px-8 flex-grow bg-[url('/home-landing.webp')] bg-cover bg-center">
+      <div className="relative isolate h-[75vh] px-6 pt-14 lg:px-8 flex-grow bg-[url('/learning-landing.jpeg')] bg-cover bg-center">
         {/* Blur Overlay */}
         <div className="absolute inset-0 bg-black bg-opacity-10 backdrop-filter backdrop-blur-sm"></div>
 
@@ -38,31 +32,33 @@ const page = () => {
           </div>
         </div>
       </div>
->>>>>>> 95b04ce1dce7316a27c5d510bd0535cb23fad8aa
-      <div className="py-8 flex flex-col items-center justify-center">
-        <h1 className="text-2xl font-bold text-black mb-4">
-          History of bushfire in past 20 years
-        </h1>
-        <hr className="w-full max-w-lg border-gray-400" />
-<<<<<<< HEAD
-        <div className="p-6">
-          <HistoryTimeline />
+
+      <div className="relative py-8 flex flex-col items-center justify-center">
+        <div className="absolute inset-0 bg-[url('/class-room.webp')] bg-cover bg-center brightness-75"></div>
+        <div className="relative z-10">
+          <h1 className="text-3xl font-black text-center text-white mb-4">
+            Cause of Bushfire
+          </h1>
+          <hr className="w-full max-w-lg border-white mb-4 mx-auto" />
+          <div className="bg-[#FFFBF2] px-10 rounded-lg">
+            <CauseBushfire />
+          </div>
         </div>
-=======
->>>>>>> 95b04ce1dce7316a27c5d510bd0535cb23fad8aa
       </div>
-      <div className="p-12">
-        <HistoryTimeline />
+
+      <div className="relative py-8 flex flex-col items-center justify-center">
+        <div className="absolute inset-0 bg-[url('/kids-talking.jpeg')] bg-cover bg-center brightness-75"></div>
+        <div className="relative z-10">
+          <h1 className="text-3xl font-black text-center text-white mb-4">
+            History of bushfire in past 20 years
+          </h1>
+          <hr className="w-full max-w-lg border-white mb-4 mx-auto" />
+          <div className="p-6">
+            <HistoryTimeline />
+          </div>
+        </div>
       </div>
-      <div className="py-8 flex flex-col items-center justify-center">
-        <h1 className="text-2xl font-bold text-black mb-4">
-          Cause of Bushfire
-        </h1>
-        <hr className="w-full max-w-lg border-gray-400" />
-      </div>
-      <div>
-        <CauseBushfire />
-      </div>
+
       <Footer />
     </div>
   );

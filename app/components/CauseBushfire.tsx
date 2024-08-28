@@ -3,12 +3,12 @@ import Image from "next/image";
 
 const CauseBushfire = () => {
   return (
-    <div className="flex items-center justify-center w-full max-w-screen-xl mx-auto mb-8">
+    <div className="flex items-center justify-center max-w-screen-xl mx-auto">
       <div className="flex w-full">
         <div className="w-1/2 p-12">
-          <div className="aspect-square overflow-visible transition-transform duration-500 hover:scale-105">
+          <div className="w-56 mx-auto aspect-square overflow-visible transition-transform duration-500 hover:scale-105">
             <Image
-              src="/koala.png"
+              src="/koala-t.png"
               alt="Koala doctor with presentation"
               width={450}
               height={450}
@@ -17,7 +17,7 @@ const CauseBushfire = () => {
           </div>
         </div>
 
-        <div className="w-1/2 flex flex-col h-1/2 items-center justify-center p-12 my-auto bg-[#FFE6C5] rounded-xl shadow-md transition-transform duration-500 hover:scale-125">
+        <div className="w-1/2 flex flex-col h-1/2 items-center justify-center p-12 my-auto bg-[#FFE6C5] rounded-xl shadow-md transition-transform duration-500 hover:scale-110">
           <p className="text-2xl font-medium text-gray-800 text-center mb-4">
             In a bushfire, potential fuels include things like dry grass,
             leaves, twigs, and branches. These fuels can catch fire, or ignite,

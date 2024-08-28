@@ -6,7 +6,7 @@ type Props = {};
 
 const HistoryTimeline = (props: Props) => {
   return (
-    <div className="grid grid-cols-3 gap-6">
+    <div className="grid grid-cols-3 gap-6 bg-[#FFFBF2] p-4 rounded-lg">
       {/* Left Column with overflow-scroll */}
       <div className="col-span-2 flex flex-col overflow-y-scroll max-h-96">
         <div className="my-3">
