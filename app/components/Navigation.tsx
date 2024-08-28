@@ -21,7 +21,7 @@ function NavList() {
           Learn
         </Link>
       </li>
-      <li>
+      {/* <li>
         <Link
           href="/prepare"
           className="flex text-2xl items-center justify-center w-28 h-12 text-gray-900 hover:text-orange-400"
@@ -52,7 +52,7 @@ function NavList() {
         >
           Help
         </Link>
-      </li>
+      </li> */}
     </ul>
   );
 }

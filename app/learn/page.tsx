@@ -8,7 +8,7 @@ import HistoryTimeline from "../components/HistoryTimeline";
 const page = () => {
   return (
     <div className="bg-[#FFFBF2] mx-auto max-w-screen">
-      <main className="h-[70vh] w-full bg-[url('/home-landing.webp')] bg-center bg-cover bg-no-repeat">
+      <main className="h-[70vh] w-full bg-[url('/learning-landing.webp')] bg-center bg-cover bg-no-repeat">
         <Navigation />
         <Hero />
       </main>
@@ -17,7 +17,7 @@ const page = () => {
           History of bushfire in past 20 years
         </h1>
         <hr className="w-full max-w-lg border-gray-400" />
-        <div className="p-12">
+        <div className="p-6">
           <HistoryTimeline />
         </div>
       </div>
