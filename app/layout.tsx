@@ -16,7 +16,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={fresca.className}>{children}</body>
+      <body className={fresca.className}>
+        <div className={fresca.className}>{children}</div>
+      </body>
     </html>
   );
 }

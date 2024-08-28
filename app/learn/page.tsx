@@ -6,8 +6,8 @@ import Hero from "../components/Hero";
 import Footer from "../components/Footer";
 import HistoryTimeline from "../components/HistoryTimeline";
 import Image from "next/image";
+
 import CauseBushfire from "../components/CauseBushfire";
-import BushfireVideo from "../components/BushfireVideo";
 
 const page = () => {
   return (
@@ -35,13 +35,26 @@ const page = () => {
       </div>
 
       <div className="relative py-8 flex flex-col items-center justify-center">
+        <div className="absolute inset-0 bg-[url('/kids-talking.jpeg')] bg-cover bg-center brightness-75"></div>
+        <div className="relative z-10">
+          <h1 className="text-3xl font-black text-center text-white mb-4">
+            History of bushfire in past 20 years
+          </h1>
+          <hr className="w-full max-w-lg border-white mb-4 mx-auto" />
+          <div className="p-6">
+            <HistoryTimeline />
+          </div>
+        </div>
+      </div>
+
+      <div className="relative py-8 flex flex-col items-center justify-center">
         <div className="absolute inset-0 bg-[url('/class-room.webp')] bg-cover bg-center brightness-75"></div>
         <div className="relative z-10">
           <h1 className="text-3xl font-black text-center text-white mb-4">
             Cause of Bushfire
           </h1>
           <hr className="w-full max-w-lg border-white mb-4 mx-auto" />
-          <div className="bg-[#FFFBF2] px-10 rounded-lg">
+          <div className="p-6">
             <CauseBushfire />
           </div>
           <div className="bg-[#FFFBF2] px-10 rounded-lg">
@@ -51,14 +64,14 @@ const page = () => {
       </div>
 
       <div className="relative py-8 flex flex-col items-center justify-center">
-        <div className="absolute inset-0 bg-[url('/kids-talking.jpeg')] bg-cover bg-center brightness-75"></div>
+        <div className="absolute inset-0 bg-[url('/bushfire-effect.webp')] bg-cover bg-center opacity-90"></div>
         <div className="relative z-10">
           <h1 className="text-3xl font-black text-center text-white mb-4">
-            History of bushfire in past 20 years
+            Effect of bushfire
           </h1>
           <hr className="w-full max-w-lg border-white mb-4 mx-auto" />
           <div className="p-6">
-            <HistoryTimeline />
+            <EffectBushfire />
           </div>
         </div>
       </div>

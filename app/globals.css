@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+/* globals.css */
+@import url("https://fonts.googleapis.com/css2?family=Fresca&display=swap");
+
+.font-fresca {
+  font-family: "Fresca", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -75,7 +84,6 @@ body {
 }
 
 @keyframes moveSideways {
-
   0%,
   100% {
     transform: translateX(0);
@@ -83,5 +91,41 @@ body {
 
   50% {
     transform: translateX(10px);
+  }
+}
+
+@keyframes windMove {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+}
+
+@keyframes rotateBranch {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25%,
+  75% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
   }
 }

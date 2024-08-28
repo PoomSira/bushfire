@@ -7,14 +7,14 @@ const TableauViz: React.FC = () => {
 
     if (divElement && vizElement) {
       if (divElement.offsetWidth > 800) {
-        vizElement.style.width = "1000px";
-        vizElement.style.height = "827px";
+        vizElement.style.width = "900px";
+        vizElement.style.height = "600px";
       } else if (divElement.offsetWidth > 500) {
-        vizElement.style.width = "1000px";
-        vizElement.style.height = "827px";
+        vizElement.style.width = "900px";
+        vizElement.style.height = "600px";
       } else {
         vizElement.style.width = "100%";
-        vizElement.style.height = "1027px";
+        vizElement.style.height = "600px";
       }
 
       const scriptElement = document.createElement("script");
@@ -26,7 +26,7 @@ const TableauViz: React.FC = () => {
 
   return (
     <div
-      className="tableauPlaceholder"
+      className="tableauPlaceholde"
       id="viz1724681896061"
       style={{ position: "relative" }}
     >
