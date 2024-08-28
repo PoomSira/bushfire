@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import HistoryTimeline from "../components/HistoryTimeline";
 import Image from "next/image";
 import CauseBushfire from "../components/CauseBushfire";
+import BushfireVideo from "../components/BushfireVideo";
 
 const page = () => {
   return (
@@ -42,6 +43,9 @@ const page = () => {
           <hr className="w-full max-w-lg border-white mb-4 mx-auto" />
           <div className="bg-[#FFFBF2] px-10 rounded-lg">
             <CauseBushfire />
+          </div>
+          <div className="bg-[#FFFBF2] px-10 rounded-lg">
+            <BushfireVideo />
           </div>
         </div>
       </div>
