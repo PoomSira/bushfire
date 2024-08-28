@@ -14,7 +14,13 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       animation: {
-        moveSideways: 'moveSideways 2s ease-in-out infinite',
+        moveSideways: "moveSideways 2s ease-in-out infinite",
+        windMove: "windMove 3s infinite",
+        rotateBranch: "rotateBranch 3s infinite",
+        shake: "shake 1s infinite;",
+      },
+      fontFamily: {
+        sans: ["Fresca", "sans-serif"],
       },
     },
   },

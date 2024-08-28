@@ -21,7 +21,7 @@ function NavList() {
           Learn
         </Link>
       </li>
-      {/* <li>
+      <li>
         <Link
           href="/prepare"
           className="flex text-2xl items-center justify-center w-28 h-12 text-gray-900 hover:text-orange-400"
@@ -52,14 +52,14 @@ function NavList() {
         >
           Help
         </Link>
-      </li> */}
+      </li>
     </ul>
   );
 }
 
 export default function Navigation() {
   return (
-    <div className="bg-[#FFFBF2] mx-auto max-w-screen px-6 py-3">
+    <div className="sticky top-0 z-30 bg-[#FFFBF2] mx-auto max-w-screen px-6 py-3">
       <div className="flex items-center justify-between w-full">
         <div className="mr-6">
           <Link href="/">
