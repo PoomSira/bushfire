@@ -57,7 +57,6 @@ const page = () => {
           <div className="p-6">
             <CauseBushfire />
           </div>
-        
         </div>
       </div>
 
