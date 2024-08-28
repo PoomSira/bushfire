@@ -59,6 +59,20 @@ const page = () => {
           </div>
         </div>
       </div>
+
+      <div className="relative py-8 flex flex-col items-center justify-center">
+        <div className="absolute inset-0 bg-[url('/bushfire-effect.webp')] bg-cover bg-center opacity-90"></div>
+        <div className="relative z-10">
+          <h1 className="text-3xl font-black text-center text-white mb-4">
+            Effect of bushfire
+          </h1>
+          <hr className="w-full max-w-lg border-white mb-4 mx-auto" />
+          <div className="p-6">
+            <EffectBushfire />
+          </div>
+        </div>
+      </div>
+
       <Footer />
     </div>
   );
