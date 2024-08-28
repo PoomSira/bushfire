@@ -8,6 +8,8 @@ import HistoryTimeline from "../components/HistoryTimeline";
 import Image from "next/image";
 
 import CauseBushfire from "../components/CauseBushfire";
+import EffectBushfire from "../components/EffectBushfire";
+import EffectBushfire from "../components/EffectBushfire";
 
 const page = () => {
   return (
