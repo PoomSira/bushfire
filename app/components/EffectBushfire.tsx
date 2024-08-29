@@ -1,207 +1,93 @@
-/* eslint-disable react/no-unescaped-entities */
-
 import React, { useState } from "react";
-import TableauViz from "./TableauViz";
-import {
-  Accordion,
-  AccordionHeader,
-  AccordionBody,
-} from "@material-tailwind/react";
 import TableauCluster from "./TableauCluster";
+import TableauViz from "./TableauViz";
+import TableauPictograph from "./TableauPictograph";
+import Image from "next/image"; // Assuming you are using Next.js for image optimization
 
-interface IconProps {
-  id: number;
-  open: number;
-}
+const EffectBushfire: React.FC = () => {
+  const [open, setOpen] = useState(false);
+  const [activeViz, setActiveViz] = useState<null | string>(null);
 
-function Icon({ id, open }: IconProps) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      strokeWidth={2}
-      stroke="currentColor"
-      className={`${
-        id === open ? "rotate-180" : ""
-      } h-5 w-5 transition-transform`}
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-      />
-    </svg>
-  );
-}
+  const openModal = (viz: string) => {
+    setActiveViz(viz);
+    setOpen(true);
+  };
 
-interface Props {}
-
-const EffectBushfire: React.FC<Props> = () => {
-  const [open, setOpen] = useState<number>(0);
-
-  const handleOpen = (value: number) => setOpen(open === value ? 0 : value);
+  const closeModal = () => {
+    setOpen(false);
+    setActiveViz(null);
+  };
 
   return (
-    <div className="grid grid-cols-5 gap-6">
-      {/* overflow-auto */}
-      <div className="col-span-3 flex flex-col bg-[#FFFBF2] p-4 rounded-lg overflow-auto">
-        <TableauViz />
+    <div className="relative py-8 flex flex-col items-center justify-center">
+      <div className="relative z-10">
+        <div className="p-6">
+          <div className="grid grid-cols-3 gap-4">
+            <div className="relative aspect-square bg-[#FFFBF2] rounded-full overflow-visible">
+              <div className="absolute bg-[#FFE6C5] right-10 top-1/2 transform -translate-y-1/2 text-center py-2 px-2 rounded-md shadow-md hover:bg-orange-300">
+                <button onClick={() => openModal("cluster")}>
+                  Click to see risk
+                </button>
+              </div>
+              <Image
+                src="/koala-t.png"
+                alt="Koala Tableau Cluster"
+                width={200}
+                height={200}
+                className="object-cover animate-moveSideways"
+              />
+            </div>
+
+            <div className="relative aspect-square bg-[#FFFBF2] rounded-full overflow-visible">
+              <div className="absolute bg-[#FFE6C5] right-10 top-1/2 transform -translate-y-1/2 text-center py-2 px-2 rounded-md shadow-md hover:bg-orange-300">
+                <button onClick={() => openModal("viz")}>
+                  Click to see history
+                </button>
+              </div>
+              <Image
+                src="/koala-t.png"
+                alt="Koala Tableau Cluster"
+                width={200}
+                height={200}
+                className="object-cover animate-moveSideways"
+              />
+            </div>
+
+            <div className="relative aspect-square bg-[#FFFBF2] rounded-full overflow-visible">
+              <div className="absolute bg-[#FFE6C5] right-3 top-1/2 transform -translate-y-1/2 text-center py-2 px-2 rounded-md shadow-md hover:bg-orange-300">
+                <button onClick={() => openModal("pictograph")}>
+                  Click to see school risk
+                </button>
+              </div>
+              <Image
+                src="/koala-t.png"
+                alt="Koala Tableau Cluster"
+                width={200}
+                height={200}
+                className="object-cover animate-moveSideways"
+              />
+            </div>
+          </div>
+        </div>
       </div>
-      <div className="col-span-2 flex flex-col bg-[#FFFBF2] p-4 rounded-lg">
-        <p className="text-black text-5xl mx-auto">Bushfire effects data...</p>
-        <Accordion
-          open={open === 1}
-          icon={<Icon id={1} open={open} />}
-          className="font-fresca" // Assuming you have a class for the Fresca font in globals.css
-        >
-          <AccordionHeader onClick={() => handleOpen(1)}>
-            <p className="text-center px-2 font-fresca">
-              What do you is you observation on the evolution of bushfires from
-              1943 to 2023?
-            </p>
-          </AccordionHeader>
-          <AccordionBody>
-            <p className="text-lg text-center px-2 font-fresca">
-              For the last 80 years, there are more and more bushfires occur in
-              not just State of Victoria, but also whole Australia. If have been
-              affected both human and animals.
-            </p>
-          </AccordionBody>
-        </Accordion>
 
-        <Accordion
-          open={open === 2}
-          icon={<Icon id={2} open={open} />}
-          className="font-fresca" // Assuming you have a class for the Fresca font in globals.css
-        >
-          <AccordionHeader onClick={() => handleOpen(2)}>
-            <p className="text-center px-2 font-fresca">
-              Which period had the most bushfires according to the graph?
-            </p>
-          </AccordionHeader>
-          <AccordionBody>
-            <p className="text-lg text-center px-2 font-fresca">
-              The period around 2019 to 2020 had the most bushfires.
-            </p>
-          </AccordionBody>
-        </Accordion>
-
-        <Accordion
-          open={open === 3}
-          icon={<Icon id={3} open={open} />}
-          className="font-fresca" // Assuming you have a class for the Fresca font in globals.css
-        >
-          <AccordionHeader onClick={() => handleOpen(3)}>
-            <p className="text-center px-2 font-fresca">
-              What year had the highest number of bushfires according to the
-              graph?
-            </p>
-          </AccordionHeader>
-          <AccordionBody>
-            <p className="text-lg px-2 font-fresca">
-              The year with the highest number of bushfires was around 2019.
-            </p>
-          </AccordionBody>
-        </Accordion>
-
-        <Accordion
-          open={open === 4}
-          icon={<Icon id={4} open={open} />}
-          className="font-fresca" // Assuming you have a class for the Fresca font in globals.css
-        >
-          <AccordionHeader onClick={() => handleOpen(4)}>
-            <p className="text-center px-2 font-fresca">
-              How did the number of bushfires change between 1960 and 1970?
-            </p>
-          </AccordionHeader>
-          <AccordionBody>
-            <p className="text-lg text-center px-2 font-fresca">
-              The number of bushfires increased between 1960 and 1970.
-            </p>
-          </AccordionBody>
-        </Accordion>
-
-        <Accordion
-          open={open === 5}
-          icon={<Icon id={5} open={open} />}
-          className="font-fresca" // Assuming you have a class for the Fresca font in globals.css
-        >
-          <AccordionHeader onClick={() => handleOpen(5)}>
-            <p className="text-center px-2 font-fresca">
-              Around what year did the number of bushfires first start to rise
-              significantly?
-            </p>
-          </AccordionHeader>
-          <AccordionBody>
-            <p className="text-lg text-center  px-2 font-fresca">
-              The number of bushfires first started to rise significantly around
-              1960.
-            </p>
-          </AccordionBody>
-        </Accordion>
-
-        <Accordion
-          open={open === 6}
-          icon={<Icon id={6} open={open} />}
-          className="font-fresca" // Assuming you have a class for the Fresca font in globals.css
-        >
-          <AccordionHeader onClick={() => handleOpen(6)}>
-            <p className="text-center px-2 font-fresca">
-              How many bushfires were there in the early 2000s compared to the
-              1980s?
-            </p>
-          </AccordionHeader>
-          <AccordionBody>
-            <p className="text-lg text-center  px-2 font-fresca">
-              There were more bushfires in the early 2000s than in the 1980s.
-            </p>
-          </AccordionBody>
-        </Accordion>
-
-        <Accordion
-          open={open === 7}
-          icon={<Icon id={7} open={open} />}
-          className="font-fresca" // Assuming you have a class for the Fresca font in globals.css
-        >
-          <AccordionHeader onClick={() => handleOpen(7)}>
-            <p className="text-center px-2 font-fresca">
-              What can you say about the trend of bushfires after 2010?
-            </p>
-          </AccordionHeader>
-          <AccordionBody>
-            <p className="text-lg text-center  px-2 font-fresca">
-              The trend shows that bushfires increased sharply after 2010.
-            </p>
-          </AccordionBody>
-        </Accordion>
-
-        {/* <Accordion open={open === 2} icon={<Icon id={2} open={open} />}>
-          <AccordionHeader onClick={() => handleOpen(2)}>
-            How to use Material Tailwind?
-          </AccordionHeader>
-          <AccordionBody>
-            We&apos;re not always in the position that we want to be at.
-            We&apos;re constantly growing. We&apos;re constantly making
-            mistakes. We&apos;re constantly trying to express ourselves and
-            actualize our dreams.
-          </AccordionBody>
-        </Accordion>
-        <Accordion open={open === 3} icon={<Icon id={3} open={open} />}>
-          <AccordionHeader onClick={() => handleOpen(3)}>
-            What can I do with Material Tailwind?
-          </AccordionHeader>
-          <AccordionBody>
-            We&apos;re not always in the position that we want to be at.
-            We&apos;re constantly growing. We&apos;re constantly making
-            mistakes. We&apos;re constantly trying to express ourselves and
-            actualize our dreams.
-          </AccordionBody>
-        </Accordion> */}
-      </div>
-      <div className="col-span-5 h-full">
-        <TableauCluster />
-      </div>
+      {open && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg w-3/4 h-3/4 relative">
+            <button
+              className="absolute top-4 right-4 text-3xl font-bold text-black z-50"
+              onClick={closeModal}
+            >
+              &times;
+            </button>
+            <div className="w-full h-full overflow-auto">
+              {activeViz === "cluster" && <TableauCluster />}
+              {activeViz === "viz" && <TableauViz />}
+              {activeViz === "pictograph" && <TableauPictograph />}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

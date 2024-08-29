@@ -54,7 +54,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      {/* Test Section */}
+      {/* Know your tutor Section */}
       <div className="relative py-8 flex flex-col items-center justify-center">
         <div className="absolute inset-0 bg-[url('/home-new.webp')] bg-cover bg-center brightness-75"></div>
         <div className="relative z-10">

@@ -8,7 +8,7 @@ const HistoryTimeline = (props: Props) => {
   return (
     <div className="grid grid-cols-3 gap-6 bg-[#FFFBF2] p-4 rounded-lg">
       {/* Left Column with overflow-scroll */}
-      <div className="col-span-2 flex flex-col overflow-y-scroll">
+      <div className="col-span-2 flex flex-col h-[75vh] overflow-y-scroll">
         <div className="my-3">
           {/* Contents of the left column */}
           {/* 2019-20 Fire Season */}

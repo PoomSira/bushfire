@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 
-const TableauCluster: React.FC = () => {
+const TableauPictograph: React.FC = () => {
   useEffect(() => {
-    const divElement = document.getElementById("viz1724881742769");
+    const divElement = document.getElementById("viz1724881019342");
     const vizElement = divElement?.getElementsByTagName("object")[0];
 
     if (divElement && vizElement) {
@@ -27,14 +27,14 @@ const TableauCluster: React.FC = () => {
   return (
     <div
       className="tableauPlaceholder"
-      id="viz1724881742769"
+      id="viz1724881019342"
       style={{ position: "relative" }}
     >
       <noscript>
         <a href="#">
           <img
-            alt="Dashboard2"
-            src="https://public.tableau.com/static/images/Bu/Bushfire_Brigade_Insight2/Dashboard2/1_rss.png"
+            alt="Dashboard 1"
+            src="https://public.tableau.com/static/images/Bu/Bushfire_Brigade_Insight1/Dashboard1/1_rss.png"
             style={{ border: "none" }}
           />
         </a>
@@ -43,12 +43,12 @@ const TableauCluster: React.FC = () => {
         <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
         <param name="embed_code_version" value="3" />
         <param name="site_root" value="" />
-        <param name="name" value="Bushfire_Brigade_Insight2/Dashboard2" />
+        <param name="name" value="Bushfire_Brigade_Insight1/Dashboard1" />
         <param name="tabs" value="no" />
         <param name="toolbar" value="yes" />
         <param
           name="static_image"
-          value="https://public.tableau.com/static/images/Bu/Bushfire_Brigade_Insight2/Dashboard2/1.png"
+          value="https://public.tableau.com/static/images/Bu/Bushfire_Brigade_Insight1/Dashboard1/1.png"
         />
         <param name="animate_transition" value="yes" />
         <param name="display_static_image" value="yes" />
@@ -62,4 +62,4 @@ const TableauCluster: React.FC = () => {
   );
 };
 
-export default TableauCluster;
+export default TableauPictograph;
