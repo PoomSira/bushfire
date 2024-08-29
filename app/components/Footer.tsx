@@ -79,7 +79,7 @@ const Footer: React.FC = () => {
             invitation in the Uluru Statement from the Heart and are committed
             to walking together to build a better future.
           </p>
-          <p>© 2024 Bushfire Brigade. All Rights Reserved.</p>
+          <p>© 2024 Bushfire Brigade(TA30). All Rights Reserved.</p>
         </div>
       </div>
     </footer>
