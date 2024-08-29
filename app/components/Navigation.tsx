@@ -67,7 +67,7 @@ export default function Navigation() {
               src="/logo.png"
               alt="Logo"
               width={120}
-              height={80}
+              height={70}
               layout="intrinsic"
               quality={100}
             />
