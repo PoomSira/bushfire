@@ -175,6 +175,17 @@ const HistoryTimeline = (props: Props) => {
             </p>
           </div>
         </div>
+        {/* Video Section */}
+        <div className="w-full max-w-5xl mx-auto mb-8 rounded-xl overflow-hidden shadow-md bg-black">
+          <video
+            controls
+            className="w-full h-full object-cover"
+            poster="/api/placeholder/800/450"
+          >
+            <source src="/home video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
       </div>
     </div>
   );
