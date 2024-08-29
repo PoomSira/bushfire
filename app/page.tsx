@@ -79,7 +79,9 @@ export default function Home() {
             <div className="grid grid-cols-3 gap-4">
               <div className="relative w-[400px] h-[400px] bg-[#FFFBF2] rounded-full overflow-visible transform transition-transform duration-300 hover:scale-105">
                 <div className="absolute bg-[#FFE6C5] right-10 top-1/2 transform -translate-y-1/2 text-center py-2 px-2 rounded-md shadow-md transition-transform duration-300 hover:scale-105 hover:bg-orange-300">
-                  <button onClick={toggleKoalaPopup}>Click to know me</button>
+                  <button onClick={toggleKoalaPopup} className="text-black">
+                    Click to know me
+                  </button>
                 </div>
                 <Image
                   src="/koala-t.png"
@@ -90,7 +92,7 @@ export default function Home() {
                 />
                 {showKoalaPopup && (
                   <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-                    <div className="bg-white p-6 rounded-lg shadow-lg">
+                    <div className="bg-white p-6 rounded-lg shadow-sm text-black">
                       <h2 className="text-xl font-bold mb-4">
                         Hello! I&apos;m Chloe, the koala
                       </h2>
@@ -112,7 +114,7 @@ export default function Home() {
 
               <div className="relative aspect-square bg-[#FFFBF2] rounded-full overflow-visible transform transition-transform duration-300 hover:scale-105">
                 <div className="absolute bg-[#FFE6C5] right-10 top-1/2 transform -translate-y-1/2 text-center py-2 px-2 rounded-md shadow-md transition-transform duration-300 hover:scale-105 hover:bg-orange-300">
-                  <button onClick={toggleKangarooPopup}>
+                  <button onClick={toggleKangarooPopup} className="text-black">
                     Click to know me
                   </button>
                 </div>
@@ -125,9 +127,9 @@ export default function Home() {
                 />
                 {showKangarooPopup && (
                   <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-                    <div className="bg-white p-6 rounded-lg shadow-lg">
+                    <div className="bg-white p-6 rounded-lg shadow-2xl text-black">
                       <h2 className="text-xl font-bold mb-4">
-                        Hello! I&apos; m Jacky, the kangaroo
+                        Hello! I&apos;m Jacky, the kangaroo
                       </h2>
                       <p className="mb-4">
                         I&apos;ll help you learn the important skills to survive
@@ -147,8 +149,10 @@ export default function Home() {
               </div>
 
               <div className="relative aspect-square bg-[#FFFBF2] rounded-full overflow-visible transform transition-transform duration-300 hover:scale-105">
-                <div className="absolute bg-[#FFE6C5] right-10 top-1/2 transform -translate-y-1/2 text-center py-2 px-2 rounded-md shadow-md transition-transform duration-300 hover:scale-105 hover:bg-orange-300">
-                  <button onClick={toggleWombatPopup}>Click to know me</button>
+                <div className="absolute bg-[#FFE6C5] text-black right-10 top-1/2 transform -translate-y-1/2 text-center py-2 px-2 rounded-md shadow-md transition-transform duration-300 hover:scale-105 hover:bg-orange-300">
+                  <button onClick={toggleWombatPopup} className="text-black">
+                    Click to know me
+                  </button>
                 </div>
                 <Image
                   src="/wombat.png"
@@ -159,7 +163,7 @@ export default function Home() {
                 />
                 {showWombatPopup && (
                   <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-                    <div className="bg-white p-6 rounded-lg shadow-lg">
+                    <div className="bg-white p-6 rounded-lg shadow-2xl text-black">
                       <h2 className="text-xl font-bold mb-4">
                         Hello! I&apos;m Johny, the wombat
                       </h2>

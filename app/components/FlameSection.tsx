@@ -143,7 +143,7 @@ const FlameSection: React.FC = () => {
 
         {/* Card Elements */}
         {activeButton === "topLeft" && (
-          <div className="absolute top-[-5rem] left-[-10rem] transform translate-y-12 w-32 bg-[#FFE6C5] shadow-md rounded-lg flex items-center justify-center p-3">
+          <div className="absolute top-[-5rem] left-[-10rem] transform translate-y-12 w-32 text-gray-800 bg-[#FFE6C5] shadow-md rounded-lg flex items-center justify-center p-3">
             <span className="text-sm">
               When it&apos;s really hot and the air is dry, everything outside,
               like plants and grass, can catch fire more easily.
@@ -152,7 +152,7 @@ const FlameSection: React.FC = () => {
         )}
 
         {activeButton === "topRight" && (
-          <div className="absolute top-[-5rem] right-[-10rem] transform translate-y-12 w-32 bg-[#FFE6C5] shadow-md rounded-lg flex items-center justify-center p-3">
+          <div className="absolute top-[-5rem] right-[-10rem] transform translate-y-12 w-32 text-gray-800 bg-[#FFE6C5] shadow-md rounded-lg flex items-center justify-center p-3">
             <span className="text-sm">
               If it hasn&apos;t rained for a while, plants and trees dry out
               like firewood which is a fuel for the flames, this makes them burn
@@ -162,7 +162,7 @@ const FlameSection: React.FC = () => {
         )}
 
         {activeButton === "bottomLeft" && (
-          <div className="absolute bottom-[-5rem] left-[-10rem] transform -translate-y-12 w-32 bg-[#FFE6C5] shadow-md rounded-lg flex items-center justify-center p-3">
+          <div className="absolute bottom-[-5rem] left-[-10rem] transform -translate-y-12 w-32 text-gray-800 bg-[#FFE6C5] shadow-md rounded-lg flex items-center justify-center p-3">
             <span className="text-sm">
               Wind can push the flames around, making the fire spread faster.
             </span>
@@ -170,7 +170,7 @@ const FlameSection: React.FC = () => {
         )}
 
         {activeButton === "bottomRight" && (
-          <div className="absolute bottom-[-5rem] right-[-10rem] transform -translate-y-12 w-32 bg-[#FFE6C5] shadow-md rounded-lg flex items-center justify-center p-3">
+          <div className="absolute bottom-[-5rem] right-[-10rem] transform -translate-y-12 w-32 text-gray-800 bg-[#FFE6C5] shadow-md rounded-lg flex items-center justify-center p-3">
             <span className="text-sm">
               Sometimes, a lightning bolt can hit the ground and start a fire.
             </span>
@@ -178,7 +178,7 @@ const FlameSection: React.FC = () => {
         )}
 
         {activeButton === "leftCenter" && (
-          <div className="absolute left-[-10rem] top-1/2 transform -translate-y-1/2 w-32 bg-[#FFE6C5] shadow-md rounded-lg flex items-center justify-center p-3">
+          <div className="absolute left-[-10rem] top-1/2 transform -translate-y-1/2 w-32 text-gray-800 bg-[#FFE6C5] shadow-md rounded-lg flex items-center justify-center p-3">
             <span className="text-sm">
               People can accidentally start fires, like if they forget to put
               out their campfires properly.
@@ -187,7 +187,7 @@ const FlameSection: React.FC = () => {
         )}
 
         {activeButton === "rightCenter" && (
-          <div className="absolute right-[-10rem] top-1/2 transform -translate-y-1/2 w-32 bg-[#FFE6C5] shadow-md rounded-lg flex items-center justify-center p-3">
+          <div className="absolute right-[-10rem] top-1/2 transform -translate-y-1/2 w-32 text-gray-800 bg-[#FFE6C5] shadow-md rounded-lg flex items-center justify-center p-3">
             <span className="text-sm">
               Fires can move up hills and mountains faster because flames grow
               higher in narrow spaces.

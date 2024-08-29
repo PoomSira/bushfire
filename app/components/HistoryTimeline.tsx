@@ -173,7 +173,7 @@ const HistoryTimeline = (props: Props) => {
         <div className="my-3 flex-1">
           <div>
             <p className="text-2xl text-orange-600">Fact</p>
-            <p className="text-xl">
+            <p className="text-xl text-gray-800">
               Fire has been a part of Australia's environment for a very long
               time, at least 65 million years (Cary et al. 2012). People in
               Australia have also been using fire to manage the land for a long
@@ -181,7 +181,7 @@ const HistoryTimeline = (props: Props) => {
               called "fire-stick farming" around 60,000 years ago.
             </p>
             <br />
-            <p className="text-xl">
+            <p className="text-xl text-gray-800">
               Today, about 3% to 10% of Australia’s land burns every year
               (Western Australian Land Information Authority 2013). These fires
               are often called bushfires. A bushfire is an uncontrolled fire

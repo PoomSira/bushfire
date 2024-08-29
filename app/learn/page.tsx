@@ -16,7 +16,7 @@ const page = () => {
       {/* Hero Section */}
       <div className="relative isolate h-[75vh] px-6 pt-14 lg:px-8 flex-grow bg-[url('/learning-landing.jpeg')] bg-cover bg-center">
         {/* Blur Overlay */}
-        <div className="absolute inset-0 bg-black bg-opacity-10 backdrop-filter backdrop-blur-sm"></div>
+        <div className="absolute inset-0 bg-black bg-opacity-20 backdrop-filter backdrop-blur-sm"></div>
 
         {/* Content Overlay */}
         <div className="relative mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">

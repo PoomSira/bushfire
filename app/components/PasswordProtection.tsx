@@ -35,14 +35,14 @@ const PasswordProtection: React.FC<PasswordProtectionProps> = ({
           style={{ backgroundImage: "url('/hero.png')" }}
         >
           <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
-            <div className="bg-white p-6 rounded-xl shadow-lg w-full max-w-md">
+            <div className="bg-white p-6 rounded-xl shadow-lg w-full max-w-md text-black">
               {/* Logo Section */}
               <div className="flex justify-center mb-4">
                 <Image
                   src="/logo.png"
                   alt="Logo"
                   width={120} // Adjust the width as needed
-                  height={100} // Adjust the height as needed
+                  height={120} // Adjust the height as needed
                   className="h-16" // Optional, if you want to control height with Tailwind
                 />
               </div>
