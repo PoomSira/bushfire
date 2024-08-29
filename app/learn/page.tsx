@@ -53,7 +53,7 @@ const page = () => {
           <h1 className="text-3xl font-black text-center text-white mb-4">
             Cause of Bushfire
           </h1>
-          <hr className="w-full max-w-lg border-white mb-4 mx-auto" />
+          <hr className="w-full max-w-lg border-white mb-4 mx-auto " />
           <div className="p-6">
             <CauseBushfire />
           </div>

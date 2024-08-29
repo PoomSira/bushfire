@@ -26,8 +26,8 @@ const CauseBushfire = () => {
         </div>
       </div>
 
-      <div className="bg-[#FFFBF2] p-12 rounded-lg">
-        <div className="py-4 bg-[#ffe6c5] rounded-lg shadow-lg">
+      <div className="bg-[#FFFBF2] p-12 rounded-lg  ">
+        <div className="py-4 bg-[#ffe6c5] rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105">
           <p className="text-2xl text-orange-600 text-center">Cause</p>
           <p className="text-xl font-medium text-gray-800 text-center mb-2 p-5">
             In a bushfire, potential fuels include things like dry grass,
@@ -42,6 +42,7 @@ const CauseBushfire = () => {
           </p>
         </div>
       </div>
+
       <div className="my-10 grid grid-cols-5 gap-6">
         <div className="col-span-4 flex flex-col">
           <BushfireVideo />
