@@ -5,6 +5,7 @@ import Navigation from "../components/Navigation";
 import Hero from "../components/Hero";
 import BushfireAreaMap from "../components/BushfireAreaMap";
 import TableauViz from "../components/TableauViz";
+import DeadpoolBye from "../components/DeadpoolBye";
 
 const page = () => {
   return (
@@ -13,10 +14,12 @@ const page = () => {
         <Navigation />
         <Hero />
       </main>
-      <div className="w-3/4">
+      {/* <div className="w-3/4">
         <BushfireAreaMap />
         <TableauViz />
-      </div>
+      </div> */}
+
+      <DeadpoolBye />
     </div>
   );
 };
