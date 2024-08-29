@@ -77,7 +77,7 @@ export default function Home() {
           <hr className="w-full max-w-lg border-white mb-4 mx-auto" />
           <div className="p-6">
             <div className="grid grid-cols-3 gap-4">
-              <div className="relative aspect-square bg-[#FFFBF2] rounded-full overflow-visible transform transition-transform duration-300 hover:scale-105">
+              <div className="relative w-[400px] h-[400px] bg-[#FFFBF2] rounded-full overflow-visible transform transition-transform duration-300 hover:scale-105">
                 <div className="absolute bg-[#FFE6C5] right-10 top-1/2 transform -translate-y-1/2 text-center py-2 px-2 rounded-md shadow-md transition-transform duration-300 hover:scale-105 hover:bg-orange-300">
                   <button onClick={toggleKoalaPopup}>Click to know me</button>
                 </div>
