@@ -1,50 +1,96 @@
 import React from "react";
-
-type TimelineItemProps = {
-  year: string;
-  title: string;
-  subtitle: string;
-};
-
-const JourneyItem: React.FC<TimelineItemProps> = ({
-  year,
-  title,
-  subtitle,
-}) => {
-  return (
-    <div className="relative flex items-center mb-10">
-      <div className="flex-1 ml-10 p-6 bg-gray-900 text-white border-2 border-yellow-500 rounded-lg shadow-lg">
-        <h3 className="text-xl font-bold">{title}</h3>
-        <p className="mt-2">{subtitle}</p>
-      </div>
-    </div>
-  );
-};
+import Image from "next/image";
 
 const Journey: React.FC = () => {
   return (
-    <div className="relative">
-      <div className="absolute top-0 left-1/2 w-1 bg-yellow-500 transform -translate-x-1/2 h-full"></div>
-      <JourneyItem
-        year="2024"
-        title="Master's Degree"
-        subtitle="Master's of Information Technology, Monash University, Clayton VIC"
-      />
-      <JourneyItem
-        year="2021"
-        title="Bachelor's Degree"
-        subtitle="Bachelor's of Information System, Holmesglen, Chadstone VIC"
-      />
-      <JourneyItem
-        year="2019"
-        title="Diploma"
-        subtitle="Diploma of Software Development, Holmesglen, Chadstone VIC"
-      />
-      <JourneyItem
-        year="2018"
-        title="Certificate IV"
-        subtitle="Certificate IV of Programming, Holmesglen, Chadstone VIC"
-      />
+    <div className="">
+      <div
+        id="Learn"
+        className="relative flex bg-clip-border rounded-xl bg-[#FFFBF2] text-gray-700 shadow-md w-full max-w-screen-xl mx-auto flex-row my-4 transition-transform duration-300 hover:scale-105 hover:shadow-lg"
+      >
+        <div className="relative w-2/5 m-0 overflow-hidden rounded-r-none bg-clip-border rounded-xl shrink-0 p-1">
+          <Image
+            src="/learning-landing.jpeg"
+            alt="Learning About Bushfires"
+            width={800} // Adjust width as needed
+            height={500} // Adjust height as needed
+            className="object-cover w-full h-full transform transition-transform duration-500 hover:scale-110"
+          />
+        </div>
+        <div className="p-6 flex flex-col justify-center">
+          <h6 className="block mb-4 font-sans text-xl antialiased font-semibold leading-relaxed tracking-normal text-gray-700 uppercase">
+            Learning About Bushfires
+          </h6>
+          <p className="block mb-4 font-sans text-lg antialiased font-normal leading-relaxed text-gray-700">
+            Students will explore the scientific causes and effects of bushfires
+            in the Victorian region, gaining a deeper understanding of these
+            natural events.
+          </p>
+          <a href="/learn" className="inline-block">
+            <button className="px-6 py-2 text-lg font-semibold text-gray-700 border-2 border-gray-700 hover:bg-black hover:text-white transition-colors duration-300 rounded-md">
+              Learn More
+            </button>
+          </a>
+        </div>
+      </div>
+      <div
+        id="Prepare"
+        className="relative flex border-2 rounded-xl bg-[#FFFBF2] text-gray-700 shadow-md w-full max-w-screen-xl mx-auto flex-row my-4 transition-transform duration-300 hover:scale-105 hover:shadow-lg"
+      >
+        <div className="p-6 flex flex-col justify-center">
+          <h6 className="block mb-4 font-sans text-xl antialiased font-semibold leading-relaxed tracking-normal text-gray-700 uppercase">
+            Preparation for Bushfires
+          </h6>
+          <p className="block mb-8 font-sans text-lg antialiased font-normal leading-relaxed text-gray-700">
+            Students will learn how to assess bushfire risks and recognize when
+            to be cautious. They will also gain knowledge on emergency
+            precautions and safety tips to stay safe during a bushfire.
+          </p>
+          <a href="/prepare" className="inline-block">
+            <button className="px-6 py-2 text-lg font-semibold text-gray-700 border-2 border-gray-700 hover:bg-black hover:text-white transition-colors duration-300 rounded-md">
+              Learn More
+            </button>
+          </a>
+        </div>
+        <div className="relative w-2/5 m-0 overflow-hidden rounded-r-none bg-clip-border rounded-xl shrink-0">
+          <Image
+            src="/prepare.webp"
+            alt="Preparation for Bushfire"
+            width={800} // Adjust width as needed
+            height={500} // Adjust height as needed
+            className="object-cover w-full h-full transform transition-transform duration-500 hover:scale-110"
+          />
+        </div>
+      </div>
+      <div
+        id="Recover"
+        className="relative flex border-2 rounded-xl bg-[#FFFBF2] text-gray-700 shadow-md w-full max-w-screen-xl mx-auto flex-row my-4 transition-transform duration-300 hover:scale-105 hover:shadow-lg"
+      >
+        <div className="relative w-2/5 m-0 overflow-hidden rounded-r-none bg-clip-border rounded-xl shrink-0">
+          <Image
+            src="/recovery.jpeg"
+            alt="Recover"
+            width={800} // Adjust width as needed
+            height={500} // Adjust height as needed
+            className="object-cover w-full h-full transform transition-transform duration-500 hover:scale-110"
+          />
+        </div>
+        <div className="p-6 flex flex-col justify-center">
+          <h6 className="block mb-4 font-sans text-xl antialiased font-semibold leading-relaxed tracking-normal text-gray-700 uppercase">
+            Recovery from Bushfires
+          </h6>
+          <p className="block mb-8 font-sans text-lg antialiased font-normal leading-relaxed text-gray-700">
+            Students will learn how individuals and communities recover from
+            bushfire impacts, focusing on immediate response, community support,
+            and long-term rebuilding efforts.
+          </p>
+          <a href="/recover" className="inline-block">
+            <button className="px-6 py-2 text-lg font-semibold text-gray-700 border-2 border-gray-700 hover:bg-black hover:text-white transition-colors duration-300 rounded-md">
+              Learn More
+            </button>
+          </a>
+        </div>
+      </div>
     </div>
   );
 };
