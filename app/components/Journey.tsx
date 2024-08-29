@@ -48,11 +48,11 @@ const Journey: React.FC = () => {
             to be cautious. They will also gain knowledge on emergency
             precautions and safety tips to stay safe during a bushfire.
           </p>
-          <a href="/prepare" className="inline-block">
+          <Link href="/prepare" className="inline-block">
             <button className="px-6 py-2 text-lg font-semibold text-gray-700 border-2 border-gray-700 hover:bg-black hover:text-white transition-colors duration-300 rounded-md">
               Learn More
             </button>
-          </a>
+          </Link>
         </div>
         <div className="relative w-2/5 m-0 overflow-hidden rounded-r-none bg-clip-border rounded-xl shrink-0">
           <Image
@@ -87,11 +87,11 @@ const Journey: React.FC = () => {
             bushfire impacts, focusing on immediate response, community support,
             and long-term rebuilding efforts.
           </p>
-          <a href="/recover" className="inline-block">
+          <Link href="/recover" className="inline-block">
             <button className="px-6 py-2 text-lg font-semibold text-gray-700 border-2 border-gray-700 hover:bg-black hover:text-white transition-colors duration-300 rounded-md">
               Learn More
             </button>
-          </a>
+          </Link>
         </div>
       </div>
     </div>
