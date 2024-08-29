@@ -55,7 +55,7 @@ export default function Home() {
               bushfire challenges.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
-              <a href="/" className="inline-block">
+              <a href="#select" className="inline-block">
                 <button className="px-4 py-2 text-lg font-semibold text-white bg-black hover:bg-white hover:text-black transition-colors duration-300 rounded-md">
                   Explore
                 </button>
@@ -68,14 +68,17 @@ export default function Home() {
       <div className="relative py-8 flex flex-col items-center justify-center">
         <div className="absolute inset-0 bg-[url('/home-new.webp')] bg-cover bg-center brightness-75"></div>
         <div className="relative z-10">
-          <h1 className="text-3xl font-black text-center text-white mb-4">
+          <h1
+            id="select"
+            className="text-3xl font-black text-center text-white mb-4"
+          >
             Get to know your tutors
           </h1>
           <hr className="w-full max-w-lg border-white mb-4 mx-auto" />
           <div className="p-6">
             <div className="grid grid-cols-3 gap-4">
-              <div className="relative aspect-square bg-[#FFFBF2] rounded-full overflow-visible">
-                <div className="absolute bg-[#FFE6C5] right-10 top-1/2 transform -translate-y-1/2 text-center py-2 px-2 rounded-md shadow-md hover:bg-orange-300">
+              <div className="relative aspect-square bg-[#FFFBF2] rounded-full overflow-visible transform transition-transform duration-300 hover:scale-105">
+                <div className="absolute bg-[#FFE6C5] right-10 top-1/2 transform -translate-y-1/2 text-center py-2 px-2 rounded-md shadow-md transition-transform duration-300 hover:scale-105 hover:bg-orange-300">
                   <button onClick={toggleKoalaPopup}>Click to know me</button>
                 </div>
                 <Image
@@ -107,8 +110,8 @@ export default function Home() {
                 )}
               </div>
 
-              <div className="relative aspect-square bg-[#FFFBF2] rounded-full overflow-visible">
-                <div className="absolute bg-[#FFE6C5] right-10 top-1/2 transform -translate-y-1/2 text-center py-2 px-2 rounded-md shadow-md hover:bg-orange-300">
+              <div className="relative aspect-square bg-[#FFFBF2] rounded-full overflow-visible transform transition-transform duration-300 hover:scale-105">
+                <div className="absolute bg-[#FFE6C5] right-10 top-1/2 transform -translate-y-1/2 text-center py-2 px-2 rounded-md shadow-md transition-transform duration-300 hover:scale-105 hover:bg-orange-300">
                   <button onClick={toggleKangarooPopup}>
                     Click to know me
                   </button>
@@ -142,8 +145,8 @@ export default function Home() {
                 )}
               </div>
 
-              <div className="relative aspect-square bg-[#FFFBF2] rounded-full overflow-visible">
-                <div className="absolute bg-[#FFE6C5] right-10 top-1/2 transform -translate-y-1/2 text-center py-2 px-2 rounded-md shadow-md hover:bg-orange-300">
+              <div className="relative aspect-square bg-[#FFFBF2] rounded-full overflow-visible transform transition-transform duration-300 hover:scale-105">
+                <div className="absolute bg-[#FFE6C5] right-10 top-1/2 transform -translate-y-1/2 text-center py-2 px-2 rounded-md shadow-md transition-transform duration-300 hover:scale-105 hover:bg-orange-300">
                   <button onClick={toggleWombatPopup}>Click to know me</button>
                 </div>
                 <Image
@@ -179,7 +182,10 @@ export default function Home() {
         </div>
       </div>
       {/* Journey Section */}
-      <div className="relative py-8 flex flex-col items-center justify-center">
+      <div
+        id="journey"
+        className="relative py-8 flex flex-col items-center justify-center"
+      >
         <div className="absolute inset-0 bg-[url('/journey.webp')] bg-cover bg-center brightness-75"></div>
         <div className="relative">
           <h1 className="text-3xl font-black text-center text-white mb-4">
