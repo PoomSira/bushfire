@@ -38,7 +38,7 @@ const page = () => {
         <div className="absolute inset-0 bg-[url('/kids-talking.jpeg')] bg-cover bg-center brightness-75"></div>
         <div className="relative z-10">
           <h1 className="text-3xl font-black text-center text-white mb-4">
-            History of bushfire in past 10 years
+            History of bushfire in past 20 years
           </h1>
           <hr className="w-full max-w-lg border-white mb-4 mx-auto" />
           <div className="p-6">
