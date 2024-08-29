@@ -8,13 +8,13 @@ const Journey: React.FC = () => {
         id="Learn"
         className="relative flex bg-clip-border rounded-xl bg-[#FFFBF2] text-gray-700 shadow-md w-full max-w-screen-xl mx-auto flex-row my-4 transition-transform duration-300 hover:scale-105 hover:shadow-lg"
       >
-        <div className="relative w-2/5 m-0 overflow-hidden rounded-r-none bg-clip-border rounded-xl shrink-0 p-1">
+        <div className="relative w-2/5 m-0 overflow-hidden rounded-r-none bg-clip-border rounded-xl shrink-0">
           <Image
             src="/learning-landing.jpeg"
             alt="Learning About Bushfires"
-            width={800} // Adjust width as needed
-            height={500} // Adjust height as needed
-            className="object-cover w-full h-full transform transition-transform duration-500 hover:scale-110"
+            width={800}
+            height={500}
+            className="object-cover w-full h-full transform transition-transform duration-500 hover:scale-110 rounded-xl"
           />
         </div>
         <div className="p-6 flex flex-col justify-center">
@@ -33,9 +33,10 @@ const Journey: React.FC = () => {
           </a>
         </div>
       </div>
+
       <div
         id="Prepare"
-        className="relative flex border-2 rounded-xl bg-[#FFFBF2] text-gray-700 shadow-md w-full max-w-screen-xl mx-auto flex-row my-4 transition-transform duration-300 hover:scale-105 hover:shadow-lg"
+        className="relative flex bg-clip-border rounded-xl bg-[#FFFBF2] text-gray-700 shadow-md w-full max-w-screen-xl mx-auto flex-row my-4 transition-transform duration-300 hover:scale-105 hover:shadow-lg"
       >
         <div className="p-6 flex flex-col justify-center">
           <h6 className="block mb-4 font-sans text-xl antialiased font-semibold leading-relaxed tracking-normal text-gray-700 uppercase">
@@ -56,23 +57,24 @@ const Journey: React.FC = () => {
           <Image
             src="/prepare.webp"
             alt="Preparation for Bushfire"
-            width={800} // Adjust width as needed
-            height={500} // Adjust height as needed
-            className="object-cover w-full h-full transform transition-transform duration-500 hover:scale-110"
+            width={800}
+            height={500}
+            className="object-cover w-full h-full transform transition-transform duration-500 hover:scale-110 rounded-xl"
           />
         </div>
       </div>
+
       <div
         id="Recover"
-        className="relative flex border-2 rounded-xl bg-[#FFFBF2] text-gray-700 shadow-md w-full max-w-screen-xl mx-auto flex-row my-4 transition-transform duration-300 hover:scale-105 hover:shadow-lg"
+        className="relative flex bg-clip-border rounded-xl bg-[#FFFBF2] text-gray-700 shadow-md w-full max-w-screen-xl mx-auto flex-row my-4 transition-transform duration-300 hover:scale-105 hover:shadow-lg"
       >
         <div className="relative w-2/5 m-0 overflow-hidden rounded-r-none bg-clip-border rounded-xl shrink-0">
           <Image
             src="/recovery.jpeg"
             alt="Recover"
-            width={800} // Adjust width as needed
-            height={500} // Adjust height as needed
-            className="object-cover w-full h-full transform transition-transform duration-500 hover:scale-110"
+            width={800}
+            height={500}
+            className="object-cover w-full h-full transform transition-transform duration-500 hover:scale-110 rounded-xl"
           />
         </div>
         <div className="p-6 flex flex-col justify-center">

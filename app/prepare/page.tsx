@@ -9,17 +9,19 @@ import DeadpoolBye from "../components/DeadpoolBye";
 
 const page = () => {
   return (
-    <div>
-      <main className="h-[70vh] w-full bg-[url('/home-landing.webp')] bg-center bg-cover bg-no-repeat">
-        <Navigation />
-        <Hero />
-      </main>
-      {/* <div className="w-3/4">
+    <div className="bg-[#FFFBF2] mx-auto max-w-screen">
+      <div>
+        <main className="h-[70vh] w-full bg-[url('/home-landing.webp')] bg-center bg-cover bg-no-repeat">
+          <Navigation />
+          <Hero />
+        </main>
+        {/* <div className="w-3/4">
         <BushfireAreaMap />
         <TableauViz />
       </div> */}
 
-      <DeadpoolBye />
+        <DeadpoolBye />
+      </div>
     </div>
   );
 };

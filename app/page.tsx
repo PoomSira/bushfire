@@ -28,9 +28,19 @@ export default function Home() {
       <Navigation />
       {/* <main className="h-[100vh] w-full bg-[url('/home-landing.webp')] bg-center bg-cover bg-no-repeat"></main> */}
       {/* Hero Section */}
-      <div className="relative isolate h-[100vh] px-6 pt-14 lg:px-8 flex-grow bg-[url('/kangaroo-home.png')] bg-cover bg-center">
+      <div className="relative isolate h-[100vh] px-6 pt-14 lg:px-8 flex-grow overflow-hidden">
+        {/* Background Video */}
+        <video
+          src="/hero-animation.mp4" // Replace with your video file path
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
+
         {/* Blur Overlay */}
-        <div className="absolute inset-0 bg-black bg-opacity-10 backdrop-filter backdrop-blur-[2px]"></div>
+        <div className="absolute inset-0 bg-black bg-opacity-30 backdrop-filter backdrop-blur-[2px]"></div>
 
         {/* Content Overlay */}
         <div className="relative mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
@@ -40,13 +50,13 @@ export default function Home() {
               <br />
               Safety Starts with You
             </h1>
-            <p className="mt-6 text-lg leading-8 text-white">
+            <p className="mt-6 text-xl leading-8 text-white">
               Inspiring a new generation to be fire-smart and prepared for
               bushfire challenges.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a href="/" className="inline-block">
-                <button className="px-4 py-2 text-lg font-semibold  text-white bg-black  hover:bg-white hover:text-black transition-colors duration-300 rounded-md">
+                <button className="px-4 py-2 text-lg font-semibold text-white bg-black hover:bg-white hover:text-black transition-colors duration-300 rounded-md">
                   Explore
                 </button>
               </a>
@@ -54,7 +64,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      {/* Test Section */}
+      {/* Character Section */}
       <div className="relative py-8 flex flex-col items-center justify-center">
         <div className="absolute inset-0 bg-[url('/home-new.webp')] bg-cover bg-center brightness-75"></div>
         <div className="relative z-10">
