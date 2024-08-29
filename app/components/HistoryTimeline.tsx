@@ -1,10 +1,19 @@
-/* eslint-disable react/no-unescaped-entities */
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 
 type Props = {};
 
 const HistoryTimeline = (props: Props) => {
+  const [open, setOpen] = useState(false);
+
+  const openModal = () => {
+    setOpen(true);
+  };
+
+  const closeModal = () => {
+    setOpen(false);
+  };
+
   return (
     <div className="grid grid-cols-3 gap-6 bg-[#FFFBF2] p-4 rounded-lg">
       {/* Left Column with overflow-scroll */}
@@ -201,7 +210,41 @@ const HistoryTimeline = (props: Props) => {
             Your browser does not support the video tag.
           </video>
         </div>
+        {/* Button Section */}
+        <div className="mb-4">
+          <button
+            onClick={openModal}
+            className="w-full px-4 py-2 bg-orange-400 text-white font-semibold rounded-lg shadow-md hover:bg-orange-300 transition-transform transform hover:scale-105"
+          >
+            Impact on Animals
+          </button>
+        </div>
       </div>
+
+      {/* Popup */}
+      {open && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-[1000]">
+          <div className="relative p-6 rounded-lg w-3/4 h-3/4 max-w-[90vw] max-h-[90vh] overflow-hidden z-[1010]">
+            <button
+              className="absolute top-4 right-4 text-6xl font-bold text-white z-[1020]"
+              onClick={closeModal}
+            >
+              &times;
+            </button>
+            <div className="relative w-full h-full overflow-auto">
+              <div className="relative w-full h-full">
+                <Image
+                  src="/animal-impact.png"
+                  alt="Animal Impact"
+                  layout="fill"
+                  objectFit="contain" // Adjusts image size to cover container
+                  className="absolute top-0 left-0"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

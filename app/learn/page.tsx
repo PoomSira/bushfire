@@ -36,7 +36,7 @@ const page = () => {
 
       <div className="relative py-8 flex flex-col items-center justify-center">
         <div className="absolute inset-0 bg-[url('/kids-talking.jpeg')] bg-cover bg-center brightness-75"></div>
-        <div className="relative z-10">
+        <div className="relative">
           <h1 className="text-3xl font-black text-center text-white mb-4">
             History of bushfire in past 20 years
           </h1>
@@ -49,7 +49,7 @@ const page = () => {
 
       <div className="relative py-8 flex flex-col items-center justify-center">
         <div className="absolute inset-0 bg-[url('/class-room.webp')] bg-cover bg-center brightness-75"></div>
-        <div className="relative z-10">
+        <div className="relative">
           <h1 className="text-3xl font-black text-center text-white mb-4">
             Cause of Bushfire
           </h1>
@@ -62,7 +62,7 @@ const page = () => {
 
       <div className="relative py-8 flex flex-col items-center justify-center">
         <div className="absolute inset-0 bg-[url('/bushfire-effect.webp')] bg-cover bg-center opacity-90"></div>
-        <div className="relative z-10">
+        <div className="relative">
           <h1 className="text-3xl font-black text-center text-white mb-4">
             Effect of bushfire
           </h1>
