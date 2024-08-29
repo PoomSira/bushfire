@@ -1,9 +1,25 @@
 import React from "react";
 import Image from "next/image";
 
-const WindFactors = () => {
+const BushfireVideo = () => {
   return (
     <div className="flex items-center justify-between w-full max-w-screen-xl mx-auto mb-8 p-8 bg-[#FFFBF2] rounded-xl">
+      {/* Right side with video */}
+      <div className="w-1/2 flex items-center justify-center">
+        <video
+          autoPlay
+          loop
+          muted
+          controls
+          width="500"
+          height="500"
+          className="rounded-xl"
+        >
+          <source src="/fire.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
       {/* Left side with question and explanation */}
       <div className="w-2/3 flex flex-col justify-between p-4 rounded-xl transform transition-transform duration-300 hover:scale-105">
         {/* Question Section */}
@@ -34,33 +50,9 @@ const WindFactors = () => {
         </div>
       </div>
 
-      {/* Right side with video */}
-      <div className="w-1/2 flex items-center justify-center">
-        <video
-          autoPlay
-          loop
-          muted
-          controls
-          width="500"
-          height="500"
-          className="rounded-xl"
-        >
-          <source src="/fire.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
       {/* Do You Know Card Section */}
-      <div className="w-full p-6 bg-[#FFE6C5] rounded-xl shadow-md transform transition-transform duration-300 hover:scale-105">
-        <p className="text-center text-xl font-semibold text-gray-800">
-          Do you Know? <br />
-          <span className="text-lg font-normal">
-            The most important aspects of weather that affect fire and fuels are
-            temperature, precipitation, wind, and humidity.
-          </span>
-        </p>
-      </div>
     </div>
   );
 };
 
-export default WindFactors;
+export default BushfireVideo;

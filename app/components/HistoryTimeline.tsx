@@ -22,7 +22,7 @@ const HistoryTimeline = (props: Props) => {
               </time>
               <div className="flex-none w-60 h-30">
                 <Image
-                  src="/learn.png"
+                  src="/timeline-1.png"
                   alt="Recover"
                   width={150}
                   height={150}
@@ -47,7 +47,7 @@ const HistoryTimeline = (props: Props) => {
               </time>
               <div className="flex-none w-60 h-30">
                 <Image
-                  src="/learn.png"
+                  src="/timeline-2.png"
                   alt="Recover"
                   width={150}
                   height={150}
@@ -70,15 +70,20 @@ const HistoryTimeline = (props: Props) => {
               <time className="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-orange-600 bg-orange-200 rounded-full">
                 2013
               </time>
-              <div className="text-xl font-bold text-slate-900">
-                Victoria experienced a significant fire season in 2012–2013.
-                Between December and mid-March, more than 190,000 hectares of
-                public and private land burned. A community member and four
-                firefighters lost their lives, with 46 houses destroyed. Major
-                fires included the Aberfeldy-Donnellys Creek, Harrietville,
-                Chepstowe, and Grampians fires. The Aberfeldy-Donnellys Creek
-                fire was active for six weeks, burning 86,000 hectares.
-                Harrietville fire ran for 55 days, burning 37,000 hectares.
+              <div className="flex-none w-60 h-30">
+                <Image
+                  src="/timeline-3.png"
+                  alt="Recover"
+                  width={150}
+                  height={150}
+                  className="object-cover w-full h-full transform transition-transform duration-500 hover:scale-110"
+                />
+              </div>
+              <div className="text-xl flex-grow my-auto px-6 font-bold text-slate-900">
+                In 2012–2013, Victoria had a big fire season. Over 190,000
+                hectares burned, 46 houses were lost, and five people died,
+                including four firefighters. Major fires included
+                Aberfeldy-Donnellys Creek and Harrietville.
               </div>
             </div>
           </div>
@@ -91,18 +96,24 @@ const HistoryTimeline = (props: Props) => {
               <time className="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-orange-600 bg-orange-200 rounded-full">
                 2009
               </time>
-              <div className="text-xl font-bold text-slate-900">
-                The Black Saturday bushfires were the worst in Australia's
-                history, killing 173 people. Almost 80 communities and entire
-                towns were left unrecognisable. The fires burned more than 2,000
-                properties and 61 businesses. Over 430,000 hectares burned,
-                including 70 national parks and reserves and more than 3,550
-                agricultural facilities.
+              <div className="flex-none w-60 h-30">
+                <Image
+                  src="/timeline-4.png"
+                  alt="Recover"
+                  width={150}
+                  height={150}
+                  className="object-cover w-full h-full transform transition-transform duration-500 hover:scale-110"
+                />
+              </div>
+              <div className="text-xl flex-grow my-auto px-6 font-bold text-slate-900">
+                The Black Saturday bushfires were Australia’s worst, killing 173
+                people. The fires destroyed towns, 2,000 homes, 61 businesses,
+                and burned over 430,000 hectares, including parks and farms.
               </div>
             </div>
           </div>
 
-          <div className="relative pl-8 sm:pl-32 py-6 group">
+          {/* <div className="relative pl-8 sm:pl-32 py-6 group">
             <div className="font-caveat font-medium text-2xl text-orange-600 mb-1 sm:mb-0">
               A Season of Over 1,000 Fires and Devastating Losses
             </div>
@@ -110,18 +121,19 @@ const HistoryTimeline = (props: Props) => {
               <time className="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-orange-600 bg-orange-200 rounded-full">
                 2007
               </time>
-              <div className="text-xl font-bold text-slate-900">
-                Fire agencies responded to more than 1,000 fires across Victoria
-                from mid-December 2006 to mid-March 2007. The total area burned
-                exceeded 1,200,000 hectares.The two most serious fires occurred
-                in the northeast (the Great Divide North fire) and Gippsland
-                (the Great Divide South fire). The fires were contained in
-                mid-February after burning for 59 days. The Great Divide North
-                and South fires burned 1,048,238 hectares, majority on public
-                land. Other significant fires burning at the same time were the
-                Tawonga Gap fire (33,590 hectares) and the Tatong-Watchbox Creek
-                Track fire (31,810 hectares). There was one death, 51 houses
-                destroyed and 1,741 stock lost.
+              <div className="flex-none w-60 h-30">
+                <Image
+                  src="/learn.png"
+                  alt="Recover"
+                  width={150}
+                  height={150}
+                  className="object-cover w-full h-full transform transition-transform duration-500 hover:scale-110"
+                />
+              </div>
+              <div className="text-xl flex-grow my-auto px-6 font-bold text-slate-900">
+                From December 2006 to March 2007, over 1,000 fires burned
+                1,200,000 hectares in Victoria. The worst fires burned for 59
+                days, destroying 51 houses and killing one person.
               </div>
             </div>
           </div>
@@ -132,21 +144,24 @@ const HistoryTimeline = (props: Props) => {
             </div>
             <div className="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-orange-600 after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5">
               <time className="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-orange-600 bg-orange-200 rounded-full">
-                2006
+                2005
               </time>
-              <div className="text-xl font-bold text-slate-900">
-                More than 500 fires broke out across the state between New
-                Year's Eve and the end of January 2006. The fires affected
-                Victorian communities in Stawell (Deep Lead), Yea, Moondarra,
-                Grampians, Kinglake, and Anakie areas. There were four
-                fatalities in these fires. Fifty-seven houses were destroyed,
-                and 359 farm buildings lost. Stock losses totalled more than
-                64,000. The fires burned about 160,000 hectares. About 60
-                percent of the area was public land and 40 percent private
-                property.
+              <div className="flex-none w-60 h-30">
+                <Image
+                  src="/learn.png"
+                  alt="Recover"
+                  width={150}
+                  height={150}
+                  className="object-cover w-full h-full transform transition-transform duration-500 hover:scale-110"
+                />
+              </div>
+              <div className="text-xl flex-grow my-auto px-6 font-bold text-slate-900">
+                Between New Year's Eve and January 2006, over 500 fires burned
+                160,000 hectares in Victoria, destroying 57 houses and killing
+                four people. Over 64,000 animals were lost.
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* Additional Content */}
           {/* ...other fire seasons... */}

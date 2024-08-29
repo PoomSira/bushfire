@@ -56,7 +56,7 @@ const FlameSection: React.FC = () => {
         </div>
 
         {/* Branch Image with animation */}
-        <div className="absolute bottom-[-1rem] left-[1rem] animate-rotateBranch">
+        <div className="absolute bottom-[-3rem] left-[1rem] animate-rotateBranch">
           <Image
             src="/branch.png"
             alt="Branch"
