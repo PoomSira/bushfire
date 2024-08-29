@@ -8,10 +8,20 @@ import Journey from "./components/Journey";
 import { useState } from "react";
 
 export default function Home() {
-  const [showPopup, setShowPopup] = useState<boolean>(false);
+  const [showKoalaPopup, setShowKoalaPopup] = useState<boolean>(false);
+  const [showKangarooPopup, setShowKangarooPopup] = useState<boolean>(false);
+  const [showWombatPopup, setShowWombatPopup] = useState<boolean>(false);
 
-  const togglePopup = (): void => {
-    setShowPopup(!showPopup);
+  const toggleKoalaPopup = (): void => {
+    setShowKoalaPopup(!showKoalaPopup);
+  };
+
+  const toggleKangarooPopup = (): void => {
+    setShowKangarooPopup(!showKangarooPopup);
+  };
+
+  const toggleWombatPopup = (): void => {
+    setShowWombatPopup(!showWombatPopup);
   };
   return (
     <div className="bg-[#FFFBF2] mx-auto max-w-screen">
@@ -56,7 +66,7 @@ export default function Home() {
             <div className="grid grid-cols-3 gap-4">
               <div className="relative aspect-square bg-[#FFFBF2] rounded-full overflow-visible">
                 <div className="absolute bg-[#FFE6C5] right-10 top-1/2 transform -translate-y-1/2 text-center py-2 px-2 rounded-md shadow-md hover:bg-orange-300">
-                  <button onClick={togglePopup}>Click to know me</button>
+                  <button onClick={toggleKoalaPopup}>Click to know me</button>
                 </div>
                 <Image
                   src="/koala-t.png"
@@ -65,7 +75,7 @@ export default function Home() {
                   height={200} // Specify height
                   className="object-cover animate-moveSideways"
                 />
-                {showPopup && (
+                {showKoalaPopup && (
                   <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
                     <div className="bg-white p-6 rounded-lg shadow-lg">
                       <h2 className="text-xl font-bold mb-4">
@@ -78,7 +88,7 @@ export default function Home() {
                       </p>
                       <button
                         className="bg-[#FFE6C5] text-black py-2 px-4 rounded hover:bg-orange-300"
-                        onClick={togglePopup}
+                        onClick={toggleKoalaPopup}
                       >
                         Close
                       </button>
@@ -86,31 +96,34 @@ export default function Home() {
                   </div>
                 )}
               </div>
+
               <div className="relative aspect-square bg-[#FFFBF2] rounded-full overflow-visible">
                 <div className="absolute bg-[#FFE6C5] right-10 top-1/2 transform -translate-y-1/2 text-center py-2 px-2 rounded-md shadow-md hover:bg-orange-300">
-                  <button onClick={togglePopup}>Click to know me</button>
+                  <button onClick={toggleKangarooPopup}>
+                    Click to know me
+                  </button>
                 </div>
                 <Image
                   src="/kangaroo.png"
-                  alt="Koala doctor with presentation"
+                  alt="Kangaroo firefighter with presentation"
                   width={270} // Specify width
                   height={270} // Specify height
                   className="object-cover animate-moveSideways"
                 />
-                {showPopup && (
+                {showKangarooPopup && (
                   <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
                     <div className="bg-white p-6 rounded-lg shadow-lg">
                       <h2 className="text-xl font-bold mb-4">
-                        Hello! I'm Chloe, the koala
+                        Hello! I'm Jacky, the kangaroo
                       </h2>
                       <p className="mb-4">
-                        I love helping you learn about bushfires, step by step.
-                        If you stick with me, you'll definitely get a HD+ in the
-                        bushfire subject!
+                        I'll help you learn the important skills to survive and
+                        prepare for a bushfire. Stick with me, and you'll have
+                        strong survival skills as your superpower!
                       </p>
                       <button
                         className="bg-[#FFE6C5] text-black py-2 px-4 rounded hover:bg-orange-300"
-                        onClick={togglePopup}
+                        onClick={toggleKangarooPopup}
                       >
                         Close
                       </button>
@@ -118,17 +131,38 @@ export default function Home() {
                   </div>
                 )}
               </div>
+
               <div className="relative aspect-square bg-[#FFFBF2] rounded-full overflow-visible">
                 <div className="absolute bg-[#FFE6C5] right-10 top-1/2 transform -translate-y-1/2 text-center py-2 px-2 rounded-md shadow-md hover:bg-orange-300">
-                  <button>Click to know me</button>
+                  <button onClick={toggleWombatPopup}>Click to know me</button>
                 </div>
                 <Image
                   src="/wombat.png"
-                  alt="Koala doctor with presentation"
+                  alt="Wombat volunteer with presentation"
                   width={220} // Specify width
                   height={220} // Specify height
                   className="object-cover animate-moveSideways"
                 />
+                {showWombatPopup && (
+                  <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+                    <div className="bg-white p-6 rounded-lg shadow-lg">
+                      <h2 className="text-xl font-bold mb-4">
+                        Hello! I'm Johny, the wombat
+                      </h2>
+                      <p className="mb-4">
+                        I love helping you learn how to recover after a
+                        bushfire. Together, we can rebuild our environment and
+                        support each other.
+                      </p>
+                      <button
+                        className="bg-[#FFE6C5] text-black py-2 px-4 rounded hover:bg-orange-300"
+                        onClick={toggleWombatPopup}
+                      >
+                        Close
+                      </button>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -137,7 +171,7 @@ export default function Home() {
       {/* Journey Section */}
       <div className="relative py-8 flex flex-col items-center justify-center">
         <div className="absolute inset-0 bg-[url('/journey.webp')] bg-cover bg-center brightness-75"></div>
-        <div className="relative z-10">
+        <div className="relative">
           <h1 className="text-3xl font-black text-center text-white mb-4">
             Start your journey
           </h1>

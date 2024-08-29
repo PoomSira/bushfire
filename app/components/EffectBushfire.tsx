@@ -7,6 +7,7 @@ import {
   AccordionHeader,
   AccordionBody,
 } from "@material-tailwind/react";
+import TableauCluster from "./TableauCluster";
 
 interface IconProps {
   id: number;
@@ -197,6 +198,9 @@ const EffectBushfire: React.FC<Props> = () => {
             actualize our dreams.
           </AccordionBody>
         </Accordion> */}
+      </div>
+      <div className="col-span-5 h-full">
+        <TableauCluster />
       </div>
     </div>
   );
