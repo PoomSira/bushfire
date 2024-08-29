@@ -28,7 +28,7 @@ export default function Home() {
       <Navigation />
       {/* <main className="h-[100vh] w-full bg-[url('/home-landing.webp')] bg-center bg-cover bg-no-repeat"></main> */}
       {/* Hero Section */}
-      <div className="relative isolate h-[75vh] px-6 pt-14 lg:px-8 flex-grow bg-[url('/home-landing.webp')] bg-cover bg-center">
+      <div className="relative isolate h-[100vh] px-6 pt-14 lg:px-8 flex-grow bg-[url('/kangaroo-home.png')] bg-cover bg-center">
         {/* Blur Overlay */}
         <div className="absolute inset-0 bg-black bg-opacity-10 backdrop-filter backdrop-blur-[2px]"></div>
 
