@@ -6,12 +6,12 @@ function NavList() {
   return (
     <ul className="my-2 flex flex-col gap-4 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
       <li>
-        <a
+        <Link
           className="flex text-2xl items-center justify-center w-28 h-12 text-gray-900 hover:text-orange-400"
           href="/"
         >
           Home
-        </a>
+        </Link>
       </li>
       <li>
         <Link

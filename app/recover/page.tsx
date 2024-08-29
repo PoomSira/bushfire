@@ -6,20 +6,24 @@ import Hero from "../components/Hero";
 import BushfireAreaMap from "../components/BushfireAreaMap";
 import TableauViz from "../components/TableauViz";
 import DeadpoolBye from "../components/DeadpoolBye";
+import Footer from "../components/Footer";
 
 const page = () => {
   return (
-    <div>
-      <main className="h-[70vh] w-full bg-[url('/home-landing.webp')] bg-center bg-cover bg-no-repeat">
-        <Navigation />
-        <Hero />
-      </main>
-      {/* <div className="w-3/4">
-        <BushfireAreaMap />
-        <TableauViz />
-      </div> */}
+    <div className="bg-[#FFFBF2] mx-auto max-w-screen">
+      <div>
+        <main className="h-[70vh] w-full bg-[url('/home-landing.webp')] bg-center bg-cover bg-no-repeat">
+          <Navigation />
+          <Hero />
+        </main>
+        {/* <div className="w-3/4">
+      <BushfireAreaMap />
+      <TableauViz />
+    </div> */}
 
-      <DeadpoolBye />
+        <DeadpoolBye />
+      </div>
+      <Footer />
     </div>
   );
 };

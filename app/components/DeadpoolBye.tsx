@@ -15,7 +15,7 @@ const KoalaPopup: React.FC = () => {
             onClick={togglePopup}
             className="bg-black text-white text-2xl py-2 px-4 rounded hover:bg-orange-300"
           >
-            Please click Me
+            Please Don't Click Me
           </button>
           {showPopup && (
             <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">

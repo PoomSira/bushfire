@@ -6,6 +6,7 @@ import Hero from "../components/Hero";
 import BushfireAreaMap from "../components/BushfireAreaMap";
 import TableauViz from "../components/TableauViz";
 import DeadpoolBye from "../components/DeadpoolBye";
+import Footer from "../components/Footer";
 
 const page = () => {
   return (
@@ -22,6 +23,7 @@ const page = () => {
 
         <DeadpoolBye />
       </div>
+      <Footer />
     </div>
   );
 };

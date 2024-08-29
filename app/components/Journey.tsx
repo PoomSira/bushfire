@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const Journey: React.FC = () => {
   return (
@@ -26,11 +27,11 @@ const Journey: React.FC = () => {
             in the Victorian region, gaining a deeper understanding of these
             natural events.
           </p>
-          <a href="/learn" className="inline-block">
+          <Link href="/learn" className="inline-block">
             <button className="px-6 py-2 text-lg font-semibold text-gray-700 border-2 border-gray-700 hover:bg-black hover:text-white transition-colors duration-300 rounded-md">
               Learn More
             </button>
-          </a>
+          </Link>
         </div>
       </div>
 
