@@ -20,51 +20,22 @@ const Footer: React.FC = () => {
             />
           </Link>
           <ul className="flex flex-wrap items-center mb-2 text-xl font-medium text-gray-500 sm:mb-0">
-            <li>
-              <Link
-                href="/learn"
-                aria-label="Learn"
-                className="hover:underline me-4 md:me-6 hover:text-orange-400"
-              >
-                Learn
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/prepare"
-                aria-label="Prepare"
-                className="hover:underline me-4 md:me-6 hover:text-orange-400"
-              >
-                Prepare
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/recover"
-                aria-label="Recover"
-                className="hover:underline me-4 md:me-6 hover:text-orange-400"
-              >
-                Recover
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/quiz"
-                aria-label="Quiz"
-                className="hover:underline me-4 md:me-6 hover:text-orange-400"
-              >
-                Quiz
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/help"
-                aria-label="Help"
-                className="hover:underline me-4 md:me-6 hover:text-orange-400"
-              >
-                Help
-              </Link>
-            </li>
+            {["Learn", "Prepare", "Recover", "Quiz", "Help"].map(
+              (text, index) => (
+                <li
+                  key={index}
+                  className="transition-transform duration-300 transform hover:scale-105"
+                >
+                  <Link
+                    href={`/${text.toLowerCase()}`}
+                    aria-label={text}
+                    className="hover:underline me-4 md:me-6 hover:text-orange-400"
+                  >
+                    {text}
+                  </Link>
+                </li>
+              )
+            )}
           </ul>
         </div>
         <hr className="border-gray-200 sm:mx-auto lg:my-8" />

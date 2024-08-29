@@ -56,7 +56,7 @@ export default function Home() {
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a href="#select" className="inline-block">
-                <button className="px-4 py-2 text-lg font-semibold text-white bg-black hover:bg-white hover:text-black transition-colors duration-300 rounded-md">
+                <button className="px-4 py-2 text-lg font-semibold text-white bg-black hover:bg-white hover:text-black transition-transform duration-300 transform hover:scale-105 rounded-md">
                   Explore
                 </button>
               </a>

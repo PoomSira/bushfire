@@ -7,7 +7,7 @@ function NavList() {
     <ul className="my-2 flex flex-col gap-4 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
       <li>
         <Link
-          className="flex text-2xl items-center justify-center w-28 h-12 text-gray-900 hover:text-orange-400"
+          className="flex text-2xl items-center justify-center w-28 h-12 text-gray-900 hover:text-orange-400 transform transition-transform duration-300 hover:scale-110"
           href="/"
         >
           Home
@@ -16,7 +16,7 @@ function NavList() {
       <li>
         <Link
           href="/learn"
-          className="flex text-2xl items-center justify-center w-28 h-12 text-gray-900 hover:text-orange-400"
+          className="flex text-2xl items-center justify-center w-28 h-12 text-gray-900 hover:text-orange-400 transform transition-transform duration-300 hover:scale-110"
         >
           Learn
         </Link>
@@ -24,7 +24,7 @@ function NavList() {
       <li>
         <Link
           href="/prepare"
-          className="flex text-2xl items-center justify-center w-28 h-12 text-gray-900 hover:text-orange-400"
+          className="flex text-2xl items-center justify-center w-28 h-12 text-gray-900 hover:text-orange-400 transform transition-transform duration-300 hover:scale-110"
         >
           Prepare
         </Link>
@@ -32,7 +32,7 @@ function NavList() {
       <li>
         <Link
           href="/recover"
-          className="flex text-2xl items-center justify-center w-28 h-12 text-gray-900 hover:text-orange-400"
+          className="flex text-2xl items-center justify-center w-28 h-12 text-gray-900 hover:text-orange-400 transform transition-transform duration-300 hover:scale-110"
         >
           Recover
         </Link>
@@ -40,7 +40,7 @@ function NavList() {
       <li>
         <Link
           href="/quiz"
-          className="flex text-2xl items-center justify-center w-28 h-12 text-gray-900 hover:text-orange-400"
+          className="flex text-2xl items-center justify-center w-28 h-12 text-gray-900 hover:text-orange-400 transform transition-transform duration-300 hover:scale-110"
         >
           Quiz
         </Link>
@@ -48,7 +48,7 @@ function NavList() {
       <li>
         <Link
           href="/help"
-          className="flex text-2xl items-center justify-center w-28 h-12 text-gray-900 hover:text-orange-400"
+          className="flex text-2xl items-center justify-center w-28 h-12 text-gray-900 hover:text-orange-400 transform transition-transform duration-300 hover:scale-110"
         >
           Help
         </Link>
