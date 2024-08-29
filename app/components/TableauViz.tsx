@@ -62,7 +62,7 @@ const TableauViz: React.FC = () => {
       </div>
 
       <div className="w-ful text-right">
-        <h2 className="text-2xl font-bold mb-4">Let's Get Started!</h2>
+        <h2 className="text-2xl font-bold mb-4">Let&apos;s Get Started!</h2>
         <p className="mb-4">Step 1: Go to the Bushfire Year Box and click ▶</p>
         <p className="mb-4">
           Watch the years pass by and see how the fires have changed.
