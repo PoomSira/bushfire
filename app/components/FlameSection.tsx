@@ -145,8 +145,8 @@ const FlameSection: React.FC = () => {
         {activeButton === "topLeft" && (
           <div className="absolute top-[-5rem] left-[-10rem] transform translate-y-12 w-32 bg-[#FFE6C5] shadow-md rounded-lg flex items-center justify-center p-3">
             <span className="text-sm">
-              When it's really hot and the air is dry, everything outside, like
-              plants and grass, can catch fire more easily.
+              When it&apos;s really hot and the air is dry, everything outside,
+              like plants and grass, can catch fire more easily.
             </span>
           </div>
         )}
@@ -154,8 +154,8 @@ const FlameSection: React.FC = () => {
         {activeButton === "topRight" && (
           <div className="absolute top-[-5rem] right-[-10rem] transform translate-y-12 w-32 bg-[#FFE6C5] shadow-md rounded-lg flex items-center justify-center p-3">
             <span className="text-sm">
-              If it hasn't rained for a while, plants and trees dry out like
-              firewood which is a fuel for the flames, this makes them burn
+              If it hasn&apos;t rained for a while, plants and trees dry out
+              like firewood which is a fuel for the flames, this makes them burn
               really easily.t
             </span>
           </div>

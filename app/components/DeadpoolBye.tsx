@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const KoalaPopup: React.FC = () => {
+const DeadpoolBye: React.FC = () => {
   const [showPopup, setShowPopup] = useState<boolean>(false);
 
   const togglePopup = (): void => {
@@ -15,7 +15,7 @@ const KoalaPopup: React.FC = () => {
             onClick={togglePopup}
             className="bg-black text-white text-2xl py-2 px-4 rounded hover:bg-orange-300"
           >
-            Please Don't Click Me
+            Please Don&apos;t Click Me
           </button>
           {showPopup && (
             <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
@@ -46,4 +46,4 @@ const KoalaPopup: React.FC = () => {
   );
 };
 
-export default KoalaPopup;
+export default DeadpoolBye;

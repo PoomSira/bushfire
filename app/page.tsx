@@ -92,12 +92,12 @@ export default function Home() {
                   <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
                     <div className="bg-white p-6 rounded-lg shadow-lg">
                       <h2 className="text-xl font-bold mb-4">
-                        Hello! I'm Chloe, the koala
+                        Hello! I&apos;m Chloe, the koala
                       </h2>
                       <p className="mb-4">
                         I love helping you learn about bushfires, step by step.
-                        If you stick with me, you'll definitely get a HD+ in the
-                        bushfire subject!
+                        If you stick with me, you&apos;ll definitely get a HD+
+                        in the bushfire subject!
                       </p>
                       <button
                         className="bg-[#FFE6C5] text-black py-2 px-4 rounded hover:bg-orange-300"
@@ -127,12 +127,13 @@ export default function Home() {
                   <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
                     <div className="bg-white p-6 rounded-lg shadow-lg">
                       <h2 className="text-xl font-bold mb-4">
-                        Hello! I'm Jacky, the kangaroo
+                        Hello! I&apos; m Jacky, the kangaroo
                       </h2>
                       <p className="mb-4">
-                        I'll help you learn the important skills to survive and
-                        prepare for a bushfire. Stick with me, and you'll have
-                        strong survival skills as your superpower!
+                        I&apos;ll help you learn the important skills to survive
+                        and prepare for a bushfire. Stick with me, and
+                        you&apos;ll have strong survival skills as your
+                        superpower!
                       </p>
                       <button
                         className="bg-[#FFE6C5] text-black py-2 px-4 rounded hover:bg-orange-300"
@@ -160,7 +161,7 @@ export default function Home() {
                   <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
                     <div className="bg-white p-6 rounded-lg shadow-lg">
                       <h2 className="text-xl font-bold mb-4">
-                        Hello! I'm Johny, the wombat
+                        Hello! I&apos;m Johny, the wombat
                       </h2>
                       <p className="mb-4">
                         I love helping you learn how to recover after a
