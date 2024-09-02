@@ -12,6 +12,7 @@ const PasswordProtection: React.FC<PasswordProtectionProps> = ({
   const [password, setPassword] = useState<string>("");
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
   const [showPassword, setShowPassword] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
 
   const correctPassword = "WeLovePatrick"; // Replace with your desired password
 
@@ -23,8 +24,9 @@ const PasswordProtection: React.FC<PasswordProtectionProps> = ({
     e.preventDefault();
     if (password === correctPassword) {
       setIsAuthenticated(true);
+      setError(null); // Clear error if authentication is successful
     } else {
-      alert("Incorrect password. Please try again.");
+      setError("Incorrect password. Please try again.");
     }
   };
 
@@ -35,10 +37,17 @@ const PasswordProtection: React.FC<PasswordProtectionProps> = ({
   return (
     <>
       {!isAuthenticated ? (
-        <div
-          className="relative min-h-screen bg-cover bg-center"
-          style={{ backgroundImage: "url('/hero.png')" }}
-        >
+        <div className="relative min-h-screen">
+          {/* Video Background */}
+          <video
+            src="/hero-kangaroo-animation.mp4" // Replace with your video file path
+            className="absolute inset-0 w-full h-full object-cover"
+            autoPlay
+            loop
+            muted
+            playsInline
+          />
+          {/* Overlay */}
           <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
             <div className="bg-white p-6 rounded-xl shadow-lg w-full max-w-md text-black">
               {/* Logo Section */}
@@ -79,6 +88,9 @@ const PasswordProtection: React.FC<PasswordProtectionProps> = ({
                     </button>
                   </div>
                 </div>
+                {error && (
+                  <div className="mb-4 text-red-500 text-sm">{error}</div>
+                )}
                 <button
                   type="submit"
                   className="w-full py-2 px-4 bg-orange-400 text-white rounded-md hover:bg-[#FFAD4D] focus:outline-none transform transition-transform duration-300 hover:scale-105 active:scale-95"

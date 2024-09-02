@@ -31,7 +31,7 @@ export default function Home() {
       <div className="relative isolate h-[100vh] px-6 pt-14 lg:px-8 flex-grow overflow-hidden">
         {/* Background Video */}
         <video
-          src="/hero-animation.mp4" // Replace with your video file path
+          src="/hero-kangaroo-animation.mp4" // Replace with your video file path
           className="absolute inset-0 w-full h-full object-cover"
           autoPlay
           loop
@@ -66,15 +66,15 @@ export default function Home() {
       </div>
       {/* Test Section */}
       <div className="relative py-8 flex flex-col items-center justify-center">
-        <div className="absolute inset-0 bg-[url('/home-new.webp')] bg-cover bg-center brightness-75"></div>
+        <div className="absolute inset-0 bg-[url('/home-new.webp')] bg-[#FFFBF2] opacity-20 bg-cover bg-center brightness-75"></div>
         <div className="relative z-10">
           <h1
             id="select"
-            className="text-3xl font-black text-center text-white mb-4"
+            className="text-3xl font-black text-center text-gray-800 mb-4"
           >
             Get to know your tutors
           </h1>
-          <hr className="w-full max-w-lg border-white mb-4 mx-auto" />
+          <hr className="w-full max-w-lg border-gray-800 mb-4 mx-auto" />
           <div className="p-6">
             <div className="grid grid-cols-3 gap-4">
               <div className="relative w-[400px] h-[400px] bg-[#FFFBF2] rounded-full overflow-visible transform transition-transform duration-300 hover:scale-105">
@@ -191,12 +191,12 @@ export default function Home() {
         id="journey"
         className="relative py-8 flex flex-col items-center justify-center"
       >
-        <div className="absolute inset-0 bg-[url('/journey.webp')] bg-cover bg-center brightness-75"></div>
+        <div className="absolute inset-0 bg-[url('/journey.webp')] bg-[#FFFBF2] opacity-20 bg-cover bg-center brightness-75"></div>
         <div className="relative">
-          <h1 className="text-3xl font-black text-center text-white mb-4">
+          <h1 className="text-3xl font-black text-center text-gray-800 mb-4">
             Start your journey
           </h1>
-          <hr className="w-full max-w-lg border-white mb-4 mx-auto" />
+          <hr className="w-full max-w-lg border-gray-800 mb-4 mx-auto" />
           <div className="p-6">
             {/* Full-width card Section */}
             <Journey />
