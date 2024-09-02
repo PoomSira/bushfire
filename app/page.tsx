@@ -40,7 +40,7 @@ export default function Home() {
         />
 
         {/* Blur Overlay */}
-        <div className="absolute inset-0 bg-black bg-opacity-30 backdrop-filter backdrop-blur-[2px]"></div>
+        <div className="absolute inset-0 bg-black bg-opacity-30 backdrop-filter"></div>
 
         {/* Content Overlay */}
         <div className="relative mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">

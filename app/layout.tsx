@@ -8,6 +8,9 @@ const fresca = Fresca({ weight: "400", subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Bushfire Brigade",
   description: "TA30",
+  icons: {
+    icon: "/burn.png",
+  },
 };
 
 export default function RootLayout({
@@ -17,6 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <link rel="shortcut icon" href="public/logo.png" />
       <body className={fresca.className}>
         <PasswordProtection>
           <div className={fresca.className}>{children}</div>
