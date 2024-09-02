@@ -21,7 +21,7 @@ const Navigation: React.FC = () => {
 
   return (
     <nav
-      className={`fixed bg-[#FFFBF2] border-gray-200 top-4 left-1/2 transform -translate-x-1/2 z-50 w-[95%] md:w-[85%] lg:w-[75%] xl:w-[70%] rounded-lg shadow-lg transition-opacity duration-300 ${
+      className={`fixed bg-[#FFFBF2] border-gray-200 top-4 left-1/2 transform -translate-x-1/2 z-50 w-[95%] md:w-[85%] lg:w-[75%] xl:w-[70%] rounded-xl shadow-lg transition-opacity duration-300 ${
         isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
       }`}
     >
