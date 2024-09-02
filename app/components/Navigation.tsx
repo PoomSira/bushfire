@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <nav className="sticky bg-[#FFFBF2] border-gray-200 top-0 z-50 w-full">
@@ -46,11 +48,15 @@ const Navigation: React.FC = () => {
           className={`${isOpen ? "block" : "hidden"} w-full md:block md:w-auto`}
           id="navbar-default"
         >
-          <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 ">
+          <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
             <li>
               <Link
-                className="flex text-2xl items-center justify-center w-28 h-12 text-gray-900 hover:text-orange-400 transform transition-transform duration-300 hover:scale-110"
                 href="/"
+                className={`flex text-2xl items-center justify-center w-28 h-12 transform transition-transform duration-300 hover:scale-110 ${
+                  pathname === "/"
+                    ? "text-orange-400"
+                    : "text-gray-900 hover:text-orange-400"
+                }`}
               >
                 Home
               </Link>
@@ -58,7 +64,11 @@ const Navigation: React.FC = () => {
             <li>
               <Link
                 href="/learn"
-                className="flex text-2xl items-center justify-center w-28 h-12 text-gray-900 hover:text-orange-400 transform transition-transform duration-300 hover:scale-110"
+                className={`flex text-2xl items-center justify-center w-28 h-12 transform transition-transform duration-300 hover:scale-110 ${
+                  pathname === "/learn"
+                    ? "text-orange-400"
+                    : "text-gray-900 hover:text-orange-400"
+                }`}
               >
                 Learn
               </Link>
@@ -66,7 +76,11 @@ const Navigation: React.FC = () => {
             <li>
               <Link
                 href="/prepare"
-                className="flex text-2xl items-center justify-center w-28 h-12 text-gray-900 hover:text-orange-400 transform transition-transform duration-300 hover:scale-110"
+                className={`flex text-2xl items-center justify-center w-28 h-12 transform transition-transform duration-300 hover:scale-110 ${
+                  pathname === "/prepare"
+                    ? "text-orange-400"
+                    : "text-gray-900 hover:text-orange-400"
+                }`}
               >
                 Prepare
               </Link>
@@ -74,7 +88,11 @@ const Navigation: React.FC = () => {
             <li>
               <Link
                 href="/recover"
-                className="flex text-2xl items-center justify-center w-28 h-12 text-gray-900 hover:text-orange-400 transform transition-transform duration-300 hover:scale-110"
+                className={`flex text-2xl items-center justify-center w-28 h-12 transform transition-transform duration-300 hover:scale-110 ${
+                  pathname === "/recover"
+                    ? "text-orange-400"
+                    : "text-gray-900 hover:text-orange-400"
+                }`}
               >
                 Recover
               </Link>
@@ -82,7 +100,11 @@ const Navigation: React.FC = () => {
             <li>
               <Link
                 href="/quiz"
-                className="flex text-2xl items-center justify-center w-28 h-12 text-gray-900 hover:text-orange-400 transform transition-transform duration-300 hover:scale-110"
+                className={`flex text-2xl items-center justify-center w-28 h-12 transform transition-transform duration-300 hover:scale-110 ${
+                  pathname === "/quiz"
+                    ? "text-orange-400"
+                    : "text-gray-900 hover:text-orange-400"
+                }`}
               >
                 Quiz
               </Link>
@@ -90,7 +112,11 @@ const Navigation: React.FC = () => {
             <li>
               <Link
                 href="/help"
-                className="flex text-2xl items-center justify-center w-28 h-12 text-gray-900 hover:text-orange-400 transform transition-transform duration-300 hover:scale-110"
+                className={`flex text-2xl items-center justify-center w-28 h-12 transform transition-transform duration-300 hover:scale-110 ${
+                  pathname === "/help"
+                    ? "text-orange-400"
+                    : "text-gray-900 hover:text-orange-400"
+                }`}
               >
                 Help
               </Link>
