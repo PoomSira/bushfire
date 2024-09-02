@@ -66,7 +66,7 @@ export default function Home() {
       </div>
       {/* Test Section */}
       <div className="relative py-8 flex flex-col items-center justify-center">
-        <div className="absolute inset-0 bg-[url('/home-new.webp')] bg-cover bg-center brightness-75"></div>
+        <div className="absolute inset-0 bg-[url('/home-new.webp')] bg-[#FFFBF2] opacity-20 bg-cover bg-center brightness-75"></div>
         <div className="relative z-10">
           <h1
             id="select"
@@ -191,7 +191,7 @@ export default function Home() {
         id="journey"
         className="relative py-8 flex flex-col items-center justify-center"
       >
-        <div className="absolute inset-0 bg-[url('/journey.webp')] bg-cover bg-center brightness-75"></div>
+        <div className="absolute inset-0 bg-[url('/journey.webp')] bg-[#FFFBF2] opacity-20 bg-cover bg-center brightness-75"></div>
         <div className="relative">
           <h1 className="text-3xl font-black text-center text-gray-800 mb-4">
             Start your journey
