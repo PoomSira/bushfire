@@ -1,14 +1,13 @@
-// components/Footer.tsx
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#FFFBF2] ">
+    <footer className="bg-[#FFFBF2] py-6">
       <hr className="my-8 border-gray-200 sm:mx-auto lg:my-8" />
-      <div className="w-full pl-10 pr-10 mx-auto p-4 md:py-4">
-        <div className="flex justify-between">
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="flex flex-col md:flex-row justify-between items-center">
           <Link href="/" aria-label="Homepage">
             <Image
               src="/logo.png"
@@ -19,17 +18,17 @@ const Footer: React.FC = () => {
               quality={100}
             />
           </Link>
-          <ul className="flex flex-wrap items-center mb-2 text-xl font-medium text-gray-500 sm:mb-0">
+          <ul className="flex flex-wrap items-center text-xl font-medium text-gray-500 mt-4 md:mt-0">
             {["Learn", "Prepare", "Recover", "Quiz", "Help"].map(
               (text, index) => (
                 <li
                   key={index}
-                  className="transition-transform duration-300 transform hover:scale-105"
+                  className="transition-transform duration-300 transform hover:scale-105 mb-2 md:mb-0"
                 >
                   <Link
                     href={`/${text.toLowerCase()}`}
                     aria-label={text}
-                    className="hover:underline me-4 md:me-6 hover:text-orange-400"
+                    className="hover:underline mx-2 md:mx-4 hover:text-orange-400"
                   >
                     {text}
                   </Link>
@@ -39,8 +38,8 @@ const Footer: React.FC = () => {
           </ul>
         </div>
         <hr className="border-gray-200 sm:mx-auto lg:my-8" />
-        <div className="text-xl text-gray-500 text-center">
-          <p className="mb-4">
+        <div className="text-center text-xl text-gray-500">
+          <p className="mb-4 px-4 sm:px-6 md:px-0">
             Bushfire Brigade respectfully acknowledges the Traditional Owners of
             the land we govern, the Wurundjeri Woi-wurrung and Bunurong / Boon
             Wurrung peoples of the Kulin and pays respect to their Elders past
@@ -50,7 +49,7 @@ const Footer: React.FC = () => {
             invitation in the Uluru Statement from the Heart and are committed
             to walking together to build a better future.
           </p>
-          <p>© 2024 Bushfire Brigade(TA30). All Rights Reserved.</p>
+          <p>© 2024 Bushfire Brigade (TA30). All Rights Reserved.</p>
         </div>
       </div>
     </footer>

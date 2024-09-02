@@ -49,10 +49,10 @@ const EffectBushfire: React.FC = () => {
                 </button>
               </div>
               <Image
-                src="/koala-t.png"
+                src="/kangaroo.png"
                 alt="Koala Tableau Cluster"
-                width={200}
-                height={200}
+                width={270}
+                height={270}
                 className="object-cover animate-moveSideways"
               />
             </div>
@@ -64,10 +64,10 @@ const EffectBushfire: React.FC = () => {
                 </button>
               </div>
               <Image
-                src="/koala-t.png"
+                src="/wombat.png"
                 alt="Koala Tableau Cluster"
-                width={200}
-                height={200}
+                width={220}
+                height={220}
                 className="object-cover animate-moveSideways"
               />
             </div>

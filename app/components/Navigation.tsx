@@ -1,12 +1,30 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
 const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const headerHeight = 300; // Adjust based on your header height
+      setIsVisible(scrollY < headerHeight);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <nav className="sticky bg-white border-gray-200 dark:bg-gray-900 top-0 z-50 w-full">
+    <nav
+      className={`fixed bg-[#FFFBF2] border-gray-200 top-4 left-1/2 transform -translate-x-1/2 z-50 w-[95%] md:w-[85%] lg:w-[75%] xl:w-[70%] rounded-lg shadow-lg transition-opacity duration-300 ${
+        isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
+      }`}
+    >
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <Link href="/">
           <Image
@@ -20,7 +38,7 @@ const Navigation: React.FC = () => {
         </Link>
         <button
           type="button"
-          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-900 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
           aria-controls="navbar-default"
           aria-expanded={isOpen}
           onClick={() => setIsOpen(!isOpen)}
@@ -46,51 +64,51 @@ const Navigation: React.FC = () => {
           className={`${isOpen ? "block" : "hidden"} w-full md:block md:w-auto`}
           id="navbar-default"
         >
-          <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-            <li>
+          <ul className="font-medium flex flex-col md:flex-row justify-between w-full p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
+            <li className="flex-1 text-center md:mx-2">
               <Link
-                className="flex text-2xl items-center justify-center w-28 h-12 text-gray-900 hover:text-orange-400 transform transition-transform duration-300 hover:scale-110"
+                className="flex justify-center items-center text-2xl w-full h-12 text-gray-900 hover:text-orange-400 transform transition-transform duration-300 hover:scale-110"
                 href="/"
               >
                 Home
               </Link>
             </li>
-            <li>
+            <li className="flex-1 text-center md:mx-2">
               <Link
                 href="/learn"
-                className="flex text-2xl items-center justify-center w-28 h-12 text-gray-900 hover:text-orange-400 transform transition-transform duration-300 hover:scale-110"
+                className="flex justify-center items-center text-2xl w-full h-12 text-gray-900 hover:text-orange-400 transform transition-transform duration-300 hover:scale-110"
               >
                 Learn
               </Link>
             </li>
-            <li>
+            <li className="flex-1 text-center md:mx-2">
               <Link
                 href="/prepare"
-                className="flex text-2xl items-center justify-center w-28 h-12 text-gray-900 hover:text-orange-400 transform transition-transform duration-300 hover:scale-110"
+                className="flex justify-center items-center text-2xl w-full h-12 text-gray-900 hover:text-orange-400 transform transition-transform duration-300 hover:scale-110"
               >
                 Prepare
               </Link>
             </li>
-            <li>
+            <li className="flex-1 text-center md:mx-2">
               <Link
                 href="/recover"
-                className="flex text-2xl items-center justify-center w-28 h-12 text-gray-900 hover:text-orange-400 transform transition-transform duration-300 hover:scale-110"
+                className="flex justify-center items-center text-2xl w-full h-12 text-gray-900 hover:text-orange-400 transform transition-transform duration-300 hover:scale-110"
               >
                 Recover
               </Link>
             </li>
-            <li>
+            <li className="flex-1 text-center md:mx-2">
               <Link
                 href="/quiz"
-                className="flex text-2xl items-center justify-center w-28 h-12 text-gray-900 hover:text-orange-400 transform transition-transform duration-300 hover:scale-110"
+                className="flex justify-center items-center text-2xl w-full h-12 text-gray-900 hover:text-orange-400 transform transition-transform duration-300 hover:scale-110"
               >
                 Quiz
               </Link>
             </li>
-            <li>
+            <li className="flex-1 text-center md:mx-2">
               <Link
                 href="/help"
-                className="flex text-2xl items-center justify-center w-28 h-12 text-gray-900 hover:text-orange-400 transform transition-transform duration-300 hover:scale-110"
+                className="flex justify-center items-center text-2xl w-full h-12 text-gray-900 hover:text-orange-400 transform transition-transform duration-300 hover:scale-110"
               >
                 Help
               </Link>
