@@ -66,7 +66,7 @@ export default function Home() {
       </div>
       {/* Test Section */}
       <div className="relative py-8 flex flex-col items-center justify-center">
-        <div className="absolute inset-0 bg-[url('/home-new.webp')] bg-[#FFFBF2] opacity-20 bg-cover bg-center brightness-75"></div>
+        <div className="absolute inset-0 bg-[url('/home-new.webp')] bg-cover bg-center brightness-75"></div>
         <div className="relative z-10">
           <h1
             id="select"
@@ -76,8 +76,8 @@ export default function Home() {
           </h1>
           <hr className="w-full max-w-lg border-gray-800 mb-4 mx-auto" />
           <div className="p-6">
-            <div className="grid grid-cols-3 gap-4">
-              <div className="relative w-[400px] h-[400px] bg-[#FFFBF2] rounded-full overflow-visible transform transition-transform duration-300 hover:scale-105">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="relative w-full aspect-square bg-[#FFFBF2] rounded-full overflow-visible transform transition-transform duration-300 hover:scale-105">
                 <div className="absolute bg-[#FFE6C5] right-10 top-1/2 transform -translate-y-1/2 text-center py-2 px-2 rounded-md shadow-md transition-transform duration-300 hover:scale-105 hover:bg-orange-300">
                   <button onClick={toggleKoalaPopup} className="text-black">
                     Click to know me
@@ -112,7 +112,7 @@ export default function Home() {
                 )}
               </div>
 
-              <div className="relative aspect-square bg-[#FFFBF2] rounded-full overflow-visible transform transition-transform duration-300 hover:scale-105">
+              <div className="relative w-full aspect-square bg-[#FFFBF2] rounded-full overflow-visible transform transition-transform duration-300 hover:scale-105">
                 <div className="absolute bg-[#FFE6C5] right-10 top-1/2 transform -translate-y-1/2 text-center py-2 px-2 rounded-md shadow-md transition-transform duration-300 hover:scale-105 hover:bg-orange-300">
                   <button onClick={toggleKangarooPopup} className="text-black">
                     Click to know me
@@ -148,7 +148,7 @@ export default function Home() {
                 )}
               </div>
 
-              <div className="relative aspect-square bg-[#FFFBF2] rounded-full overflow-visible transform transition-transform duration-300 hover:scale-105">
+              <div className="relative w-full aspect-square bg-[#FFFBF2] rounded-full overflow-visible transform transition-transform duration-300 hover:scale-105">
                 <div className="absolute bg-[#FFE6C5] text-black right-10 top-1/2 transform -translate-y-1/2 text-center py-2 px-2 rounded-md shadow-md transition-transform duration-300 hover:scale-105 hover:bg-orange-300">
                   <button onClick={toggleWombatPopup} className="text-black">
                     Click to know me
@@ -191,7 +191,7 @@ export default function Home() {
         id="journey"
         className="relative py-8 flex flex-col items-center justify-center"
       >
-        <div className="absolute inset-0 bg-[url('/journey.webp')] bg-[#FFFBF2] opacity-20 bg-cover bg-center brightness-75"></div>
+        <div className="absolute inset-0 bg-[url('/journey.webp')] bg-cover bg-center brightness-75"></div>
         <div className="relative">
           <h1 className="text-3xl font-black text-center text-gray-800 mb-4">
             Start your journey
