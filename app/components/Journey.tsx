@@ -13,39 +13,9 @@ const Journey: React.FC = () => {
           <Image
             src="/learning-landing.jpeg"
             alt="Learning About Bushfires"
-            layout="fill"
-            objectFit="cover"
-            className="transform transition-transform duration-500 hover:scale-110"
-          />
-        </div>
-        <div className="p-6 flex flex-col justify-center">
-          <h6 className="block mb-4 font-sans text-xl antialiased font-semibold leading-relaxed tracking-normal text-gray-700 uppercase">
-            Learning About Bushfires
-          </h6>
-          <p className="block mb-4 font-sans text-lg antialiased font-normal leading-relaxed text-gray-700">
-            Students will explore the scientific causes and effects of bushfires
-            in the Victorian region, gaining a deeper understanding of these
-            natural events.
-          </p>
-          <Link href="/learn" className="inline-block">
-            <button className="px-6 py-2 text-lg font-semibold text-gray-700 border-2 border-gray-700 hover:bg-black hover:text-white transition-colors duration-300 rounded-md">
-              Learn More
-            </button>
-          </Link>
-        </div>
-      </div>
-
-      <div
-        id="Learn"
-        className="relative flex flex-col lg:flex-row bg-clip-border rounded-xl bg-[#FFFBF2] text-gray-700 shadow-md w-full max-w-screen-xl mx-auto my-4 transition-transform duration-300 hover:scale-105 hover:shadow-lg"
-      >
-        <div className="relative w-full lg:w-2/5 h-[300px] lg:h-[400px] overflow-hidden rounded-t-xl lg:rounded-r-none lg:rounded-l-xl bg-clip-border">
-          <Image
-            src="/prepare.webp"
-            alt="Learning About Bushfires"
-            layout="fill"
-            objectFit="cover"
-            className="transform transition-transform duration-500 hover:scale-110"
+            width={800}
+            height={500}
+            className="object-cover w-full h-full transform transition-transform duration-500 hover:scale-110 rounded-xl"
           />
         </div>
         <div className="p-6 flex flex-col justify-center">
