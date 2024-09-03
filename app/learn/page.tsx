@@ -14,7 +14,7 @@ const page = () => {
     <div className="bg-[#FFFBF2] mx-auto max-w-screen">
       <Navigation />
       {/* Hero Section */}
-      <div className="relative isolate h-[100vh] px-6 pt-14 lg:px-8 flex-grow bg-[url('/learning-landing.jpeg')] bg-cover bg-center">
+      <div className="relative isolate h-[90vh] px-6 pt-14 lg:px-8 flex-grow bg-[url('/learning-landing.jpeg')] bg-cover bg-center">
         {/* Blur Overlay */}
         <div className="absolute inset-0 bg-black bg-opacity-20 backdrop-filter backdrop-blur-sm"></div>
 
@@ -22,13 +22,13 @@ const page = () => {
         <div className="relative mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
           <div className="text-center">
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
-              Bushfire Brigade
+              Learn with Bushfire Brigade
               <br />
               Safety Starts with You
             </h1>
             <p className="mt-6 text-lg leading-8 text-white">
-              Inspiring a new generation to be fire-smart and prepared for
-              bushfire challenges.
+              Empowering young minds to be fire-smart and ready for bushfire
+              challenges.
             </p>
           </div>
         </div>
