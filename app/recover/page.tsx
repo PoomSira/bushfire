@@ -18,7 +18,7 @@ const page = () => {
         <div className="absolute inset-0 bg-black bg-opacity-20 backdrop-filter backdrop-blur-sm"></div>
 
         {/* Content Overlay */}
-        <div className="relative mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+        <div className="relative mx-auto max-w-3xl py-32 sm:py-48 lg:py-56">
           <div className="text-center">
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
               Recover with Bushfire Brigade
