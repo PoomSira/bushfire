@@ -36,9 +36,7 @@ const CauseBushfire = () => {
             Sometimes, lightning or even human activity, like a campfire or a
             spark from machinery, can start a fire. To control and put out a
             bushfire, firefighters work hard by creating firebreaks, which are
-            gaps in the vegetation that stop the fire from spreading. They also
-            use water and fire retardants to slow down and extinguish the
-            flames, protecting people, animals, and homes from the fire.
+            gaps in the vegetation that stop the fire from spreading.
           </p>
         </div>
       </div>
