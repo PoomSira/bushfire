@@ -70,8 +70,9 @@ const FlameSection: React.FC = () => {
         <div className="absolute top-0 left-0 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
           <button
             onClick={() => handleButtonClick("topLeft")}
-            className="relative w-12 h-12 bg-orange-500 rounded-full"
+            className="relative w-12 h-12 text-white bg-orange-500 rounded-full"
           >
+            Click!
             <span className="absolute top-0 left-0 transform w-12 h-12 rounded-full bg-orange-400 opacity-75 animate-ping"></span>
           </button>
 
@@ -84,8 +85,9 @@ const FlameSection: React.FC = () => {
         <div className="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
           <button
             onClick={() => handleButtonClick("topRight")}
-            className="relative w-12 h-12 bg-orange-500 rounded-full"
+            className="relative w-12 h-12 text-white bg-orange-500 rounded-full"
           >
+            Click!
             <span className="absolute top-0 right-0 transform w-12 h-12 rounded-full bg-orange-400 opacity-75 animate-ping"></span>
           </button>
           <span className="mt-2 text-md text-center text-black font-black">
@@ -96,8 +98,9 @@ const FlameSection: React.FC = () => {
         <div className="absolute bottom-0 left-0 transform -translate-x-1/2 translate-y-1/2 flex flex-col items-center">
           <button
             onClick={() => handleButtonClick("bottomLeft")}
-            className="relative w-12 h-12 bg-orange-500 rounded-full"
+            className="relative w-12 h-12 text-white bg-orange-500 rounded-full"
           >
+            Click!
             <span className="absolute bottom-0 left-0 transform w-12 h-12 rounded-full bg-orange-400 opacity-75 animate-ping"></span>
           </button>
           <span className="mt-2 text-md text-center text-black font-black">
@@ -108,8 +111,9 @@ const FlameSection: React.FC = () => {
         <div className="absolute bottom-0 right-0 transform translate-x-1/2 translate-y-1/2 flex flex-col items-center">
           <button
             onClick={() => handleButtonClick("bottomRight")}
-            className="relative w-12 h-12 bg-orange-500 rounded-full"
+            className="relative w-12 h-12 text-white bg-orange-500 rounded-full"
           >
+            Click!
             <span className="absolute bottom-0 right-0 transform w-12 h-12 rounded-full bg-orange-400 opacity-75 animate-ping"></span>
           </button>
           <span className="mt-2 text-md text-center text-black font-black">
@@ -120,8 +124,9 @@ const FlameSection: React.FC = () => {
         <div className="absolute left-0 top-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
           <button
             onClick={() => handleButtonClick("leftCenter")}
-            className="relative w-12 h-12 bg-orange-500 rounded-full"
+            className="relative w-12 h-12 text-white bg-orange-500 rounded-full"
           >
+            Click!
             <span className="absolute left-0 top-0 transform w-12 h-12 rounded-full bg-orange-400 opacity-75 animate-ping"></span>
           </button>
           <span className="mt-2 text-md text-center text-black font-black">
@@ -132,8 +137,9 @@ const FlameSection: React.FC = () => {
         <div className="absolute right-0 top-1/2 transform translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
           <button
             onClick={() => handleButtonClick("rightCenter")}
-            className="relative w-12 h-12 bg-orange-500 rounded-full"
+            className="relative w-12 h-12 text-white bg-orange-500 rounded-full"
           >
+            Click!
             <span className="absolute right-0 top-0 transform w-12 h-12 rounded-full bg-orange-400 opacity-75 animate-ping"></span>
           </button>
           <span className="mt-2 text-md text-center text-black font-black">
