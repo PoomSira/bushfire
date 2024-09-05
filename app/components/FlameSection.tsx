@@ -9,7 +9,7 @@ const FlameSection: React.FC = () => {
   };
 
   return (
-    <div className="flex w-1/2 flex-col items-center justify-center bg-[#FFFBF2] rounded-lg p-12 transform transition-transform duration-300 hover:scale-105">
+    <div className="flex w-full flex-col items-center justify-center bg-[#FFFBF2] rounded-lg p-12 transform transition-transform duration-300 hover:scale-105">
       <div className="relative w-56 aspect-square">
         {/* Flame Image */}
         <div className="relative">

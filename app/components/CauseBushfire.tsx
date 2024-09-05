@@ -6,10 +6,10 @@ import BushfireVideo from "./BushfireVideo";
 const CauseBushfire = () => {
   return (
     <div>
-      <div className="flex items-center justify-center max-w-screen-xl mx-auto p-4 rounded-lg">
-        <div className="flex w-full">
+      <div className="flex flex-col md:flex-row items-center justify-center max-w-screen-xl mx-auto p-4 rounded-lg">
+        <div className="flex flex-col md:flex-row w-full">
           {/* Koala Section */}
-          <div className="flex w-1/2 justify-center items-center">
+          <div className="flex w-full md:w-1/2 justify-center items-center">
             <div className="w-56 aspect-square overflow-visible transition-transform duration-500 hover:scale-105">
               <Image
                 src="/koala-t.png"
@@ -26,7 +26,7 @@ const CauseBushfire = () => {
         </div>
       </div>
 
-      <div className="bg-[#FFFBF2] p-12 rounded-lg  ">
+      <div className="bg-[#FFFBF2] p-12 rounded-lg">
         <div className="py-4 bg-[#ffe6c5] rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105">
           <p className="text-2xl text-orange-600 text-center">Cause</p>
           <p className="text-xl font-medium text-gray-800 text-center mb-2 p-5">
@@ -41,12 +41,12 @@ const CauseBushfire = () => {
         </div>
       </div>
 
-      <div className="my-10 grid grid-cols-5 gap-6">
-        <div className="col-span-4 flex flex-col">
+      <div className="my-10 grid grid-cols-1 lg:grid-cols-5 gap-6">
+        <div className="col-span-1 lg:col-span-4 flex flex-col">
           <BushfireVideo />
         </div>
 
-        <div className="col-span-1 flex flex-col">
+        <div className="col-span-1 flex flex-col items-center">
           {/* Do You Know Card Section */}
           <div className="w-full p-6 bg-[#ffe6c5] rounded-xl shadow-md transform transition-transform duration-300 hover:scale-105">
             <p className="text-center text-xl font-semibold italic text-gray-800">
@@ -58,7 +58,8 @@ const CauseBushfire = () => {
             </p>
           </div>
 
-          <div className="w-56 my-auto aspect-square overflow-visible transition-transform duration-500 hover:scale-105">
+          {/* Centered Koala Image */}
+          <div className="w-56 my-auto aspect-square flex justify-center items-center overflow-visible transition-transform duration-500 hover:scale-105">
             <Image
               src="/koala-p.png"
               alt="Koala doctor with presentation"
