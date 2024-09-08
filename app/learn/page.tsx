@@ -68,7 +68,7 @@ const page = () => {
         <div className="absolute inset-0 bg-[url('/bushfire-effect.webp')] bg-[#FFFBF2] opacity-20 bg-cover bg-center brightness-75"></div>
         <div className="relative max-w-7xl mx-auto">
           <h2 className="text-3xl font-black text-center text-gray-700 mb-4">
-            Bushfire Data Visualizations
+            Effect of Bushfire
           </h2>
           <hr className="w-full max-w-lg border-gray-700 mb-8 mx-auto" />
 
