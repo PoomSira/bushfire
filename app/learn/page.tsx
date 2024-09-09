@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
@@ -9,10 +9,17 @@ import HistoryTimeline from "../components/HistoryTimeline";
 import TableauViz from "../components/TableauViz";
 import TableauPictograph from "../components/TableauPictograph";
 import TableauCluster from "../components/TableauCluster";
-
 import CauseBushfire from "../components/CauseBushfire";
 import EffectBushfire from "../components/EffectBushfire";
-const page = () => {
+import { ChevronDown, ChevronUp } from "lucide-react";
+
+const Page = () => {
+  const [isAnswerVisible, setIsAnswerVisible] = useState(false);
+
+  const toggleAnswer = () => {
+    setIsAnswerVisible(!isAnswerVisible);
+  };
+
   return (
     <div className="bg-[#FFFBF2] mx-auto max-w-screen">
       <Navigation />
@@ -82,21 +89,34 @@ const page = () => {
                 <TableauViz />
               </div>
               <div className="lg:w-1/3 lg:pl-8 relative">
-                <div className="bg-[#FFE6C5] p-6 rounded-xl shadow-lg relative transition-transform duration-300 ease-in-out transform hover:scale-105">
-                  <h4 className="text-xl font-bold mb-4 text-gray-700">
-                    Let's Get Started!
-                  </h4>
-                  <p className="mb-4 text-lg text-gray-700">
-                    Step 1: Go to the Bushfire Year Box and click ▶
-                  </p>
-                  <p className="mb-4 text-lg text-gray-700">
-                    Watch the years pass by and see how the fires have changed.
-                  </p>
-                  <p className="font-semibold text-lg text-gray-700">
-                    Bushfires have been getting worse over the years because the
-                    climate is getting hotter and drier. This makes it easier
-                    for fires to start and spread.
-                  </p>
+                <div className="bg-[#FFE6C5] rounded-xl shadow-lg overflow-hidden transition-all duration-300 ease-in-out">
+                  <div className="p-6 cursor-pointer" onClick={toggleAnswer}>
+                    <h4 className="text-xl font-bold mb-4 text-gray-700 flex justify-between items-center">
+                      Let's Get Started!
+                      {isAnswerVisible ? (
+                        <ChevronUp className="w-6 h-6" />
+                      ) : (
+                        <ChevronDown className="w-6 h-6" />
+                      )}
+                    </h4>
+                    <p className="text-lg text-gray-700">
+                      Step 1: Go to the Bushfire Year Box and click ▶
+                    </p>
+                  </div>
+
+                  {isAnswerVisible && (
+                    <div className="p-6 pt-0 bg-[#FFE6C5]">
+                      <p className="mb-4 text-lg text-gray-700">
+                        Watch the years pass by and see how the fires have
+                        changed.
+                      </p>
+                      <p className="font-semibold text-lg text-gray-700">
+                        Bushfires have been getting worse over the years because
+                        the climate is getting hotter and drier. This makes it
+                        easier for fires to start and spread.
+                      </p>
+                    </div>
+                  )}
                 </div>
                 {/* Koala image below the card */}
                 <div className="mt-8 flex justify-center transition-transform duration-300 ease-in-out transform hover:scale-105">
@@ -123,34 +143,53 @@ const page = () => {
               </div>
               <div className="lg:w-1/3 lg:pl-8 relative">
                 <div className="bg-[#FFE6C5] p-6 rounded-xl shadow-lg relative transition-transform duration-300 ease-in-out transform hover:scale-105">
-                  <h4 className="text-xl font-bold mb-4 text-gray-700">
-                    Can you guess how many schools have been affected by
-                    bushfires?
-                  </h4>
-                  <p className="mb-4 text-lg text-gray-700">
-                    667 schools are identified to be in bushfire risk areas.
-                  </p>
-                  <p className="mb-4 text-lg text-gray-700">
-                    What do the risks mean?
-                  </p>
-                  <ul className="list-disc list-inside text-lg text-gray-700">
-                    <li>
-                      <b>Extreme RISK:</b> Big, dangerous fires. Be very careful
-                      and stay safe!
-                    </li>
-                    <li>
-                      <b>High Risk:</b> Strong fires possible. Stay alert and
-                      follow safety rules.
-                    </li>
-                    <li>
-                      <b>Medium Risk:</b> Small fires likely. Still, be careful
-                      and follow fire safety.
-                    </li>
-                    <li>
-                      <b>Low Risk:</b> Very safe from fires. Know safety rules
-                      just in case.
-                    </li>
-                  </ul>
+                  <div className="cursor-pointer" onClick={toggleAnswer}>
+                    <h4 className="text-xl font-bold mb-4 text-gray-700">
+                      Can you guess how many schools have been affected by
+                      bushfires?
+                      {isAnswerVisible ? (
+                        <ChevronUp className="w-6 h-6" />
+                      ) : (
+                        <ChevronDown className="w-6 h-6" />
+                      )}
+                    </h4>
+                  </div>
+                  {isAnswerVisible && (
+                    <p className="mb-4 text-lg text-gray-700">
+                      667 schools are identified to be in bushfire risk areas.
+                    </p>
+                  )}
+
+                  <div className="cursor-pointer" onClick={toggleAnswer}>
+                    <p className="mb-4 text-lg text-gray-700">
+                      What do the risks mean?
+                      {isAnswerVisible ? (
+                        <ChevronUp className="w-6 h-6" />
+                      ) : (
+                        <ChevronDown className="w-6 h-6" />
+                      )}
+                    </p>
+                  </div>
+                  {isAnswerVisible && (
+                    <ul className="list-disc list-inside text-lg text-gray-700">
+                      <li>
+                        <b>Extreme RISK:</b> Big, dangerous fires. Be very
+                        careful and stay safe!
+                      </li>
+                      <li>
+                        <b>High Risk:</b> Strong fires possible. Stay alert and
+                        follow safety rules.
+                      </li>
+                      <li>
+                        <b>Medium Risk:</b> Small fires likely. Still, be
+                        careful and follow fire safety.
+                      </li>
+                      <li>
+                        <b>Low Risk:</b> Very safe from fires. Know safety rules
+                        just in case.
+                      </li>
+                    </ul>
+                  )}
                 </div>
                 {/* Kangaroo image below the card */}
                 <div className="mt-8 flex justify-center transition-transform duration-300 ease-in-out transform hover:scale-105">
@@ -177,35 +216,48 @@ const page = () => {
               </div>
               <div className="lg:w-1/3 lg:pl-8 relative">
                 <div className="bg-[#FFE6C5] p-6 rounded-xl shadow-lg relative transition-transform duration-300 ease-in-out transform hover:scale-105">
-                  <h4 className="text-xl font-bold mb-4 text-gray-700">
-                    Which areas are mostly at risk of bushfires?
-                  </h4>
-                  <p className="mb-4 text-lg text-gray-700">
-                    Step 1: Click on High Risk Bubble
-                  </p>
-                  <p className="mb-4 text-lg text-gray-700">
-                    Step 2: Hover over the largest bubble inside it
-                  </p>
-                  <p className="mb-4 text-lg text-gray-700">
-                    Yarra Ranges have 13 schools at high risk
-                  </p>
-                  <p className="mb-4 text-lg text-gray-700">
-                    Step 3: Click on Medium Risk Bubble
-                  </p>
-                  <p className="mb-4 text-lg text-gray-700">
-                    Step 4: Hover over the largest 2 bubbles inside it
-                  </p>
-                  <p className="mb-4 text-lg text-gray-700">
-                    Yarra Ranges and Greater Bendigo have the most schools with
-                    medium risk
-                  </p>
-                  <h4 className="text-xl font-bold mt-8 mb-4 text-gray-700">
-                    Is your school here?
-                  </h4>
-                  <p className="font-semibold text-lg text-gray-700">
-                    If so, time to become a BUSHFIRE SAFETY EXPERT!
-                  </p>
+                  <div className="cursor-pointer" onClick={toggleAnswer}>
+                    <h4 className="text-xl font-bold mb-2 text-gray-700 flex justify-between items-center">
+                      Which areas are mostly at risk of bushfires?
+                      {isAnswerVisible ? (
+                        <ChevronUp className="w-6 h-6" />
+                      ) : (
+                        <ChevronDown className="w-6 h-6" />
+                      )}
+                    </h4>
+                  </div>
+
+                  {isAnswerVisible && (
+                    <div className="px-6 pb-6 pt-0 bg-[#FFE6C5]">
+                      <p className="mb-4 text-lg text-gray-700">
+                        Step 1: Click on High Risk Bubble
+                      </p>
+                      <p className="mb-4 text-lg text-gray-700">
+                        Step 2: Hover over the largest bubble inside it
+                      </p>
+                      <p className="mb-4 text-lg text-gray-700">
+                        Yarra Ranges have 13 schools at high risk
+                      </p>
+                      <p className="mb-4 text-lg text-gray-700">
+                        Step 3: Click on Medium Risk Bubble
+                      </p>
+                      <p className="mb-4 text-lg text-gray-700">
+                        Step 4: Hover over the largest 2 bubbles inside it
+                      </p>
+                      <p className="mb-4 text-lg text-gray-700">
+                        Yarra Ranges and Greater Bendigo have the most schools
+                        with medium risk
+                      </p>
+                      <h4 className="text-xl font-bold mt-8 mb-4 text-gray-700">
+                        Is your school here?
+                      </h4>
+                      <p className="font-semibold text-lg text-gray-700">
+                        If so, time to become a BUSHFIRE SAFETY EXPERT!
+                      </p>
+                    </div>
+                  )}
                 </div>
+
                 {/* Wombat image below the card */}
                 <div className="mt-8 flex justify-center transition-transform duration-300 ease-in-out transform hover:scale-105">
                   <Image
@@ -226,4 +278,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
