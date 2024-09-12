@@ -105,7 +105,7 @@ const BushfireAreaMap = () => {
           });
         })
         .catch((error) => {
-          console.error("Error loading CSV data: ", error);
+          console.error("Error loading CSV dataa: ", error);
           setLoading(false); // Also hide the spinner on error
         });
     });
