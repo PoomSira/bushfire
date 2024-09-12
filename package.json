@@ -19,6 +19,7 @@
     "nes-ui-react": "^0.3.0",
     "nes.css": "^2.3.0",
     "next": "14.2.5",
+    "pako": "^2.1.0",
     "papaparse": "^5.4.1",
     "react": "^18",
     "react-dom": "^18",
@@ -28,6 +29,7 @@
   },
   "devDependencies": {
     "@types/node": "^20",
+    "@types/pako": "^2.0.3",
     "@types/papaparse": "^5.3.14",
     "@types/react": "^18",
     "@types/react-dom": "^18",

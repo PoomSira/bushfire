@@ -46,44 +46,57 @@ const BushfireAreaMap = () => {
 
     // Load CSV data and display schools
     map.on("load", () => {
-      // Fetch the GeoJSON file for bushfire history polygons
-      fetch("/BUSHFIRE_HISTORY_SCARE.geojson") // Ensure the file is correctly named and in the public folder
-        .then((response) => response.json())
-        .then((geojsonData) => {
-          // Add a source for the bushfire polygons
-          map.addSource("bushfire-history", {
-            type: "geojson",
-            data: geojsonData,
-          });
+      // Dynamically import pako
+      import("pako").then((pako) => {
+        // Fetch the compressed GeoJSON file for bushfire polygons
+        fetch("/BUSHFIRE_HISTORY_SCARE.geojson.gz") // Ensure the file is correctly named and in the public folder
+          .then((response) => response.arrayBuffer()) // Fetch as arrayBuffer since it's compressed
+          .then((buffer) => {
+            // Decompress the GZIP file
+            const decompressed = pako.inflate(new Uint8Array(buffer), {
+              to: "string",
+            });
 
-          // Add a layer to style and display the polygons
-          map.addLayer({
-            id: "bushfire-polygons",
-            type: "fill",
-            source: "bushfire-history", // reference the source
-            layout: {},
-            paint: {
-              "fill-color": "#FC923C", // Color of the polygons
-              "fill-opacity": 0.5, // Transparency of the polygons
-            },
-          });
+            // Parse the decompressed result as JSON
+            const geojsonData = JSON.parse(decompressed);
 
-          // Optional: Add borders to the polygons
-          map.addLayer({
-            id: "bushfire-borders",
-            type: "line",
-            source: "bushfire-history",
-            layout: {},
-            paint: {
-              "line-color": "#ff4500", // Color of the border
-              "line-width": 2, // Width of the border
-            },
+            // Add a source for the bushfire polygons
+            map.addSource("bushfire-history", {
+              type: "geojson",
+              data: geojsonData, // Properly decompressed and parsed GeoJSON data
+            });
+
+            // Add a layer to style and display the polygons
+            map.addLayer({
+              id: "bushfire-polygons",
+              type: "fill",
+              source: "bushfire-history", // reference the source
+              layout: {},
+              paint: {
+                "fill-color": "#FC923C", // Color of the polygons
+                "fill-opacity": 0.5, // Transparency of the polygons
+              },
+            });
+
+            // Optional: Add borders to the polygons
+            map.addLayer({
+              id: "bushfire-borders",
+              type: "line",
+              source: "bushfire-history",
+              layout: {},
+              paint: {
+                "line-color": "#ff4500", // Color of the border
+                "line-width": 2, // Width of the border
+              },
+            });
+            // Set loading to false after the polygons have been added
+            setLoading(false); // Stop the spinner
+          })
+          .catch((error) => {
+            console.error("Error loading compressed GeoJSON data:", error);
+            setLoading(false); // Also hide the spinner on error
           });
-        })
-        .catch((error) => {
-          console.error("Error loading GeoJSON data: ", error);
-          setLoading(false); // Also hide the spinner on error
-        });
+      });
 
       // Fetch school location data from the CSV file
       fetch("/merged_school_bushfire_risk.csv") // Update with the actual path to your CSV
@@ -96,17 +109,11 @@ const BushfireAreaMap = () => {
               const parsedSchools = result.data;
               plotSchoolsOnMap(parsedSchools, map);
               setSchools(parsedSchools); // Store all schools data
-              setLoading(false); // Hide the spinner once data is loaded
             },
             error: (error: Error) => {
               console.error("Error parsing CSV data: ", error);
-              setLoading(false);
             },
           });
-        })
-        .catch((error) => {
-          console.error("Error loading CSV dataa: ", error);
-          setLoading(false); // Also hide the spinner on error
         });
     });
 
