@@ -1,14 +1,36 @@
 "use client";
 
-import React from "react";
+import { useState } from "react";
+import Image from "next/image";
 import Navigation from "../components/Navigation";
-import Hero from "../components/Hero";
-import BushfireAreaMap from "../components/BushfireAreaMap";
-import TableauViz from "../components/TableauViz";
-import DeadpoolBye from "../components/DeadpoolBye";
 import Footer from "../components/Footer";
+import Gauge from "../components/Gauge";
+import BushfireAreaMap from "../components/BushfireAreaMap";
+import TableauVizSeason from "../components/TableauVizSeason";
+import TableauViz from "../components/TableauViz";
+import TableauPictograph from "../components/TableauPictograph";
+import TableauCluster from "../components/TableauCluster";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
-const page = () => {
+const Page = () => {
+  const [value, setValue] = useState(50);
+
+  const [isAnswerVisibleOne, setIsAnswerVisibleOne] = useState(false);
+  const [isAnswerVisibleTwo, setIsAnswerVisibleTwo] = useState(false);
+  const [isAnswerVisibleThree, setIsAnswerVisibleThree] = useState(false);
+
+  const toggleAnswerOne = () => {
+    setIsAnswerVisibleOne(!isAnswerVisibleOne);
+  };
+
+  const toggleAnswerTwo = () => {
+    setIsAnswerVisibleTwo(!isAnswerVisibleTwo);
+  };
+
+  const toggleAnswerThree = () => {
+    setIsAnswerVisibleThree(!isAnswerVisibleThree);
+  };
+
   return (
     <div className="bg-[#FFFBF2] mx-auto max-w-screen">
       <Navigation />
@@ -32,9 +54,106 @@ const page = () => {
           </div>
         </div>
       </div>
+
+      {/* Busfire map area */}
+      <div className="relative py-8 flex flex-col items-center justify-center w-full">
+        <div className="absolute inset-0 bg-[url('/class-room.webp')] bg-[#FFFBF2] opacity-20 bg-cover bg-center brightness-75"></div>
+
+        <div className="relative w-full h-full flex flex-col items-center justify-center">
+          <h1 className="text-3xl font-black text-center text-gray-700 mb-4">
+            Assessing my risk
+          </h1>
+          <hr className="w-full max-w-lg border-gray-700 mb-4 mx-auto" />
+
+          <div className="w-full flex p-12 rounded-md h-screen">
+            {/* Tableau Visualization */}
+            <div className="w-3/4 h-full">
+              <TableauVizSeason />
+            </div>
+
+            {/* Text Content */}
+            <div className="w-1/4 p-6 h-full overflow-auto bg-[#FFFBF2] rounded-lg">
+              <div className="p-4 bg-[#FFE6C5] rounded-md shadow-md">
+                <h2 className="text-2xl text-[#EA580B] font-bold mb-4">
+                  Additional Information
+                </h2>
+                <div className="cursor-pointer" onClick={toggleAnswerOne}>
+                  <h4 className="text-xl font-bold mb-4 text-gray-700 flex justify-between items-center">
+                    When should we be careful?
+                    {isAnswerVisibleOne ? (
+                      <ChevronUp className="w-6 h-6" />
+                    ) : (
+                      <ChevronDown className="w-6 h-6" />
+                    )}
+                  </h4>
+                </div>
+
+                {isAnswerVisibleOne && (
+                  <div className="bg-[#FFE6C5]">
+                    <p className="mb-4 text-lg text-gray-700">
+                      We know that bushfires are more likely to happen during
+                      the hottest and driest times of the year.
+                    </p>
+                  </div>
+                )}
+
+                <div className="cursor-pointer" onClick={toggleAnswerTwo}>
+                  <h4 className="text-xl font-bold mb-4 text-gray-700 flex justify-between items-center">
+                    Which season should we be careful in?
+                    {isAnswerVisibleTwo ? (
+                      <ChevronUp className="w-6 h-6" />
+                    ) : (
+                      <ChevronDown className="w-6 h-6" />
+                    )}
+                  </h4>
+                </div>
+
+                {isAnswerVisibleTwo && (
+                  <div className="bg-[#FFE6C5]">
+                    <p className="mb-4 text-lg text-gray-700">
+                      As you can see in the chart, summer is the season when
+                      bushfires happen the most because it’s hot and dry. Spring
+                      and autumn can also be risky.
+                    </p>
+                  </div>
+                )}
+
+                <div className="cursor-pointer" onClick={toggleAnswerThree}>
+                  <h4 className="text-xl font-bold mb-4 text-gray-700 flex justify-between items-center">
+                    Which months should we be very careful?
+                    {isAnswerVisibleThree ? (
+                      <ChevronUp className="w-6 h-6" />
+                    ) : (
+                      <ChevronDown className="w-6 h-6" />
+                    )}
+                  </h4>
+                </div>
+
+                {isAnswerVisibleThree && (
+                  <div className="bg-[#FFE6C5]">
+                    <p className="mb-4 text-lg text-gray-700">
+                      We need to be extra careful in December, January, and
+                      February because those are the hottest months of summer.
+                    </p>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+
+          <div className="w-full px-6 flex">
+            <BushfireAreaMap />
+          </div>
+
+          <div className="w-full px-6 flex">
+            <Gauge />
+          </div>
+        </div>
+      </div>
+
       <Footer />
     </div>
   );
 };
 
-export default page;
+export default Page;
