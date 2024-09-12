@@ -3,17 +3,22 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import mapboxgl from "mapbox-gl";
 import Papa from "papaparse"; // For parsing CSV data
 
-type Props = {};
+interface School {
+  Facility_Name: string;
+  Fire_Risk_Category_2023_24: string;
+  X: string; // Longitude
+  Y: string; // Latitude
+}
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoicG9vbXNpcmEiLCJhIjoiY2x6ajdzcnEyMG9vMDJ2cHhkbnp4dThjOSJ9.q98baVlbLATw6CGl9IIw_Q";
 
-const BushfireAreaMap = (props: Props) => {
+const BushfireAreaMap = () => {
   const [loading, setLoading] = useState(true); // Loading state for the spinner
-  const [schools, setSchools] = useState([]); // All schools data
-  const [filteredSchools, setFilteredSchools] = useState([]); // Filtered schools based on search
+  const [schools, setSchools] = useState<School[]>([]); // All schools data
+  const [filteredSchools, setFilteredSchools] = useState<School[]>([]); // Filtered schools based on search
   const [searchQuery, setSearchQuery] = useState(""); // Search input value
-  const [mapInstance, setMapInstance] = useState(null); // Map instance
+  const [mapInstance, setMapInstance] = useState<mapboxgl.Map | null>(null); // Map instance
   const [highlightIndex, setHighlightIndex] = useState(-1); // Index of the highlighted school
 
   const [viewport, setViewport] = useState({
@@ -39,8 +44,9 @@ const BushfireAreaMap = (props: Props) => {
     // Add navigation controls (zoom in/out)
     map.addControl(new mapboxgl.NavigationControl());
 
-    // Load GeoJSON data and display polygons
+    // Load CSV data and display schools
     map.on("load", () => {
+      // Fetch the GeoJSON file for bushfire history polygons
       fetch("/BUSHFIRE_HISTORY_SCARE.geojson") // Ensure the file is correctly named and in the public folder
         .then((response) => response.json())
         .then((geojsonData) => {
@@ -73,42 +79,46 @@ const BushfireAreaMap = (props: Props) => {
               "line-width": 2, // Width of the border
             },
           });
-
-          // Fetch school location data from the CSV file
-          fetch("/merged_school_bushfire_risk.csv") // Update with the actual path to your CSV
-            .then((response) => response.text())
-            .then((csvText) => {
-              // Parse the CSV using PapaParse
-              Papa.parse(csvText, {
-                header: true, // Use the first row as headers
-                complete: (result) => {
-                  plotSchoolsOnMap(result.data, map);
-                  setSchools(result.data); // Store all schools data
-                  setLoading(false); // Hide the spinner once data is loaded
-                },
-                error: (error) => {
-                  console.error("Error parsing CSV data: ", error);
-                  setLoading(false);
-                },
-              });
-            })
-            .catch((error) => {
-              console.error("Error loading CSV data: ", error);
-              setLoading(false); // Also hide the spinner on error
-            });
         })
         .catch((error) => {
           console.error("Error loading GeoJSON data: ", error);
+          setLoading(false); // Also hide the spinner on error
+        });
+
+      // Fetch school location data from the CSV file
+      fetch("/merged_school_bushfire_risk.csv") // Update with the actual path to your CSV
+        .then((response) => response.text())
+        .then((csvText) => {
+          // Parse the CSV using PapaParse
+          Papa.parse<School>(csvText, {
+            header: true, // Use the first row as headers
+            complete: (result) => {
+              const parsedSchools = result.data;
+              plotSchoolsOnMap(parsedSchools, map);
+              setSchools(parsedSchools); // Store all schools data
+              setLoading(false); // Hide the spinner once data is loaded
+            },
+            error: (error: Error) => {
+              console.error("Error parsing CSV data: ", error);
+              setLoading(false);
+            },
+          });
+        })
+        .catch((error) => {
+          console.error("Error loading CSV data: ", error);
           setLoading(false); // Also hide the spinner on error
         });
     });
 
     // Cleanup on unmount
     return () => map.remove();
+
+    // Cleanup on unmount
+    return () => map.remove();
   }, [viewport]);
 
   // Handle search input change
-  const handleSearchChange = (event) => {
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const query = event.target.value.toLowerCase();
     setSearchQuery(query);
 
@@ -126,7 +136,7 @@ const BushfireAreaMap = (props: Props) => {
   };
 
   // Handle key navigation for dropdown list
-  const handleKeyDown = (event) => {
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "ArrowDown") {
       // Move down in the list
       setHighlightIndex((prevIndex) =>
@@ -142,7 +152,7 @@ const BushfireAreaMap = (props: Props) => {
   };
 
   // Zoom into a specific school when it's clicked from the search results
-  const handleSchoolClick = (school) => {
+  const handleSchoolClick = (school: School) => {
     const longitude = parseFloat(school.X);
     const latitude = parseFloat(school.Y);
 
@@ -156,7 +166,7 @@ const BushfireAreaMap = (props: Props) => {
   };
 
   // Function to plot schools on the map from CSV data
-  const plotSchoolsOnMap = (schools, map) => {
+  const plotSchoolsOnMap = (schools: School[], map: mapboxgl.Map) => {
     schools.forEach((school) => {
       const longitude = parseFloat(school.X);
       const latitude = parseFloat(school.Y);
