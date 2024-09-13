@@ -151,6 +151,134 @@ const Page = () => {
         </div>
       </div>
 
+      {/* Survival skills section*/}
+      <div className="relative py-8 flex flex-col items-center justify-center w-full">
+        <div className="absolute inset-0 bg-[url('/home-new.webp')] bg-[#FFFBF2] opacity-10 bg-cover bg-center brightness-75"></div>
+        <h1 className="text-3xl font-black text-center text-gray-700 mb-4">
+          Survival Skills
+        </h1>
+        <hr className="w-full max-w-lg border-gray-700 mb-4 mx-auto" />
+
+        <h2 className="text-2xl font-black text-center text-gray-700 mb-4">
+          What Places Should You Watch Out For?
+        </h2>
+
+        {/* Close to grass Container */}
+        <div className="flex flex-col md:flex-row items-center justify-around p-8">
+          {/* Image Container */}
+          <div className="w-full md:w-1/2 p-4">
+            <div className="transition-transform transform hover:scale-105 duration-500">
+              <Image
+                src="/closeToGrass.png"
+                alt="Paddock"
+                className="rounded-2xl w-full h-auto"
+                width={500}
+                height={300}
+              />
+            </div>
+          </div>
+
+          {/* Text Card */}
+          <div className="w-full md:w-auto bg-[#FFE6C5] p-6 rounded-lg shadow-lg mt-8 md:mt-0 transition-transform transform hover:scale-105 duration-500">
+            <h2 className="text-2xl font-semibold mb-4 text-gray-800">
+              1) Close to or among grass or paddocks
+            </h2>
+            <ul className="list-disc list-inside text-xl text-gray-700">
+              <li>Dry, brown grass can catch fire really fast.</li>
+              <li>Tall grass makes bigger flames.</li>
+              <li>Grass fires spread quicker than forest fires.</li>
+            </ul>
+          </div>
+        </div>
+        {/* 2)	dense or open bush  Container */}
+        <div className="flex flex-col md:flex-row items-center justify-around p-8">
+          {/* Text Card */}
+          <div className="w-full md:w-auto bg-[#FFE6C5] p-6 rounded-lg shadow-lg mt-8 md:mt-0 transition-transform transform hover:scale-105 duration-500">
+            <h2 className="text-2xl font-semibold mb-4 text-gray-800">
+              2) Dense or open bush
+            </h2>
+            <ul className="list-disc list-inside text-xl text-gray-700">
+              <li>Both thick and open bush can be risky.</li>
+              <li>
+                Small sticks burn fast, and big logs stay hot for a long time.
+              </li>
+              <li>Smoke from the fire can make it hard to see.</li>
+            </ul>
+          </div>
+          {/* Image Container */}
+          <div className="w-full md:w-1/2 p-4">
+            <div className="transition-transform transform hover:scale-105 duration-500">
+              <Image
+                src="/denseBush.png"
+                alt="Dense Bush"
+                className="rounded-2xl w-auto h-auto"
+                width={500}
+                height={300}
+              />
+            </div>
+          </div>
+        </div>
+        {/* 3)	Costal scrub  Container */}
+        <div className="flex flex-col md:flex-row items-center justify-around p-8">
+          {/* Image Container */}
+          <div className="w-full md:w-1/2 p-4">
+            <div className="transition-transform transform hover:scale-105 duration-500">
+              <Image
+                src="/costalScrub.png"
+                alt="Costal"
+                className="rounded-lg w-auto h-auto"
+                width={500}
+                height={300}
+              />
+            </div>
+          </div>
+          {/* Text Card */}
+          <div className="w-full md:w-auto bg-[#FFE6C5] p-6 rounded-lg shadow-lg mt-8 md:mt-0 transition-transform transform hover:scale-105 duration-500">
+            <h2 className="text-2xl font-semibold mb-4 text-gray-800">
+              3) Near coastal scrub
+            </h2>
+            <ul className="list-disc list-inside text-xl text-gray-700">
+              <li>The coast fires will be very hot and spread quickly.</li>
+              <li>Ocean winds can make the fire move in surprising ways.</li>
+              <li>Lots of small, burning pieces will be flying around.</li>
+            </ul>
+          </div>
+        </div>
+        {/* 4) Where suburbs meet the bush or grasslands   Container */}
+        <div className="flex flex-col md:flex-row items-center justify-around p-8">
+          {/* Text Card */}
+          <div className="w-full md:w-auto bg-[#FFE6C5] p-6 rounded-lg shadow-lg mt-8 md:mt-0 transition-transform transform hover:scale-105 duration-500">
+            <h2 className="text-2xl font-semibold mb-4 text-gray-800">
+              4) Where suburbs meet the bush or grasslands
+            </h2>
+            <ul className="list-disc list-inside text-xl text-gray-700">
+              <li>
+                Fires in parks or reserves can quickly spread to nearby fences
+                and gardens.
+              </li>
+              <li>Fires can jump from one house to another.</li>
+              <li>
+                If you live near bushes, burning pieces might land on your
+                house.
+              </li>
+              <li>Strong winds can blow burning pieces from far away.</li>
+            </ul>
+          </div>
+          {/* Image Container */}
+          <div className="w-full md:w-1/2 p-4">
+            <div className="transition-transform transform hover:scale-105 duration-500">
+              <Image
+                src="/grassland.png"
+                alt="Grassland"
+                className="rounded-lg w-auto h-auto"
+                width={500}
+                height={300}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
       <Footer />
     </div>
   );
