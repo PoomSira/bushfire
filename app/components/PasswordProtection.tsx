@@ -14,7 +14,7 @@ const PasswordProtection: React.FC<PasswordProtectionProps> = ({
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
-  const correctPassword = "WeLovePatrick"; // Replace with your desired password
+  const correctPassword = "PleaseWeNeedHD"; // Replace with your desired password
 
   const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPassword(e.target.value);
