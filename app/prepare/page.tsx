@@ -65,18 +65,17 @@ const Page = () => {
           </h1>
           <hr className="w-full max-w-lg border-gray-700 mb-4 mx-auto" />
 
-          <div className="w-full flex p-12 rounded-md h-screen">
-            {/* Tableau Visualization */}
-            <div className="w-3/4 h-full">
-              <TableauVizSeason />
-            </div>
-
-            {/* Text Content */}
-            <div className="w-1/4 p-6 h-full overflow-auto bg-[#FFFBF2] rounded-lg">
+          <div className="w-8/12 flex justify-center items-center ml-10">
+            <TableauVizSeason />
+          </div>
+          {/* Additional Information Cards */}
+          <div className="-mt-96 w-full px-12 flex justify-around space-x-4 min-h-56">
+            {/* Card 1 */}
+            <div className="w-1/3 bg-[#FFFBF2] p-6 rounded-lg shadow-lg">
               <div className="p-4 bg-[#FFE6C5] rounded-md shadow-md">
-                <h2 className="text-2xl text-[#EA580B] font-bold mb-4">
-                  Additional Information
-                </h2>
+                {/* <h2 className="text-2xl text-[#EA580B] font-bold mb-4">
+                    Additional Information
+                  </h2> */}
                 <div className="cursor-pointer" onClick={toggleAnswerOne}>
                   <h4 className="text-xl font-bold mb-4 text-gray-700 flex justify-between items-center">
                     When should we be careful?
@@ -96,7 +95,12 @@ const Page = () => {
                     </p>
                   </div>
                 )}
+              </div>
+            </div>
 
+            {/* Card 2 */}
+            <div className="w-1/3 bg-[#FFFBF2] p-6 rounded-lg shadow-lg">
+              <div className="p-4 bg-[#FFE6C5] rounded-md shadow-md">
                 <div className="cursor-pointer" onClick={toggleAnswerTwo}>
                   <h4 className="text-xl font-bold mb-4 text-gray-700 flex justify-between items-center">
                     Which season should we be careful in?
@@ -117,7 +121,12 @@ const Page = () => {
                     </p>
                   </div>
                 )}
+              </div>
+            </div>
 
+            {/* Card 3 */}
+            <div className="w-1/3 bg-[#FFFBF2] p-6 rounded-lg shadow-lg">
+              <div className="p-4 bg-[#FFE6C5] rounded-md shadow-md">
                 <div className="cursor-pointer" onClick={toggleAnswerThree}>
                   <h4 className="text-xl font-bold mb-4 text-gray-700 flex justify-between items-center">
                     Which months should we be very careful?
@@ -141,7 +150,7 @@ const Page = () => {
             </div>
           </div>
 
-          <div className="w-full px-6 flex">
+          <div className="relative w-full px-6 flex">
             <BushfireAreaMap />
           </div>
 
