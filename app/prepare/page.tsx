@@ -65,11 +65,11 @@ const Page = () => {
           </h1>
           <hr className="w-full max-w-lg border-gray-700 mb-4 mx-auto" />
 
-          <div className="w-8/12 flex justify-center items-center ml-10">
+          <div className="w-8/12 flex justify-center items-center ml-10 mt-4">
             <TableauVizSeason />
           </div>
           {/* Additional Information Cards */}
-          <div className="-mt-96 w-full px-12 flex justify-around space-x-4 min-h-56">
+          <div className="w-full px-12 flex justify-around space-x-4 min-h-56 mt-4">
             {/* Card 1 */}
             <div className="w-1/3 bg-[#FFFBF2] p-6 rounded-lg shadow-lg">
               <div className="p-4 bg-[#FFE6C5] rounded-md shadow-md">
