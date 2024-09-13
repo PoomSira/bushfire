@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "mapbox-gl/dist/mapbox-gl.css";
 import mapboxgl from "mapbox-gl";
 import Papa from "papaparse"; // For parsing CSV data
+import { FeatureCollection, GeoJsonProperties, Point } from "geojson";
 
 interface School {
   Facility_Name: string;
@@ -172,23 +173,72 @@ const BushfireAreaMap = () => {
     setFilteredSchools([]); // Hide the dropdown after selection
   };
 
-  // Function to plot schools on the map from CSV data
   const plotSchoolsOnMap = (schools: School[], map: mapboxgl.Map) => {
-    schools.forEach((school) => {
-      const longitude = parseFloat(school.X);
-      const latitude = parseFloat(school.Y);
+    // Create a GeoJSON source for the schools data
+    const geojsonData: FeatureCollection<Point, GeoJsonProperties> = {
+      type: "FeatureCollection",
+      features: schools.map((school) => ({
+        type: "Feature",
+        geometry: {
+          type: "Point",
+          coordinates: [parseFloat(school.X), parseFloat(school.Y)], // Longitude, Latitude
+        },
+        properties: {
+          name: school.Facility_Name,
+          risk: school.Fire_Risk_Category_2023_24,
+        },
+      })),
+    };
 
-      // Check if coordinates are valid
-      if (!isNaN(longitude) && !isNaN(latitude)) {
-        const marker = new mapboxgl.Marker({ color: "#FF0000" }) // Red color for school markers
-          .setLngLat([longitude, latitude]) // Longitude and Latitude from the CSV data
-          .setPopup(
-            new mapboxgl.Popup({ offset: 25 }).setText(
-              `School: ${school.Facility_Name}\nRisk: ${school.Fire_Risk_Category_2023_24}`
-            )
-          ) // Popup with school name and fire risk category
+    // Add the source to the map
+    map.addSource("schools", {
+      type: "geojson",
+      data: geojsonData,
+    });
+
+    // Add a circle layer to represent the schools as circles
+    map.addLayer({
+      id: "school-circles",
+      type: "circle",
+      source: "schools",
+      paint: {
+        "circle-color": "#1E1AB8", // Red color for the circles
+        "circle-radius": 6, // Size of the circles
+        "circle-stroke-width": 2,
+        "circle-stroke-color": "#FFFFFF", // White border around the circles
+      },
+    });
+
+    // Add popup functionality when clicking on a circle
+    map.on("click", "school-circles", (e) => {
+      if (e.features && e.features.length > 0) {
+        const feature = e.features[0];
+
+        // Cast geometry to Point type since we know it's a Point
+        const pointGeometry = feature.geometry as Point;
+        const coordinates = pointGeometry.coordinates.slice();
+        const description = `
+          <div style="color: #111827;">
+            <strong>School:</strong> ${feature.properties?.name}<br>
+            <strong>Risk:</strong> ${feature.properties?.risk}
+          </div>
+        `;
+
+        new mapboxgl.Popup()
+          .setLngLat(coordinates as [number, number]) // Ensure coordinates are [number, number]
+          .setHTML(description)
           .addTo(map);
       }
+    });
+
+    // Change the cursor to a pointer when hovering over the circles
+    map.on("mouseenter", "school-circles", () => {
+      map.getCanvas().style.cursor = "pointer";
+    });
+
+    // Change it back to the default when it's not hovering
+    map.on("mouseleave", "school-circles", () => {
+      map.getCanvas().style.cursor = "";
     });
   };
 
@@ -260,7 +310,7 @@ const BushfireAreaMap = () => {
             value={searchQuery}
             onChange={handleSearchChange}
             onKeyDown={handleKeyDown} // Handle keyboard navigation
-            className="w-full p-2 mb-4 border rounded-md"
+            className="w-full p-2 mb-4 border rounded-md placeholder-gray-500" // Use Tailwind's placeholder utility
           />
 
           {/* Dropdown for filtered school list */}
@@ -270,7 +320,7 @@ const BushfireAreaMap = () => {
                 <li
                   key={index}
                   onClick={() => handleSchoolClick(school)}
-                  className={`cursor-pointer p-2 mb-2 rounded-md ${
+                  className={`cursor-pointer p-2 mb-2 rounded-md text-gray-700 ${
                     index === highlightIndex ? "bg-orange-200" : ""
                   }`}
                 >

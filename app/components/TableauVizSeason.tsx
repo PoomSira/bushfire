@@ -10,10 +10,8 @@ const TableauVizSeason: React.FC = () => {
 
     if (divElement && vizElement) {
       const resizeViz = () => {
-        // Ensure the Tableau visualization fits within the available space
         vizElement.style.width = "100%";
-        // Adjust the height dynamically based on the parent element's height
-        vizElement.style.height = `${divElement.clientHeight}px`;
+        vizElement.style.height = `${divElement.clientWidth * 0.75}px`;
       };
 
       resizeViz();
@@ -31,7 +29,7 @@ const TableauVizSeason: React.FC = () => {
   return (
     <div
       ref={vizRef}
-      className="tableauPlaceholder w-full h-full" // Ensure full height to fit the container
+      className="tableauPlaceholder w-full" // Ensure full height to fit the container
       id="viz1725915259368"
       style={{ position: "relative" }}
     >
@@ -42,8 +40,8 @@ const TableauVizSeason: React.FC = () => {
             src="https://public.tableau.com/static/images/Bu/Bushfire_Brigade_Season/Dashboard1/1_rss.png"
             style={{ border: "none" }}
             layout="responsive"
-            width={500}
-            height={414}
+            width={1000}
+            height={827}
           />
         </a>
       </noscript>

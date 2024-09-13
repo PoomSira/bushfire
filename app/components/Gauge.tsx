@@ -112,31 +112,31 @@ const Gauge: React.FC = () => {
         {/* Buttons to change the image */}
         <div className="mt-4 flex space-x-4">
           <button
-            className="bg-gray-200 px-4 py-2 rounded"
+            className="bg-gray-200 px-4 py-2 rounded text-black border-2 border-black min-w-24"
             onClick={() => handleImageChange("/fdr-no-rating.svg", "no-rating")}
           >
             No Rating
           </button>
           <button
-            className="bg-green-200 px-4 py-2 rounded"
+            className="bg-[#64BF2F] hover:bg-green-200 px-4 py-2 rounded text-black border-2 border-black min-w-24"
             onClick={() => handleImageChange("/fdr-moderate.svg", "moderate")}
           >
             Moderate
           </button>
           <button
-            className="bg-yellow-200 px-4 py-2 rounded"
+            className="bg-[#FDDD3B] hover:bg-yellow-200 px-4 py-2 rounded text-black border-2 border-black min-w-24"
             onClick={() => handleImageChange("/fdr-high.svg", "high")}
           >
             High
           </button>
           <button
-            className="bg-orange-200 px-4 py-2 rounded"
+            className="bg-[#F78100] hover:bg-orange-200 px-4 py-2 rounded text-black border-2 border-black min-w-24"
             onClick={() => handleImageChange("/fdr-extreme.svg", "extreme")}
           >
             Extreme
           </button>
           <button
-            className="bg-red-200 px-4 py-2 rounded"
+            className="bg-[#ee3939] hover:bg-red-200 px-4 py-2 rounded text-black border-2 border-black min-w-24"
             onClick={() =>
               handleImageChange("/fdr-catastrophic.svg", "catastrophic")
             }
