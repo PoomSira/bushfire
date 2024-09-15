@@ -64,36 +64,40 @@ export default function Home() {
           </div>
         </div>
       </div>
-      {/* Test Section */}
+      {/* Tutor Section */}
       <div className="relative py-8 flex flex-col items-center justify-center">
         <div className="absolute inset-0 bg-[url('/home-new.webp')] bg-[#FFFBF2] opacity-20 bg-cover bg-center brightness-75"></div>
         <div className="relative z-10">
           <h1
             id="select"
-            className="text-3xl font-black text-center text-gray-800 mb-4"
+            className="text-2xl md:text-3xl font-black text-center text-gray-800 mb-4"
           >
             Get to know your tutors
           </h1>
           <hr className="w-full max-w-lg border-gray-800 mb-4 mx-auto" />
-          <div className="p-6">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="p-4 w-full">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* Koala Tutor */}
               <div className="relative w-full aspect-square bg-[#FFFBF2] rounded-full overflow-visible transform transition-transform duration-300 hover:scale-105">
-                <div className="absolute bg-[#FFE6C5] right-10 top-1/2 transform -translate-y-1/2 text-center py-2 px-2 rounded-md shadow-md transition-transform duration-300 hover:scale-105 hover:bg-orange-300">
-                  <button onClick={toggleKoalaPopup} className="text-black">
+                <div className="absolute bg-[#FFE6C5] right-4 md:right-10 top-1/2 transform -translate-y-1/2 text-center py-2 px-2 rounded-md shadow-md transition-transform duration-300 hover:scale-105 hover:bg-orange-300">
+                  <button
+                    onClick={toggleKoalaPopup}
+                    className="text-black text-sm md:text-base"
+                  >
                     Click to know me
                   </button>
                 </div>
                 <Image
                   src="/koala-t.png"
                   alt="Koala doctor with presentation"
-                  width={200} // Specify width
-                  height={200} // Specify height
+                  width={190} // Adjusted for smaller screens
+                  height={190}
                   className="object-cover animate-moveSideways"
                 />
                 {showKoalaPopup && (
                   <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
                     <div className="bg-white p-6 rounded-lg shadow-sm text-black">
-                      <h2 className="text-xl font-bold mb-4">
+                      <h2 className="text-lg md:text-xl font-bold mb-4">
                         Hello! I&apos;m Chloe, the koala
                       </h2>
                       <p className="mb-4">
@@ -112,23 +116,27 @@ export default function Home() {
                 )}
               </div>
 
+              {/* Kangaroo Tutor */}
               <div className="relative w-full aspect-square bg-[#FFFBF2] rounded-full overflow-visible transform transition-transform duration-300 hover:scale-105">
-                <div className="absolute bg-[#FFE6C5] right-10 top-1/2 transform -translate-y-1/2 text-center py-2 px-2 rounded-md shadow-md transition-transform duration-300 hover:scale-105 hover:bg-orange-300">
-                  <button onClick={toggleKangarooPopup} className="text-black">
+                <div className="absolute bg-[#FFE6C5] right-4 md:right-10 top-1/2 transform -translate-y-1/2 text-center py-2 px-2 rounded-md shadow-md transition-transform duration-300 hover:scale-105 hover:bg-orange-300">
+                  <button
+                    onClick={toggleKangarooPopup}
+                    className="text-black text-sm md:text-base"
+                  >
                     Click to know me
                   </button>
                 </div>
                 <Image
                   src="/kangaroo.png"
                   alt="Kangaroo firefighter with presentation"
-                  width={270} // Specify width
-                  height={270} // Specify height
+                  width={240} // Adjusted for smaller screens
+                  height={240}
                   className="object-cover animate-moveSideways"
                 />
                 {showKangarooPopup && (
                   <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
                     <div className="bg-white p-6 rounded-lg shadow-2xl text-black">
-                      <h2 className="text-xl font-bold mb-4">
+                      <h2 className="text-lg md:text-xl font-bold mb-4">
                         Hello! I&apos;m Jacky, the kangaroo
                       </h2>
                       <p className="mb-4">
@@ -148,23 +156,27 @@ export default function Home() {
                 )}
               </div>
 
+              {/* Wombat Tutor */}
               <div className="relative w-full aspect-square bg-[#FFFBF2] rounded-full overflow-visible transform transition-transform duration-300 hover:scale-105">
-                <div className="absolute bg-[#FFE6C5] text-black right-10 top-1/2 transform -translate-y-1/2 text-center py-2 px-2 rounded-md shadow-md transition-transform duration-300 hover:scale-105 hover:bg-orange-300">
-                  <button onClick={toggleWombatPopup} className="text-black">
+                <div className="absolute bg-[#FFE6C5] right-4 md:right-10 top-1/2 transform -translate-y-1/2 text-center py-2 px-2 rounded-md shadow-md transition-transform duration-300 hover:scale-105 hover:bg-orange-300">
+                  <button
+                    onClick={toggleWombatPopup}
+                    className="text-black text-sm md:text-base"
+                  >
                     Click to know me
                   </button>
                 </div>
                 <Image
                   src="/wombat.png"
                   alt="Wombat volunteer with presentation"
-                  width={220} // Specify width
-                  height={220} // Specify height
+                  width={190} // Adjusted for smaller screens
+                  height={190}
                   className="object-cover animate-moveSideways"
                 />
                 {showWombatPopup && (
                   <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
                     <div className="bg-white p-6 rounded-lg shadow-2xl text-black">
-                      <h2 className="text-xl font-bold mb-4">
+                      <h2 className="text-lg md:text-xl font-bold mb-4">
                         Hello! I&apos;m Johny, the wombat
                       </h2>
                       <p className="mb-4">
