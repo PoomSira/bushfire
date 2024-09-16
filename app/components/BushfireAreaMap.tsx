@@ -45,7 +45,6 @@ const BushfireAreaMap = () => {
     // Add navigation controls (zoom in/out)
     map.addControl(new mapboxgl.NavigationControl());
 
-    // Load CSV data and display schools
     map.on("load", () => {
       // Dynamically import pako
       import("pako").then((pako) => {
@@ -117,9 +116,6 @@ const BushfireAreaMap = () => {
           });
         });
     });
-
-    // Cleanup on unmount
-    return () => map.remove();
 
     // Cleanup on unmount
     return () => map.remove();

@@ -11,6 +11,9 @@ import TableauViz from "../components/TableauViz";
 import TableauPictograph from "../components/TableauPictograph";
 import TableauCluster from "../components/TableauCluster";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
+import EmergencyKitGame from "../components/EmergencyKitGame";
 
 const Page = () => {
   const [value, setValue] = useState(50);
@@ -296,6 +299,9 @@ const Page = () => {
         </div>
       </div>
 
+      <DndProvider backend={HTML5Backend}>
+        <EmergencyKitGame />
+      </DndProvider>
       <Footer />
     </div>
   );
