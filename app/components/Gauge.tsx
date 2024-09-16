@@ -174,9 +174,13 @@ const Gauge: React.FC = () => {
       </div>
 
       {/* Right column - Static content */}
-      <div className="flex flex-col items-start bg-[#FFFBF2] p-6 rounded-md">
-        <h2 className="text-2xl font-bold mb-4">{texts[currentText].title}</h2>
-        <div className="whitespace-pre-line">{texts[currentText].content}</div>
+      <div className="flex flex-col items-center bg-[#FFFBF2] bg-[url('/forest.png')] bg-cover bg-center bg-no-repeat p-6 rounded-md">
+        <h2 className="text-xl md:text-2xl font-bold mb-4 tex text-[#EA580B]">
+          {texts[currentText].title}
+        </h2>
+        <div className="whitespace-pre-line text-lg md:text-lg text-black bg-[#FFE6C5] p-6 rounded-md shadow-md">
+          {texts[currentText].content}
+        </div>
       </div>
     </div>
   );
