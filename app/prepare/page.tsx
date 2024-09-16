@@ -8,6 +8,7 @@ import Gauge from "../components/Gauge";
 import BushfireAreaMap from "../components/BushfireAreaMap";
 import TableauVizSeason from "../components/TableauVizSeason";
 import Fireplan from "../components/Fireplan";
+import BushfireSurvival from "../components/BushfireSurvival";
 import TableauViz from "../components/TableauViz";
 import TableauPictograph from "../components/TableauPictograph";
 import TableauCluster from "../components/TableauCluster";
@@ -223,7 +224,7 @@ const Page = () => {
             {/* Text Card */}
             <div className="w-full bg-[#FFE6C5] p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 duration-500">
               <h2 className="text-2xl font-semibold mb-4 text-gray-800">
-                1) Close to or among grass or paddocks
+                1) Close to or among grass
               </h2>
               <ul className="list-disc list-inside text-xl text-gray-700">
                 <li>Dry, brown grass can catch fire really fast.</li>
@@ -250,7 +251,7 @@ const Page = () => {
             {/* Text Card */}
             <div className="w-full bg-[#FFE6C5] p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 duration-500">
               <h2 className="text-2xl font-semibold mb-4 text-gray-800">
-                2) Dense or open bush
+                2) Area with thick bushes
               </h2>
               <ul className="list-disc list-inside text-xl text-gray-700">
                 <li>Both thick and open bush can be risky.</li>
@@ -282,7 +283,7 @@ const Page = () => {
             {/* Text Card */}
             <div className="w-full bg-[#FFE6C5] p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 duration-500">
               <h2 className="text-2xl font-semibold mb-4 text-gray-800">
-                3) Near coastal scrub
+                3) Near beaches with bushes
               </h2>
               <ul className="list-disc list-inside text-xl text-gray-700">
                 <li>The coast fires will be very hot and spread quickly.</li>
@@ -370,6 +371,18 @@ const Page = () => {
           <DndProvider backend={HTML5Backend}>
             <EmergencyKitGame />
           </DndProvider>
+        </div>
+      </div>
+
+      {/*Bushfire survival option*/}
+      <div className="relative py-8 flex flex-col items-center justify-center w-full">
+        <div className="absolute inset-0 bg-[url('/3.webp')] bg-[#FFFBF2] opacity-20 bg-cover bg-center brightness-75"></div>
+        <h1 className="text-3xl font-black text-center text-gray-700 mb-4">
+          Bushfire Survival Options!
+        </h1>
+        <hr className="w-full max-w-lg border-gray-700 mb-4 mx-auto" />
+        <div className="relative w-full flex flex-col items-center justify-center">
+          <BushfireSurvival />
         </div>
       </div>
 
