@@ -296,6 +296,35 @@ const Page = () => {
         </div>
       </div>
 
+      {/* Fire plan section */}
+      <div className="relative py-8 flex flex-col items-center justify-center w-full">
+        <div className="absolute inset-0 bg-[url('/kids-talking.jpeg')] bg-[#FFFBF2] opacity-10 bg-cover bg-center brightness-75"></div>
+        <h1 className="text-3xl font-black text-center text-gray-700 mb-4">
+          Why Having a Fire Plan is Super Important!
+        </h1>
+        <hr className="w-full max-w-lg border-gray-700 mb-4 mx-auto" />
+
+        <div className="relative p-10 py-8 flex items-center justify-center w-full">
+          <div className="w-3/4 px-8 bg-[#FFE6C5] p-8 rounded-xl shadow-lg transition-transform transform hover:scale-105 duration-500 relative z-10">
+            <p className="text-2xl text-center text-gray-700 mb-4 relative">
+              A fire plan helps keep you safe by showing you exactly what to do
+              if there&apos;s a fire. It helps you stay calm, know where to go,
+              and what to take. It&apos;s like having a safety guide to keep you
+              and your family out of trouble! 🚒🔥
+            </p>
+          </div>
+          <div className="z-20">
+            <Image
+              src="/kangaroo.png"
+              alt="Kangaroo pointing at the card"
+              width={200}
+              height={200}
+              className="object-contain animate-moveSideways"
+            />
+          </div>
+        </div>
+      </div>
+
       <Footer />
     </div>
   );
