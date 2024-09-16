@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import Gauge from "../components/Gauge";
 import BushfireAreaMap from "../components/BushfireAreaMap";
 import TableauVizSeason from "../components/TableauVizSeason";
+import Fireplan from "../components/Fireplan";
 import TableauViz from "../components/TableauViz";
 import TableauPictograph from "../components/TableauPictograph";
 import TableauCluster from "../components/TableauCluster";
@@ -323,6 +324,7 @@ const Page = () => {
             />
           </div>
         </div>
+        <Fireplan />
       </div>
 
       <Footer />
