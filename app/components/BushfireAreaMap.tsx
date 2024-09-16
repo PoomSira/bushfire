@@ -295,10 +295,10 @@ const BushfireAreaMap = () => {
             find out if our school is at risk.
           </p>
           <ul className="text-gray-700 my-4">
-            <li>Category 1: Extreme risk</li>
-            <li>Category 2: High risk</li>
-            <li>Category 3: Medium risk</li>
-            <li>Category 4: Low risk</li>
+            <li>CAT 1: Extreme risk</li>
+            <li>CAT 2: High risk</li>
+            <li>CAT 3: Medium risk</li>
+            <li>CAT 4: Low risk</li>
           </ul>
           <input
             type="text"

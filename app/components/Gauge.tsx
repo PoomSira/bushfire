@@ -7,78 +7,110 @@ const Gauge: React.FC = () => {
   const [currentText, setCurrentText] = useState<
     "no-rating" | "moderate" | "high" | "extreme" | "catastrophic"
   >("no-rating");
-  const [expanded, setExpanded] = useState<string | null>(null); // For accordion
 
-  // Text for each danger level
+  // Updated text for each danger level with bullet points where necessary
   const texts = {
     "no-rating": {
       title: "No Rating",
-      content: [
-        {
-          question:
-            "On days when there is minimal risk, the Fire Danger Rating will be set to ‘no rating’.",
-          answer:
-            "Bushfires which start in these conditions are unlikely to spread in a dangerous or life-threatening way, but you will still need to remain alert and abide by local seasonal laws and regulations.",
-        },
-      ],
+      content:
+        "On days when there is minimal risk, the Fire Danger Rating will be set to ‘no rating’. Bushfires which start in these conditions are unlikely to spread in a dangerous or life-threatening way, but you will still need to remain alert and abide by local seasonal laws and regulations.",
     },
     moderate: {
       title: "Moderate",
-      content: [
-        {
-          question: "What does it mean?",
-          answer: "Most fires can be controlled.",
-        },
-        {
-          question: "What should I do?",
-          answer:
-            "Plan and prepare. Stay up to date and be ready to act if there is a fire.",
-        },
-      ],
+      content: (
+        <div>
+          <p>What does it mean?</p>
+          <ul className="list-disc pl-5">
+            <li>Most fires can be controlled.</li>
+          </ul>
+          <p>What should I do?</p>
+          <ul className="list-disc pl-5">
+            <li>Plan and prepare.</li>
+            <li>Stay up to date and be ready to act if there is a fire.</li>
+          </ul>
+        </div>
+      ),
     },
     high: {
       title: "High",
-      content: [
-        {
-          question: "What does it mean?",
-          answer: "Fires can be dangerous.",
-        },
-        {
-          question: "What should I do?",
-          answer:
-            "Be ready to act. There’s a heightened risk. Be alert for fires in your area.",
-        },
-      ],
+      content: (
+        <div>
+          <p>What does it mean?</p>
+          <ul className="list-disc pl-5">
+            <li>Fires can be dangerous.</li>
+          </ul>
+          <p>What should I do?</p>
+          <ul className="list-disc pl-5">
+            <li>Be ready to act.</li>
+            <li>There’s a heightened risk. Be alert for fires in your area.</li>
+            <li>Decide what you will do if a fire starts.</li>
+            <li>
+              If a fire starts, your life and property may be at risk. The
+              safest option is to avoid bushfire risk areas.
+            </li>
+          </ul>
+        </div>
+      ),
     },
     extreme: {
       title: "Extreme",
-      content: [
-        {
-          question: "What does it mean?",
-          answer:
-            "Fires will spread quickly and be extremely dangerous. These are dangerous fire conditions.",
-        },
-        {
-          question: "What should I do?",
-          answer:
-            "Take action now to protect your life and property. Check your bushfire plan and ensure that your property is fire ready.",
-        },
-      ],
+      content: (
+        <div>
+          <p>What does it mean?</p>
+          <ul className="list-disc pl-5">
+            <li>Fires will spread quickly and be extremely dangerous.</li>
+            <li>These are dangerous fire conditions.</li>
+            <li>Expect hot, dry and windy conditions.</li>
+          </ul>
+          <p>What should I do?</p>
+          <ul className="list-disc pl-5">
+            <li>
+              Check your bushfire plan and that your property is fire ready
+            </li>
+            <li>
+              If a fire starts, take immediate action. If you and your property
+              are not prepared to the highest level, go to a safer location well
+              before the fire impacts.
+            </li>
+            <li>Reconsider travel through bushfire risk areas.</li>
+            <li>
+              Leaving bushfire risk areas early in the day is your safest
+              option.hat
+            </li>
+          </ul>
+        </div>
+      ),
     },
     catastrophic: {
       title: "Catastrophic",
-      content: [
-        {
-          question: "What does it mean?",
-          answer:
-            "If a fire starts and takes hold, lives are likely to be lost. These are the most dangerous conditions for a fire.",
-        },
-        {
-          question: "What should I do?",
-          answer:
-            "For your survival, leave bushfire risk areas early in the day.",
-        },
-      ],
+      content: (
+        <div>
+          <p>What does it mean?</p>
+          <ul className="list-disc pl-5">
+            <li>
+              If a fire starts and takes hold, lives are likely to be lost.
+            </li>
+            <li>These are the most dangerous conditions for a fire.</li>
+          </ul>
+          <p>What should I do?</p>
+          <ul className="list-disc pl-5">
+            <li>For your survival, leave bushfire risk areas.</li>
+            <li>
+              Your life may depend on the decisions you make, even before there
+              is a fire.
+            </li>
+            <li>For your survival, do not be in bushfire risk areas.</li>
+            <li>
+              Stay safe by going to a safer location early in the morning or the
+              night before.
+            </li>
+            <li>
+              Homes cannot withstand fires in these conditions. You may not be
+              able to leave and help may not be available.
+            </li>
+          </ul>
+        </div>
+      ),
     },
   };
 
@@ -91,15 +123,10 @@ const Gauge: React.FC = () => {
     setCurrentText(textKey);
   };
 
-  // Toggle accordion for text sections
-  const toggleAccordion = (index: number) => {
-    setExpanded(expanded === `item-${index}` ? null : `item-${index}`);
-  };
-
   return (
     <div className="grid grid-cols-2 gap-4 p-6 rounded-lg w-full">
       {/* Left column - Image and buttons */}
-      <div className="flex flex-col items-center justify-center bg-[#FFFBF2] p-6 rounded-md">
+      <div className="flex flex-col items-center justify-center bg-[url('/forest.png')] bg-cover bg-center bg-no-repeat p-6 rounded-md">
         {/* Display the current image */}
         <Image
           src={currentImage}
@@ -110,7 +137,7 @@ const Gauge: React.FC = () => {
         />
 
         {/* Buttons to change the image */}
-        <div className="mt-4 flex space-x-4">
+        <div className="mt-4 flex flex-col space-y-4 w-3/4">
           <button
             className="bg-gray-200 px-4 py-2 rounded text-black border-2 border-black min-w-24"
             onClick={() => handleImageChange("/fdr-no-rating.svg", "no-rating")}
@@ -146,50 +173,10 @@ const Gauge: React.FC = () => {
         </div>
       </div>
 
-      {/* Right column - Accordion content with fixed width */}
+      {/* Right column - Static content */}
       <div className="flex flex-col items-start bg-[#FFFBF2] p-6 rounded-md">
         <h2 className="text-2xl font-bold mb-4">{texts[currentText].title}</h2>
-
-        {/* Accordion */}
-        {texts[currentText].content.map((item, index) => (
-          <div key={index} className="mb-2 w-full">
-            <div
-              className="cursor-pointer text-lg font-semibold bg-gray-100 px-4 py-2 rounded w-full flex justify-between items-center"
-              onClick={() => toggleAccordion(index)}
-            >
-              {item.question}
-              {/* Insert the SVG icon for chevron down/up */}
-              <span
-                className={`transform transition-transform duration-300 ${
-                  expanded === `item-${index}` ? "rotate-180" : "rotate-0"
-                }`}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M6 9l6 6 6-6" />
-                </svg>
-              </span>
-            </div>
-            {/* Show answer only if expanded */}
-            {expanded === `item-${index}` && (
-              <div
-                className="pl-4 mt-1 bg-white px-4 py-2 rounded"
-                style={{ width: "100%" }} // Fixed width for the answer as well
-              >
-                {item.answer}
-              </div>
-            )}
-          </div>
-        ))}
+        <div className="whitespace-pre-line">{texts[currentText].content}</div>
       </div>
     </div>
   );

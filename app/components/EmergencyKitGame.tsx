@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import DraggableItem from "./DraggableItem";
 import CategoryBox from "./CategoryBox";
+import Image from "next/image"; // Assuming you're using Next.js, if not replace with img tag
 
-// EmergencyKitGame.tsx
 export type CategoryName =
   | "Overnight Bag"
   | "Important Stuff"
@@ -96,10 +96,13 @@ const EmergencyKitGame: React.FC = () => {
     );
   };
 
+  // Check if all items are categorized
+  const allItemsCategorized = availableItems.length === 0;
+
   return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4">Emergency Kit Packing Game</h1>
-      <div className="flex flex-col lg:flex-row gap-6">
+    <div className="p-12 w-full">
+      {/* <h1 className="text-2xl font-bold mb-4">Emergency Kit Packing Game</h1> */}
+      <div className="flex flex-col lg:flex-row gap-6 bg-[#FFFBF2] p-4 rounded-lg">
         <div className="w-full lg:w-1/2">
           <h2 className="text-xl font-semibold mb-2">Items to Pack</h2>
           <div className="grid grid-cols-2 gap-4">
@@ -107,6 +110,21 @@ const EmergencyKitGame: React.FC = () => {
               <DraggableItem key={item} item={item} />
             ))}
           </div>
+          {/* Display success message and Kangaroo Image when all items are categorized */}
+          {allItemsCategorized && (
+            <div className="flex flex-col justify-center items-center mt-12">
+              <div className="text-2xl font-bold text-center mb-4 bg-[#FFE6C5] p-4 rounded-lg shadow-md">
+                You have done a great job!
+              </div>
+              <Image
+                src="/kangaroo.png"
+                alt="Kangaroo pointing at the card"
+                width={200}
+                height={200}
+                className="object-contain animate-moveSideways"
+              />
+            </div>
+          )}
         </div>
         <div className="w-full lg:w-1/2">
           <h2 className="text-xl font-semibold mb-2">Pack into Categories</h2>

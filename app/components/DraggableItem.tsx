@@ -20,7 +20,7 @@ const DraggableItem: React.FC<DraggableItemProps> = ({ item }) => {
       ref={(instance) => {
         if (instance) drag(instance); // Correctly connect the drag functionality to the element
       }}
-      className={`p-3 border bg-white rounded-md shadow-md text-center cursor-move ${
+      className={`p-3 border bg-[#FFE6C5] rounded-md shadow-md text-center cursor-move ${
         isDragging ? "opacity-50" : "opacity-100"
       }`}
     >

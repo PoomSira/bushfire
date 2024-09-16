@@ -69,6 +69,21 @@ const Page = () => {
           </h1>
           <hr className="w-full max-w-lg border-gray-700 mb-4 mx-auto" />
 
+          <div className="bg-[#FFFBF2] p-12 rounded-lg mx-12">
+            <div className="py-4 bg-[#ffe6c5] rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105">
+              <p className="text-2xl text-orange-600 text-center">
+                Introduction
+              </p>
+              <p className="text-xl font-medium text-gray-800 text-center mb-2 p-5">
+                Bushfires can be scary, but we can learn how to stay safe if
+                they happen. In this section, we'll talk about what we can do to
+                get ready for bushfires and how to stay safe if one starts. It’s
+                important to know what to do so we can protect ourselves and
+                others!
+              </p>
+            </div>
+          </div>
+
           <div className="w-8/12 flex justify-center items-center ml-10 mt-4">
             <TableauVizSeason />
           </div>
@@ -151,6 +166,19 @@ const Page = () => {
                   </div>
                 )}
               </div>
+            </div>
+          </div>
+
+          <div className="bg-[#FFFBF2] p-12 rounded-lg mx-12 mt-8">
+            <div className="py-4 bg-[#ffe6c5] rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105">
+              <p className="text-2xl text-orange-600 text-center">
+                Do You Know?
+              </p>
+              <p className="text-xl font-medium text-gray-800 text-center mb-2 p-5">
+                In the bar chart, the spike in the 2019 summer season, known as
+                the "Black Summer," was one of the most intense and catastrophic
+                fire seasons on record in Australia.
+              </p>
             </div>
           </div>
 
@@ -330,9 +358,21 @@ const Page = () => {
         <Fireplan />
       </div>
 
-      <DndProvider backend={HTML5Backend}>
-        <EmergencyKitGame />
-      </DndProvider>
+      {/* Emergency Kit Packing Game */}
+      <div className="relative py-8 flex flex-col items-center justify-center w-full">
+        <div className="absolute inset-0 bg-[url('/bag.png')] bg-[#FFFBF2] opacity-20 bg-cover bg-center brightness-75"></div>
+        <h1 className="text-3xl font-black text-center text-gray-700 mb-4">
+          Emergency Kit Packing Game
+        </h1>
+        <hr className="w-full max-w-lg border-gray-700 mb-4 mx-auto" />
+
+        <div className="relative w-full flex flex-col items-center justify-center">
+          <DndProvider backend={HTML5Backend}>
+            <EmergencyKitGame />
+          </DndProvider>
+        </div>
+      </div>
+
       <Footer />
     </div>
   );
