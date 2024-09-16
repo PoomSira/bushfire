@@ -85,23 +85,23 @@ const FireSafetyBasics: React.FC = () => {
         alt="Kangaroo"
         width={250}
         height={250}
-        className="absolute -right-60 animate-moveSideways"
+        className="absolute -right-40 top-4 md:-right-60 animate-moveSideways"
       />
 
-      <div className="relative bg-[#ce2029] p-8 w-auto rounded-xl shadow-md">
-        <h1 className="text-4xl font-bold text-center text-white mb-4">
+      <div className="relative bg-[#ce2029] p-6 md:p-8 rounded-xl shadow-md">
+        <h1 className="text-3xl md:text-4xl font-bold text-center text-white mb-4">
           Fire Safety Basics
         </h1>
-        <p className="text-white text-xl mb-6 text-center">
+        <p className="text-lg md:text-xl mb-6 text-center text-white">
           Click Each Circle so Mr. Joey, the Kangaroo Bushfire Fighter, will
           explain to you!
         </p>
 
-        <div className="grid grid-cols-3 gap-6 items-center">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 md:gap-6">
           {safetyTips.map((tip) => (
             <button
               key={tip.id}
-              className="relative w-56 h-56 rounded-full overflow-hidden transition-transform transform hover:scale-110"
+              className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-56 md:h-56 rounded-full overflow-hidden transition-transform transform hover:scale-110"
               onClick={() => setSelectedTip(tip)}
             >
               {/* Image as background */}
@@ -110,13 +110,17 @@ const FireSafetyBasics: React.FC = () => {
                 alt={tip.title}
                 layout="fill"
                 objectFit="cover"
-                className="rounded-full opacity-85"
+                className="rounded-full"
               />
 
               {/* Text Overlay (ID and Title) */}
-              <div className="absolute inset-0 flex flex-col justify-center items-center text-white">
-                <span className="text-2xl font-bold">{tip.id}</span>
-                <span className="text-lg text-center">{tip.title}</span>
+              <div className="absolute inset-0 flex flex-col justify-center items-center text-white bg-black bg-opacity-40">
+                <span className="text-lg sm:text-xl md:text-2xl font-bold">
+                  {tip.id}
+                </span>
+                <span className="text-xs sm:text-sm md:text-lg text-center">
+                  {tip.title}
+                </span>
               </div>
             </button>
           ))}
@@ -126,11 +130,13 @@ const FireSafetyBasics: React.FC = () => {
       {/* Popup */}
       {selectedTip && (
         <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center p-4 z-50">
-          <div className="bg-white p-6 rounded-lg w-96">
-            <h2 className="text-2xl text-black font-bold mb-4">
+          <div className="bg-white p-6 rounded-lg w-full max-w-md">
+            <h2 className="text-xl md:text-2xl text-black font-bold mb-4">
               {selectedTip.title}
             </h2>
-            <p className="text-black text-xl">{selectedTip.content}</p>
+            <p className="text-black text-base md:text-xl">
+              {selectedTip.content}
+            </p>
 
             <button
               className="mt-4 bg-[#ce2029] text-white px-4 py-2 rounded hover:bg-black transition-colors"
