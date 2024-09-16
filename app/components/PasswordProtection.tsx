@@ -49,7 +49,7 @@ const PasswordProtection: React.FC<PasswordProtectionProps> = ({
           />
           {/* Overlay */}
           <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
-            <div className="bg-white p-6 rounded-xl shadow-lg w-full max-w-md text-black">
+            <div className="bg-[#FFFBF2] p-6 rounded-xl shadow-lg w-full max-w-md text-black opacity-95">
               {/* Logo Section */}
               <div className="flex justify-center mb-4">
                 <Image
