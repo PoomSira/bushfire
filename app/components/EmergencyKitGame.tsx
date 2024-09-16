@@ -104,7 +104,9 @@ const EmergencyKitGame: React.FC = () => {
       {/* <h1 className="text-2xl font-bold mb-4">Emergency Kit Packing Game</h1> */}
       <div className="flex flex-col lg:flex-row gap-6 bg-[#FFFBF2] p-4 rounded-lg">
         <div className="w-full lg:w-1/2">
-          <h2 className="text-xl font-semibold mb-2">Items to Pack</h2>
+          <h2 className="text-xl font-semibold mb-2 text-center">
+            Items to Pack
+          </h2>
           <div className="grid grid-cols-2 gap-4">
             {availableItems.map((item) => (
               <DraggableItem key={item} item={item} />
@@ -127,7 +129,9 @@ const EmergencyKitGame: React.FC = () => {
           )}
         </div>
         <div className="w-full lg:w-1/2">
-          <h2 className="text-xl font-semibold mb-2">Pack into Categories</h2>
+          <h2 className="text-xl font-semibold mb-2 text-center">
+            Pack into Categories
+          </h2>
           <div className="grid grid-cols-2 gap-4">
             {kitCategories.map((category) => (
               <CategoryBox
