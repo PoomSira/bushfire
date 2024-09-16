@@ -174,7 +174,7 @@ const Gauge: React.FC = () => {
       </div>
 
       {/* Right column - Static content */}
-      <div className="flex flex-col items-start bg-[#FFFBF2] p-6 rounded-md">
+      <div className="flex flex-col items-start bg-[#FFFBF2] text-black p-6 rounded-md">
         <h2 className="text-2xl font-bold mb-4">{texts[currentText].title}</h2>
         <div className="whitespace-pre-line">{texts[currentText].content}</div>
       </div>

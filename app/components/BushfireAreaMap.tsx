@@ -306,7 +306,7 @@ const BushfireAreaMap = () => {
             value={searchQuery}
             onChange={handleSearchChange}
             onKeyDown={handleKeyDown} // Handle keyboard navigation
-            className="w-full p-2 mb-4 border rounded-md placeholder-gray-500" // Use Tailwind's placeholder utility
+            className="w-full p-2 mb-4 border text-black rounded-md placeholder-gray-500" // Use Tailwind's placeholder utility
           />
 
           {/* Dropdown for filtered school list */}
