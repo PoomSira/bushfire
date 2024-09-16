@@ -19,11 +19,11 @@ const Gauge: React.FC = () => {
       title: "Moderate",
       content: (
         <div>
-          <p>What does it mean?</p>
+          <p className="font-bold text-2xl">What does it mean?</p>
           <ul className="list-disc pl-5">
             <li>Most fires can be controlled.</li>
           </ul>
-          <p>What should I do?</p>
+          <p className="font-bold text-2xl">What should I do?</p>
           <ul className="list-disc pl-5">
             <li>Plan and prepare.</li>
             <li>Stay up to date and be ready to act if there is a fire.</li>
@@ -35,11 +35,11 @@ const Gauge: React.FC = () => {
       title: "High",
       content: (
         <div>
-          <p>What does it mean?</p>
+          <p className="font-bold text-2xl">What does it mean?</p>
           <ul className="list-disc pl-5">
             <li>Fires can be dangerous.</li>
           </ul>
-          <p>What should I do?</p>
+          <p className="font-bold text-2xl">What should I do?</p>
           <ul className="list-disc pl-5">
             <li>Be ready to act.</li>
             <li>There’s a heightened risk. Be alert for fires in your area.</li>
@@ -56,13 +56,13 @@ const Gauge: React.FC = () => {
       title: "Extreme",
       content: (
         <div>
-          <p>What does it mean?</p>
+          <p className="font-bold text-2xl">What does it mean?</p>
           <ul className="list-disc pl-5">
             <li>Fires will spread quickly and be extremely dangerous.</li>
             <li>These are dangerous fire conditions.</li>
             <li>Expect hot, dry and windy conditions.</li>
           </ul>
-          <p>What should I do?</p>
+          <p className="font-bold text-2xl">What should I do?</p>
           <ul className="list-disc pl-5">
             <li>
               Check your bushfire plan and that your property is fire ready
@@ -85,14 +85,14 @@ const Gauge: React.FC = () => {
       title: "Catastrophic",
       content: (
         <div>
-          <p>What does it mean?</p>
+          <p className="font-bold text-2xl">What does it mean?</p>
           <ul className="list-disc pl-5">
             <li>
               If a fire starts and takes hold, lives are likely to be lost.
             </li>
             <li>These are the most dangerous conditions for a fire.</li>
           </ul>
-          <p>What should I do?</p>
+          <p className="font-bold text-2xl">What should I do?</p>
           <ul className="list-disc pl-5">
             <li>For your survival, leave bushfire risk areas.</li>
             <li>

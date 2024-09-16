@@ -175,7 +175,7 @@ const Page = () => {
                 Do You Know?
               </p>
               <p className="text-base font-medium text-gray-800 text-center mb-2 p-4 md:text-xl lg:p-5">
-                In the bar chart, the spike in the 2019 summer season, known as
+                In the line chart, the spike in the 2019 summer season, known as
                 the &quot;Black Summer,&quot; was one of the most intense and
                 catastrophic fire seasons on record in Australia.
               </p>
