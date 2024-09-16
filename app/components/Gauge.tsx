@@ -124,20 +124,20 @@ const Gauge: React.FC = () => {
   };
 
   return (
-    <div className="grid grid-cols-2 gap-4 p-6 rounded-lg w-full">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-6 rounded-lg w-full">
       {/* Left column - Image and buttons */}
       <div className="flex flex-col items-center justify-center bg-[url('/forest.png')] bg-cover bg-center bg-no-repeat p-6 rounded-md">
         {/* Display the current image */}
         <Image
           src={currentImage}
           alt="Gauge image"
-          width={400}
-          height={400}
-          className="object-cover"
+          width={300}
+          height={300}
+          className="object-cover md:w-400 md:h-400"
         />
 
         {/* Buttons to change the image */}
-        <div className="mt-4 flex flex-col space-y-4 w-3/4">
+        <div className="mt-4 flex flex-col space-y-4 w-full md:w-3/4">
           <button
             className="bg-gray-200 px-4 py-2 rounded text-black border-2 border-black min-w-24"
             onClick={() => handleImageChange("/fdr-no-rating.svg", "no-rating")}
@@ -174,9 +174,13 @@ const Gauge: React.FC = () => {
       </div>
 
       {/* Right column - Static content */}
-      <div className="flex flex-col items-start bg-[#FFFBF2] p-6 rounded-md">
-        <h2 className="text-2xl font-bold mb-4">{texts[currentText].title}</h2>
-        <div className="whitespace-pre-line">{texts[currentText].content}</div>
+      <div className="flex flex-col items-center bg-[#FFFBF2] bg-[url('/forest.png')] bg-cover bg-center bg-no-repeat p-6 rounded-md">
+        <h2 className="text-xl md:text-2xl font-bold mb-4 tex text-[#EA580B]">
+          {texts[currentText].title}
+        </h2>
+        <div className="whitespace-pre-line text-lg md:text-lg text-black bg-[#FFE6C5] p-6 rounded-md shadow-md">
+          {texts[currentText].content}
+        </div>
       </div>
     </div>
   );

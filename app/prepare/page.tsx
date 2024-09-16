@@ -61,20 +61,21 @@ const Page = () => {
 
       {/* Busfire map area */}
       <div className="relative py-8 flex flex-col items-center justify-center w-full">
+        {/* Background Image */}
         <div className="absolute inset-0 bg-[url('/class-room.webp')] bg-[#FFFBF2] opacity-20 bg-cover bg-center brightness-75"></div>
 
         <div className="relative w-full h-full flex flex-col items-center justify-center">
-          <h1 className="text-3xl font-black text-center text-gray-700 mb-4">
+          <h1 className="text-3xl font-black text-center text-gray-700 mb-4 md:text-4xl lg:text-5xl">
             Assessing my risk
           </h1>
           <hr className="w-full max-w-lg border-gray-700 mb-4 mx-auto" />
 
-          <div className="bg-[#FFFBF2] p-12 rounded-lg mx-12">
+          <div className="bg-[#FFFBF2] p-6 rounded-lg mx-4 md:p-8 lg:p-12">
             <div className="py-4 bg-[#ffe6c5] rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105">
-              <p className="text-2xl text-orange-600 text-center">
+              <p className="text-2xl text-orange-600 text-center md:text-3xl">
                 Introduction
               </p>
-              <p className="text-xl font-medium text-gray-800 text-center mb-2 p-5">
+              <p className="text-base font-medium text-gray-800 text-center mb-2 p-4 md:text-xl lg:p-5">
                 Bushfires can be scary, but we can learn how to stay safe if
                 they happen. In this section, we&apos;ll talk about what we can
                 do to get ready for bushfires and how to stay safe if one
@@ -84,19 +85,18 @@ const Page = () => {
             </div>
           </div>
 
-          <div className="w-8/12 flex justify-center items-center ml-10 mt-4">
+          {/* Responsive Tableau Visualization */}
+          <div className="w-full flex justify-center items-center mt-4 px-4 md:w-10/12 lg:w-8/12">
             <TableauVizSeason />
           </div>
-          {/* Additional Information Cards */}
-          <div className="w-full px-12 flex justify-around space-x-4 min-h-56 mt-4">
+
+          {/* Information Cards */}
+          <div className="w-full px-4 flex flex-col md:flex-row justify-around space-y-4 md:space-y-0 md:space-x-4 min-h-56 mt-4">
             {/* Card 1 */}
-            <div className="w-1/3 bg-[#FFFBF2] p-6 rounded-lg shadow-lg">
+            <div className="w-full md:w-1/3 bg-[#FFFBF2] p-4 md:p-6 rounded-lg shadow-lg">
               <div className="p-4 bg-[#FFE6C5] rounded-md shadow-md">
-                {/* <h2 className="text-2xl text-[#EA580B] font-bold mb-4">
-                    Additional Information
-                  </h2> */}
                 <div className="cursor-pointer" onClick={toggleAnswerOne}>
-                  <h4 className="text-xl font-bold mb-4 text-gray-700 flex justify-between items-center">
+                  <h4 className="text-lg md:text-xl font-bold mb-4 text-gray-700 flex justify-between items-center">
                     When should we be careful?
                     {isAnswerVisibleOne ? (
                       <ChevronUp className="w-6 h-6" />
@@ -108,7 +108,7 @@ const Page = () => {
 
                 {isAnswerVisibleOne && (
                   <div className="bg-[#FFE6C5]">
-                    <p className="mb-4 text-lg text-gray-700">
+                    <p className="mb-4 text-sm md:text-lg text-gray-700">
                       We know that bushfires are more likely to happen during
                       the hottest and driest times of the year.
                     </p>
@@ -118,10 +118,10 @@ const Page = () => {
             </div>
 
             {/* Card 2 */}
-            <div className="w-1/3 bg-[#FFFBF2] p-6 rounded-lg shadow-lg">
+            <div className="w-full md:w-1/3 bg-[#FFFBF2] p-4 md:p-6 rounded-lg shadow-lg">
               <div className="p-4 bg-[#FFE6C5] rounded-md shadow-md">
                 <div className="cursor-pointer" onClick={toggleAnswerTwo}>
-                  <h4 className="text-xl font-bold mb-4 text-gray-700 flex justify-between items-center">
+                  <h4 className="text-lg md:text-xl font-bold mb-4 text-gray-700 flex justify-between items-center">
                     Which season should we be careful in?
                     {isAnswerVisibleTwo ? (
                       <ChevronUp className="w-6 h-6" />
@@ -133,7 +133,7 @@ const Page = () => {
 
                 {isAnswerVisibleTwo && (
                   <div className="bg-[#FFE6C5]">
-                    <p className="mb-4 text-lg text-gray-700">
+                    <p className="mb-4 text-sm md:text-lg text-gray-700">
                       As you can see in the chart, summer is the season when
                       bushfires happen the most because it’s hot and dry. Spring
                       and autumn can also be risky.
@@ -144,10 +144,10 @@ const Page = () => {
             </div>
 
             {/* Card 3 */}
-            <div className="w-1/3 bg-[#FFFBF2] p-6 rounded-lg shadow-lg">
+            <div className="w-full md:w-1/3 bg-[#FFFBF2] p-4 md:p-6 rounded-lg shadow-lg">
               <div className="p-4 bg-[#FFE6C5] rounded-md shadow-md">
                 <div className="cursor-pointer" onClick={toggleAnswerThree}>
-                  <h4 className="text-xl font-bold mb-4 text-gray-700 flex justify-between items-center">
+                  <h4 className="text-lg md:text-xl font-bold mb-4 text-gray-700 flex justify-between items-center">
                     Which months should we be very careful?
                     {isAnswerVisibleThree ? (
                       <ChevronUp className="w-6 h-6" />
@@ -159,7 +159,7 @@ const Page = () => {
 
                 {isAnswerVisibleThree && (
                   <div className="bg-[#FFE6C5]">
-                    <p className="mb-4 text-lg text-gray-700">
+                    <p className="mb-4 text-sm md:text-lg text-gray-700">
                       We need to be extra careful in December, January, and
                       February because those are the hottest months of summer.
                     </p>
@@ -169,12 +169,12 @@ const Page = () => {
             </div>
           </div>
 
-          <div className="bg-[#FFFBF2] p-12 rounded-lg mx-12 mt-8">
+          <div className="bg-[#FFFBF2] p-6 md:p-8 lg:p-12 rounded-lg mx-4 md:mx-12 mt-8">
             <div className="py-4 bg-[#ffe6c5] rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105">
-              <p className="text-2xl text-orange-600 text-center">
+              <p className="text-2xl text-orange-600 text-center md:text-3xl">
                 Do You Know?
               </p>
-              <p className="text-xl font-medium text-gray-800 text-center mb-2 p-5">
+              <p className="text-base font-medium text-gray-800 text-center mb-2 p-4 md:text-xl lg:p-5">
                 In the bar chart, the spike in the 2019 summer season, known as
                 the &quot;Black Summer,&quot; was one of the most intense and
                 catastrophic fire seasons on record in Australia.
@@ -182,11 +182,13 @@ const Page = () => {
             </div>
           </div>
 
-          <div className="relative w-full px-6 flex">
+          {/* Bushfire Map */}
+          <div className="w-full px-4 md:px-6 mt-8 flex justify-center items-center">
             <BushfireAreaMap />
           </div>
 
-          <div className="w-full px-6 flex">
+          {/* Gauge */}
+          <div className="w-full px-4 md:px-6 mt-4 flex justify-center items-center">
             <Gauge />
           </div>
         </div>
@@ -330,24 +332,30 @@ const Page = () => {
 
       {/* Fire plan section */}
       <div className="relative py-8 flex flex-col items-center justify-center w-full">
+        {/* Background Image */}
         <div className="absolute inset-0 bg-[url('/kids-talking.jpeg')] bg-[#FFFBF2] opacity-10 bg-cover bg-center brightness-75"></div>
-        <h1 className="text-3xl font-black text-center text-gray-700 mb-4">
+
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-black text-center text-gray-700 mb-4">
           Why Having a Fire Plan is Super Important!
         </h1>
         <hr className="w-full max-w-lg border-gray-700 mb-4 mx-auto" />
 
-        <div className="relative p-10 py-8 flex items-center justify-center w-full">
-          <div className="z-20">
+        {/* Kangaroo and Text Card */}
+        <div className="relative p-6 md:p-10 flex flex-col md:flex-row items-center justify-center w-full">
+          {/* Kangaroo Image */}
+          <div className="z-20 mb-6 md:mb-0 md:mr-6">
             <Image
               src="/kangaroo.png"
               alt="Kangaroo pointing at the card"
-              width={200}
-              height={200}
+              width={150}
+              height={150}
               className="object-contain animate-moveSideways"
             />
           </div>
-          <div className="w-3/4 px-8 bg-[#FFE6C5] p-8 rounded-xl shadow-lg transition-transform transform hover:scale-105 duration-500 relative z-10">
-            <p className="text-2xl text-center text-gray-700 mb-4 relative">
+
+          {/* Text Card */}
+          <div className="w-full md:w-3/4 lg:w-2/3 bg-[#FFE6C5] p-6 md:p-8 rounded-xl shadow-lg transition-transform transform hover:scale-105 duration-500 relative z-10">
+            <p className="text-base md:text-xl lg:text-2xl text-center text-gray-700 mb-4">
               A fire plan helps keep you safe by showing you exactly what to do
               if there&apos;s a fire. It helps you stay calm, know where to go,
               and what to take. It&apos;s like having a safety guide to keep you
@@ -355,6 +363,8 @@ const Page = () => {
             </p>
           </div>
         </div>
+
+        {/* Fireplan Component */}
         <Fireplan />
       </div>
 
