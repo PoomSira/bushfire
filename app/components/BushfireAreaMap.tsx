@@ -239,10 +239,13 @@ const BushfireAreaMap = () => {
   };
 
   return (
-    <div className="w-full p-6 flex">
+    <div className="w-full p-6 flex flex-col lg:flex-row">
       {/* Left Column: Map */}
-      <div className="w-2/3 bg-[#FFFBF2] p-6 rounded-md">
-        <div style={{ width: "100%", height: "70vh", position: "relative" }}>
+      <div className="w-full lg:w-2/3 bg-[#FFFBF2] p-6 rounded-md mb-6 lg:mb-0">
+        <div
+          style={{ width: "100%", height: "50vh", position: "relative" }}
+          className="lg:h-70vh"
+        >
           {/* Loading spinner */}
           {loading && (
             <div
@@ -285,7 +288,7 @@ const BushfireAreaMap = () => {
       </div>
 
       {/* Right Column: Search and Dropdown */}
-      <div className="w-1/3 bg-[#FFFBF2] p-6 rounded-md">
+      <div className="w-full lg:w-1/3 bg-[#FFFBF2] p-6 rounded-md">
         <div className="w-full p-4 bg-[#FFE6C5] rounded-md shadow-md relative">
           <h2 className="text-2xl text-[#EA580B] font-bold mb-4">
             Let’s figure out where we are

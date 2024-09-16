@@ -19,11 +19,11 @@ const Gauge: React.FC = () => {
       title: "Moderate",
       content: (
         <div>
-          <p>What does it mean?</p>
+          <p className="font-bold text-2xl">What does it mean?</p>
           <ul className="list-disc pl-5">
             <li>Most fires can be controlled.</li>
           </ul>
-          <p>What should I do?</p>
+          <p className="font-bold text-2xl">What should I do?</p>
           <ul className="list-disc pl-5">
             <li>Plan and prepare.</li>
             <li>Stay up to date and be ready to act if there is a fire.</li>
@@ -35,11 +35,11 @@ const Gauge: React.FC = () => {
       title: "High",
       content: (
         <div>
-          <p>What does it mean?</p>
+          <p className="font-bold text-2xl">What does it mean?</p>
           <ul className="list-disc pl-5">
             <li>Fires can be dangerous.</li>
           </ul>
-          <p>What should I do?</p>
+          <p className="font-bold text-2xl">What should I do?</p>
           <ul className="list-disc pl-5">
             <li>Be ready to act.</li>
             <li>There’s a heightened risk. Be alert for fires in your area.</li>
@@ -56,13 +56,13 @@ const Gauge: React.FC = () => {
       title: "Extreme",
       content: (
         <div>
-          <p>What does it mean?</p>
+          <p className="font-bold text-2xl">What does it mean?</p>
           <ul className="list-disc pl-5">
             <li>Fires will spread quickly and be extremely dangerous.</li>
             <li>These are dangerous fire conditions.</li>
             <li>Expect hot, dry and windy conditions.</li>
           </ul>
-          <p>What should I do?</p>
+          <p className="font-bold text-2xl">What should I do?</p>
           <ul className="list-disc pl-5">
             <li>
               Check your bushfire plan and that your property is fire ready
@@ -85,14 +85,14 @@ const Gauge: React.FC = () => {
       title: "Catastrophic",
       content: (
         <div>
-          <p>What does it mean?</p>
+          <p className="font-bold text-2xl">What does it mean?</p>
           <ul className="list-disc pl-5">
             <li>
               If a fire starts and takes hold, lives are likely to be lost.
             </li>
             <li>These are the most dangerous conditions for a fire.</li>
           </ul>
-          <p>What should I do?</p>
+          <p className="font-bold text-2xl">What should I do?</p>
           <ul className="list-disc pl-5">
             <li>For your survival, leave bushfire risk areas.</li>
             <li>
@@ -124,20 +124,20 @@ const Gauge: React.FC = () => {
   };
 
   return (
-    <div className="grid grid-cols-2 gap-4 p-6 rounded-lg w-full">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-6 rounded-lg w-full">
       {/* Left column - Image and buttons */}
       <div className="flex flex-col items-center justify-center bg-[url('/forest.png')] bg-cover bg-center bg-no-repeat p-6 rounded-md">
         {/* Display the current image */}
         <Image
           src={currentImage}
           alt="Gauge image"
-          width={400}
-          height={400}
-          className="object-cover"
+          width={300}
+          height={300}
+          className="object-cover md:w-400 md:h-400"
         />
 
         {/* Buttons to change the image */}
-        <div className="mt-4 flex flex-col space-y-4 w-3/4">
+        <div className="mt-4 flex flex-col space-y-4 w-full md:w-3/4">
           <button
             className="bg-gray-200 px-4 py-2 rounded text-black border-2 border-black min-w-24"
             onClick={() => handleImageChange("/fdr-no-rating.svg", "no-rating")}
@@ -174,9 +174,13 @@ const Gauge: React.FC = () => {
       </div>
 
       {/* Right column - Static content */}
-      <div className="flex flex-col items-start bg-[#FFFBF2] text-black p-6 rounded-md">
-        <h2 className="text-2xl font-bold mb-4">{texts[currentText].title}</h2>
-        <div className="whitespace-pre-line">{texts[currentText].content}</div>
+      <div className="flex flex-col items-center bg-[#FFFBF2] bg-[url('/forest.png')] bg-cover bg-center bg-no-repeat p-6 rounded-md">
+        <h2 className="text-xl md:text-2xl font-bold mb-4 tex text-[#EA580B]">
+          {texts[currentText].title}
+        </h2>
+        <div className="whitespace-pre-line text-lg md:text-lg text-black bg-[#FFE6C5] p-6 rounded-md shadow-md">
+          {texts[currentText].content}
+        </div>
       </div>
     </div>
   );
