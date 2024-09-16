@@ -88,7 +88,7 @@ const FireSafetyBasics: React.FC = () => {
         className="absolute -right-40 top-4 md:-right-60 animate-moveSideways"
       />
 
-      <div className="relative bg-[#ce2029] p-6 md:p-8 rounded-xl shadow-md">
+      <div className="relative bg-[#ce2029] p-6 md:p-8 rounded-2xl shadow-md">
         <h1 className="text-3xl md:text-4xl font-bold text-center text-white mb-4">
           Fire Safety Basics
         </h1>

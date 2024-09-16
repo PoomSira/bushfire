@@ -104,10 +104,10 @@ const EmergencyKitGame: React.FC = () => {
       {/* <h1 className="text-2xl font-bold mb-4">Emergency Kit Packing Game</h1> */}
       <div className="flex flex-col lg:flex-row gap-6 bg-[#FFFBF2] p-4 rounded-lg">
         <div className="w-full lg:w-1/2">
-          <h2 className="text-xl font-semibold mb-2 text-center">
+          <h2 className="text-xl font-semibold mb-2 text-black text-center">
             Items to Pack
           </h2>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 gap-4 text-black">
             {availableItems.map((item) => (
               <DraggableItem key={item} item={item} />
             ))}
@@ -115,7 +115,7 @@ const EmergencyKitGame: React.FC = () => {
           {/* Display success message and Kangaroo Image when all items are categorized */}
           {allItemsCategorized && (
             <div className="flex flex-col justify-center items-center mt-12">
-              <div className="text-2xl font-bold text-center mb-4 bg-[#FFE6C5] p-4 rounded-lg shadow-md">
+              <div className="text-2xl font-bold text-black text-center mb-4 bg-[#FFE6C5] p-4 rounded-lg shadow-md">
                 You have done a great job!
               </div>
               <Image
@@ -129,10 +129,10 @@ const EmergencyKitGame: React.FC = () => {
           )}
         </div>
         <div className="w-full lg:w-1/2">
-          <h2 className="text-xl font-semibold mb-2 text-center">
+          <h2 className="text-xl font-semibold mb-2 text-center text-black">
             Pack into Categories
           </h2>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 gap-4 text-black">
             {kitCategories.map((category) => (
               <CategoryBox
                 key={category.name}
