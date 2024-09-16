@@ -76,10 +76,10 @@ const Page = () => {
               </p>
               <p className="text-xl font-medium text-gray-800 text-center mb-2 p-5">
                 Bushfires can be scary, but we can learn how to stay safe if
-                they happen. In this section, we'll talk about what we can do to
-                get ready for bushfires and how to stay safe if one starts. It’s
-                important to know what to do so we can protect ourselves and
-                others!
+                they happen. In this section, we&apos;ll talk about what we can
+                do to get ready for bushfires and how to stay safe if one
+                starts. It’s important to know what to do so we can protect
+                ourselves and others!
               </p>
             </div>
           </div>
@@ -176,8 +176,8 @@ const Page = () => {
               </p>
               <p className="text-xl font-medium text-gray-800 text-center mb-2 p-5">
                 In the bar chart, the spike in the 2019 summer season, known as
-                the "Black Summer," was one of the most intense and catastrophic
-                fire seasons on record in Australia.
+                the &quot;Black Summer,&quot; was one of the most intense and
+                catastrophic fire seasons on record in Australia.
               </p>
             </div>
           </div>
