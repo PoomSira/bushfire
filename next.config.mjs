@@ -13,6 +13,7 @@ const nextConfig = {
         pathname: '/dxtvfgaud/**', // Cloudinary for videos and images
       },
     ],
+    domains: ['public.tableau.com'],
   },
 };
 
