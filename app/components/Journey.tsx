@@ -11,7 +11,7 @@ const Journey: React.FC = () => {
       >
         <div className="relative lg:w-2/5 m-0 overflow-hidden rounded-r-none bg-clip-border rounded-xl shrink-0">
           <Image
-            src="/learning-landing.jpeg"
+            src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/learning-landing.jpeg"
             alt="Learning About Bushfires"
             width={800}
             height={500}
@@ -56,7 +56,7 @@ const Journey: React.FC = () => {
         </div>
         <div className="relative w-full lg:w-2/5 m-0 overflow-hidden rounded-r-none bg-clip-border rounded-xl shrink-0">
           <Image
-            src="/prepare.webp"
+            src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/prepare.webp"
             alt="Preparation for Bushfire"
             width={800}
             height={500}
@@ -71,7 +71,7 @@ const Journey: React.FC = () => {
       >
         <div className="relative w-full lg:w-2/5 m-0 overflow-hidden rounded-r-none bg-clip-border rounded-xl shrink-0">
           <Image
-            src="/recovery.jpeg"
+            src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/recovery.jpeg"
             alt="Recover"
             width={800}
             height={500}

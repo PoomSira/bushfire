@@ -14,7 +14,7 @@ const FlameSection: React.FC = () => {
         {/* Flame Image */}
         <div className="relative">
           <Image
-            src="/flame.png"
+            src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/flame.png"
             alt="Flame on"
             width={450}
             height={450}
@@ -25,7 +25,7 @@ const FlameSection: React.FC = () => {
         {/* Cloud Image with animation */}
         <div className="absolute top-[-2rem] right-[2rem] animate-bounce">
           <Image
-            src="/cloud-thunder.png"
+            src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/cloud-thunder.png"
             alt="Cloud with thunder"
             width={120}
             height={120}
@@ -36,7 +36,7 @@ const FlameSection: React.FC = () => {
         {/* Electric Pole Image with animation */}
         <div className="absolute top-[0rem] right-[0rem] animate-shake">
           <Image
-            src="/electric-pole.png"
+            src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/electric-pole.png"
             alt="Electric Pole"
             width={150}
             height={150}
@@ -47,7 +47,7 @@ const FlameSection: React.FC = () => {
         {/* Wind Image with animation */}
         <div className="absolute top-[4rem] left-[-2rem] animate-windMove">
           <Image
-            src="/wind.png"
+            src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/wind.png"
             alt="Wind"
             width={120}
             height={120}
@@ -58,7 +58,7 @@ const FlameSection: React.FC = () => {
         {/* Branch Image with animation */}
         <div className="absolute bottom-[-3rem] left-[1rem] animate-rotateBranch">
           <Image
-            src="/branch.png"
+            src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/branch.png"
             alt="Branch"
             width={200}
             height={200}

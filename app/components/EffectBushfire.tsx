@@ -34,7 +34,7 @@ const EffectBushfire: React.FC = () => {
                 </button>
               </div>
               <Image
-                src="/koala-t.png"
+                src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/koala-t.png"
                 alt="Koala Tableau Cluster"
                 width={200}
                 height={200}
@@ -49,7 +49,7 @@ const EffectBushfire: React.FC = () => {
                 </button>
               </div>
               <Image
-                src="/kangaroo.png"
+                src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/kangaroo.png"
                 alt="Koala Tableau Cluster"
                 width={270}
                 height={270}
@@ -64,7 +64,7 @@ const EffectBushfire: React.FC = () => {
                 </button>
               </div>
               <Image
-                src="/wombat.png"
+                src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/wombat.png"
                 alt="Koala Tableau Cluster"
                 width={220}
                 height={220}

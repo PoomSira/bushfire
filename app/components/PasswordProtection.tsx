@@ -53,7 +53,7 @@ const PasswordProtection: React.FC<PasswordProtectionProps> = ({
               {/* Logo Section */}
               <div className="flex justify-center mb-4">
                 <Image
-                  src="/logo.png"
+                  src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/logo.png"
                   alt="Logo"
                   width={120} // Adjust the width as needed
                   height={120} // Adjust the height as needed

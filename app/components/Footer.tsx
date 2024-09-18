@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <Link href="/" aria-label="Homepage">
             <Image
-              src="/logo.png"
+              src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/logo.png"
               alt="Bushfire Brigade Logo"
               width={120}
               height={100}

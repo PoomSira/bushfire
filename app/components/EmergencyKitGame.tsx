@@ -119,7 +119,7 @@ const EmergencyKitGame: React.FC = () => {
                 You have done a great job!
               </div>
               <Image
-                src="/kangaroo.png"
+                src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/kangaroo.png"
                 alt="Kangaroo pointing at the card"
                 width={200}
                 height={200}

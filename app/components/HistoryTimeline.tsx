@@ -31,7 +31,7 @@ const HistoryTimeline = (props: Props) => {
               </time>
               <div className="flex-none w-60 h-30">
                 <Image
-                  src="/timeline-1.png"
+                  src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/timeline-1.png"
                   alt="Recover"
                   width={150}
                   height={150}
@@ -56,7 +56,7 @@ const HistoryTimeline = (props: Props) => {
               </time>
               <div className="flex-none w-60 h-30">
                 <Image
-                  src="/timeline-2.png"
+                  src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/timeline-2.png"
                   alt="Recover"
                   width={150}
                   height={150}
@@ -81,7 +81,7 @@ const HistoryTimeline = (props: Props) => {
               </time>
               <div className="flex-none w-60 h-30">
                 <Image
-                  src="/timeline-3.png"
+                  src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/timeline-3.png"
                   alt="Recover"
                   width={150}
                   height={150}
@@ -107,7 +107,7 @@ const HistoryTimeline = (props: Props) => {
               </time>
               <div className="flex-none w-60 h-30">
                 <Image
-                  src="/timeline-4.png"
+                  src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/timeline-4.png"
                   alt="Recover"
                   width={150}
                   height={150}
@@ -186,7 +186,7 @@ const HistoryTimeline = (props: Props) => {
                 style={{ transform: "scale(2)", transformOrigin: "top center" }}
               >
                 <Image
-                  src="/animal-impact.png"
+                  src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/animal-impact.png"
                   alt="Animal Impact"
                   width={500}
                   height={500}

@@ -12,7 +12,7 @@ const page = () => {
   return (
     <div className="bg-[#FFFBF2] mx-auto max-w-screen">
       <div>
-        <main className="h-[70vh] w-full bg-[url('/home-landing.webp')] bg-center bg-cover bg-no-repeat">
+        <main className="h-[70vh] w-full bg-[url('https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/home-landing.webp')] bg-center bg-cover bg-no-repeat">
           <Navigation />
           <Hero />
         </main>

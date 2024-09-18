@@ -63,7 +63,7 @@ const Page = () => {
       {/* Busfire map area */}
       <div className="relative py-8 flex flex-col items-center justify-center w-full">
         {/* Background Image */}
-        <div className="absolute inset-0 bg-[url('/class-room.webp')] bg-[#FFFBF2] opacity-20 bg-cover bg-center brightness-75"></div>
+        <div className="absolute inset-0 bg-[url('https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/class-room.webp')] bg-[#FFFBF2] opacity-20 bg-cover bg-center brightness-75"></div>
 
         <div className="relative w-full h-full flex flex-col items-center justify-center">
           <h1 className="text-3xl font-black text-center text-gray-700 mb-4 md:text-4xl lg:text-5xl">
@@ -197,7 +197,7 @@ const Page = () => {
 
       {/* Survival skills section */}
       <div className="relative py-8 flex flex-col items-center justify-center w-full">
-        <div className="absolute inset-0 bg-[url('/home-new.webp')] bg-[#FFFBF2] opacity-10 bg-cover bg-center brightness-75"></div>
+        <div className="absolute inset-0 bg-[url('https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/home-new.webp')] bg-[#FFFBF2] opacity-10 bg-cover bg-center brightness-75"></div>
         <h1 className="text-3xl font-black text-center text-gray-700 mb-4">
           Survival Skills
         </h1>
@@ -242,7 +242,7 @@ const Page = () => {
             <div className="w-full max-w-md p-4">
               <div className="transition-transform transform hover:scale-105 duration-500">
                 <Image
-                  src="/denseBush.png"
+                  src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/denseBush.png"
                   alt="Dense Bush"
                   className="rounded-2xl w-auto h-auto animate-moveSideways"
                   width={500}
@@ -274,7 +274,7 @@ const Page = () => {
             <div className="w-full max-w-md p-4">
               <div className="transition-transform transform hover:scale-105 duration-500">
                 <Image
-                  src="/costalScrub.png"
+                  src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/costalScrub.png"
                   alt="Coastal Scrub"
                   className="rounded-lg w-auto h-auto animate-moveSideways"
                   width={500}
@@ -301,7 +301,7 @@ const Page = () => {
             <div className="w-full max-w-md p-4">
               <div className="transition-transform transform hover:scale-105 duration-500">
                 <Image
-                  src="/grassland.png"
+                  src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/grassland.png"
                   alt="Grassland"
                   className="rounded-lg w-auto h-auto animate-moveSideways"
                   width={500}
@@ -334,7 +334,7 @@ const Page = () => {
       {/* Fire plan section */}
       <div className="relative py-8 flex flex-col items-center justify-center w-full">
         {/* Background Image */}
-        <div className="absolute inset-0 bg-[url('/kids-talking.jpeg')] bg-[#FFFBF2] opacity-10 bg-cover bg-center brightness-75"></div>
+        <div className="absolute inset-0 bg-[url('https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/kids-talking.jpeg')] bg-[#FFFBF2] opacity-10 bg-cover bg-center brightness-75"></div>
 
         <h1 className="text-2xl md:text-3xl lg:text-4xl font-black text-center text-gray-700 mb-4">
           Why Having a Fire Plan is Super Important!
@@ -346,7 +346,7 @@ const Page = () => {
           {/* Kangaroo Image */}
           <div className="z-20 mb-6 md:mb-0 md:mr-6">
             <Image
-              src="/kangaroo.png"
+              src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/kangaroo.png"
               alt="Kangaroo pointing at the card"
               width={150}
               height={150}
@@ -371,7 +371,7 @@ const Page = () => {
 
       {/* Emergency Kit Packing Game */}
       <div className="relative py-8 flex flex-col items-center justify-center w-full">
-        <div className="absolute inset-0 bg-[url('/bag.png')] bg-[#FFFBF2] opacity-20 bg-cover bg-center brightness-75"></div>
+        <div className="absolute inset-0 bg-[url('https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/bag.png')] bg-[#FFFBF2] opacity-20 bg-cover bg-center brightness-75"></div>
         <h1 className="text-3xl font-black text-center text-gray-700 mb-4">
           Emergency Kit Packing Game
         </h1>
@@ -386,7 +386,7 @@ const Page = () => {
 
       {/*Bushfire survival option*/}
       <div className="relative py-8 flex flex-col items-center justify-center w-full">
-        <div className="absolute inset-0 bg-[url('/3.webp')] bg-[#FFFBF2] opacity-20 bg-cover bg-center brightness-75"></div>
+        <div className="absolute inset-0 bg-[url('https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/3.webp')] bg-[#FFFBF2] opacity-20 bg-cover bg-center brightness-75"></div>
         <h1 className="text-3xl font-black text-center text-gray-700 mb-4">
           Bushfire Survival Options!
         </h1>

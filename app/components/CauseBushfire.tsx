@@ -12,7 +12,7 @@ const CauseBushfire = () => {
           <div className="flex w-full md:w-1/2 justify-center items-center">
             <div className="w-56 aspect-square overflow-visible transition-transform duration-500 hover:scale-105">
               <Image
-                src="/koala-t.png"
+                src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/koala-t.png"
                 alt="Koala doctor with presentation"
                 width={450}
                 height={450}
@@ -61,7 +61,7 @@ const CauseBushfire = () => {
           {/* Centered Koala Image */}
           <div className="w-56 my-auto aspect-square flex justify-center items-center overflow-visible transition-transform duration-500 hover:scale-105">
             <Image
-              src="/koala-p.png"
+              src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/koala-p.png"
               alt="Koala doctor with presentation"
               width={500}
               height={500}

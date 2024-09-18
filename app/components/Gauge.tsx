@@ -3,7 +3,9 @@ import Image from "next/image";
 
 const Gauge: React.FC = () => {
   // State to track the current image and content
-  const [currentImage, setCurrentImage] = useState("/fdr-no-rating.svg");
+  const [currentImage, setCurrentImage] = useState(
+    "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/fdr-no-rating.svg"
+  );
   const [currentText, setCurrentText] = useState<
     "no-rating" | "moderate" | "high" | "extreme" | "catastrophic"
   >("no-rating");
@@ -126,7 +128,7 @@ const Gauge: React.FC = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-6 rounded-lg w-full">
       {/* Left column - Image and buttons */}
-      <div className="flex flex-col items-center justify-center bg-[url('/forest.png')] bg-cover bg-center bg-no-repeat p-6 rounded-md">
+      <div className="flex flex-col items-center justify-center bg-[url('https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/forest.png')] bg-cover bg-center bg-no-repeat p-6 rounded-md">
         {/* Display the current image */}
         <Image
           src={currentImage}
@@ -140,32 +142,55 @@ const Gauge: React.FC = () => {
         <div className="mt-4 flex flex-col space-y-4 w-full md:w-3/4">
           <button
             className="bg-gray-200 px-4 py-2 rounded text-black border-2 border-black min-w-24"
-            onClick={() => handleImageChange("/fdr-no-rating.svg", "no-rating")}
+            onClick={() =>
+              handleImageChange(
+                "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/fdr-no-rating.svg",
+                "no-rating"
+              )
+            }
           >
             No Rating
           </button>
           <button
             className="bg-[#64BF2F] hover:bg-green-200 px-4 py-2 rounded text-black border-2 border-black min-w-24"
-            onClick={() => handleImageChange("/fdr-moderate.svg", "moderate")}
+            onClick={() =>
+              handleImageChange(
+                "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/fdr-moderate.svg",
+                "moderate"
+              )
+            }
           >
             Moderate
           </button>
           <button
             className="bg-[#FDDD3B] hover:bg-yellow-200 px-4 py-2 rounded text-black border-2 border-black min-w-24"
-            onClick={() => handleImageChange("/fdr-high.svg", "high")}
+            onClick={() =>
+              handleImageChange(
+                "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/fdr-high.svg",
+                "high"
+              )
+            }
           >
             High
           </button>
           <button
             className="bg-[#F78100] hover:bg-orange-200 px-4 py-2 rounded text-black border-2 border-black min-w-24"
-            onClick={() => handleImageChange("/fdr-extreme.svg", "extreme")}
+            onClick={() =>
+              handleImageChange(
+                "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/fdr-extreme.svg",
+                "extreme"
+              )
+            }
           >
             Extreme
           </button>
           <button
             className="bg-[#ee3939] hover:bg-red-200 px-4 py-2 rounded text-black border-2 border-black min-w-24"
             onClick={() =>
-              handleImageChange("/fdr-catastrophic.svg", "catastrophic")
+              handleImageChange(
+                "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/fdr-catastrophic.svg",
+                "catastrophic"
+              )
             }
           >
             Catastrophic
@@ -174,7 +199,7 @@ const Gauge: React.FC = () => {
       </div>
 
       {/* Right column - Static content */}
-      <div className="flex flex-col items-center bg-[#FFFBF2] bg-[url('/forest.png')] bg-cover bg-center bg-no-repeat p-6 rounded-md">
+      <div className="flex flex-col items-center bg-[#FFFBF2] bg-[url('https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/forest.png')] bg-cover bg-center bg-no-repeat p-6 rounded-md">
         <h2 className="text-xl md:text-2xl font-bold mb-4 tex text-[#EA580B]">
           {texts[currentText].title}
         </h2>

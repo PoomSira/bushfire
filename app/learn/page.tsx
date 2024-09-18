@@ -24,7 +24,7 @@ const Page = () => {
     <div className="bg-[#FFFBF2] mx-auto max-w-screen">
       <Navigation />
       {/* Hero Section */}
-      <div className="relative isolate h-[90vh] px-6 pt-14 lg:px-8 flex-grow bg-[url('/learning-landing.jpeg')] bg-cover bg-center">
+      <div className="relative isolate h-[90vh] px-6 pt-14 lg:px-8 flex-grow bg-[url('https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/learning-landing.jpeg')] bg-cover bg-center">
         {/* Blur Overlay */}
         <div className="absolute inset-0 bg-black bg-opacity-20 backdrop-filter backdrop-blur-sm"></div>
 
@@ -45,7 +45,7 @@ const Page = () => {
       </div>
 
       <div className="relative py-8 flex flex-col items-center justify-center">
-        <div className="absolute inset-0 bg-[url('/kids-talking.jpeg')] bg-[#FFFBF2] opacity-20 bg-cover bg-center brightness-75"></div>
+        <div className="absolute inset-0 bg-[url('https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/kids-talking.jpeg')] bg-[#FFFBF2] opacity-20 bg-cover bg-center brightness-75"></div>
         <div className="relative">
           <h1 className="text-3xl font-black text-center text-gray-700 mb-4">
             History of bushfire
@@ -58,7 +58,7 @@ const Page = () => {
       </div>
 
       <div className="relative py-8 flex flex-col items-center justify-center">
-        <div className="absolute inset-0 bg-[url('/class-room.webp')] bg-[#FFFBF2] opacity-20 bg-cover bg-center brightness-75"></div>
+        <div className="absolute inset-0 bg-[url('https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/class-room.webp')] bg-[#FFFBF2] opacity-20 bg-cover bg-center brightness-75"></div>
         <div className="relative">
           <h1 className="text-3xl font-black text-center text-gray-700 mb-4">
             Cause of Bushfire
@@ -72,7 +72,7 @@ const Page = () => {
 
       {/* Tableau Visualizations */}
       <div className="relative py-12 px-4">
-        <div className="absolute inset-0 bg-[url('/bushfire-effect.webp')] bg-[#FFFBF2] opacity-20 bg-cover bg-center brightness-75"></div>
+        <div className="absolute inset-0 bg-[url('https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/bushfire-effect.webp')] bg-[#FFFBF2] opacity-20 bg-cover bg-center brightness-75"></div>
         <div className="relative max-w-7xl mx-auto">
           <h2 className="text-3xl font-black text-center text-gray-700 mb-4">
             Effect of Bushfire
@@ -121,7 +121,7 @@ const Page = () => {
                 {/* Koala image below the card */}
                 <div className="mt-8 flex justify-center transition-transform duration-300 ease-in-out transform hover:scale-105">
                   <Image
-                    src="/koala-t.png"
+                    src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/koala-t.png"
                     alt="Koala doctor with presentation"
                     width={150} // Adjust size as needed
                     height={150} // Adjust size as needed
@@ -194,7 +194,7 @@ const Page = () => {
                 {/* Kangaroo image below the card */}
                 <div className="mt-8 flex justify-center transition-transform duration-300 ease-in-out transform hover:scale-105">
                   <Image
-                    src="/kangaroo.png"
+                    src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/kangaroo.png"
                     alt="Kangaroo with presentation"
                     width={150} // Adjust size as needed
                     height={150} // Adjust size as needed
@@ -261,7 +261,7 @@ const Page = () => {
                 {/* Wombat image below the card */}
                 <div className="mt-8 flex justify-center transition-transform duration-300 ease-in-out transform hover:scale-105">
                   <Image
-                    src="/wombat.png"
+                    src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/wombat.png"
                     alt="Wombat with presentation"
                     width={150} // Adjust size as needed
                     height={150} // Adjust size as needed

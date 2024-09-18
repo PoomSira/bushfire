@@ -66,7 +66,7 @@ export default function Home() {
       </div>
       {/* Tutor Section */}
       <div className="relative py-8 flex flex-col items-center justify-center">
-        <div className="absolute inset-0 bg-[url('/home-new.webp')] bg-[#FFFBF2] opacity-20 bg-cover bg-center brightness-75"></div>
+        <div className="absolute inset-0 bg-[url('https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/home-new.webp')] bg-[#FFFBF2] opacity-20 bg-cover bg-center brightness-75"></div>
         <div className="relative z-10">
           <h1
             id="select"
@@ -88,7 +88,7 @@ export default function Home() {
                   </button>
                 </div>
                 <Image
-                  src="/koala-t.png"
+                  src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/koala-t.png"
                   alt="Koala doctor with presentation"
                   width={190} // Adjusted for smaller screens
                   height={190}
@@ -127,7 +127,7 @@ export default function Home() {
                   </button>
                 </div>
                 <Image
-                  src="/kangaroo.png"
+                  src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/kangaroo.png"
                   alt="Kangaroo firefighter with presentation"
                   width={240} // Adjusted for smaller screens
                   height={240}
@@ -167,7 +167,7 @@ export default function Home() {
                   </button>
                 </div>
                 <Image
-                  src="/wombat.png"
+                  src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/wombat.png"
                   alt="Wombat volunteer with presentation"
                   width={190} // Adjusted for smaller screens
                   height={190}
@@ -203,7 +203,7 @@ export default function Home() {
         id="journey"
         className="relative py-8 flex flex-col items-center justify-center"
       >
-        <div className="absolute inset-0 bg-[url('/journey.webp')] bg-[#FFFBF2] opacity-20 bg-cover bg-center brightness-75"></div>
+        <div className="absolute inset-0 bg-[url('https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/journey.webp')] bg-[#FFFBF2] opacity-20 bg-cover bg-center brightness-75"></div>
         <div className="relative">
           <h1 className="text-3xl font-black text-center text-gray-800 mb-4">
             Start your journey

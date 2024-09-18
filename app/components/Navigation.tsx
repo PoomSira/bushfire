@@ -12,7 +12,7 @@ const Navigation: React.FC = () => {
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <Link href="/">
           <Image
-            src="/logo.png"
+            src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/logo.png"
             alt="Logo"
             width={120}
             height={70}
