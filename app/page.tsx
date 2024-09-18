@@ -78,8 +78,8 @@ export default function Home() {
           <div className="p-4 w-full">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {/* Koala Tutor */}
-              <div className="relative w-full h-full aspect-square bg-[#FFFBF2] rounded-full transform transition-transform duration-300 hover:scale-105">
-                <div className="absolute bg-[#FFE6C5] right-4 md:right-10 top-1/2 transform -translate-y-1/2 text-center py-2 px-2 rounded-md shadow-md transition-transform duration-300 hover:scale-105 hover:bg-orange-300 ml-3">
+              <div className="relative w-full h-full bg-[#FFFBF2] rounded-full transform transition-transform duration-300 hover:scale-105">
+                <div className="absolute bg-[#FFE6C5] right-4 md:right-10 top-1/2 transform -translate-y-1/2 text-center py-2 px-2 rounded-md shadow-md transition-transform duration-300 hover:scale-105 hover:bg-orange-300 z-10">
                   <button
                     onClick={toggleKoalaPopup}
                     className="text-black text-sm md:text-base"
@@ -117,8 +117,8 @@ export default function Home() {
               </div>
 
               {/* Kangaroo Tutor */}
-              <div className="relative w-full aspect-square bg-[#FFFBF2] rounded-full overflow-visible transform transition-transform duration-300 hover:scale-105">
-                <div className="absolute bg-[#FFE6C5] right-4 md:right-10 top-1/2 transform -translate-y-1/2 text-center py-2 px-2 rounded-md shadow-md transition-transform duration-300 hover:scale-105 hover:bg-orange-300">
+              <div className="relative w-full h-full aspect-square bg-[#FFFBF2] rounded-full transform transition-transform duration-300 hover:scale-105">
+                <div className="absolute bg-[#FFE6C5] right-4 md:right-10 top-1/2 transform -translate-y-1/2 text-center py-2 px-2 rounded-md shadow-md transition-transform duration-300 hover:scale-105 hover:bg-orange-300 z-10">
                   <button
                     onClick={toggleKangarooPopup}
                     className="text-black text-sm md:text-base"
@@ -157,8 +157,8 @@ export default function Home() {
               </div>
 
               {/* Wombat Tutor */}
-              <div className="relative w-full aspect-square bg-[#FFFBF2] rounded-full overflow-visible transform transition-transform duration-300 hover:scale-105">
-                <div className="absolute bg-[#FFE6C5] right-4 md:right-10 top-1/2 transform -translate-y-1/2 text-center py-2 px-2 rounded-md shadow-md transition-transform duration-300 hover:scale-105 hover:bg-orange-300">
+              <div className="relative w-full h-full aspect-square bg-[#FFFBF2] rounded-full transform transition-transform duration-300 hover:scale-105">
+                <div className="absolute bg-[#FFE6C5] right-4 md:right-10 top-1/2 transform -translate-y-1/2 text-center py-2 px-2 rounded-md shadow-md transition-transform duration-300 hover:scale-105 hover:bg-orange-300 z-10">
                   <button
                     onClick={toggleWombatPopup}
                     className="text-black text-sm md:text-base"
