@@ -14,7 +14,7 @@ const BushfireSurvival: React.FC = () => {
           <div className="w-full md:w-1/2">
             <video className="w-full h-auto rounded-lg" loop autoPlay>
               <source
-                src="https://res.cloudinary.com/dxtvfgaud/video/upload/v1726650156/Leave_Early_lb1t86.mp4"
+                src="https://res.cloudinary.com/dxtvfgaud/video/upload/q_auto:low,f_auto/v1726650156/Leave_Early_lb1t86.mp4"
                 type="video/mp4"
               />
               Your browser does not support the video tag.
@@ -29,7 +29,7 @@ const BushfireSurvival: React.FC = () => {
               autoPlay
             >
               <source
-                src="https://res.cloudinary.com/dxtvfgaud/video/upload/v1726650163/Leave_Early_Steps_u9dppa.mp4"
+                src="https://res.cloudinary.com/dxtvfgaud/video/upload/q_auto:low,f_auto/v1726650163/Leave_Early_Steps_u9dppa.mp4"
                 type="video/mp4"
               />
               Your browser does not support the video tag.
@@ -48,7 +48,7 @@ const BushfireSurvival: React.FC = () => {
           <div className="w-full md:w-1/2 mb-4 md:mb-0">
             <video className="w-full h-auto rounded-lg" loop autoPlay>
               <source
-                src="https://res.cloudinary.com/dxtvfgaud/video/upload/v1726650328/Well_prepared_urvvqa.mp4"
+                src="https://res.cloudinary.com/dxtvfgaud/video/upload/q_auto:low,f_auto/v1726650328/Well_prepared_urvvqa.mp4"
                 type="video/mp4"
               />
               Your browser does not support the video tag.
@@ -63,7 +63,7 @@ const BushfireSurvival: React.FC = () => {
               autoPlay
             >
               <source
-                src="https://res.cloudinary.com/dxtvfgaud/video/upload/v1726650342/Prepared_steps_wbby1x.mp4"
+                src="https://res.cloudinary.com/dxtvfgaud/video/upload/q_auto:low,f_auto/v1726650342/Prepared_steps_wbby1x.mp4"
                 type="video/mp4"
               />
               Your browser does not support the video tag.
@@ -82,7 +82,7 @@ const BushfireSurvival: React.FC = () => {
           <div className="w-full md:w-1/2 mb-4 md:mb-0">
             <video className="w-full h-auto rounded-lg" loop autoPlay>
               <source
-                src="https://res.cloudinary.com/dxtvfgaud/video/upload/v1726649866/Last_option_rofcy2.mp4"
+                src="https://res.cloudinary.com/dxtvfgaud/video/upload/q_auto:low,f_auto/v1726649866/Last_option_rofcy2.mp4"
                 type="video/mp4"
               />
               Your browser does not support the video tag.
@@ -97,7 +97,7 @@ const BushfireSurvival: React.FC = () => {
               autoPlay
             >
               <source
-                src="https://res.cloudinary.com/dxtvfgaud/video/upload/v1726649875/Last_Resort_Flowchart_fvssdg.mp4"
+                src="https://res.cloudinary.com/dxtvfgaud/video/upload/q_auto:low,f_auto/v1726649875/Last_Resort_Flowchart_fvssdg.mp4"
                 type="video/mp4"
               />
               Your browser does not support the video tag.

@@ -15,7 +15,7 @@ const BushfireVideo = () => {
           className="rounded-xl"
         >
           <source
-            src="https://res.cloudinary.com/dxtvfgaud/video/upload/v1726649696/fire_tjpjly.mp4"
+            src="https://res.cloudinary.com/dxtvfgaud/video/upload/q_auto:low,f_auto/v1726649696/fire_tjpjly.mp4"
             type="video/mp4"
           />
           Your browser does not support the video tag.

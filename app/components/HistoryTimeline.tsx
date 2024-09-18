@@ -156,7 +156,7 @@ const HistoryTimeline = (props: Props) => {
             poster="/api/placeholder/800/450"
           >
             <source
-              src="https://res.cloudinary.com/dxtvfgaud/video/upload/v1726649395/home_video_sug9ez.mp4"
+              src="https://res.cloudinary.com/dxtvfgaud/video/upload/q_auto:low,f_auto/v1726649395/home_video_sug9ez.mp4"
               type="video/mp4"
             />
             Your browser does not support the video tag.
