@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "Bushfire Brigade",
   description: "TA30",
   icons: {
-    icon: "/burn.png",
+    icon: "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/burn.png",
   },
 };
 
