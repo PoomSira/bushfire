@@ -14,7 +14,8 @@ const safetyTips: SafetyTip[] = [
     title: "Know the Danger Levels",
     content:
       "Fire Danger Ratings are like a score that tells us how risky it is. Higher numbers mean more danger. Learn what each level means and decide when to act.",
-    imageSrc: "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/1.png", // Path to the image for this tip
+    imageSrc:
+      "https://res.cloudinary.com/dxtvfgaud/image/upload/f_auto,q_auto/v1726657554/1_fxbfpi.webp", // Path to the image for this tip
   },
   {
     id: 2,
@@ -22,7 +23,7 @@ const safetyTips: SafetyTip[] = [
     content:
       "Leaving Early means getting out before a fire starts. Plan whether you'll leave the night before or in the morning to stay safe.",
     imageSrc:
-      "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/2.jpeg", // Path to the image for this tip
+      "https://res.cloudinary.com/dxtvfgaud/image/upload/f_auto,q_auto/v1726657555/2_agbldb.jpg", // Path to the image for this tip
   },
   {
     id: 3,
@@ -30,14 +31,15 @@ const safetyTips: SafetyTip[] = [
     content:
       "Safe Places are where you'll go to be safe, like a family member's house or another safe spot.",
     imageSrc:
-      "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/3.webp", // Path to the image for this tip
+      "https://res.cloudinary.com/dxtvfgaud/image/upload/f_auto,q_auto/v1726657555/3_edz9tb.webp", // Path to the image for this tip
   },
   {
     id: 4,
     title: "Pick Your Route",
     content:
       "Routes are the roads you'll take to get to safety. Know your main way and a backup in case roads are blocked.",
-    imageSrc: "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/4.jpg", // Path to the image for this tip
+    imageSrc:
+      "https://res.cloudinary.com/dxtvfgaud/image/upload/f_auto,q_auto/v1726657554/4_qqgll1.jpg", // Path to the image for this tip
   },
   {
     id: 5,
@@ -45,28 +47,31 @@ const safetyTips: SafetyTip[] = [
     content:
       "Packing Essentials means bringing what you need, like clothes, important papers, and an emergency kit.",
     imageSrc:
-      "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/5.webp", // Path to the image for this tip
+      "https://res.cloudinary.com/dxtvfgaud/image/upload/f_auto,q_auto/v1726657555/5_xfwiah.webp", // Path to the image for this tip
   },
   {
     id: 6,
     title: "Care for Your Pets",
     content:
       "Pet Safety means planning how to take your pets with you or making sure they're safe if you can't take them.",
-    imageSrc: "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/6.jpg", // Path to the image for this tip
+    imageSrc:
+      "https://res.cloudinary.com/dxtvfgaud/image/upload/f_auto,q_auto/v1726657554/6_endajv.jpg", // Path to the image for this tip
   },
   {
     id: 7,
     title: "Tell Others & Check on Them",
     content:
       "Informing Others is letting neighbors or family know your plans, so they know where you are and can help if needed. Helping Others means making sure elderly relatives, friends, or anyone who might need extra help is safe.",
-    imageSrc: "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/7.jpg", // Path to the image for this tip
+    imageSrc:
+      "https://res.cloudinary.com/dxtvfgaud/image/upload/f_auto,q_auto/v1726657555/7_netxhl.jpg", // Path to the image for this tip
   },
   {
     id: 8,
     title: "Stay Updated",
     content:
       "Getting Updates means knowing how to find out the latest news, like using a radio or phone alerts.",
-    imageSrc: "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/8.jpg", // Path to the image for this tip
+    imageSrc:
+      "https://res.cloudinary.com/dxtvfgaud/image/upload/f_auto,q_auto/v1726657556/8_ciovda.jpg", // Path to the image for this tip
   },
   {
     id: 9,
@@ -74,7 +79,7 @@ const safetyTips: SafetyTip[] = [
     content:
       "Emergency Plans mean knowing what to do if you can't leave, like finding a safe place inside your home.",
     imageSrc:
-      "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/9.webp", // Path to the image for this tip
+      "https://res.cloudinary.com/dxtvfgaud/image/upload/f_auto,q_auto/v1726657557/9_sz0mhi.webp", // Path to the image for this tip
   },
 ];
 
