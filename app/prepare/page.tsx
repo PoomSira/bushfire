@@ -40,7 +40,7 @@ const Page = () => {
     <div className="bg-[#FFFBF2] mx-auto max-w-screen">
       <Navigation />
       {/* Hero Section */}
-      <div className="relative isolate h-[90vh] px-6 pt-14 lg:px-8 flex-grow bg-[url('/prepare.webp')] bg-cover bg-center">
+      <div className="relative isolate h-[90vh] px-6 pt-14 lg:px-8 flex-grow bg-[url('https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/prepare.webp')] bg-cover bg-center">
         {/* Blur Overlay */}
         <div className="absolute inset-0 bg-black bg-opacity-20 backdrop-filter backdrop-blur-sm"></div>
 
@@ -215,7 +215,7 @@ const Page = () => {
             <div className="w-full max-w-md p-4">
               <div className="transition-transform transform hover:scale-105 duration-500">
                 <Image
-                  src="/closeToGrass.png"
+                  src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/closeToGrass.png"
                   alt="Paddock"
                   className="rounded-2xl w-full h-auto animate-moveSideways"
                   width={500}
