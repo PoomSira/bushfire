@@ -10,12 +10,14 @@ const BushfireVideo = () => {
           autoPlay
           loop
           muted
-          controls
           width="500"
           height="500"
           className="rounded-xl"
         >
-          <source src="/fire.mp4" type="video/mp4" />
+          <source
+            src="https://res.cloudinary.com/dxtvfgaud/video/upload/v1726649696/fire_tjpjly.mp4"
+            type="video/mp4"
+          />
           Your browser does not support the video tag.
         </video>
       </div>

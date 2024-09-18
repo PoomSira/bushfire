@@ -40,7 +40,7 @@ const PasswordProtection: React.FC<PasswordProtectionProps> = ({
         <div className="relative min-h-screen">
           {/* Video Background */}
           <video
-            src="/hero-kangaroo-animation.mp4" // Replace with your video file path
+            src="https://res.cloudinary.com/dxtvfgaud/video/upload/v1726649122/hero-kangaroo-animation_emryuw.mp4" // Replace with your video file path
             className="absolute inset-0 w-full h-full object-cover"
             autoPlay
             loop

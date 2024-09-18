@@ -13,7 +13,10 @@ const BushfireSurvival: React.FC = () => {
           {/* Leave Early Video */}
           <div className="w-full md:w-1/2">
             <video className="w-full h-auto rounded-lg" loop autoPlay>
-              <source src="/Leave_Early.mp4" type="video/mp4" />
+              <source
+                src="https://res.cloudinary.com/dxtvfgaud/video/upload/v1726650156/Leave_Early_lb1t86.mp4"
+                type="video/mp4"
+              />
               Your browser does not support the video tag.
             </video>
           </div>
@@ -25,7 +28,10 @@ const BushfireSurvival: React.FC = () => {
               loop
               autoPlay
             >
-              <source src="/Leave_Early_Steps.mp4" type="video/mp4" />
+              <source
+                src="https://res.cloudinary.com/dxtvfgaud/video/upload/v1726650163/Leave_Early_Steps_u9dppa.mp4"
+                type="video/mp4"
+              />
               Your browser does not support the video tag.
             </video>
           </div>
@@ -41,7 +47,10 @@ const BushfireSurvival: React.FC = () => {
           {/* Well Prepared Video */}
           <div className="w-full md:w-1/2 mb-4 md:mb-0">
             <video className="w-full h-auto rounded-lg" loop autoPlay>
-              <source src="/Well_prepared.mp4" type="video/mp4" />
+              <source
+                src="https://res.cloudinary.com/dxtvfgaud/video/upload/v1726650328/Well_prepared_urvvqa.mp4"
+                type="video/mp4"
+              />
               Your browser does not support the video tag.
             </video>
           </div>
@@ -53,7 +62,10 @@ const BushfireSurvival: React.FC = () => {
               loop
               autoPlay
             >
-              <source src="/Prepared_steps.mp4" type="video/mp4" />
+              <source
+                src="https://res.cloudinary.com/dxtvfgaud/video/upload/v1726650342/Prepared_steps_wbby1x.mp4"
+                type="video/mp4"
+              />
               Your browser does not support the video tag.
             </video>
           </div>
@@ -69,7 +81,10 @@ const BushfireSurvival: React.FC = () => {
           {/* Last Option Video */}
           <div className="w-full md:w-1/2 mb-4 md:mb-0">
             <video className="w-full h-auto rounded-lg" loop autoPlay>
-              <source src="/Last_option.mp4" type="video/mp4" />
+              <source
+                src="https://res.cloudinary.com/dxtvfgaud/video/upload/v1726649866/Last_option_rofcy2.mp4"
+                type="video/mp4"
+              />
               Your browser does not support the video tag.
             </video>
           </div>
@@ -81,7 +96,10 @@ const BushfireSurvival: React.FC = () => {
               loop
               autoPlay
             >
-              <source src="/Last_Resort_Flowchart.mp4" type="video/mp4" />
+              <source
+                src="https://res.cloudinary.com/dxtvfgaud/video/upload/v1726649875/Last_Resort_Flowchart_fvssdg.mp4"
+                type="video/mp4"
+              />
               Your browser does not support the video tag.
             </video>
           </div>

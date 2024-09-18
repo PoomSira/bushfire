@@ -31,7 +31,7 @@ export default function Home() {
       <div className="relative isolate h-[100vh] px-6 pt-14 lg:px-8 flex-grow overflow-hidden">
         {/* Background Video */}
         <video
-          src="/hero-kangaroo-animation.mp4" // Replace with your video file path
+          src="https://res.cloudinary.com/dxtvfgaud/video/upload/v1726649122/hero-kangaroo-animation_emryuw.mp4" // Replace with your video file path
           className="absolute inset-0 w-full h-full object-cover"
           autoPlay
           loop

@@ -21,18 +21,12 @@ const DeadpoolBye: React.FC = () => {
             <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
               <div className="bg-white p-4 rounded-lg shadow-lg max-w-full max-h-full mx-4 overflow-auto">
                 <p className="mb-4 text-2xl text-black font-bold">
-                  Work in Progress...
+                  Work in Progress!
+                  <br />
+                  We will be right back...
+                  <br />
+                  Come back later
                 </p>
-                <div className="flex justify-center mb-4">
-                  <video
-                    src="/D&W-bye.mp4"
-                    className="max-w-full max-h-96 object-contain"
-                    autoPlay
-                    loop
-                    controls
-                    muted
-                  />
-                </div>
                 <button
                   className="bg-[#FFE6C5] text-black py-2 px-4 rounded hover:bg-orange-300"
                   onClick={togglePopup}
