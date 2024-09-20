@@ -290,14 +290,14 @@ const BushfireAreaMap = () => {
       {/* Right Column: Search and Dropdown */}
       <div className="w-full lg:w-1/3 my-auto justify-center p-6 rounded-lg">
         <div className="w-full p-4 bg-[#FFE6C5] rounded-md shadow-md relative">
-          <h2 className="text-2xl text-[#EA580B] font-bold mb-4">
+          <h2 className="text-2xl text-center text-[#EA580B] font-bold mb-4">
             Let’s figure out where we are
           </h2>
-          <p className="text-gray-700">
+          <p className="text-gray-700 text-xl">
             Where are we? – Are we in an area that could have bushfires? Let’s
             find out if our school is at risk.
           </p>
-          <ul className="text-gray-700 my-4">
+          <ul className="text-gray-700 text-xl my-4">
             <li>CAT 1: Extreme risk</li>
             <li>CAT 2: High risk</li>
             <li>CAT 3: Medium risk</li>
@@ -330,7 +330,7 @@ const BushfireAreaMap = () => {
           )}
 
           <div className="relative justify-center items-center mt-4 bg-orange-500 p-2 rounded-md shadow-sm">
-            <p className="text-center text-white text-lg">
+            <p className="text-center text-white text-xl">
               If your school location is covered by the red shaded area, it
               means your school has been affected by bushfires before. Be
               cautious and follow guidelines.
