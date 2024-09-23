@@ -38,7 +38,7 @@ const page = () => {
 
         <div className="relative w-full h-full flex flex-col items-center justify-center">
           <h1 className="text-3xl font-black text-center text-gray-700 mb-4">
-            Healing After the Fire - Daisy and Bobby&apos;s Journey
+            Cockatoo Ash Wednesday 1983: The People&apos;s Story
           </h1>
           <hr className="w-full max-w-2xl border-gray-700 mb-6 mx-auto" />
 
@@ -48,17 +48,17 @@ const page = () => {
                 Introduction
               </p>
               <p className="text-base font-medium text-gray-800 text-center mb-2 p-4 md:text-2xl lg:p-5">
-                After a bushfire, it’s normal to feel a lot of different
+                After a bushfire, it&apos;s normal to feel a lot of different
                 emotions. In Cockatoo in the Dandenong Ranges after the Ash
                 Wednesday fires in 1983, Daisy and Bobby experienced this. They
                 had to find ways to cope with their feelings and begin the
-                process of recovery. Let’s follow them on their journey to
+                process of recovery. Let&apos;s follow them on their journey to
                 recovery!
               </p>
             </div>
           </div>
           <h2 className="text-2xl font-black text-center text-gray-700 mb-4 mt-8">
-            Cockatoo Ash Wednesday 1983: The People’s Story
+            Healing After the Fire - Daisy and Bobby&apos;s Journey
           </h2>
           <hr className="w-full max-w-lg border-gray-700 mb-6 mx-auto" />
           {/*Rainbow after the storm*/}
