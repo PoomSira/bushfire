@@ -8,7 +8,7 @@ const BushfireSurvival: React.FC = () => {
         <h2 className="text-3xl font-bold mb-4 text-center text-gray-700">
           Leave Early
         </h2>
-        <hr className="w-autol max-w-xs border-gray-700 mb-6 mx-auto" />
+        <hr className="w-auto max-w-xs border-gray-700 mb-6 mx-auto" />
 
         <div className="flex flex-col md:flex-row gap-4">
           {/* Leave Early Video */}
@@ -44,7 +44,7 @@ const BushfireSurvival: React.FC = () => {
         <h2 className="text-3xl font-bold mb-4 text-center text-gray-700">
           Well Prepared
         </h2>
-        <hr className="w-autol max-w-xs border-gray-700 mb-6 mx-auto" />
+        <hr className="w-auto max-w-xs border-gray-700 mb-6 mx-auto" />
 
         <div className="flex flex-col md:flex-row gap-4">
           {/* Well Prepared Video */}
@@ -80,7 +80,7 @@ const BushfireSurvival: React.FC = () => {
         <h2 className="text-3xl font-bold mb-4 text-center text-gray-700">
           Last Option
         </h2>
-        <hr className="w-autol max-w-xs border-gray-700 mb-6 mx-auto" />
+        <hr className="w-auto max-w-xs border-gray-700 mb-6 mx-auto" />
         <div className="flex flex-col md:flex-row gap-4">
           {/* Last Option Video */}
           <div className="w-full md:w-1/2 mb-4 md:mb-0">
