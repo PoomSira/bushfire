@@ -4,59 +4,73 @@ import Image from "next/image";
 const BushfireStoryCockatoo = () => {
   const storyPanels = [
     {
-      image: "/Image1.jpg",
+      image:
+        "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/Image1.jpg",
       text: "Title: The Rainbow After the Storm",
     },
     {
-      image: "/Image2.jpg",
+      image:
+        "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/Image2.jpg",
       text: "In a small town called Cockatoo, there was a terrible bushfire that left everything burnt and blackened.",
     },
     {
-      image: "/Image3.jpg",
+      image:
+        "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/Image3.jpg",
       text: "Daisy and Bobby were very sad and scared after the fire.",
     },
     {
-      image: "/Image4.jpg",
+      image:
+        "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/Image4.jpg",
       text: "Their teacher, Ms. McLeod, decided to help them express their feelings by drawing.",
     },
     {
-      image: "/Image5.jpg",
+      image:
+        "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/Image5.jpg",
       text: "For days, the children drew pictures of the fire, trying to get all their sadness and fear out of their minds.",
     },
     {
-      image: "/Image6.jpg",
+      image:
+        "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/Image6.jpg",
       text: "But one day, Ms. McLeod asked them to try something different. She encouraged the children to draw something bright and happy instead.",
     },
     {
-      image: "/Image7.jpg",
+      image:
+        "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/Image7.jpg",
       text: "To her surprise, every child drew the same thing—a rainbow.",
     },
     {
-      image: "/Image8.jpg",
+      image:
+        "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/Image8.jpg",
       text: "This rainbow symbolized hope and happiness, showing that even after something as scary as a bushfire, there is always a way to feel better.",
     },
     {
-      image: "/Image9.jpg",
+      image:
+        "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/Image9.jpg",
       text: "The experience that Daisy, Bobby, and the children of Cockatoo went through is called trauma.",
     },
     {
-      image: "/Image10.jpg",
+      image:
+        "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/Image10.jpg",
       text: "Trauma happens when something really scary or upsetting occurs, like a bushfire. It can make you feel stressed, sad, or even confused.",
     },
     {
-      image: "/Image11.jpg",
+      image:
+        "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/Image11.jpg",
       text: "But it’s important to know that everyone experiences trauma differently, and there are ways to feel better over time.",
     },
     {
-      image: "/Image12.jpg",
+      image:
+        "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/Image12.jpg",
       text: "Activities like drawing, talking, writing about your experience can help you recover.",
     },
     {
-      image: "/Image13.jpg",
+      image:
+        "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/Image13.jpg",
       text: "After doing these activities, think about how you feel. It’s okay to have mixed emotions after something as big as a bushfire.",
     },
     {
-      image: "/Image14.jpg",
+      image:
+        "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/Image14.jpg",
       text: "And just like Daisy, Bobby, and the children in Cockatoo, you too can find ways to see the rainbow after the storm!",
     },
   ];
