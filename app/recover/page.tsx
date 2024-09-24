@@ -66,7 +66,7 @@ const page = () => {
           <BushfireStoryCockatoo />
         </div>
       </div>
-      {/*Bushfire survival option*/}
+      {/*RecoveryPlan*/}
       <div className="relative py-8 flex flex-col items-center justify-center w-full">
         <div className="absolute inset-0 bg-[url('https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/3.webp')] bg-[#FFFBF2] opacity-20 bg-cover bg-center brightness-75"></div>
         <h1 className="text-3xl font-black text-center text-gray-700 mb-4">
