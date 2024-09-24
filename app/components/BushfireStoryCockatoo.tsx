@@ -160,6 +160,7 @@ const BushfireStoryCockatoo = () => {
                 <button
                   className="absolute top-2 right-2 bg-white rounded-full shadow-xl z-10"
                   onClick={() => handleAudioToggle(index)}
+                  title="Click to Listen and Experience the Adventure!" // Tooltip added here
                 >
                   <Image
                     src={
