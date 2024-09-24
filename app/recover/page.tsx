@@ -3,7 +3,7 @@
 import React from "react";
 import Navigation from "../components/Navigation";
 import Image from "next/image";
-//import RecoveryPlan from "../components/RecoveryPlan";
+import RecoveryPlan from "../components/RecoveryPlan";
 import BushfireStoryCockatoo from "../components/BushfireStoryCockatoo";
 import Footer from "../components/Footer";
 
@@ -74,7 +74,7 @@ const page = () => {
         </h1>
         <hr className="w-full max-w-xs border-gray-700 mb-4 mx-auto" />
         <div className="relative w-full flex flex-col items-center justify-center">
-          {/* <RecoveryPlan /> */}
+          <RecoveryPlan />
         </div>
       </div>
 
