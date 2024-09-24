@@ -74,7 +74,7 @@ const page = () => {
         </h1>
         <hr className="w-full max-w-xs border-gray-700 mb-4 mx-auto" />
         <div className="relative w-full flex flex-col items-center justify-center">
-          <RecoveryPlan />
+          {/* <RecoveryPlan /> */}
         </div>
       </div>
 
