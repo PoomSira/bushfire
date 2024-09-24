@@ -3,6 +3,7 @@
 import React from "react";
 import Navigation from "../components/Navigation";
 import Image from "next/image";
+import RecoveryPlan from "../components/RecoveryPlan";
 import BushfireStoryCockatoo from "../components/BushfireStoryCockatoo";
 import Footer from "../components/Footer";
 
@@ -31,7 +32,7 @@ const page = () => {
         </div>
       </div>
 
-      {/* Busfire map area */}
+      {/* Busfire story */}
       <div className="relative py-8 flex flex-col items-center justify-center w-full">
         {/* Background Image */}
         <div className="absolute inset-0 bg-[url('https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/timeline-1.png')] bg-[#FFFBF2] opacity-20 bg-cover bg-center brightness-75"></div>
@@ -65,6 +66,18 @@ const page = () => {
           <BushfireStoryCockatoo />
         </div>
       </div>
+      {/*Bushfire survival option*/}
+      <div className="relative py-8 flex flex-col items-center justify-center w-full">
+        <div className="absolute inset-0 bg-[url('https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/3.webp')] bg-[#FFFBF2] opacity-20 bg-cover bg-center brightness-75"></div>
+        <h1 className="text-3xl font-black text-center text-gray-700 mb-4">
+          My Recovery Plan
+        </h1>
+        <hr className="w-full max-w-xs border-gray-700 mb-4 mx-auto" />
+        <div className="relative w-full flex flex-col items-center justify-center">
+          <RecoveryPlan />
+        </div>
+      </div>
+
       <Footer />
     </div>
   );

@@ -176,7 +176,7 @@ const BushfireStoryCockatoo = () => {
               </div>
               {/* Orange text card */}
               <div className="bg-orange-200 rounded-xl shadow-lg p-4 flex-grow">
-                <p className="text-xl text-black">{panel.text}</p>
+                <p className="text-xl text-black text-center">{panel.text}</p>
               </div>
             </div>
           );
