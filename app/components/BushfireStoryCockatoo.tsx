@@ -5,98 +5,98 @@ const BushfireStoryCockatoo = () => {
   const storyPanels = [
     {
       image:
-        "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/Image1.jpg",
+        "https://res.cloudinary.com/dxtvfgaud/image/upload/q_auto,f_auto/v1727155807/Image1_gdiri0.jpg",
       text: "Title: The Rainbow After the Storm",
       audio:
         "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/In_the_aftermath_1.wav",
     },
     {
       image:
-        "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/Image2.jpg",
+        "https://res.cloudinary.com/dxtvfgaud/image/upload/q_auto,f_auto/v1727155808/Image2_xlelc5.jpg",
       text: "In a small town called Cockatoo, there was a terrible bushfire that left everything burnt and blackened.",
       audio:
         "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/Once_a_vibrant_town_2.wav",
     },
     {
       image:
-        "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/Image3.jpg",
+        "https://res.cloudinary.com/dxtvfgaud/image/upload/q_auto,f_auto/v1727155808/Image3_alfwae.jpg",
       text: "Daisy and Bobby were very sad and scared after the fire.",
       audio:
         "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/Daisy_and_Bobby_couldnt_3.wav",
     },
     {
       image:
-        "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/Image4.jpg",
+        "https://res.cloudinary.com/dxtvfgaud/image/upload/q_auto,f_auto/v1727155808/Image4_qp1vgc.jpg",
       text: "Their teacher, Ms. McLeod, decided to help them express their feelings by drawing.",
       audio:
         "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/McLeod_noticed_the_sadnes_4.wav",
     },
     {
       image:
-        "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/Image5.jpg",
+        "https://res.cloudinary.com/dxtvfgaud/image/upload/q_auto,f_auto/v1727155808/Image5_u7pyeb.jpg",
       text: "For days, the children drew pictures of the fire, trying to get all their sadness and fear out of their minds.",
       audio:
         "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/For_several_days_5.wav",
     },
     {
       image:
-        "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/Image6.jpg",
+        "https://res.cloudinary.com/dxtvfgaud/image/upload/q_auto,f_auto/v1727155808/Image6_qwsb4u.jpg",
       text: "But one day, Ms. McLeod asked them to try something different. She encouraged the children to draw something bright and happy instead.",
       audio:
         "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/After_days_of_drawing_6.wav",
     },
     {
       image:
-        "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/Image7.jpg",
+        "https://res.cloudinary.com/dxtvfgaud/image/upload/q_auto,f_auto/v1727155809/Image7_hj3dip.jpg",
       text: "To her surprise, every child drew the same thing—a rainbow.",
       audio:
         "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/What_McLeod_didn-t_expect_7.wav",
     },
     {
       image:
-        "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/Image8.jpg",
+        "https://res.cloudinary.com/dxtvfgaud/image/upload/q_auto,f_auto/v1727155808/Image8_ggeybf.jpg",
       text: "This rainbow symbolized hope and happiness, showing that even after something as scary as a bushfire, there is always a way to feel better.",
       audio:
         "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/For_the_children_8.wav",
     },
     {
       image:
-        "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/Image9.jpg",
+        "https://res.cloudinary.com/dxtvfgaud/image/upload/q_auto,f_auto/v1727155808/Image9_oorzqh.jpg",
       text: "The experience that Daisy, Bobby, and the children of Cockatoo went through is called trauma.",
       audio:
         "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/Daisy_Bobby_and_their_9.wav",
     },
     {
       image:
-        "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/Image10.jpg",
+        "https://res.cloudinary.com/dxtvfgaud/image/upload/q_auto,f_auto/v1727155809/Image10_ukpw7y.jpg",
       text: "Trauma happens when something really scary or upsetting occurs, like a bushfire. It can make you feel stressed, sad, or even confused.",
       audio:
         "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/Trauma_can_affect_people_10.wav",
     },
     {
       image:
-        "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/Image11.jpg",
+        "https://res.cloudinary.com/dxtvfgaud/image/upload/q_auto,f_auto/v1727155809/Image11_gifq0s.jpg",
       text: "But it’s important to know that everyone experiences trauma differently, and there are ways to feel better over time.",
       audio:
         "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/Not_everyone_reacts_11.wav",
     },
     {
       image:
-        "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/Image12.jpg",
+        "https://res.cloudinary.com/dxtvfgaud/image/upload/q_auto,f_auto/v1727155809/Image12_niqtd5.jpg",
       text: "Activities like drawing, talking, writing about your experience can help you recover.",
       audio:
         "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/Finding_ways_to_express_12.wav",
     },
     {
       image:
-        "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/Image13.jpg",
+        "https://res.cloudinary.com/dxtvfgaud/image/upload/q_auto,f_auto/v1727155809/Image13_po8huu.jpg",
       text: "After doing these activities, think about how you feel. It’s okay to have mixed emotions after something as big as a bushfire.",
       audio:
         "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/After_spent_time_13.wav",
     },
     {
       image:
-        "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/Image14.jpg",
+        "https://res.cloudinary.com/dxtvfgaud/image/upload/q_auto,f_auto/v1727155809/Image14_ks0n8r.jpg",
       text: "And just like Daisy, Bobby, and the children in Cockatoo, you too can find ways to see the rainbow after the storm!",
       audio:
         "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/Remember_just_like_Daisy_14.wav",

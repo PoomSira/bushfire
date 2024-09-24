@@ -215,7 +215,7 @@ const Page = () => {
             <div className="w-full max-w-md p-4">
               <div className="transition-transform transform hover:scale-105 duration-500">
                 <Image
-                  src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/closeToGrass.png"
+                  src="https://res.cloudinary.com/dxtvfgaud/image/upload/v1727156722/closeToGrass_xusv7e.png"
                   alt="Paddock"
                   className="rounded-2xl w-full h-auto animate-moveSideways"
                   width={500}
@@ -242,7 +242,7 @@ const Page = () => {
             <div className="w-full max-w-md p-4">
               <div className="transition-transform transform hover:scale-105 duration-500">
                 <Image
-                  src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/denseBush.png"
+                  src="https://res.cloudinary.com/dxtvfgaud/image/upload/v1727156723/denseBush_dv3zu4.png"
                   alt="Dense Bush"
                   className="rounded-2xl w-auto h-auto animate-moveSideways"
                   width={500}
@@ -274,7 +274,7 @@ const Page = () => {
             <div className="w-full max-w-md p-4">
               <div className="transition-transform transform hover:scale-105 duration-500">
                 <Image
-                  src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/costalScrub.png"
+                  src="https://res.cloudinary.com/dxtvfgaud/image/upload/v1727156723/costalScrub_li0mqf.png"
                   alt="Coastal Scrub"
                   className="rounded-lg w-auto h-auto animate-moveSideways"
                   width={500}
@@ -301,7 +301,7 @@ const Page = () => {
             <div className="w-full max-w-md p-4">
               <div className="transition-transform transform hover:scale-105 duration-500">
                 <Image
-                  src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/grassland.png"
+                  src="https://res.cloudinary.com/dxtvfgaud/image/upload/v1727156723/grassland_s5epnk.png"
                   alt="Grassland"
                   className="rounded-lg w-auto h-auto animate-moveSideways"
                   width={500}
@@ -339,7 +339,7 @@ const Page = () => {
         <h1 className="text-2xl md:text-3xl lg:text-4xl font-black text-center text-gray-700 mb-4">
           Why Having a Fire Plan is Super Important!
         </h1>
-        <hr className="w-full max-w-lg border-gray-700 mb-4 mx-auto" />
+        <hr className="w-full max-w-2xl border-gray-700 mb-4 mx-auto" />
 
         {/* Kangaroo and Text Card */}
         <div className="relative p-6 md:p-10 flex flex-col md:flex-row items-center justify-center w-full">
