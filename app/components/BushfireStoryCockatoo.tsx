@@ -169,8 +169,8 @@ const BushfireStoryCockatoo = () => {
                         : "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/mute.png"
                     }
                     alt={playingIndex === index ? "Pause" : "Play"}
-                    width={24} // Adjust the size as needed
-                    height={24} // Adjust the size as needed
+                    width={30} // Adjust the size as needed
+                    height={30} // Adjust the size as needed
                   />
                 </button>
               </div>
