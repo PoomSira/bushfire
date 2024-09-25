@@ -105,19 +105,16 @@ const PathToRecovery = () => {
             Bushfire impacts on Victoria&apos;s environment
           </h2>
           <p className="text-gray-700 text-lg">
-            In this video, Dr. Mark Norman and James Todd discuss the aftermath
-            of severe fires across Victoria, focusing on both the extensive
-            damage and areas of survival. Recent aerial surveys reveal sobering
-            impacts from high-intensity fires, yet some regions have remained
-            unscathed, providing hope for recovery. The Victorian government has
-            allocated $17.5 million for emergency actions to support
-            biodiversity recovery efforts. The video highlights resilient
-            landscapes, including intact rainforests and green corridors, which
-            are crucial for the survival of threatened species like the
-            Brush-tailed rock-wallaby. It emphasizes the need for targeted
-            recovery actions as ecosystems may take a long time to heal, with
-            some areas potentially changing forever due to climate change and
-            unprecedented fire conditions.
+            Dr. Mark Norman and James Todd discuss the aftermath of severe fires
+            in Victoria, revealing significant damage alongside areas of
+            survival. Aerial surveys indicate high-intensity fire impacts, but
+            some regions remain unscathed, offering hope for recovery. The
+            Victorian government has allocated $17.5 million for biodiversity
+            recovery efforts. The video highlights resilient landscapes, such as
+            intact rainforests and green corridors crucial for species like the
+            Brush-tailed rock-wallaby. Targeted recovery actions are needed as
+            ecosystems may take time to heal and some areas may change
+            permanently due to climate change.
           </p>
         </div>
 

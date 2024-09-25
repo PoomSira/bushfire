@@ -36,7 +36,7 @@ const page = () => {
       {/* Busfire story */}
       <div className="relative py-8 flex flex-col items-center justify-center w-full">
         {/* Background Image */}
-        <div className="absolute inset-0 bg-[url('https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/timeline-1.png')] bg-[#FFFBF2] opacity-20 bg-cover bg-center brightness-75"></div>
+        <div className="absolute inset-0 bg-[url('https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/class-room.webp')] bg-[#FFFBF2] opacity-20 bg-cover bg-center brightness-75"></div>
 
         <div className="relative w-full h-full flex flex-col items-center justify-center">
           <h1 className="text-3xl font-black text-center text-gray-700 mb-4">
