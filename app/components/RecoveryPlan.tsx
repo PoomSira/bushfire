@@ -20,7 +20,7 @@ const RecoveryPlan: React.FC = () => {
       });
 
       quillRef.current.setContents([
-        { insert: "Write your recovery plan,,\n" },
+        { insert: "Write your recovery plan...\n" },
         { insert: "\n" },
       ]);
     }
