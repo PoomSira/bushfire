@@ -5,6 +5,7 @@ import Navigation from "../components/Navigation";
 import Image from "next/image";
 import RecoveryPlan from "../components/RecoveryPlan";
 import PathToRecovery from "../components/PathToRecovery";
+import VoiceOfRecovery from "../components/VoiceOfRecovery";
 import BushfireStoryCockatoo from "../components/BushfireStoryCockatoo";
 import Footer from "../components/Footer";
 
@@ -76,6 +77,17 @@ const page = () => {
         <hr className="w-full max-w-xs border-gray-700 mb-4 mx-auto" />
         <div className="relative w-full flex items-center justify-center">
           <PathToRecovery />
+        </div>
+      </div>
+      {/*Voice of recovery*/}
+      <div className="relative py-8 flex flex-col items-center justify-center w-full">
+        <div className="absolute inset-0 bg-[url('https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/timeline-1.png')] bg-[#FFFBF2] opacity-20 bg-cover bg-center brightness-75"></div>
+        <h1 className="text-3xl font-black text-center text-gray-700 mb-4">
+          Voice of Recovery
+        </h1>
+        <hr className="w-full max-w-xs border-gray-700 mb-4 mx-auto" />
+        <div className="relative w-full flex items-center justify-center">
+          <VoiceOfRecovery />
         </div>
       </div>
       {/*RecoveryPlan*/}
