@@ -1,28 +1,28 @@
 import dynamic from "next/dynamic";
 import { useState } from "react";
-import "react-quill/dist/quill.snow.css"; // Quill styling
 import { jsPDF } from "jspdf"; // Import jsPDF for custom PDF generation
 import html2pdf from "html2pdf.js"; // Import html2pdf.js for HTML to PDF conversion
+import "react-quill/dist/quill.snow.css"; // Ensure Quill's CSS is imported
 
-// Dynamically import ReactQuill to avoid issues with SSR in Next.js
+// Dynamically import ReactQuill to avoid SSR issues
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
 // Toolbar options for the editor
 const toolbarOptions = [
-  ["bold", "italic", "underline", "strike"], // toggled buttons
+  ["bold", "italic", "underline", "strike"],
   ["blockquote", "code-block"],
   ["link", "image", "video", "formula"],
-  [{ header: 1 }, { header: 2 }], // custom button values
+  [{ header: 1 }, { header: 2 }],
   [{ list: "ordered" }, { list: "bullet" }, { list: "check" }],
-  [{ script: "sub" }, { script: "super" }], // superscript/subscript
-  [{ indent: "-1" }, { indent: "+1" }], // outdent/indent
-  [{ direction: "rtl" }], // text direction
-  [{ size: ["small", false, "large", "huge"] }], // custom dropdown
+  [{ script: "sub" }, { script: "super" }],
+  [{ indent: "-1" }, { indent: "+1" }],
+  [{ direction: "rtl" }],
+  [{ size: ["small", false, "large", "huge"] }],
   [{ header: [1, 2, 3, 4, 5, 6, false] }],
-  [{ color: [] }, { background: [] }], // dropdown with defaults from theme
+  [{ color: [] }, { background: [] }],
   [{ font: [] }],
   [{ align: [] }],
-  ["clean"], // remove formatting button
+  ["clean"],
 ];
 
 const RecoveryPlan: React.FC = () => {
@@ -48,14 +48,11 @@ const RecoveryPlan: React.FC = () => {
       // Center the logo horizontally
       const logoX = (pdfWidth - logoWidth) / 2; // Calculate x position to center the logo
 
-      // Add the logo to the PDF (centered at the top)
-      doc.addImage(img, "PNG", logoX, 10, logoWidth, logoHeight); // Adjust the position (x, y) and size (width, height)
-
       // Now handle the rich text content (preserving text size, alignment, etc.)
       const element = document.createElement("div");
-      element.innerHTML = `
-        <div style="margin-top: ${logoHeight + 15}px;">${content}</div>
-      `;
+      element.innerHTML = `<div style="margin-top: ${
+        logoHeight + 15
+      }px;">${content}</div>`;
 
       // Attach the element to the DOM temporarily to ensure it's fully rendered
       document.body.appendChild(element);
@@ -96,7 +93,7 @@ const RecoveryPlan: React.FC = () => {
             value={content}
             onChange={setContent}
             modules={{
-              toolbar: toolbarOptions, // Custom toolbar from your example
+              toolbar: toolbarOptions,
             }}
             className="bg-white text-gray-800 rounded-lg border-none"
             placeholder="Write something amazing..."
@@ -104,7 +101,6 @@ const RecoveryPlan: React.FC = () => {
           />
         </div>
 
-        {/* Center the button */}
         <div className="flex justify-center mt-4">
           <button
             type="button"
