@@ -80,7 +80,7 @@ const Page = () => {
                 Bushfires can be scary, but we can learn how to stay safe if
                 they happen. In this section, we&apos;ll talk about what we can
                 do to get ready for bushfires and how to stay safe if one
-                starts. It’s important to know what to do so we can protect
+                starts. It&apos;s important to know what to do so we can protect
                 ourselves and others!
               </p>
             </div>
