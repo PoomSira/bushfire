@@ -3,16 +3,6 @@ import { useState } from "react";
 import "react-quill/dist/quill.snow.css"; // Quill styling
 import { jsPDF } from "jspdf"; // Import jsPDF for custom PDF generation
 import html2pdf from "html2pdf.js"; // Import html2pdf.js for HTML to PDF conversion
-import { saveAs } from "file-saver"; // Import file-saver for file saving
-import {
-  Document,
-  Packer,
-  Paragraph,
-  TextRun,
-  ImageRun,
-  AlignmentType,
-  Header,
-} from "docx"; // Import docx components
 
 // Dynamically import ReactQuill to avoid issues with SSR in Next.js
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
@@ -34,46 +24,6 @@ const toolbarOptions = [
   [{ align: [] }],
   ["clean"], // remove formatting button
 ];
-
-// Helper function to extract plain text and images from HTML content
-const extractContentFromHtml = (html: string) => {
-  const doc = new DOMParser().parseFromString(html, "text/html");
-  const paragraphs: Paragraph[] = [];
-  const imagePromises: Promise<{
-    image: ArrayBuffer;
-    width: number;
-    height: number;
-  }>[] = [];
-
-  doc.body.childNodes.forEach((node) => {
-    // Handle text nodes (paragraphs, divs)
-    if (node.nodeName === "P" || node.nodeName === "DIV") {
-      const textContent = node.textContent || "";
-      paragraphs.push(new Paragraph({ children: [new TextRun(textContent)] }));
-    }
-
-    // Handle image nodes
-    if (node.nodeName === "IMG") {
-      const img = node as HTMLImageElement;
-      const imgSrc = img.src;
-
-      if (imgSrc.startsWith("data:image/")) {
-        const promise = fetch(imgSrc)
-          .then((res) => res.blob())
-          .then((blob) => blob.arrayBuffer())
-          .then((buffer) => ({
-            image: buffer,
-            width: 300, // Set image width for DOCX
-            height: (300 * img.height) / img.width, // Keep the aspect ratio
-          }));
-
-        imagePromises.push(promise);
-      }
-    }
-  });
-
-  return { paragraphs, imagePromises };
-};
 
 const RecoveryPlan: React.FC = () => {
   const [content, setContent] = useState<string>("");
@@ -98,11 +48,14 @@ const RecoveryPlan: React.FC = () => {
       // Center the logo horizontally
       const logoX = (pdfWidth - logoWidth) / 2; // Calculate x position to center the logo
 
+      // Add the logo to the PDF (centered at the top)
+      doc.addImage(img, "PNG", logoX, 10, logoWidth, logoHeight); // Adjust the position (x, y) and size (width, height)
+
       // Now handle the rich text content (preserving text size, alignment, etc.)
       const element = document.createElement("div");
-      element.innerHTML = `<div style="margin-top: ${
-        logoHeight + 15
-      }px;">${content}</div>`;
+      element.innerHTML = `
+        <div style="margin-top: ${logoHeight + 15}px;">${content}</div>
+      `;
 
       // Attach the element to the DOM temporarily to ensure it's fully rendered
       document.body.appendChild(element);
@@ -135,63 +88,6 @@ const RecoveryPlan: React.FC = () => {
     };
   };
 
-  // Function to handle Word document download
-  const handleDownloadDocx = async () => {
-    const { paragraphs, imagePromises } = extractContentFromHtml(content);
-
-    const logoUrl =
-      "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/logo.png";
-
-    // Fetch the logo image to add to the header
-    const response = await fetch(logoUrl);
-    const imageData = await response.blob();
-    const imageArrayBuffer = await imageData.arrayBuffer();
-
-    // Wait for all image promises to resolve (this handles images in the rich text content)
-    const imageRuns = await Promise.all(imagePromises);
-
-    // Initialize the document and add the logo to the header, centered
-    const doc = new Document({
-      sections: [
-        {
-          headers: {
-            default: new Header({
-              children: [
-                new Paragraph({
-                  alignment: AlignmentType.CENTER, // Center the logo
-                  children: [
-                    new ImageRun({
-                      data: imageArrayBuffer,
-                      transformation: { width: 100, height: 40 }, // Set logo size
-                    }),
-                  ],
-                }),
-              ],
-            }),
-          },
-          children: [
-            ...paragraphs,
-            ...imageRuns.map(({ image, width, height }) => {
-              return new Paragraph({
-                children: [
-                  new ImageRun({
-                    data: image,
-                    transformation: { width, height },
-                  }),
-                ],
-              });
-            }),
-          ],
-        },
-      ],
-    });
-
-    // Pack the document into a blob and save it
-    Packer.toBlob(doc).then((blob) => {
-      saveAs(blob, "recovery-plan.docx");
-    });
-  };
-
   return (
     <div className="container mx-auto p-4">
       <form onSubmit={(e) => e.preventDefault()}>
@@ -208,21 +104,14 @@ const RecoveryPlan: React.FC = () => {
           />
         </div>
 
-        {/* Center the buttons */}
-        <div className="flex justify-center mt-4 space-x-4">
+        {/* Center the button */}
+        <div className="flex justify-center mt-4">
           <button
             type="button"
             onClick={handleDownloadPDF}
             className="w-1/5 px-4 py-2 bg-orange-400 text-white font-semibold rounded-lg shadow-md hover:bg-orange-300 transition-transform transform hover:scale-105"
           >
-            Download as PDF
-          </button>
-          <button
-            type="button"
-            onClick={handleDownloadDocx}
-            className="w-1/5 px-4 py-2 bg-black text-white font-semibold rounded-lg shadow-md hover:bg-slate-700 transition-transform transform hover:scale-105"
-          >
-            Download as DOCX
+            Download your plan
           </button>
         </div>
       </form>
