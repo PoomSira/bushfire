@@ -3,11 +3,15 @@
 import React from "react";
 import Navigation from "../components/Navigation";
 import Image from "next/image";
-import RecoveryPlan from "../components/RecoveryPlan";
 import PathToRecovery from "../components/PathToRecovery";
 import VoiceOfRecovery from "../components/VoiceOfRecovery";
 import BushfireStoryCockatoo from "../components/BushfireStoryCockatoo";
 import Footer from "../components/Footer";
+import dynamic from "next/dynamic";
+
+const RecoveryPlan = dynamic(() => import("../components/RecoveryPlan"), {
+  ssr: false,
+});
 
 const page = () => {
   return (
