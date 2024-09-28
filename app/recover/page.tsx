@@ -49,19 +49,30 @@ const page = () => {
           </h1>
           <hr className="w-full max-w-2xl border-gray-700 mb-6 mx-auto" />
 
-          <div className="bg-[#FFFBF2] p-6 rounded-xl mx-4 md:p-8 lg:p-10">
-            <div className="py-4 bg-[#ffe6c5] rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-105">
-              <p className="text-2xl text-orange-600 text-center md:text-3xl">
-                Introduction
-              </p>
-              <p className="text-base font-medium text-gray-800 text-center mb-2 p-4 md:text-2xl lg:p-5">
-                After a bushfire, it&apos;s normal to feel a lot of different
-                emotions. In Cockatoo in the Dandenong Ranges after the Ash
-                Wednesday fires in 1983, Daisy and Bobby experienced this. They
-                had to find ways to cope with their feelings and begin the
-                process of recovery. Let&apos;s follow them on their journey to
-                recovery!
-              </p>
+          <div className="flex items-center p-8 space-x-4 md:space-x-8">
+            <div className="flex-shrink-0">
+              <Image
+                src="/wombat.png"
+                alt="Wombat"
+                width={150}
+                height={150}
+                className="rounded-full animate-moveSideways"
+              />
+            </div>
+            <div className="flex-grow bg-[#FFFBF2] p-6 rounded-xl mx-4 md:p-8 lg:p-10">
+              <div className="py-4 bg-[#ffe6c5] rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-105">
+                <p className="text-2xl text-orange-600 text-center md:text-3xl">
+                  Introduction
+                </p>
+                <p className="text-base font-medium text-gray-800 text-center mb-2 p-4 md:text-2xl lg:p-5">
+                  After a bushfire, it&apos;s normal to feel a lot of different
+                  emotions. In Cockatoo in the Dandenong Ranges after the Ash
+                  Wednesday fires in 1983, Daisy and Bobby experienced this.
+                  They had to find ways to cope with their feelings and begin
+                  the process of recovery. Let&apos;s follow them on their
+                  journey to recovery!
+                </p>
+              </div>
             </div>
           </div>
           <h2 className="text-2xl font-black text-center text-gray-700 mb-4 mt-8">
