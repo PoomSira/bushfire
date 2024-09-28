@@ -1,13 +1,22 @@
 import dynamic from "next/dynamic";
-import { useState } from "react";
-import { jsPDF } from "jspdf"; // Import jsPDF for custom PDF generation
-import html2pdf from "html2pdf.js"; // Import html2pdf.js for HTML to PDF conversion
-import "react-quill/dist/quill.snow.css"; // Ensure Quill's CSS is imported
+import React, {
+  useState,
+  useRef,
+  useEffect,
+  useCallback,
+  useMemo,
+} from "react";
+import { jsPDF } from "jspdf";
+import html2canvas from "html2canvas";
+import "react-quill/dist/quill.snow.css";
 
 // Dynamically import ReactQuill to avoid SSR issues
-const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
+const ReactQuill = dynamic(() => import("react-quill"), {
+  ssr: false,
+  loading: () => <p>Loading editor...</p>,
+});
 
-// Toolbar options for the editor
+// Toolbar options for the Quill editor
 const toolbarOptions = [
   ["bold", "italic", "underline", "strike"],
   ["blockquote", "code-block"],
@@ -27,63 +36,94 @@ const toolbarOptions = [
 
 const RecoveryPlan: React.FC = () => {
   const [content, setContent] = useState<string>("");
+  const quillRef = useRef<any>(null);
 
-  // Function to handle PDF generation with a logo
-  const handleDownloadPDF = async () => {
-    const doc = new jsPDF("p", "mm", "a4");
-    const logoUrl =
-      "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/logo.png"; // Logo URL
+  // Memoize the imageHandler function
+  const imageHandler = useCallback(() => {
+    const input = document.createElement("input");
+    input.setAttribute("type", "file");
+    input.setAttribute("accept", "image/*");
+    input.click();
 
-    // Add the logo to the header of the first page
-    const img = new Image();
-    img.src = logoUrl;
-
-    // Wait until the image is loaded
-    img.onload = async () => {
-      const pdfWidth = 210; // A4 page width in mm
-      const logoWidthPercentage = 25; // Set the logo width as a percentage of the PDF width (e.g., 25%)
-      const logoWidth = (pdfWidth * logoWidthPercentage) / 100; // Logo width in mm
-      const logoHeight = (img.height / img.width) * logoWidth; // Maintain aspect ratio
-
-      // Center the logo horizontally
-      const logoX = (pdfWidth - logoWidth) / 2; // Calculate x position to center the logo
-
-      // Now handle the rich text content (preserving text size, alignment, etc.)
-      const element = document.createElement("div");
-      element.innerHTML = `<div style="margin-top: ${
-        logoHeight + 15
-      }px;">${content}</div>`;
-
-      // Attach the element to the DOM temporarily to ensure it's fully rendered
-      document.body.appendChild(element);
-
-      // Options for html2pdf to convert the content into a PDF
-      const opt = {
-        margin: [20, 20, 20, 20], // Add margins to avoid content overlap
-        filename: "recovery-plan.pdf",
-        image: { type: "jpeg", quality: 0.98 },
-        html2canvas: { scale: 2 },
-        jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
-        pagebreak: { mode: ["css", "legacy"] },
-      };
-
-      // Generate the content PDF with html2pdf and combine it with the logo
-      html2pdf()
-        .from(element)
-        .set(opt)
-        .toPdf()
-        .get("pdf")
-        .then((pdfObj: jsPDF) => {
-          // Add the logo on the first page of the generated content
-          pdfObj.setPage(1);
-          pdfObj.addImage(img, "PNG", logoX, 10, logoWidth, logoHeight); // Reapply the logo on the first page
-          pdfObj.save("recovery-plan.pdf");
-        });
-
-      // Remove the temporary HTML element
-      document.body.removeChild(element);
+    input.onchange = async () => {
+      const file = input.files?.[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          const quill = quillRef.current?.getEditor();
+          const range = quill.getSelection(true);
+          quill.insertEmbed(range.index, "image", e.target?.result);
+        };
+        reader.readAsDataURL(file);
+      }
     };
+  }, []);
+
+  useEffect(() => {
+    if (quillRef.current) {
+      const quillEditor = quillRef.current.getEditor();
+      quillEditor.getModule("toolbar").addHandler("image", imageHandler);
+    }
+  }, [imageHandler]);
+
+  const handleDownloadPDF = async () => {
+    const element = document.createElement("div");
+    element.innerHTML = content;
+    element.style.width = "210mm";
+    element.style.padding = "20mm";
+    element.style.backgroundColor = "white";
+    element.style.color = "black";
+    document.body.appendChild(element);
+
+    const canvas = await html2canvas(element, {
+      scale: 4,
+      logging: false,
+      useCORS: true,
+      backgroundColor: "#ffffff",
+    });
+
+    document.body.removeChild(element);
+
+    const imgData = canvas.toDataURL("image/png");
+
+    const pdf = new jsPDF({
+      orientation: "portrait",
+      unit: "mm",
+      format: "a4",
+    });
+
+    const logoUrl =
+      "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/logo.png";
+    const logoWidth = 50;
+    const logoX = (210 - logoWidth) / 2;
+    pdf.addImage(logoUrl, "PNG", logoX, 10, logoWidth, logoWidth * 0.5);
+
+    const pdfWidth = pdf.internal.pageSize.getWidth();
+    const pdfHeight = pdf.internal.pageSize.getHeight();
+    const imgWidth = canvas.width;
+    const imgHeight = canvas.height;
+    const ratio = Math.min(pdfWidth / imgWidth, (pdfHeight - 30) / imgHeight);
+    const imgX = (pdfWidth - imgWidth * ratio) / 2;
+    const imgY = 30;
+
+    pdf.addImage(
+      imgData,
+      "PNG",
+      imgX,
+      imgY,
+      imgWidth * ratio,
+      imgHeight * ratio
+    );
+
+    pdf.save("recovery-plan.pdf");
   };
+
+  const modules = useMemo(
+    () => ({
+      toolbar: toolbarOptions,
+    }),
+    []
+  );
 
   return (
     <div className="container mx-auto p-4">
@@ -92,11 +132,9 @@ const RecoveryPlan: React.FC = () => {
           <ReactQuill
             value={content}
             onChange={setContent}
-            modules={{
-              toolbar: toolbarOptions,
-            }}
+            modules={modules}
             className="bg-white text-gray-800 rounded-lg border-none"
-            placeholder="Write something amazing..."
+            placeholder="Write your recovery plan here..."
             theme="snow"
           />
         </div>
