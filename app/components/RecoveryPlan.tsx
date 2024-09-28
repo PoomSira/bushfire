@@ -94,7 +94,7 @@ const RecoveryPlan: React.FC = () => {
 
     const logoUrl =
       "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/logo.png";
-    const logoWidth = 50;
+    const logoWidth = 40;
     const logoX = (210 - logoWidth) / 2;
     pdf.addImage(logoUrl, "PNG", logoX, 10, logoWidth, logoWidth * 0.5);
 
