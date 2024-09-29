@@ -49,7 +49,7 @@ const page = () => {
           </h1>
           <hr className="w-full max-w-2xl border-gray-700 mb-6 mx-auto" />
 
-          <div className="flex items-center p-8 space-x-4 md:space-x-8">
+          <div className="flex flex-col items-center p-4 md:p-8 space-y-4 md:space-y-0 md:space-x-8 md:flex-row">
             <div className="flex-shrink-0">
               <Image
                 src="/wombat.png"
@@ -59,12 +59,12 @@ const page = () => {
                 className="rounded-full animate-moveSideways"
               />
             </div>
-            <div className="flex-grow bg-[#FFFBF2] p-6 rounded-xl mx-4 md:p-8 lg:p-10">
+            <div className="flex-grow bg-[#FFFBF2] p-4 rounded-xl mx-4 md:p-6 lg:p-10">
               <div className="py-4 bg-[#ffe6c5] rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-105">
-                <p className="text-2xl text-orange-600 text-center md:text-3xl">
+                <p className="text-xl text-orange-600 text-center md:text-2xl">
                   Introduction
                 </p>
-                <p className="text-base font-medium text-gray-800 text-center mb-2 p-4 md:text-2xl lg:p-5">
+                <p className="text-xl text-gray-800 text-center mb-2 p-2 lg:p-5">
                   After a bushfire, it&apos;s normal to feel a lot of different
                   emotions. In Cockatoo in the Dandenong Ranges after the Ash
                   Wednesday fires in 1983, Daisy and Bobby experienced this.
@@ -75,6 +75,7 @@ const page = () => {
               </div>
             </div>
           </div>
+
           <h2 className="text-2xl font-black text-center text-gray-700 mb-4 mt-8">
             Healing After the Fire - Daisy and Bobby&apos;s Journey
           </h2>
