@@ -9,7 +9,7 @@ const Journey: React.FC = () => {
         id="Learn"
         className="relative flex flex-col lg:flex-row bg-clip-border rounded-xl bg-[#FFFBF2] text-gray-700 shadow-md w-full max-w-screen-xl mx-auto my-4 transition-transform duration-300 hover:scale-105 hover:shadow-lg"
       >
-        <div className="relative lg:w-2/5 m-0 overflow-hidden rounded-r-none bg-clip-border rounded-xl shrink-0">
+        <div className="relative lg:w-2/5 m-0 overflow-hidden rounded-xl shrink-0">
           <Image
             src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/learning-landing.jpeg"
             alt="Learning About Bushfires"
@@ -18,7 +18,7 @@ const Journey: React.FC = () => {
             className="object-cover w-full h-full transform transition-transform duration-500 hover:scale-110 rounded-xl"
           />
         </div>
-        <div className="p-6 flex flex-col justify-center">
+        <div className="p-6 flex flex-col justify-center rounded-xl">
           <h6 className="block mb-4 font-sans text-xl antialiased font-semibold leading-relaxed tracking-normal text-gray-700 uppercase">
             Learning About Bushfires
           </h6>
@@ -39,7 +39,7 @@ const Journey: React.FC = () => {
         id="Prepare"
         className="relative flex flex-col lg:flex-row bg-clip-border rounded-xl bg-[#FFFBF2] text-gray-700 shadow-md w-full max-w-screen-xl mx-auto my-4 transition-transform duration-300 hover:scale-105 hover:shadow-lg"
       >
-        <div className="p-6 flex flex-col justify-center">
+        <div className="p-6 flex flex-col justify-center rounded-xl">
           <h6 className="block mb-4 font-sans text-xl antialiased font-semibold leading-relaxed tracking-normal text-gray-700 uppercase">
             Preparation for Bushfires
           </h6>
@@ -54,7 +54,7 @@ const Journey: React.FC = () => {
             </button>
           </Link>
         </div>
-        <div className="relative w-full lg:w-2/5 m-0 overflow-hidden rounded-r-none bg-clip-border rounded-xl shrink-0">
+        <div className="relative w-full lg:w-2/5 m-0 overflow-hidden rounded-xl shrink-0">
           <Image
             src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/prepare.webp"
             alt="Preparation for Bushfire"
@@ -69,7 +69,7 @@ const Journey: React.FC = () => {
         id="Recover"
         className="relative flex flex-col lg:flex-row bg-clip-border rounded-xl bg-[#FFFBF2] text-gray-700 shadow-md w-full max-w-screen-xl mx-auto my-4 transition-transform duration-300 hover:scale-105 hover:shadow-lg"
       >
-        <div className="relative w-full lg:w-2/5 m-0 overflow-hidden rounded-r-none bg-clip-border rounded-xl shrink-0">
+        <div className="relative w-full lg:w-2/5 m-0 overflow-hidden rounded-xl shrink-0">
           <Image
             src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/recovery.jpeg"
             alt="Recover"
@@ -78,7 +78,7 @@ const Journey: React.FC = () => {
             className="object-cover w-full h-full transform transition-transform duration-500 hover:scale-110 rounded-xl"
           />
         </div>
-        <div className="p-6 flex flex-col justify-center">
+        <div className="p-6 flex flex-col justify-center rounded-xl">
           <h6 className="block mb-4 font-sans text-xl antialiased font-semibold leading-relaxed tracking-normal text-gray-700 uppercase">
             Recovery from Bushfires
           </h6>
