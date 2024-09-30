@@ -17,8 +17,9 @@ const QuizGame = (props: Props) => {
           className="object-cover w-full h-48 rounded-xl transform transition-transform duration-500 hover:scale-110"
         />
         <p className="text-gray-600 mt-4 mb-6">
-          This is a description for the first card. Add any text here to
-          describe the card&apos;s purpose.
+          Learn about the basics of bushfires, from how they start to how they
+          spread. This quiz will test your knowledge and help you become more
+          aware of bushfire safety measures. Ready to learn?
         </p>
         <button className="bg-orange-400 p-2 text-white font-semibold rounded-lg shadow-md hover:bg-orange-300 transition-transform transform hover:scale-105">
           Start Quiz
@@ -36,8 +37,9 @@ const QuizGame = (props: Props) => {
           className="object-cover w-full h-48 rounded-xl transform transition-transform duration-500 hover:scale-110"
         />
         <p className="text-gray-600 mt-4 mb-6">
-          This is a description for the second card. Add any text here to
-          describe the card&apos;s purpose.
+          Being prepared for a bushfire is essential. This quiz will guide you
+          through key preparation steps, like making an emergency plan and
+          knowing what to pack. Test your readiness for any bushfire event.
         </p>
         <button className="bg-orange-400 p-2 text-white font-semibold rounded-lg shadow-md hover:bg-orange-300 transition-transform transform hover:scale-105">
           Start Quiz
@@ -55,8 +57,9 @@ const QuizGame = (props: Props) => {
           className="object-cover w-full h-48 rounded-xl transform transition-transform duration-500 hover:scale-110"
         />
         <p className="text-gray-600 mt-4 mb-6">
-          This is a description for the third card. Add any text here to
-          describe the card&apos;s purpose.
+          After a bushfire, recovery is an important step. This quiz will test
+          your understanding of the actions you should take to stay safe,
+          rebuild, and get support. Learn how to recover effectively now.
         </p>
         <button className="bg-orange-400 p-2 text-white font-semibold rounded-lg shadow-md hover:bg-orange-300 transition-transform transform hover:scale-105">
           Start Quiz
