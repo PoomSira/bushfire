@@ -247,7 +247,7 @@ export default function Home() {
             <MotionH1
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.9 }}
               className="text-3xl font-black text-center text-gray-800 mb-4"
             >
               Start your journey
