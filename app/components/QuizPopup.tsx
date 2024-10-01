@@ -65,7 +65,7 @@ const QuizPopup: React.FC<Props> = ({ questions, onClose }) => {
             <p className="text-sm text-gray-500 mb-2">
               Question {currentQuestion + 1} of {questions.length}
             </p>
-            <h3 className="text-2xl mb-4">
+            <h3 className="text-gray-700 text-2xl mb-4">
               {questions[currentQuestion].questionText}
             </h3>
 
@@ -79,7 +79,7 @@ const QuizPopup: React.FC<Props> = ({ questions, onClose }) => {
               </button>
             ))}
 
-            <p className="mt-4 text-lg">{feedback}</p>
+            <p className="text-gray-700 mt-4 text-lg">{feedback}</p>
             <p className="mt-2 text-gray-600">
               Score: {score}/{questions.length}
             </p>
@@ -87,8 +87,10 @@ const QuizPopup: React.FC<Props> = ({ questions, onClose }) => {
         ) : (
           // Show final score after the quiz is completed
           <div className="text-center">
-            <h2 className="text-3xl font-bold">Quiz Completed!</h2>
-            <p className="mt-4 text-xl">
+            <h2 className="text-3xl font-bold text-gray-700">
+              Quiz Completed!
+            </h2>
+            <p className="mt-4 text-xl text-gray-700">
               Your final score is {score}/{questions.length}
             </p>
             <button

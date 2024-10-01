@@ -19,7 +19,9 @@ const QuizCard: React.FC<Props> = ({
 }) => {
   return (
     <div className="bg-[#FFFBF2] shadow-md rounded-lg p-6">
-      <h2 className="text-xl font-bold mb-4">{title}</h2>
+      <h2 className="text-gray-700 text-xl text-center font-bold mb-4">
+        {title}
+      </h2>
       <Image
         src={imageUrl}
         alt={title}
