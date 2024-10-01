@@ -82,10 +82,11 @@ const Page = () => {
             <hr className="w-full max-w-lg border-gray-700 mb-8 mx-auto" />
 
             {/* TableauViz */}
-            <div className="mb-16 relative">
+            <div className="mt-16 relative">
               <h3 className="text-2xl font-bold mb-4 text-center text-gray-700">
                 Bushfire History Timeline
               </h3>
+              <hr className="w-full max-w-xs border-gray-700 mb-8 mx-auto" />
               <div className="lg:flex lg:items-start lg:justify-between">
                 <div className="lg:w-2/3 mb-8 lg:mb-0">
                   <TableauViz />
@@ -135,10 +136,11 @@ const Page = () => {
             </div>
 
             {/* TableauPictograph */}
-            <div className="mb-16 relative">
+            <div className="mt-14 relative">
               <h3 className="text-2xl font-bold mb-4 text-center text-gray-700">
                 Schools Affected by Bushfires
               </h3>
+              <hr className="w-full max-w-xs border-gray-700 mb-8 mx-auto" />
               <div className="lg:flex lg:items-start lg:justify-between">
                 <div className="lg:w-2/3 mb-8 lg:mb-0">
                   <TableauPictograph />
@@ -208,10 +210,11 @@ const Page = () => {
             </div>
 
             {/* TableauCluster */}
-            <div className="relative">
+            <div className="mt-14 relative">
               <h3 className="text-2xl font-bold mb-4 text-center text-gray-700">
                 Bushfire Risk Areas
               </h3>
+              <hr className="w-full max-w-xs border-gray-700 mb-8 mx-auto" />
               <div className="lg:flex lg:items-start lg:justify-between">
                 <div className="lg:w-2/3 mb-8 lg:mb-0">
                   <TableauCluster />
