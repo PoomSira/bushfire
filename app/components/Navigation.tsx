@@ -8,7 +8,7 @@ const Navigation: React.FC = () => {
   const pathname = usePathname();
 
   return (
-    <nav className="sticky bg-[#FFFBF2] border-gray-200 top-0 z-50 w-full">
+    <nav className="sticky bg-[#FFFBF2] shadow-md top-0 z-50 w-full">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <Link href="/">
           <Image
