@@ -20,34 +20,83 @@ export type CategoryName =
 
 // Items with name and image
 const initialItems: CategoryItem[] = [
-  { name: "Change of clothes", image: "/clothes.png" },
-  { name: "soap and toothpaste", image: "/soap.png" },
+  {
+    name: "Change of clothes",
+    image:
+      "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/clothes.png",
+  },
+  {
+    name: "soap and toothpaste",
+    image: "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/soap.png",
+  },
   {
     name: "Toilet paper and tissues",
-    image: "/toilet-paper.png",
+    image:
+      "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/toilet-paper.png",
   },
-  { name: "Food that lasts a long time", image: "/food.png" },
-  { name: "Passport", image: "/passport.png" },
-  { name: "Photos", image: "/profile.png" },
+  {
+    name: "Food that lasts a long time",
+    image: "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/food.png",
+  },
+  {
+    name: "Passport",
+    image:
+      "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/passport.png",
+  },
+  {
+    name: "Photos",
+    image:
+      "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/profile.png",
+  },
   {
     name: "Will and Insurance papers",
-    image: "/will.png",
+    image: "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/will.png",
   },
-  { name: "Medicines", image: "/medicine.png" },
-  { name: "First Aid Kit", image: "/firstaid.png" },
+  {
+    name: "Medicines",
+    image:
+      "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/medicine.png",
+  },
+  {
+    name: "First Aid Kit",
+    image:
+      "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/firstaid.png",
+  },
   {
     name: "Mobile phone and charger",
-    image: "/phone.png",
+    image:
+      "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/phone.png",
   },
-  { name: "Battery-powered radio", image: "/radio.png" },
+  {
+    name: "Battery-powered radio",
+    image:
+      "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/radio.png",
+  },
   {
     name: "Flashlight and extra batteries",
-    image: "/Flashlight.png",
+    image:
+      "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/Flashlight.png",
   },
-  { name: "Enough water for everyone", image: "/water.png" },
-  { name: "Woolen blankets", image: "/blankets.png" },
-  { name: "Doctor’s number", image: "/emergency.png" },
-  { name: "Local council", image: "/local-council.png" },
+  {
+    name: "Enough water for everyone",
+    image:
+      "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/water.png",
+  },
+  {
+    name: "Woolen blankets",
+    image:
+      "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/blankets.png",
+  },
+  {
+    name: "Doctor’s number",
+    image:
+      "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/emergency.png",
+  },
+  {
+    name: "Local council",
+    image:
+      "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/local-council.png",
+  },
 ];
 
 // Updated categories to store CategoryItems with CategoryName type
