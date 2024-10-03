@@ -46,31 +46,27 @@ const BushfireAreaMap = () => {
     map.addControl(new mapboxgl.NavigationControl());
 
     map.on("load", () => {
-      // Dynamically import pako
+      // Fetch and add bushfire polygons first (so they will be placed behind the nodes)
       import("pako").then((pako) => {
-        // Fetch the compressed GeoJSON file for bushfire polygons
-        fetch("/BUSHFIRE_HISTORY_SCARE.geojson.gz") // Ensure the file is correctly named and in the public folder
-          .then((response) => response.arrayBuffer()) // Fetch as arrayBuffer since it's compressed
+        fetch("/BUSHFIRE_HISTORY_SCARE.geojson.gz")
+          .then((response) => response.arrayBuffer())
           .then((buffer) => {
-            // Decompress the GZIP file
             const decompressed = pako.inflate(new Uint8Array(buffer), {
               to: "string",
             });
-
-            // Parse the decompressed result as JSON
             const geojsonData = JSON.parse(decompressed);
 
-            // Add a source for the bushfire polygons
+            // Add bushfire polygon source
             map.addSource("bushfire-history", {
               type: "geojson",
-              data: geojsonData, // Properly decompressed and parsed GeoJSON data
+              data: geojsonData,
             });
 
-            // Add a layer to style and display the polygons
+            // Add the polygon layer (this will be rendered in the background)
             map.addLayer({
               id: "bushfire-polygons",
               type: "fill",
-              source: "bushfire-history", // reference the source
+              source: "bushfire-history",
               layout: {},
               paint: {
                 "fill-color": "#FC923C", // Color of the polygons
@@ -78,37 +74,35 @@ const BushfireAreaMap = () => {
               },
             });
 
-            // Optional: Add borders to the polygons
+            setLoading(false); // Loading spinner
+            // Add borders for the polygons
             map.addLayer({
               id: "bushfire-borders",
               type: "line",
               source: "bushfire-history",
               layout: {},
               paint: {
-                "line-color": "#ff4500", // Color of the border
-                "line-width": 2, // Width of the border
+                "line-color": "#ff4500", // Border color
+                "line-width": 2, // Border width
               },
             });
-            // Set loading to false after the polygons have been added
-            setLoading(false); // Stop the spinner
           })
+
           .catch((error) => {
             console.error("Error loading compressed GeoJSON data:", error);
-            setLoading(false); // Also hide the spinner on error
           });
       });
 
-      // Fetch school location data from the CSV file
-      fetch("/merged_school_bushfire_risk.csv") // Update with the actual path to your CSV
+      // After adding polygons, fetch and plot schools
+      fetch("/merged_school_bushfire_risk.csv")
         .then((response) => response.text())
         .then((csvText) => {
-          // Parse the CSV using PapaParse
           Papa.parse<School>(csvText, {
-            header: true, // Use the first row as headers
+            header: true,
             complete: (result) => {
               const parsedSchools = result.data;
-              plotSchoolsOnMap(parsedSchools, map);
-              setSchools(parsedSchools); // Store all schools data
+              plotSchoolsOnMap(parsedSchools, map); // Plot schools after polygons
+              setSchools(parsedSchools);
             },
             error: (error: Error) => {
               console.error("Error parsing CSV data: ", error);
@@ -117,7 +111,6 @@ const BushfireAreaMap = () => {
         });
     });
 
-    // Cleanup on unmount
     return () => map.remove();
   }, [viewport]);
 
@@ -192,48 +185,89 @@ const BushfireAreaMap = () => {
       data: geojsonData,
     });
 
-    // Add a circle layer to represent the schools as circles
+    // CAT 1: Red rectangle-like appearance (Circle with larger radius and no stroke)
     map.addLayer({
-      id: "school-circles",
+      id: "cat-1",
       type: "circle",
       source: "schools",
+      filter: ["==", "risk", "CAT 1"],
       paint: {
-        "circle-color": "#1E1AB8", // Red color for the circles
-        "circle-radius": 6, // Size of the circles
-        "circle-stroke-width": 2,
-        "circle-stroke-color": "#FFFFFF", // White border around the circles
+        "circle-color": "#FF0000", // Red
+        "circle-radius": 8, // Larger size to mimic a rectangle
+        "circle-stroke-width": 0, // No stroke for CAT 1
       },
     });
 
-    // Add popup functionality when clicking on a circle
-    map.on("click", "school-circles", (e) => {
+    // CAT 2: Purple diamond (still a circle but can be styled to be different size)
+    map.addLayer({
+      id: "cat-2",
+      type: "circle",
+      source: "schools",
+      filter: ["==", "risk", "CAT 2"],
+      paint: {
+        "circle-color": "#800080", // Purple
+        "circle-radius": 7, // Slightly smaller
+        "circle-stroke-width": 2,
+        "circle-stroke-color": "#FFFFFF", // White stroke to differentiate
+      },
+    });
+
+    // CAT 3: Blue triangle-like appearance (we'll simulate it using a larger stroke)
+    map.addLayer({
+      id: "cat-3",
+      type: "circle",
+      source: "schools",
+      filter: ["==", "risk", "CAT 3"],
+      paint: {
+        "circle-color": "#0000FF", // Blue
+        "circle-radius": 6,
+        "circle-stroke-width": 4,
+        "circle-stroke-color": "#0000FF", // Thicker stroke to mimic triangle
+      },
+    });
+
+    // CAT 4: Green circle
+    map.addLayer({
+      id: "cat-4",
+      type: "circle",
+      source: "schools",
+      filter: ["==", "risk", "CAT 4"],
+      paint: {
+        "circle-color": "#21C55E", // Green
+        "circle-radius": 6, // Normal size
+        "circle-stroke-width": 2,
+        "circle-stroke-color": "#FFFFFF", // White stroke
+      },
+    });
+
+    // Add popup functionality when clicking on a node
+    map.on("click", ["cat-1", "cat-2", "cat-3", "cat-4"], (e) => {
       if (e.features && e.features.length > 0) {
         const feature = e.features[0];
 
-        // Cast geometry to Point type since we know it's a Point
         const pointGeometry = feature.geometry as Point;
         const coordinates = pointGeometry.coordinates.slice();
         const description = `
-          <div style="color: #111827;">
-            <strong>School:</strong> ${feature.properties?.name}<br>
-            <strong>Risk:</strong> ${feature.properties?.risk}
-          </div>
-        `;
+        <div style="color: #111827;">
+          <strong>School:</strong> ${feature.properties?.name}<br>
+          <strong>Risk:</strong> ${feature.properties?.risk}
+        </div>
+      `;
 
         new mapboxgl.Popup()
-          .setLngLat(coordinates as [number, number]) // Ensure coordinates are [number, number]
+          .setLngLat(coordinates as [number, number])
           .setHTML(description)
           .addTo(map);
       }
     });
 
-    // Change the cursor to a pointer when hovering over the circles
-    map.on("mouseenter", "school-circles", () => {
+    // Change the cursor to a pointer when hovering over the nodes
+    map.on("mouseenter", ["cat-1", "cat-2", "cat-3", "cat-4"], () => {
       map.getCanvas().style.cursor = "pointer";
     });
 
-    // Change it back to the default when it's not hovering
-    map.on("mouseleave", "school-circles", () => {
+    // Reset the cursor when leaving the node
+    map.on("mouseleave", ["cat-1", "cat-2", "cat-3", "cat-4"], () => {
       map.getCanvas().style.cursor = "";
     });
   };
@@ -297,11 +331,23 @@ const BushfireAreaMap = () => {
             Where are we? – Are we in an area that could have bushfires? Let’s
             find out if our school is at risk.
           </p>
-          <ul className="text-gray-700 text-xl my-4">
-            <li>CAT 1: Extreme risk</li>
-            <li>CAT 2: High risk</li>
-            <li>CAT 3: Medium risk</li>
-            <li>CAT 4: Low risk</li>
+          <ul className="text-gray-700 text-xl my-4 space-y-2">
+            <li className="flex items-center">
+              <span className="w-4 h-4 bg-red-500 rounded-full inline-block mr-2"></span>{" "}
+              CAT 1: Extreme risk
+            </li>
+            <li className="flex items-center">
+              <span className="w-4 h-4 bg-purple-500 rounded-full inline-block mr-2"></span>{" "}
+              CAT 2: High risk
+            </li>
+            <li className="flex items-center">
+              <span className="w-4 h-4 bg-blue-500 rounded-full inline-block mr-2"></span>{" "}
+              CAT 3: Medium risk
+            </li>
+            <li className="flex items-center">
+              <span className="w-4 h-4 bg-green-500 rounded-full inline-block mr-2"></span>{" "}
+              CAT 4: Low risk
+            </li>
           </ul>
           <input
             type="text"
@@ -309,7 +355,7 @@ const BushfireAreaMap = () => {
             value={searchQuery}
             onChange={handleSearchChange}
             onKeyDown={handleKeyDown} // Handle keyboard navigation
-            className="w-full p-2 mb-4 border text-black rounded-md placeholder-gray-500" // Use Tailwind's placeholder utility
+            className="w-full p-2 mb-4 border text-black rounded-md placeholder-gray-500"
           />
 
           {/* Dropdown for filtered school list */}
