@@ -52,7 +52,7 @@ const page = () => {
                   alt="Wombat"
                   width={150}
                   height={150}
-                  className="rounded-full animate-moveSideways"
+                  className="rounded-full animate-moveSideways shadow-lg"
                 />
               </div>
             </div>
@@ -66,14 +66,15 @@ const page = () => {
                   alt="Triple Zero Emergency"
                   width={150}
                   height={150}
-                  className="object-contain rounded-xl"
+                  className="object-contain rounded-xl shadow-lg"
                 />
               </div>
               {/* Text Section */}
-              <div className="bg-[#ffe6c5] p-4 mx-4 rounded-xl shadow-md text-gray-800">
+              <div className="bg-[#ffe6c5] p-4 mx-4 rounded-xl shadow-lg text-gray-800">
                 <h2 className="font-bold text-center text-2xl mb-2">
                   Triple Zero (000)
                 </h2>
+                <hr className="w-full max-w-xs border-gray-700 mb-6 mx-auto" />
                 <p className="text-xl text-center">
                   You should call Triple Zero if you need urgent help from
                   Police, Fire, or Ambulance services. This is for emergencies
@@ -93,6 +94,48 @@ const page = () => {
                     https://www.triplezero.gov.au/
                   </a>
                 </p>
+              </div>
+            </div>
+            {/* Vic Emergency */}
+            <div className="flex flex-col sm:flex-row items-center mt-8">
+              {/* Text Section */}
+              <div className="bg-[#ffe6c5] p-4 mx-4 rounded-xl shadow-lg text-gray-800">
+                <h2 className="font-bold text-center text-2xl mb-2">
+                  VicEmergency App
+                </h2>
+                <hr className="w-full max-w-xs border-gray-700 mb-6 mx-auto" />
+                <p className="text-xl text-center">
+                  The VicEmergency app is a helpful tool to get important alerts
+                  and warnings about emergencies like bushfires in your area.
+                </p>
+                <h2 className="font-bold text-center text-2xl my-2">
+                  How to Use It
+                </h2>
+                <p className="text-xl text-center">
+                  Ask a parent or guardian to help you download the VicEmergency
+                  app from the App Store or Google Play. Together, you can set
+                  up alerts for your location to stay informed about any nearby
+                  dangers.
+                </p>
+                <p className="font-semibold text-blue-700 text-center text-xl mt-2">
+                  <a
+                    href="https://emergency.vic.gov.au/"
+                    rel="noopener noreferrer"
+                    className="hover:underline"
+                  >
+                    https://emergency.vic.gov.au/
+                  </a>
+                </p>
+              </div>
+              {/* Image Section */}
+              <div className="flex-shrink-0 p-4">
+                <Image
+                  src="/vicemergency.jpg"
+                  alt="Vic Emergency"
+                  width={220}
+                  height={120}
+                  className="object-contain rounded-xl shadow-lg"
+                />
               </div>
             </div>
           </div>
