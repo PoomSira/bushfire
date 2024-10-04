@@ -130,7 +130,7 @@ const page = () => {
               {/* Image Section */}
               <div className="flex-shrink-0 p-4">
                 <Image
-                  src="/vicemergency.jpg"
+                  src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/vicemergency.jpg"
                   alt="Vic Emergency"
                   width={220}
                   height={120}
