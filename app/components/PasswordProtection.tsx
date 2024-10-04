@@ -1,5 +1,5 @@
 "use client";
-import { useState, ReactNode } from "react";
+import React, { useState, ReactNode } from "react"; // <-- Add React import
 import Image from "next/image";
 
 interface PasswordProtectionProps {
@@ -40,7 +40,7 @@ const PasswordProtection: React.FC<PasswordProtectionProps> = ({
         <div className="relative min-h-screen">
           {/* Video Background */}
           <video
-            src="https://res.cloudinary.com/dxtvfgaud/video/upload/q_auto:low,f_auto/v1726649122/hero-kangaroo-animation_emryuw.mp4" // Replace with your video file path
+            src="https://res.cloudinary.com/dxtvfgaud/video/upload/q_auto:low,f_auto/v1726649122/hero-kangaroo-animation_emryuw.mp4"
             className="absolute inset-0 w-full h-full object-cover"
             autoPlay
             loop
@@ -55,9 +55,9 @@ const PasswordProtection: React.FC<PasswordProtectionProps> = ({
                 <Image
                   src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/logo.png"
                   alt="Logo"
-                  width={120} // Adjust the width as needed
-                  height={120} // Adjust the height as needed
-                  className="h-16" // Optional, if you want to control height with Tailwind
+                  width={120}
+                  height={120}
+                  className="h-16"
                 />
               </div>
               {/* Password Form */}

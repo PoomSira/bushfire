@@ -9,6 +9,7 @@ import VoiceOfRecovery from "../components/VoiceOfRecovery";
 import BushfireStoryCockatoo from "../components/BushfireStoryCockatoo";
 import Footer from "../components/Footer";
 import dynamic from "next/dynamic";
+import Link from "next/link";
 
 const RecoveryPlan = dynamic(() => import("../components/RecoveryPlan"), {
   ssr: false,
@@ -117,6 +118,45 @@ const page = () => {
           <hr className="w-full max-w-xs border-gray-700 mb-4 mx-auto" />
           <div className="relative w-full flex flex-col items-center justify-center">
             <RecoveryPlan />
+          </div>
+        </div>
+
+        {/* User journey */}
+        <div className="relative flex flex-col md:flex-row items-center justify-center p-4">
+          {/* Background Image */}
+          <div className="absolute inset-0 bg-[url('https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/quiz-section.webp')] bg-[#FFFBF2] opacity-10 bg-cover bg-center brightness-75"></div>
+
+          {/* Left Box with Text and Button */}
+          <div className="bg-[#ffe6c5] w-full md:w-1/2 rounded-lg p-4 shadow-lg mb-4 md:mb-0 relative z-10">
+            <p className="text-center font-bold text-gray-700 text-xl mb-4">
+              Want to test your knowledge and strengthen your skills?
+            </p>
+            <p className="text-center text-gray-700 text-xl mb-4">
+              Jump to the Quiz section and challenge yourself with fun quizzes
+              that prepare you for bushfire readiness!
+            </p>
+            <div className="flex justify-center">
+              <Link href="/quiz" className="inline-block">
+                <button className="px-6 py-2 text-lg font-semibold text-gray-700 border-2 border-gray-700 hover:bg-black hover:text-white transition-colors duration-300 rounded-md">
+                  Quiz
+                </button>
+              </Link>
+            </div>
+          </div>
+
+          {/* Right Box with SVG Image */}
+          <div className="flex justify-center md:ml-8 relative">
+            <div className="bg-[#ffe6c5] rounded-full p-6 shadow-lg flex items-center justify-center">
+              <svg height="260" width="260">
+                <circle cx="80" cy="80" r="80" fill="none" />
+                <image
+                  href="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/wombat.png"
+                  height="220"
+                  width="220"
+                  className="animate-moveSideways"
+                />
+              </svg>
+            </div>
           </div>
         </div>
 

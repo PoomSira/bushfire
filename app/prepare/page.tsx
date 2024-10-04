@@ -10,13 +10,11 @@ import BushfireAreaMap from "../components/BushfireAreaMap";
 import TableauVizSeason from "../components/TableauVizSeason";
 import Fireplan from "../components/Fireplan";
 import BushfireSurvival from "../components/BushfireSurvival";
-import TableauViz from "../components/TableauViz";
-import TableauPictograph from "../components/TableauPictograph";
-import TableauCluster from "../components/TableauCluster";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import EmergencyKitGame from "../components/EmergencyKitGame";
+import Link from "next/link";
 
 const Page = () => {
   const [value, setValue] = useState(50);
@@ -398,6 +396,45 @@ const Page = () => {
           <hr className="w-full max-w-lg border-gray-700 mb-4 mx-auto" />
           <div className="relative w-full flex flex-col items-center justify-center">
             <BushfireSurvival />
+          </div>
+        </div>
+
+        {/* User journey */}
+        <div className="relative flex flex-col md:flex-row items-center justify-center p-4">
+          {/* Background Image */}
+          <div className="absolute inset-0 bg-[url('https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/recovery.jpeg')] bg-[#FFFBF2] opacity-10 bg-cover bg-center brightness-75"></div>
+
+          {/* Left Box with Text and Button */}
+          <div className="bg-[#ffe6c5] w-full md:w-1/2 rounded-lg p-4 shadow-lg mb-4 md:mb-0 relative z-10">
+            <p className="text-center font-bold text-gray-700 text-xl mb-4">
+              Ready to take the next step in your journey?
+            </p>
+            <p className="text-center text-gray-700 text-xl mb-4">
+              Jump to the Recover section and learn essential strategies to heal
+              and rebuild after bushfire emergencies!
+            </p>
+            <div className="flex justify-center">
+              <Link href="/recover" className="inline-block">
+                <button className="px-6 py-2 text-lg font-semibold text-gray-700 border-2 border-gray-700 hover:bg-black hover:text-white transition-colors duration-300 rounded-md">
+                  Recover
+                </button>
+              </Link>
+            </div>
+          </div>
+
+          {/* Right Box with SVG Image */}
+          <div className="flex justify-center md:ml-8 relative">
+            <div className="bg-[#ffe6c5] rounded-full p-6 shadow-lg flex items-center justify-center">
+              <svg height="260" width="260">
+                <circle cx="80" cy="80" r="80" fill="none" />
+                <image
+                  href="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/kangaroo.png"
+                  height="220"
+                  width="220"
+                  className="animate-moveSideways"
+                />
+              </svg>
+            </div>
           </div>
         </div>
 
