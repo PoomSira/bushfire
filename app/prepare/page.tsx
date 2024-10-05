@@ -201,11 +201,24 @@ const Page = () => {
           <h1 className="text-3xl font-black text-center text-gray-700 mb-4">
             Survival Skills
           </h1>
-          <hr className="w-full max-w-lg border-gray-700 mb-4 mx-auto" />
+          <hr className="w-full max-w-lg border-gray-700 mb-2 mx-auto" />
           <br />
+          {/* Video Section */}
+          <div className="w-full flex justify-center items-center rounded-xl mx-4 md:mx-0 md:p-8 lg:p-12 z-10">
+            <div className="w-full flex justify-center">
+              <video controls className="w-2/3 h-auto rounded-lg object-cover">
+                <source
+                  src="https://res.cloudinary.com/dxtvfgaud/video/upload/q_auto,f_auto/v1728126994/prepare_video_yuqks7.mp4"
+                  type="video/mp4"
+                />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
           <h2 className="text-3xl font-black text-center text-gray-700 mb-4">
             What Places Should You Watch Out For?
           </h2>
+          <hr className="w-full max-w-lg border-gray-700 mb-2 mx-auto" />
 
           {/* First row - Close to grass and Dense or open bush */}
           <div className="flex flex-col md:flex-row flex-wrap items-center justify-between p-8 space-y-8 md:space-y-0 w-auto">
