@@ -18,7 +18,7 @@ app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
     # allow_origins=["http://localhost:3000"],  # Your frontend URL
-    allow_origins=["https://www.bushfire-brigade.me"],
+    allow_origins=["https://www.bushfire-brigade.me/help"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -59,6 +59,6 @@ async def predict(data: InputData):
         raise HTTPException(status_code=500, detail=f"Prediction error: {str(e)}")
     
     return {"prediction": prediction_value}
-    
+
 # Create a Mangum handler for AWS Lambda (this is what Vercel's serverless function uses)
 handler = Mangum(app)
