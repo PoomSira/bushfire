@@ -20,7 +20,7 @@ const nextConfig = {
     return [
       {
         source: "/api/:path*", // When the frontend makes requests to /api/...
-        destination: "/backend/:path*", // It should map to the Vercel serverless function at the same path
+        destination: "/api/:path*", // It should map to the Vercel serverless function at the same path
       },
     ];
   },
