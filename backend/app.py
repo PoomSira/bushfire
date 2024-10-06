@@ -36,7 +36,7 @@ class InputData(BaseModel):
 
 @app.get("/")
 async def read_root():
-    return {"message": "Welcome to the FastAPI ML Model API!"}
+    return {"message": "Welcome to the FastAPI ML Model API!!!!"}
 
 @app.post("/predict")
 async def predict(data: InputData):
