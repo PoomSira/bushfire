@@ -10,6 +10,7 @@ const BushfireVideo = () => {
           autoPlay
           loop
           muted
+          playsInline
           width="500"
           height="500"
           className="rounded-xl"
