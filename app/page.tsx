@@ -103,36 +103,45 @@ export default function Home() {
                   initial="hidden"
                   whileInView="visible"
                   transition={{ duration: 0.5, delay: 0.1 }}
-                  className="relative w-full h-full bg-[#FFFBF2] rounded-full transform transition-transform duration-300 hover:scale-105"
+                  className="flex justify-center relative"
                 >
-                  <div className="absolute bg-[#FFE6C5] right-4 md:right-10 top-1/2 transform -translate-y-1/2 text-center py-2 px-2 rounded-md shadow-md transition-transform duration-300 hover:scale-105 hover:bg-orange-300 z-10">
+                  <div className="bg-[#FFFBF2] rounded-full shadow-lg flex items-center justify-center z-10">
+                    <svg height="350" width="350">
+                      <circle cx="150" cy="150" r="140" fill="#FFFBF2" />
+                      <image
+                        href="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/koala-t.png"
+                        height="250"
+                        width="250"
+                        x="30"
+                        y="30"
+                        className="animate-moveSideways"
+                      />
+                    </svg>
                     <button
-                      onClick={toggleKoalaPopup}
-                      className="text-black text-sm md:text-base"
+                      onClick={toggleKoalaPopup} // Change this toggle function for each tutor
+                      className="absolute text-black text-sm md:text-base bg-[#FFE6C5] py-2 px-4 rounded-lg shadow-md transition-transform duration-300 hover:scale-105 hover:bg-orange-300"
+                      style={{
+                        bottom: "20px",
+                        left: "50%",
+                        transform: "translateX(-50%)",
+                      }}
                     >
-                      Click to know me
+                      Learn more
                     </button>
                   </div>
-                  <Image
-                    src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/koala-t.png"
-                    alt="Koala doctor with presentation"
-                    width={180}
-                    height={180}
-                    className="object-cover animate-moveSideways"
-                  />
                   {showKoalaPopup && (
-                    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-                      <div className="bg-white p-6 rounded-lg shadow-sm text-black">
+                    <div className="fixed inset-0 flex items-center justify-center bg-[#FFFBF2] rounded-xl bg-opacity-90 backdrop-blur-sm z-50">
+                      <div className=" p-6 rounded-lg text-gray-800">
                         <h2 className="text-lg md:text-xl font-bold mb-4">
                           Hello! I&apos;m Chloe, the koala
                         </h2>
-                        <p className="mb-4">
+                        <p className="mb-4 text-lg">
                           I love helping you learn about bushfires, step by
                           step. If you stick with me, you&apos;ll definitely get
                           a HD+ in the bushfire subject!
                         </p>
                         <button
-                          className="bg-[#FFE6C5] text-black py-2 px-4 rounded hover:bg-orange-300"
+                          className="bg-[#FFE6C5] text-black py-2 px-4 rounded-lg hover:bg-orange-300"
                           onClick={toggleKoalaPopup}
                         >
                           Close
@@ -148,37 +157,46 @@ export default function Home() {
                   initial="hidden"
                   whileInView="visible"
                   transition={{ duration: 0.5, delay: 0.2 }}
-                  className="relative w-full h-full aspect-square bg-[#FFFBF2] rounded-full transform transition-transform duration-300 hover:scale-105"
+                  className="flex justify-center relative"
                 >
-                  <div className="absolute bg-[#FFE6C5] right-4 md:right-10 top-1/2 transform -translate-y-1/2 text-center py-2 px-2 rounded-md shadow-md transition-transform duration-300 hover:scale-105 hover:bg-orange-300 z-10">
+                  <div className="bg-[#FFFBF2] rounded-full shadow-lg flex items-center justify-center z-10">
+                    <svg height="350" width="350">
+                      <circle cx="150" cy="150" r="140" fill="#FFFBF2" />
+                      <image
+                        href="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/kangaroo.png"
+                        height="250"
+                        width="250"
+                        x="30"
+                        y="30"
+                        className="animate-moveSideways"
+                      />
+                    </svg>
                     <button
-                      onClick={toggleKangarooPopup}
-                      className="text-black text-sm md:text-base"
+                      onClick={toggleKangarooPopup} // Change this toggle function for each tutor
+                      className="absolute text-black text-sm md:text-base bg-[#FFE6C5] py-2 px-4 rounded-lg shadow-md transition-transform duration-300 hover:scale-105 hover:bg-orange-300"
+                      style={{
+                        bottom: "20px",
+                        left: "50%",
+                        transform: "translateX(-50%)",
+                      }}
                     >
-                      Click to know me
+                      Learn more
                     </button>
                   </div>
-                  <Image
-                    src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/kangaroo.png"
-                    alt="Kangaroo firefighter with presentation"
-                    width={240}
-                    height={240}
-                    className="object-cover animate-moveSideways"
-                  />
                   {showKangarooPopup && (
-                    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-                      <div className="bg-white p-6 rounded-lg shadow-2xl text-black">
+                    <div className="fixed inset-0 flex items-center justify-center bg-[#FFFBF2] rounded-xl bg-opacity-90 backdrop-blur-sm z-50">
+                      <div className="p-6 rounded-lg text-gray-800">
                         <h2 className="text-lg md:text-xl font-bold mb-4">
                           Hello! I&apos;m Jacky, the kangaroo
                         </h2>
-                        <p className="mb-4">
+                        <p className="mb-4 text-lg">
                           I&apos;ll help you learn the important skills to
                           survive and prepare for a bushfire. Stick with me, and
                           you&apos;ll have strong survival skills as your
                           superpower!
                         </p>
                         <button
-                          className="bg-[#FFE6C5] text-black py-2 px-4 rounded hover:bg-orange-300"
+                          className="bg-[#FFE6C5] text-black py-2 px-4 rounded-lg hover:bg-orange-300"
                           onClick={toggleKangarooPopup}
                         >
                           Close
@@ -194,36 +212,45 @@ export default function Home() {
                   initial="hidden"
                   whileInView="visible"
                   transition={{ duration: 0.5, delay: 0.3 }}
-                  className="relative w-full h-full aspect-square bg-[#FFFBF2] rounded-full transform transition-transform duration-300 hover:scale-105"
+                  className="flex justify-center relative"
                 >
-                  <div className="absolute bg-[#FFE6C5] right-4 md:right-10 top-1/2 transform -translate-y-1/2 text-center py-2 px-2 rounded-md shadow-md transition-transform duration-300 hover:scale-105 hover:bg-orange-300 z-10">
+                  <div className="bg-[#FFFBF2] rounded-full shadow-lg flex items-center justify-center z-10">
+                    <svg height="350" width="350">
+                      <circle cx="150" cy="150" r="140" fill="#FFFBF2" />
+                      <image
+                        href="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/wombat.png"
+                        height="250"
+                        width="250"
+                        x="30"
+                        y="30"
+                        className="animate-moveSideways"
+                      />
+                    </svg>
                     <button
-                      onClick={toggleWombatPopup}
-                      className="text-black text-sm md:text-base"
+                      onClick={toggleWombatPopup} // Change this toggle function for each tutor
+                      className="absolute text-black text-sm md:text-base bg-[#FFE6C5] py-2 px-4 rounded-lg shadow-md transition-transform duration-300 hover:scale-105 hover:bg-orange-300"
+                      style={{
+                        bottom: "20px",
+                        left: "50%",
+                        transform: "translateX(-50%)",
+                      }}
                     >
-                      Click to know me
+                      Learn more
                     </button>
                   </div>
-                  <Image
-                    src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/wombat.png"
-                    alt="Wombat volunteer with presentation"
-                    width={190}
-                    height={190}
-                    className="object-cover animate-moveSideways"
-                  />
                   {showWombatPopup && (
-                    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-                      <div className="bg-white p-6 rounded-lg shadow-2xl text-black">
+                    <div className="fixed inset-0 flex items-center justify-center bg-[#FFFBF2] rounded-xl bg-opacity-90 backdrop-blur-sm z-50">
+                      <div className="p-6 rounded-lg text-gray-800">
                         <h2 className="text-lg md:text-xl font-bold mb-4">
                           Hello! I&apos;m Johny, the wombat
                         </h2>
-                        <p className="mb-4">
+                        <p className="mb-4 text-lg">
                           I love helping you learn how to recover after a
                           bushfire. Together, we can rebuild our environment and
                           support each other.
                         </p>
                         <button
-                          className="bg-[#FFE6C5] text-black py-2 px-4 rounded hover:bg-orange-300"
+                          className="bg-[#FFE6C5] text-black py-2 px-4 rounded-lg hover:bg-orange-300"
                           onClick={toggleWombatPopup}
                         >
                           Close

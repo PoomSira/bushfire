@@ -52,7 +52,7 @@ const page = () => {
                   alt="Wombat"
                   width={150}
                   height={150}
-                  className="rounded-full animate-moveSideways shadow-lg"
+                  className="rounded-full animate-moveSideways"
                 />
               </div>
             </div>
@@ -130,12 +130,40 @@ const page = () => {
               {/* Image Section */}
               <div className="flex-shrink-0 p-4">
                 <Image
-                  src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/vicemergency.jpg"
+                  src="/emergency.jpg"
                   alt="Vic Emergency"
                   width={220}
                   height={120}
                   className="object-contain rounded-xl shadow-lg"
                 />
+              </div>
+            </div>
+            {/* CFA and Text Card Section */}
+            <div className="flex flex-col md:flex-row items-start mt-8 px-4 w-full space-y-4 md:space-y-0 md:space-x-4 justify-center">
+              {/* Left Section: Responsive CFA Image (60% width) */}
+              <div className="flex-shrink-0 w-full md:w-3/5 max-w-3xl">
+                <Image
+                  src="/cfa.jpg"
+                  width="100"
+                  height="100"
+                  alt="CFA Information"
+                  className="w-full h-auto object-contain rounded-xl shadow-lg"
+                  priority={true}
+                />
+              </div>
+
+              {/* Right Section: Text Card (Centered, 40% width) */}
+              <div className="flex flex-col w-full md:w-2/5 bg-[#ffe6c5] p-4 rounded-xl shadow-lg text-gray-800 md:self-center">
+                <h2 className="font-bold text-center text-2xl mb-2">
+                  Why is this important?
+                </h2>
+                <hr className="w-full max-w-xs border-gray-700 mb-6 mx-auto" />
+                <p className="text-xl text-center">
+                  Having these emergency contacts and resources handy can help
+                  you stay prepared and respond quickly if a bushfire happens.
+                  Make sure you know how to use them and discuss them with your
+                  family and school so everyone is ready!
+                </p>
               </div>
             </div>
           </div>

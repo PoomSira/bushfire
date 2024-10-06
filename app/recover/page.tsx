@@ -124,7 +124,7 @@ const page = () => {
         {/* User journey */}
         <div className="relative flex flex-col md:flex-row items-center justify-center p-4">
           {/* Background Image */}
-          <div className="absolute inset-0 bg-[url('https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/quiz-section.webp')] bg-[#FFFBF2] opacity-10 bg-cover bg-center brightness-75"></div>
+          <div className="absolute inset-0 bg-[url('https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/quiz-section.webp')] bg-[#FFFBF2] opacity-20 bg-cover bg-center brightness-75"></div>
 
           {/* Left Box with Text and Button */}
           <div className="bg-[#ffe6c5] w-full md:w-1/2 rounded-lg p-4 shadow-lg mb-4 md:mb-0 relative z-10">

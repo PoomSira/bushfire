@@ -204,17 +204,18 @@ const Page = () => {
           <hr className="w-full max-w-lg border-gray-700 mb-2 mx-auto" />
           <br />
           {/* Video Section */}
-          <div className="w-full flex justify-center items-center rounded-xl mx-4 md:mx-0 md:p-8 lg:p-12 z-10">
+          <div className="w-full flex justify-center items-center rounded-xl mb-5 mx-4 md:mx-0 md:p-8 lg:p-12 z-10">
             <div className="w-full flex justify-center">
-              <video controls className="w-2/3 h-auto rounded-lg object-cover">
-                <source
-                  src="https://res.cloudinary.com/dxtvfgaud/video/upload/q_auto,f_auto/v1728126994/prepare_video_yuqks7.mp4"
-                  type="video/mp4"
-                />
-                Your browser does not support the video tag.
-              </video>
+              <iframe
+                className="w-2/3 h-96 md:h-[600px] lg:h-[500px] rounded-xl object-cover shadow-lg"
+                src="https://www.youtube.com/embed/XsB8D8NQ76I"
+                title="YouTube Video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
             </div>
           </div>
+
           <h2 className="text-3xl font-black text-center text-gray-700 mb-4">
             What Places Should You Watch Out For?
           </h2>
@@ -415,7 +416,7 @@ const Page = () => {
         {/* User journey */}
         <div className="relative flex flex-col md:flex-row items-center justify-center p-4">
           {/* Background Image */}
-          <div className="absolute inset-0 bg-[url('https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/recovery.jpeg')] bg-[#FFFBF2] opacity-10 bg-cover bg-center brightness-75"></div>
+          <div className="absolute inset-0 bg-[url('https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/recovery.jpeg')] bg-[#FFFBF2] opacity-20 bg-cover bg-center brightness-75"></div>
 
           {/* Left Box with Text and Button */}
           <div className="bg-[#ffe6c5] w-full md:w-1/2 rounded-lg p-4 shadow-lg mb-4 md:mb-0 relative z-10">

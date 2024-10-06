@@ -11,15 +11,15 @@ import TableauViz from "../components/TableauViz";
 import TableauPictograph from "../components/TableauPictograph";
 import TableauCluster from "../components/TableauCluster";
 import CauseBushfire from "../components/CauseBushfire";
-import EffectBushfire from "../components/EffectBushfire";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import Link from "next/link";
 
 const Page = () => {
-  const [isAnswerVisible, setIsAnswerVisible] = useState(false);
+  const [visibleAnswer, setVisibleAnswer] = useState<number | null>(null); // Track which answer is visible
 
-  const toggleAnswer = () => {
-    setIsAnswerVisible(!isAnswerVisible);
+  const toggleAnswer = (index: number) => {
+    // Toggle the visibility of the selected answer
+    setVisibleAnswer((prev) => (prev === index ? null : index));
   };
 
   return (
@@ -89,15 +89,18 @@ const Page = () => {
               </h3>
               <hr className="w-full max-w-xs border-gray-700 mb-8 mx-auto" />
               <div className="lg:flex lg:items-start lg:justify-between">
-                <div className="lg:w-2/3 mb-8 lg:mb-0">
+                <div className="lg:w-2/3 mb-4 lg:mb-0">
                   <TableauViz />
                 </div>
                 <div className="lg:w-1/3 lg:pl-8 relative">
                   <div className="bg-[#FFE6C5] rounded-xl shadow-lg overflow-hidden transition-all duration-300 ease-in-out">
-                    <div className="p-6 cursor-pointer" onClick={toggleAnswer}>
+                    <div
+                      className="p-6 cursor-pointer"
+                      onClick={() => toggleAnswer(1)}
+                    >
                       <h4 className="text-xl font-bold mb-4 text-gray-700 flex justify-between items-center">
                         Let's Get Started!
-                        {isAnswerVisible ? (
+                        {visibleAnswer === 1 ? (
                           <ChevronUp className="w-6 h-6" />
                         ) : (
                           <ChevronDown className="w-6 h-6" />
@@ -108,7 +111,7 @@ const Page = () => {
                       </p>
                     </div>
 
-                    {isAnswerVisible && (
+                    {visibleAnswer === 1 && (
                       <div className="p-6 pt-0 bg-[#FFE6C5]">
                         <p className="mb-4 text-lg text-gray-700">
                           Watch the years pass by and see how the fires have
@@ -137,7 +140,7 @@ const Page = () => {
             </div>
 
             {/* TableauPictograph */}
-            <div className="mt-14 relative">
+            <div className="mt-8 relative">
               <h3 className="text-2xl font-bold mb-4 text-center text-gray-700">
                 Schools Affected by Bushfires
               </h3>
@@ -148,34 +151,40 @@ const Page = () => {
                 </div>
                 <div className="lg:w-1/3 lg:pl-8 relative">
                   <div className="bg-[#FFE6C5] p-6 rounded-xl shadow-lg relative transition-transform duration-300 ease-in-out transform hover:scale-105">
-                    <div className="cursor-pointer" onClick={toggleAnswer}>
+                    <div
+                      className="cursor-pointer"
+                      onClick={() => toggleAnswer(2)}
+                    >
                       <h4 className="text-xl font-bold mb-4 text-gray-700">
                         Can you guess how many schools have been affected by
                         bushfires?
-                        {isAnswerVisible ? (
+                        {visibleAnswer === 2 ? (
                           <ChevronUp className="w-6 h-6" />
                         ) : (
                           <ChevronDown className="w-6 h-6" />
                         )}
                       </h4>
                     </div>
-                    {isAnswerVisible && (
+                    {visibleAnswer === 2 && (
                       <p className="mb-4 text-lg text-gray-700">
                         667 schools are identified to be in bushfire risk areas.
                       </p>
                     )}
 
-                    <div className="cursor-pointer" onClick={toggleAnswer}>
-                      <p className="mb-4 text-lg text-gray-700">
+                    <div
+                      className="cursor-pointer"
+                      onClick={() => toggleAnswer(3)}
+                    >
+                      <p className="mb-4 text-lg font-bold text-gray-700">
                         What do the risks mean?
-                        {isAnswerVisible ? (
+                        {visibleAnswer === 3 ? (
                           <ChevronUp className="w-6 h-6" />
                         ) : (
                           <ChevronDown className="w-6 h-6" />
                         )}
                       </p>
                     </div>
-                    {isAnswerVisible && (
+                    {visibleAnswer === 3 && (
                       <ul className="list-disc list-inside text-lg text-gray-700">
                         <li>
                           <b>Extreme RISK:</b> Big, dangerous fires. Be very
@@ -211,7 +220,7 @@ const Page = () => {
             </div>
 
             {/* TableauCluster */}
-            <div className="mt-14 relative">
+            <div className="mt-8 relative">
               <h3 className="text-2xl font-bold mb-4 text-center text-gray-700">
                 Bushfire Risk Areas
               </h3>
@@ -222,10 +231,13 @@ const Page = () => {
                 </div>
                 <div className="lg:w-1/3 lg:pl-8 relative">
                   <div className="bg-[#FFE6C5] p-6 rounded-xl shadow-lg relative transition-transform duration-300 ease-in-out transform hover:scale-105">
-                    <div className="cursor-pointer" onClick={toggleAnswer}>
+                    <div
+                      className="cursor-pointer"
+                      onClick={() => toggleAnswer(4)}
+                    >
                       <h4 className="text-xl font-bold mb-2 text-gray-700 flex justify-between items-center">
                         Which areas are mostly at risk of bushfires?
-                        {isAnswerVisible ? (
+                        {visibleAnswer === 4 ? (
                           <ChevronUp className="w-6 h-6" />
                         ) : (
                           <ChevronDown className="w-6 h-6" />
@@ -233,7 +245,7 @@ const Page = () => {
                       </h4>
                     </div>
 
-                    {isAnswerVisible && (
+                    {visibleAnswer === 4 && (
                       <div className="px-6 pb-6 pt-0 bg-[#FFE6C5]">
                         <p className="mb-4 text-lg text-gray-700">
                           Step 1: Click on High Risk Bubble
@@ -248,27 +260,19 @@ const Page = () => {
                           Step 3: Click on Medium Risk Bubble
                         </p>
                         <p className="mb-4 text-lg text-gray-700">
-                          Step 4: Hover over the largest 2 bubbles inside it
+                          Step 4: Hover over the largest bubble inside it
                         </p>
                         <p className="mb-4 text-lg text-gray-700">
-                          Yarra Ranges and Greater Bendigo have the most schools
-                          with medium risk
-                        </p>
-                        <h4 className="text-xl font-bold mt-8 mb-4 text-gray-700">
-                          Is your school here?
-                        </h4>
-                        <p className="font-semibold text-lg text-gray-700">
-                          If so, time to become a BUSHFIRE SAFETY EXPERT!
+                          Casey has 16 schools at medium risk
                         </p>
                       </div>
                     )}
                   </div>
-
-                  {/* Wombat image below the card */}
+                  {/* Emu image below the card */}
                   <div className="mt-8 flex justify-center transition-transform duration-300 ease-in-out transform hover:scale-105">
                     <Image
                       src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/wombat.png"
-                      alt="Wombat with presentation"
+                      alt="Wombat"
                       width={150} // Adjust size as needed
                       height={150} // Adjust size as needed
                       className="object-cover animate-moveSideways"
@@ -282,7 +286,7 @@ const Page = () => {
         {/* User journey */}
         <div className="relative flex flex-col md:flex-row items-center justify-center p-4">
           {/* Background Image */}
-          <div className="absolute inset-0 bg-[url('https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/prepare.webp')] bg-[#FFFBF2] opacity-10 bg-cover bg-center brightness-75"></div>
+          <div className="absolute inset-0 bg-[url('https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/prepare.webp')] bg-[#FFFBF2] opacity-20 bg-cover bg-center brightness-75"></div>
 
           {/* Left Box with Text and Button */}
           <div className="bg-[#ffe6c5] w-full md:w-1/2 rounded-lg p-4 shadow-lg mb-4 md:mb-0 relative z-10">
