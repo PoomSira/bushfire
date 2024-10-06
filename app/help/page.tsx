@@ -131,7 +131,7 @@ const page = () => {
               {/* Image Section */}
               <div className="flex-shrink-0 p-4">
                 <Image
-                  src="/emergency.jpg"
+                  src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/emergency.jpg"
                   alt="Vic Emergency"
                   width={220}
                   height={120}
@@ -144,7 +144,7 @@ const page = () => {
               {/* Left Section: Responsive CFA Image (60% width) */}
               <div className="flex-shrink-0 w-full md:w-3/5 max-w-3xl">
                 <Image
-                  src="/cfa.jpg"
+                  src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/cfa.jpg"
                   width="100"
                   height="100"
                   alt="CFA Information"
