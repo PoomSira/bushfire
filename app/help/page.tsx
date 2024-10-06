@@ -144,12 +144,11 @@ const page = () => {
               {/* Left Section: Responsive CFA Image (60% width) */}
               <div className="flex-shrink-0 w-full md:w-3/5 max-w-3xl">
                 <Image
-                  src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/cfa.jpg"
-                  width="100"
-                  height="100"
+                  src="https://res.cloudinary.com/dxtvfgaud/image/upload/f_auto,q_100/v1728225961/cfa_zsv2ep.jpg"
+                  width={3355}
+                  height={2386}
                   alt="CFA Information"
                   className="w-full h-auto object-contain rounded-xl shadow-lg"
-                  priority={true}
                 />
               </div>
 
