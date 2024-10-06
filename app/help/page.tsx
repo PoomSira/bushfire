@@ -5,6 +5,7 @@ import { SmoothScrollWrapper } from "../components/SmoothScrollWrapper";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import Image from "next/image";
+import Predict from "../components/predict";
 
 const page = () => {
   return (
@@ -168,6 +169,7 @@ const page = () => {
             </div>
           </div>
         </div>
+        <Predict />
         <Footer />
       </div>
     </SmoothScrollWrapper>
