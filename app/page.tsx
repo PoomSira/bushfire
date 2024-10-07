@@ -306,7 +306,7 @@ export default function Home() {
             </h1>
             <hr className="w-full max-w-xs border-gray-700 mb-2 mx-auto" />
             {/* Bushfire Brigade Manual*/}
-            <div className="flex flex-col sm:flex-row items-center mt-8">
+            <div className="flex flex-col sm:flex-row items-center mt-4">
               {/* text card */}
               <div className="bg-[#FFFBF2] p-4 mx-4 mt-4 rounded-xl shadow-lg text-gray-800">
                 <h2 className="font-bold text-center text-2xl mb-2">
