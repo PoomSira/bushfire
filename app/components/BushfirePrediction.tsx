@@ -113,7 +113,7 @@ export default function BushfirePrediction() {
 
   return (
     <div className="p-12 bg-[#FFFBF2] rounded-lg">
-      <h1 className="text-2xl font-bold mb-6 text-center">
+      <h1 className="text-2xl font-bold mb-6 text-center text-black">
         Predict Bushfire Risk
       </h1>
       <form onSubmit={handleSubmit}>
