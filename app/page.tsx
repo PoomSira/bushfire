@@ -293,9 +293,9 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <BackToTopButton />
         <Footer />
       </div>
+      <BackToTopButton />
     </SmoothScrollWrapper>
   );
 }

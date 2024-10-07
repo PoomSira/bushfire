@@ -452,9 +452,10 @@ const Page = () => {
             </div>
           </div>
         </div>
-        <BackToTopButton />
+
         <Footer />
       </div>
+      <BackToTopButton />
     </SmoothScrollWrapper>
   );
 };

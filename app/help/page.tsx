@@ -367,9 +367,10 @@ const page = () => {
           </div>
         </div>
         <Predict />
-        <BackToTopButton />
+
         <Footer />
       </div>
+      <BackToTopButton />
     </SmoothScrollWrapper>
   );
 };

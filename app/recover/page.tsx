@@ -160,9 +160,10 @@ const page = () => {
             </div>
           </div>
         </div>
-        <BackToTopButton />
+
         <Footer />
       </div>
+      <BackToTopButton />
     </SmoothScrollWrapper>
   );
 };
