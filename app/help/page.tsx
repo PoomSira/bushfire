@@ -38,8 +38,9 @@ const page = () => {
             </h1>
             <hr className="w-full max-w-xl border-gray-700 mb-6 mx-auto" />
 
+            {/* Text card */}
             <div className="flex flex-col items-center p-4 md:p-8 space-y-4 md:space-y-0 md:space-x-8 md:flex-row">
-              <div className=" flex-grow py-4 bg-[#ffe6c5] rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-105">
+              <div className=" flex-grow py-4 bg-[#ffe6c5] rounded-xl shadow-lg">
                 <p className="text-2xl text-gray-800 text-center mb-2 p-2 lg:p-5">
                   In case of an emergency, it&apos;s important to know who to
                   call and where to get the right information. Here&apos;s a
@@ -47,9 +48,10 @@ const page = () => {
                   and resources available in Victoria.
                 </p>
               </div>
+              {/* Image card */}
               <div className="flex-shrink-0">
                 <Image
-                  src="/wombat.png"
+                  src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/wombat.png"
                   alt="Wombat"
                   width={150}
                   height={150}
@@ -164,6 +166,101 @@ const page = () => {
                   Make sure you know how to use them and discuss them with your
                   family and school so everyone is ready!
                 </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* What should you do contacts */}
+        <div className="relative py-8 flex flex-col items-center justify-center w-full">
+          {/* Background Image */}
+          <div className="absolute inset-0 bg-[url('https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/timeline-1.png')] bg-[#FFFBF2] opacity-20 bg-cover bg-center brightness-75"></div>
+
+          <div className="relative w-full h-full flex flex-col items-center justify-center">
+            <h1 className="text-3xl font-black text-center text-gray-700 mb-4">
+              Guides
+            </h1>
+            <hr className="w-full max-w-xs border-gray-700 mb-6 mx-auto" />
+
+            <div className="flex flex-col items-center p-4 md:p-8 space-y-4 md:space-y-0 md:space-x-8 md:flex-row">
+              {/* Image card */}
+              <div className="flex-shrink-0">
+                <Image
+                  src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/kangaroo.png"
+                  alt="Wombat"
+                  width={150}
+                  height={150}
+                  className="rounded-full animate-moveSideways"
+                />
+              </div>
+              {/* Text card */}
+              <div className="flex-grow py-4 bg-[#ffe6c5] rounded-xl text-gray-800 shadow-lg p-6">
+                <h2 className="font-bold text-center text-2xl mb-4">
+                  What should you do during a Bushfire?
+                </h2>
+                <hr className="w-full max-w-md border-gray-700 mb-6 mx-auto" />
+                <p className="text-xl mb-4">
+                  On hot, dry, and windy days, bushfires can start and spread
+                  very quickly. Here are the important things you need to know
+                  to stay safe during a bushfire:
+                </p>
+                <ol className="list-decimal pl-6 text-xl space-y-4">
+                  <li>
+                    <h2 className="font-bold text-xl mb-2 underline">
+                      Leave Early if Possible
+                    </h2>
+                    <p>
+                      If the <b>Fire Danger Rating</b> is marked as{" "}
+                      <b>Extreme</b> or <b>Catastrophic</b>, it is very
+                      dangerous to stay. The safest choice is to leave early to
+                      protect yourself and your family.
+                    </p>
+                    <p>
+                      <em className="font-semibold">
+                        <b>Why should you leave early?</b>
+                      </em>{" "}
+                      Waiting to see what happens can be very risky. Fires can
+                      move quickly, and roads may become blocked or unsafe.
+                      Decide early when and where you will go.
+                    </p>
+                  </li>
+                  <li>
+                    <h2 className="font-bold text-xl mb-2 underline">
+                      Follow Emergency Services&apos; Instructions
+                    </h2>
+                    <p>
+                      <em className="font-semibold">Listen and Act:</em> Always
+                      listen carefully to the instructions given by emergency
+                      services. If they recommend leaving or evacuating, do so
+                      immediately. Emergency services provide the most
+                      up-to-date information on where the fire is and what you
+                      should do.
+                    </p>
+                    <p>
+                      <em className="font-semibold">Fun fact:</em> You might
+                      hear the words &apos;evacuation&apos; or
+                      &apos;evacuating&apos; a lot when a bushfire happens. This
+                      means moving from a dangerous place to a safer one.
+                    </p>
+                  </li>
+                  <li>
+                    <h2 className="font-bold text-xl mb-2 underline">
+                      Get Information from Multiple Sources
+                    </h2>
+                    <p>
+                      <em className="font-semibold">Stay Informed:</em>{" "}
+                      Don&apos;t rely on just one source for information. Check
+                      multiple trusted sources like the <b>VicEmergency app</b>{" "}
+                      and local radio stations to get the most accurate and
+                      current updates about the bushfire situation.
+                    </p>
+                    <p>
+                      <em className="font-semibold">Remember:</em> Safety comes
+                      first! Talk to your parents, teachers, or guardians about
+                      what to do during a bushfire, and make sure you have a
+                      plan in place.
+                    </p>
+                  </li>
+                </ol>
               </div>
             </div>
           </div>
