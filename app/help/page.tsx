@@ -2,6 +2,7 @@
 
 import React from "react";
 import { SmoothScrollWrapper } from "../components/SmoothScrollWrapper";
+import BackToTopButton from "../components/BackToTopButton";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import Image from "next/image";
@@ -87,13 +88,13 @@ const page = () => {
                   Remember: 000 is the most important number for any emergency.
                   Make sure to memorise it!
                 </p>
-                <p className="font-semibold text-blue-700 text-center text-xl mt-2">
+                <p className="font-semibold text-orange-500 text-center text-xl mt-2">
                   <a
                     href="https://www.triplezero.gov.au/"
                     rel="noopener noreferrer"
                     className="hover:underline"
                   >
-                    https://www.triplezero.gov.au/
+                    Visit Triple Zero (000)
                   </a>
                 </p>
               </div>
@@ -119,13 +120,13 @@ const page = () => {
                   up alerts for your location to stay informed about any nearby
                   dangers.
                 </p>
-                <p className="font-semibold text-blue-700 text-center text-xl mt-2">
+                <p className="font-semibold text-orange-500 text-center text-xl mt-2">
                   <a
                     href="https://emergency.vic.gov.au/"
                     rel="noopener noreferrer"
                     className="hover:underline"
                   >
-                    https://emergency.vic.gov.au/
+                    Visit VicEmergency
                   </a>
                 </p>
               </div>
@@ -262,10 +263,112 @@ const page = () => {
                 </ol>
               </div>
             </div>
+            {/* Survival guide*/}
+            <div className="flex flex-col sm:flex-row items-center mt-8">
+              {/* text card */}
+              <div className="bg-[#ffe6c5] p-4 mx-4 mt-4 rounded-xl shadow-lg text-gray-800">
+                <h2 className="font-bold text-center text-2xl mb-2">
+                  Your Guide to Survival
+                </h2>
+                <hr className="w-full max-w-xs border-gray-700 mb-6 mx-auto" />
+                <p className="text-xl text-center mb-4">
+                  This guide provides essential information aimed at anyone who
+                  lives, works, or travels in Victoria, so they are prepared for
+                  the summer fire season.
+                </p>
+                <p className="text-xl">In this guide, you will learn:</p>
+                <ul className="list-disc list-inside pl-4 text-xl space-y-2">
+                  <li>how to stay informed on fire risk days</li>
+                  <li>why you should leave early</li>
+                  <li>what you can or can&apos;t do on fire risk days</li>
+                  <li>
+                    what information to gather ahead of fire season for you and
+                    your family
+                  </li>
+                  <li>what to expect during a bushfire</li>
+                  <li>
+                    guidance on how to stay informed of fires across your area.
+                  </li>
+                </ul>
+                <p className="font-semibold text-orange-500 text-center text-xl mt-4">
+                  <a
+                    href="https://www.cfa.vic.gov.au/ArticleDocuments/335/CFA%20Your%20Guide%20to%20Survival%20(Version%206).pdf.aspx?Embed=Y"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    className="hover:underline"
+                  >
+                    Download a PDF copy of Your Guide to Survival
+                  </a>
+                </p>
+              </div>
+              {/* Image Section */}
+              <div className="flex-shrink-0 p-4">
+                <Image
+                  src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/survival_guide.png"
+                  alt="Survival guide"
+                  width={220}
+                  height={120}
+                  className="object-contain rounded-xl shadow-lg"
+                />
+              </div>
+            </div>
+            {/* Fire Ready Kit*/}
+            <div className="flex flex-col sm:flex-row items-center mt-8">
+              {/* Image Section */}
+              <div className="flex-shrink-0 p-4">
+                <Image
+                  src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/fire_ready_kit.png"
+                  alt="Fire Ready Kit"
+                  width={220}
+                  height={120}
+                  className="object-contain rounded-xl shadow-lg"
+                />
+              </div>
+              {/* Text card for Fire Ready Kit */}
+              <div className="bg-[#ffe6c5] p-4 mx-4 mt-4 rounded-xl shadow-lg text-gray-800">
+                <h2 className="font-bold text-center text-2xl mb-2">
+                  Fire Ready Kit
+                </h2>
+                <hr className="w-full max-w-xs border-gray-700 mb-6 mx-auto" />
+                <p className="text-xl mb-4">
+                  The responsibility for surviving the fire season is shared
+                  between emergency services and the community. You have a role
+                  in ensuring our community&apos;s safety.
+                </p>
+                <p className="text-xl">The Fire Ready Kit includes:</p>
+                <ul className="list-disc list-inside pl-4 text-xl space-y-2">
+                  <li>Guidance on preparing before the fire season begins.</li>
+                  <li>
+                    Steps for planning what to do if fire is in your area.
+                  </li>
+                  <li>Information on survival tactics if you cannot leave.</li>
+                  <li>
+                    Resources to help ensure you are well-prepared for
+                    bushfires.
+                  </li>
+                </ul>
+                <p className="text-xl mt-4">
+                  The Fire Ready Kit is just one of the tools you should use to
+                  ensure you are prepared for bushfire.
+                </p>
+                <p className="font-semibold text-orange-500 text-center text-xl mt-4">
+                  <a
+                    href="https://www.cfa.vic.gov.au/ArticleDocuments/342/CFA%20Fire%20Ready%20Kit%20(Version%202).pdf.aspx?Embed=Y"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    className="hover:underline"
+                  >
+                    Download a PDF copy of Fire Ready Kit
+                  </a>
+                </p>
+              </div>
+            </div>
           </div>
         </div>
+        <Predict />
         <Footer />
       </div>
+      <BackToTopButton />
     </SmoothScrollWrapper>
   );
 };

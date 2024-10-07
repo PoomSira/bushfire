@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { SmoothScrollWrapper } from "../components/SmoothScrollWrapper";
 import Image from "next/image";
+import BackToTopButton from "../components/BackToTopButton";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import Gauge from "../components/Gauge";
@@ -454,6 +455,7 @@ const Page = () => {
 
         <Footer />
       </div>
+      <BackToTopButton />
     </SmoothScrollWrapper>
   );
 };

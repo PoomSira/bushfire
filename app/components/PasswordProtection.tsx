@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, ReactNode } from "react"; // <-- Add React import
+import React, { useState, ReactNode } from "react";
 import Image from "next/image";
 
 interface PasswordProtectionProps {
@@ -49,7 +49,7 @@ const PasswordProtection: React.FC<PasswordProtectionProps> = ({
           />
           {/* Overlay */}
           <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
-            <div className="bg-white p-6 rounded-xl shadow-lg w-full max-w-md text-black opacity-95">
+            <div className="bg-white p-6 rounded-xl shadow-lg w-full max-w-sm sm:max-w-md md:max-w-lg text-black opacity-95 mx-4">
               {/* Logo Section */}
               <div className="flex justify-center mb-4">
                 <Image
@@ -64,7 +64,7 @@ const PasswordProtection: React.FC<PasswordProtectionProps> = ({
               <form onSubmit={handleSubmit}>
                 <div className="mb-4">
                   <label
-                    className="text-lg font-semibold mb-4"
+                    className="text-lg font-semibold mb-2"
                     htmlFor="password"
                   >
                     Password
@@ -76,8 +76,12 @@ const PasswordProtection: React.FC<PasswordProtectionProps> = ({
                       value={password}
                       onChange={handlePasswordChange}
                       required
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-orange-500 appearance-none"
                       placeholder="Enter password"
+                      style={{
+                        WebkitAppearance: "none",
+                        MozAppearance: "none",
+                      }}
                     />
                     <button
                       type="button"

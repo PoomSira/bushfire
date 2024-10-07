@@ -2,6 +2,7 @@
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import Image from "next/image";
+import BackToTopButton from "./components/BackToTopButton";
 import Journey from "./components/Journey";
 import {
   SmoothScrollWrapper,
@@ -292,9 +293,9 @@ export default function Home() {
             </div>
           </div>
         </div>
-
         <Footer />
       </div>
+      <BackToTopButton />
     </SmoothScrollWrapper>
   );
 }
