@@ -1,10 +1,13 @@
-// components/QuizPopup.tsx
 import React, { useState } from "react";
 
 type Question = {
   questionText: string;
   choices: string[];
   correctAnswer: number;
+  feedback: {
+    correct: string;
+    incorrect: string;
+  };
 };
 
 type Props = {
@@ -15,34 +18,44 @@ type Props = {
 const QuizPopup: React.FC<Props> = ({ questions, onClose }) => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
-  const [feedback, setFeedback] = useState("");
+  const [feedback, setFeedback] = useState<string | null>(null);
+  const [isAnswerSelected, setIsAnswerSelected] = useState(false);
   const [showFinalScore, setShowFinalScore] = useState(false);
 
+  // Handles when an answer is selected
   const handleAnswerClick = (index: number) => {
-    if (index === questions[currentQuestion].correctAnswer) {
-      setScore(score + 1);
-      setFeedback("Correct!");
-    } else {
-      setFeedback("Wrong!");
-    }
+    if (isAnswerSelected) return; // Prevent further clicks after an answer is selected
 
-    setTimeout(() => {
-      setFeedback("");
-      if (currentQuestion < questions.length - 1) {
-        setCurrentQuestion(currentQuestion + 1);
-      } else {
-        setShowFinalScore(true); // Show final score when the quiz is finished
-      }
-    }, 1000);
+    setIsAnswerSelected(true); // Prevent selecting multiple answers
+    const isCorrect = questions[currentQuestion].correctAnswer === index;
+
+    // Use feedback from the question object
+    if (isCorrect) {
+      setScore(score + 1);
+      setFeedback(questions[currentQuestion].feedback.correct);
+    } else {
+      setFeedback(questions[currentQuestion].feedback.incorrect);
+    }
+  };
+
+  // Move to the next question
+  const handleNextQuestion = () => {
+    setIsAnswerSelected(false); // Enable answer selection for the next question
+    setFeedback(null); // Reset feedback
+
+    if (currentQuestion < questions.length - 1) {
+      setCurrentQuestion(currentQuestion + 1);
+    } else {
+      setShowFinalScore(true); // End of the quiz
+    }
   };
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
       <div className="relative bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
-        {/* Close Button in the top right corner */}
         <button
           className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 focus:outline-none"
-          onClick={() => onClose(score)} // Pass the final score when closing
+          onClick={() => onClose(score)} // Close the quiz
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -72,20 +85,54 @@ const QuizPopup: React.FC<Props> = ({ questions, onClose }) => {
             {questions[currentQuestion].choices.map((choice, index) => (
               <button
                 key={index}
-                className="block w-full bg-orange-400 text-white py-2 my-2 rounded-lg hover:bg-orange-300"
+                className={`block w-full py-2 my-2 rounded-lg 
+                  ${
+                    isAnswerSelected
+                      ? "cursor-not-allowed"
+                      : "hover:bg-orange-300"
+                  } 
+                  ${
+                    feedback &&
+                    index === questions[currentQuestion].correctAnswer
+                      ? "bg-green-400"
+                      : isAnswerSelected && "bg-red-400"
+                  }
+                  ${
+                    !isAnswerSelected
+                      ? "bg-orange-400 text-white"
+                      : "text-white"
+                  }`}
                 onClick={() => handleAnswerClick(index)}
+                disabled={isAnswerSelected}
               >
                 {choice}
               </button>
             ))}
 
-            <p className="text-gray-700 mt-4 text-lg">{feedback}</p>
-            <p className="mt-2 text-gray-600">
-              Score: {score}/{questions.length}
-            </p>
+            {feedback && (
+              <p
+                className={`mt-4 text-lg ${
+                  feedback.includes("Correct")
+                    ? "text-green-600"
+                    : "text-red-600"
+                }`}
+              >
+                {feedback}
+              </p>
+            )}
+
+            {isAnswerSelected && (
+              <button
+                className="mt-4 w-full bg-orange-400 text-white hover:bg-orange-300 py-2 rounded-lg"
+                onClick={handleNextQuestion}
+              >
+                {currentQuestion < questions.length - 1
+                  ? "Next Question"
+                  : "Finish Quiz"}
+              </button>
+            )}
           </>
         ) : (
-          // Show final score after the quiz is completed
           <div className="text-center">
             <h2 className="text-3xl font-bold text-gray-700">
               Quiz Completed!
@@ -95,7 +142,7 @@ const QuizPopup: React.FC<Props> = ({ questions, onClose }) => {
             </p>
             <button
               className="mt-6 bg-orange-400 p-2 text-white font-semibold rounded-lg shadow-md hover:bg-orange-300"
-              onClick={() => onClose(score)} // Pass the final score and close
+              onClick={() => onClose(score)} // Close and pass the score
             >
               Close Quiz
             </button>

@@ -54,13 +54,13 @@ const valuetext = (value: number) => {
 
 export default function BushfirePrediction() {
   const [formData, setFormData] = useState<FormData>({
-    Station_Region: 1,
-    Temps_Min: 0,
-    Temps_Max: 0,
-    Rain: 0,
-    AM9_RH: 0,
-    AM9_Spd: 0,
-    PM3_RH: 0,
+    Station_Region: 5,
+    Temps_Min: 9.2,
+    Temps_Max: 20.7,
+    Rain: 0.2,
+    AM9_RH: 61.0,
+    AM9_Spd: 6.0,
+    PM3_RH: 61.0,
   });
 
   const [prediction, setPrediction] = useState<number | null>(null);
@@ -119,7 +119,9 @@ export default function BushfirePrediction() {
       <form onSubmit={handleSubmit}>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-12 mb-6 justify-items-center items-center">
           <div>
-            <label className="block font-semibold">Station Region:</label>
+            <label className="block font-semibold text-black">
+              Station Region: {formData.Station_Region}
+            </label>
             <Box sx={{ width: 300 }}>
               <Slider
                 aria-label="Station Region"
@@ -147,7 +149,9 @@ export default function BushfirePrediction() {
             </Box>
           </div>
           <div>
-            <label className="block font-semibold">Min Temperature (°C):</label>
+            <label className="block font-semibold text-black">
+              Min Temperature (°C): {formData.Temps_Min}
+            </label>
             <Box sx={{ width: 300 }}>
               <Slider
                 aria-label="Min Temperature"
@@ -175,7 +179,9 @@ export default function BushfirePrediction() {
             </Box>
           </div>
           <div>
-            <label className="block font-semibold">Max Temperature (°C):</label>
+            <label className="block font-semibold text-black">
+              Max Temperature (°C): {formData.Temps_Max}
+            </label>
             <Box sx={{ width: 300 }}>
               <Slider
                 aria-label="Max Temperature"
@@ -203,7 +209,9 @@ export default function BushfirePrediction() {
             </Box>
           </div>
           <div>
-            <label className="block font-semibold">Rain (mm):</label>
+            <label className="block font-semibold text-black">
+              Rain (mm): {formData.Rain}
+            </label>
             <Box sx={{ width: 300 }}>
               <Slider
                 aria-label="Rain"
@@ -231,7 +239,9 @@ export default function BushfirePrediction() {
             </Box>
           </div>
           <div>
-            <label className="block font-semibold">9AM Humidity (%):</label>
+            <label className="block font-semibold text-black">
+              9AM Humidity (%): {formData.AM9_RH}
+            </label>
             <Box sx={{ width: 300 }}>
               <Slider
                 aria-label="9AM Humidity"
@@ -259,8 +269,8 @@ export default function BushfirePrediction() {
             </Box>
           </div>
           <div>
-            <label className="block font-semibold">
-              9AM Wind Speed (km/h):
+            <label className="block font-semibold text-black">
+              9AM Wind Speed (km/h): {formData.AM9_Spd}
             </label>
             <Box sx={{ width: 300 }}>
               <Slider
@@ -289,7 +299,9 @@ export default function BushfirePrediction() {
             </Box>
           </div>
           <div>
-            <label className="block font-semibold">3PM Humidity (%):</label>
+            <label className="block font-semibold text-black">
+              3PM Humidity (%): {formData.PM3_RH}
+            </label>
             <Box sx={{ width: 300 }}>
               <Slider
                 aria-label="3PM Humidity"
@@ -338,7 +350,7 @@ export default function BushfirePrediction() {
         )} */}
 
         {probability !== null && Array.isArray(probability[0]) && (
-          <div className="text-center text-xl w-1/2">
+          <div className="text-center text-3xl font-bold w-2/3">
             {/* Calculate the probability percentage */}
             {/* <span>{(probability[0][1] * 100).toFixed(2)}%</span> */}
 
@@ -346,13 +358,19 @@ export default function BushfirePrediction() {
             {probability[0][1] * 100 < 50 ? (
               <p className="text-orange-400 mt-4">
                 <strong>LOW BUSHFIRE RISK!</strong> Under this weather
-                condition, there is a {(probability[0][1] * 100).toFixed(2)}%
+                condition, there is a{" "}
+                <span className="text-4xl font-extrabold">
+                  {(probability[0][1] * 100).toFixed(2)}%
+                </span>
                 probability that a bushfire is likely to occur.
               </p>
             ) : (
               <p className="text-red-500 mt-4">
                 <strong>HIGH BUSHFIRE RISK!</strong> Under this weather
-                condition, there is a {(probability[0][1] * 100).toFixed(2)}%
+                condition, there is a{" "}
+                <span className="text-4xl font-extrabold">
+                  {(probability[0][1] * 100).toFixed(2)} %
+                </span>
                 probability that a bushfire is likely to occur.
               </p>
             )}
