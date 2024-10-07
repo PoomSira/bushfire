@@ -4,6 +4,7 @@ import React from "react";
 import { SmoothScrollWrapper } from "../components/SmoothScrollWrapper";
 import Navigation from "../components/Navigation";
 import Image from "next/image";
+import BackToTopButton from "../components/BackToTopButton";
 import PathToRecovery from "../components/PathToRecovery";
 import VoiceOfRecovery from "../components/VoiceOfRecovery";
 import BushfireStoryCockatoo from "../components/BushfireStoryCockatoo";
@@ -159,7 +160,7 @@ const page = () => {
             </div>
           </div>
         </div>
-
+        <BackToTopButton />
         <Footer />
       </div>
     </SmoothScrollWrapper>

@@ -4,6 +4,7 @@ import React from "react";
 import { SmoothScrollWrapper } from "../components/SmoothScrollWrapper";
 import Navigation from "../components/Navigation";
 import Image from "next/image";
+import BackToTopButton from "../components/BackToTopButton";
 import Footer from "../components/Footer";
 import QuizGame from "../components/QuizGame";
 import Link from "next/link";
@@ -91,7 +92,7 @@ const page = () => {
             </div>
           </div>
         </div>
-
+        <BackToTopButton />
         <Footer />
       </div>
     </SmoothScrollWrapper>

@@ -2,6 +2,7 @@
 
 import React from "react";
 import { SmoothScrollWrapper } from "../components/SmoothScrollWrapper";
+import BackToTopButton from "../components/BackToTopButton";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import Image from "next/image";
@@ -304,7 +305,7 @@ const page = () => {
               {/* Image Section */}
               <div className="flex-shrink-0 p-4">
                 <Image
-                  src="/survival_guide.png"
+                  src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/survival_guide.png"
                   alt="Survival guide"
                   width={220}
                   height={120}
@@ -317,7 +318,7 @@ const page = () => {
               {/* Image Section */}
               <div className="flex-shrink-0 p-4">
                 <Image
-                  src="/fire_ready_kit.png"
+                  src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/fire_ready_kit.png"
                   alt="Fire Ready Kit"
                   width={220}
                   height={120}
@@ -366,6 +367,7 @@ const page = () => {
           </div>
         </div>
         <Predict />
+        <BackToTopButton />
         <Footer />
       </div>
     </SmoothScrollWrapper>
