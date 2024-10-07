@@ -77,16 +77,16 @@ const page = () => {
           {/* Left Box with Text and Button */}
           <div className="bg-[#ffe6c5] w-full md:w-1/2 rounded-lg p-4 shadow-lg mb-4 md:mb-0 relative z-10">
             <p className="text-center font-bold text-gray-700 text-xl mb-4">
-              Need guidance or support?
+              What to become a bushfire Detective?
             </p>
             <p className="text-center text-gray-700 text-xl mb-4">
-              Explore the Help section to find resources and manuals that make
-              navigating bushfire preparedness easy for everyone!
+              Join our exciting challenge and use real weather data to predict
+              bushfire risks!
             </p>
             <div className="flex justify-center">
-              <Link href="/help" className="inline-block">
+              <Link href="/predict" className="inline-block">
                 <button className="px-6 py-2 text-lg font-semibold text-gray-700 border-2 border-gray-700 hover:bg-black hover:text-white transition-colors duration-300 rounded-md">
-                  Help
+                  Predict
                 </button>
               </Link>
             </div>

@@ -111,6 +111,18 @@ const Navigation: React.FC = () => {
             </li>
             <li>
               <Link
+                href="/predict"
+                className={`flex text-2xl items-center justify-center w-28 h-12 transform transition-transform duration-300 hover:scale-110 ${
+                  pathname === "/predict"
+                    ? "text-orange-400"
+                    : "text-gray-900 hover:text-orange-400"
+                }`}
+              >
+                Predict
+              </Link>
+            </li>
+            <li>
+              <Link
                 href="/help"
                 className={`flex text-2xl items-center justify-center w-28 h-12 transform transition-transform duration-300 hover:scale-110 ${
                   pathname === "/help"
