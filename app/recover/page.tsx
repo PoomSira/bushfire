@@ -1,7 +1,12 @@
 "use client";
 
 import React from "react";
-import { SmoothScrollWrapper } from "../components/SmoothScrollWrapper";
+import {
+  SmoothScrollWrapper,
+  MotionH1,
+  MotionDiv,
+} from "../components/SmoothScrollWrapper";
+import { motion } from "framer-motion";
 import Navigation from "../components/Navigation";
 import Image from "next/image";
 import BackToTopButton from "../components/BackToTopButton";
@@ -29,15 +34,25 @@ const page = () => {
           {/* Content Overlay */}
           <div className="relative mx-auto max-w-3xl py-32 sm:py-48 lg:py-56">
             <div className="text-center">
-              <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
+              <MotionH1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="text-4xl font-bold tracking-tight text-white sm:text-6xl"
+              >
                 Recover with Bushfire Brigade
                 <br />
                 Safety Starts with You
-              </h1>
-              <p className="mt-6 text-lg leading-8 text-white">
+              </MotionH1>
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="mt-6 text-xl leading-8 text-white"
+              >
                 Empowering young minds to be fire-smart and ready for bushfire
                 challenges.
-              </p>
+              </motion.p>
             </div>
           </div>
         </div>
