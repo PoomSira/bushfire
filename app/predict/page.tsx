@@ -10,7 +10,6 @@ import { motion } from "framer-motion";
 import Navigation from "../components/Navigation";
 import Image from "next/image";
 import Footer from "../components/Footer";
-import QuizGame from "../components/QuizGame";
 import Link from "next/link";
 import BushfirePrediction from "../components/BushfirePrediction";
 

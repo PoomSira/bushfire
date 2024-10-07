@@ -370,7 +370,7 @@ export default function BushfirePrediction() {
                 condition, there is a{" "}
                 <span className="text-4xl font-extrabold">
                   {(probability[0][1] * 100).toFixed(2)} %
-                </span>
+                </span>{" "}
                 probability that a bushfire is likely to occur.
               </p>
             )}
