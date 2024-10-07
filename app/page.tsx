@@ -360,7 +360,7 @@ export default function Home() {
               {/* Image Section */}
               <div className="flex-shrink-0 p-4">
                 <Image
-                  src="/bushfire_manual.png"
+                  src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/bushfire_manual.png"
                   alt="Survival guide"
                   width={220}
                   height={120}
