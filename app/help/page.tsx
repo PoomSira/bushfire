@@ -365,7 +365,6 @@ const page = () => {
             </div>
           </div>
         </div>
-        <Predict />
         <Footer />
       </div>
       <BackToTopButton />
