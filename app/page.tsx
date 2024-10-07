@@ -2,6 +2,7 @@
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import Image from "next/image";
+import Link from "next/link";
 import BackToTopButton from "./components/BackToTopButton";
 import Journey from "./components/Journey";
 import {
@@ -293,6 +294,83 @@ export default function Home() {
             </div>
           </div>
         </div>
+
+        {/* What should you do contacts */}
+        <div className="relative py-8 flex flex-col items-center justify-center w-full">
+          {/* Background Image */}
+          <div className="absolute inset-0 bg-[url('https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/3.webp')] bg-[#FFFBF2] opacity-20 bg-cover bg-center brightness-75"></div>
+
+          <div className="relative w-full h-full flex flex-col items-center justify-center">
+            <h1 className="text-3xl font-black text-center text-gray-700 mb-4">
+              Bushfire Brigade Handbook
+            </h1>
+            <hr className="w-full max-w-xs border-gray-700 mb-2 mx-auto" />
+            {/* Bushfire Brigade Manual*/}
+            <div className="flex flex-col sm:flex-row items-center mt-8">
+              {/* text card */}
+              <div className="bg-[#FFFBF2] p-4 mx-4 mt-4 rounded-xl shadow-lg text-gray-800">
+                <h2 className="font-bold text-center text-2xl mb-2">
+                  Your Guide to Navigating the Bushfire Brigade Website
+                </h2>
+                <p className="text-xl mb-4">
+                  This manual is designed to help users, including teachers,
+                  parents, and students, navigate the Bushfire Brigade website
+                  with ease. It offers a step-by-step guide to accessing
+                  important sections, learning resources, and interactive
+                  features related to bushfire education.
+                </p>
+                <p className="text-xl">In this manual, you will learn:</p>
+                <ul className="list-disc list-inside pl-4 text-xl space-y-2">
+                  <li>
+                    How to use the navigation bar to access different sections
+                    such as Learn, Prepare, Recover, and Quiz
+                  </li>
+                  <li>
+                    How to interact with educational content about bushfire
+                    causes, safety tips, and recovery processes
+                  </li>
+                  <li>
+                    How to participate in quizzes to reinforce knowledge gained
+                    from the website
+                  </li>
+                  <li>
+                    How to access help and support resources, including
+                    emergency contacts like Triple Zero and the VicEmergency app
+                  </li>
+                  <li>
+                    How to find and download learning materials and recovery
+                    plans for students.
+                  </li>
+                </ul>
+
+                {/* Centering the button */}
+                <div className="flex justify-center items-center">
+                  <Link
+                    href="https://drive.google.com/file/d/1dN6rMcCw57Pu0zH8t4SyR1SN1xFAYyWA/view?usp=sharing"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    <button className="px-6 py-2 mt-4 text-lg font-semibold text-gray-700 border-2 border-gray-700 hover:bg-black hover:text-white transition-colors duration-300 rounded-md">
+                      Download
+                    </button>
+                  </Link>
+                </div>
+              </div>
+
+              {/* Image Section */}
+              <div className="flex-shrink-0 p-4">
+                <Image
+                  src="https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/bushfire_manual.png"
+                  alt="Survival guide"
+                  width={220}
+                  height={120}
+                  className="object-contain rounded-xl shadow-lg"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
         <Footer />
       </div>
       <BackToTopButton />

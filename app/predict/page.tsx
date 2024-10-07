@@ -1,11 +1,15 @@
 "use client";
 
 import React from "react";
-import { SmoothScrollWrapper } from "../components/SmoothScrollWrapper";
+import {
+  SmoothScrollWrapper,
+  MotionH1,
+  MotionDiv,
+} from "../components/SmoothScrollWrapper";
+import { motion } from "framer-motion";
 import Navigation from "../components/Navigation";
 import Image from "next/image";
 import Footer from "../components/Footer";
-import QuizGame from "../components/QuizGame";
 import Link from "next/link";
 import BushfirePrediction from "../components/BushfirePrediction";
 
@@ -15,20 +19,30 @@ const page = () => {
       <div className="bg-[#FFFBF2] mx-auto max-w-screen">
         <Navigation />
         {/* Hero Section */}
-        <div className="relative isolate h-[90vh] px-6 pt-14 lg:px-8 flex-grow bg-[url('/kid-computer.webp')] bg-cover bg-center">
+        <div className="relative isolate h-[90vh] px-6 pt-14 lg:px-8 flex-grow bg-[url('https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/kid-computer.webp')] bg-cover bg-center">
           {/* Blur Overlay */}
           <div className="absolute inset-0 bg-black bg-opacity-20 backdrop-filter backdrop-blur-sm"></div>
 
           {/* Content Overlay */}
           <div className="relative mx-auto max-w-3xl py-32 sm:py-48 lg:py-56">
             <div className="text-center">
-              <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
+              <MotionH1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="text-4xl font-bold tracking-tight text-white sm:text-6xl"
+              >
                 Become a Weather Detective with Machine Learning!
-              </h1>
-              <p className="mt-6 text-lg leading-8 text-white">
+              </MotionH1>
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="mt-6 text-xl leading-8 text-white"
+              >
                 Join our exciting challenge and use real weather data to predict
                 bushfire risks!
-              </p>
+              </motion.p>
             </div>
           </div>
         </div>

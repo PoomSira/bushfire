@@ -1,7 +1,12 @@
 "use client";
 
 import React from "react";
-import { SmoothScrollWrapper } from "../components/SmoothScrollWrapper";
+import {
+  SmoothScrollWrapper,
+  MotionH1,
+  MotionDiv,
+} from "../components/SmoothScrollWrapper";
+import { motion } from "framer-motion";
 import BackToTopButton from "../components/BackToTopButton";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
@@ -20,10 +25,15 @@ const page = () => {
           {/* Content Overlay */}
           <div className="relative mx-auto max-w-3xl py-32 sm:py-48 lg:py-56">
             <div className="text-center">
-              <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
+              <MotionH1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="text-4xl font-bold tracking-tight text-white sm:text-6xl"
+              >
                 Help you need with Bushfire Brigade
                 <br />
-              </h1>
+              </MotionH1>
             </div>
           </div>
         </div>

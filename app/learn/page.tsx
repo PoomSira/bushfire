@@ -2,7 +2,11 @@
 "use client";
 
 import React, { useState } from "react";
-import { SmoothScrollWrapper } from "../components/SmoothScrollWrapper";
+import {
+  SmoothScrollWrapper,
+  MotionH1,
+  MotionDiv,
+} from "../components/SmoothScrollWrapper";
 import Image from "next/image";
 import BackToTopButton from "../components/BackToTopButton";
 import Navigation from "../components/Navigation";
@@ -14,6 +18,7 @@ import TableauCluster from "../components/TableauCluster";
 import CauseBushfire from "../components/CauseBushfire";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const Page = () => {
   const [visibleAnswer, setVisibleAnswer] = useState<number | null>(null); // Track which answer is visible
@@ -34,44 +39,99 @@ const Page = () => {
 
           {/* Content Overlay */}
           <div className="relative mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
-            <div className="text-center">
-              <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center"
+            >
+              <MotionH1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="text-4xl font-bold tracking-tight text-white sm:text-6xl"
+              >
                 Learn with Bushfire Brigade
                 <br />
                 Safety Starts with You
-              </h1>
-              <p className="mt-6 text-lg leading-8 text-white">
+              </MotionH1>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="mt-6 text-lg leading-8 text-white"
+              >
                 Empowering young minds to be fire-smart and ready for bushfire
                 challenges.
-              </p>
-            </div>
+              </motion.p>
+            </motion.div>
           </div>
         </div>
 
         <div className="relative py-8 flex flex-col items-center justify-center">
           <div className="absolute inset-0 bg-[url('https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/kids-talking.jpeg')] bg-[#FFFBF2] opacity-20 bg-cover bg-center brightness-75"></div>
-          <div className="relative">
-            <h1 className="text-3xl font-black text-center text-gray-700 mb-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="relative"
+          >
+            <MotionH1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-3xl font-black text-center text-gray-700 mb-4"
+            >
               History of bushfire
-            </h1>
-            <hr className="w-full max-w-lg border-gray-700 mb-4 mx-auto" />
-            <div className="p-6">
+            </MotionH1>
+            <motion.hr
+              initial={{ width: 0 }}
+              animate={{ width: "100%" }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="w-full max-w-lg border-gray-700 mb-4 mx-auto"
+            />
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="p-6"
+            >
               <HistoryTimeline />
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
 
         <div className="relative py-8 flex flex-col items-center justify-center">
           <div className="absolute inset-0 bg-[url('https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/class-room.webp')] bg-[#FFFBF2] opacity-20 bg-cover bg-center brightness-75"></div>
-          <div className="relative">
-            <h1 className="text-3xl font-black text-center text-gray-700 mb-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="relative"
+          >
+            <MotionH1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-3xl font-black text-center text-gray-700 mb-4"
+            >
               Cause of Bushfire
-            </h1>
-            <hr className="w-full max-w-lg border-gray-700 mb-4 mx-auto " />
-            <div className="p-6">
+            </MotionH1>
+            <motion.hr
+              initial={{ width: 0 }}
+              animate={{ width: "100%" }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="w-full max-w-lg border-gray-700 mb-4 mx-auto"
+            />
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="p-6"
+            >
               <CauseBushfire />
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
 
         {/* Tableau Visualizations */}

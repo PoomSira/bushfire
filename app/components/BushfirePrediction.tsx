@@ -113,7 +113,7 @@ export default function BushfirePrediction() {
 
   return (
     <div className="p-12 bg-[#FFFBF2] rounded-lg">
-      <h1 className="text-2xl font-bold mb-6 text-center text-black">
+      <h1 className="text-2xl font-bold mb-6 text-center">
         Predict Bushfire Risk
       </h1>
       <form onSubmit={handleSubmit}>
@@ -370,7 +370,7 @@ export default function BushfirePrediction() {
                 condition, there is a{" "}
                 <span className="text-4xl font-extrabold">
                   {(probability[0][1] * 100).toFixed(2)} %
-                </span>
+                </span>{" "}
                 probability that a bushfire is likely to occur.
               </p>
             )}
