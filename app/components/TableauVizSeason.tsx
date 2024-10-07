@@ -51,7 +51,7 @@ const TableauVizSeason: React.FC = () => {
         <param name="site_root" value="" />
         <param name="name" value="Bushfire_Brigade_Season/Dashboard1" />
         <param name="tabs" value="no" />
-        <param name="toolbar" value="yes" />
+        <param name="toolbar" value="no" /> {/* This disables the toolbar */}
         <param
           name="static_image"
           value="https://public.tableau.com/static/images/Bu/Bushfire_Brigade_Season/Dashboard1/1.png"
