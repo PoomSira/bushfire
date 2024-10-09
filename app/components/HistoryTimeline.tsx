@@ -189,7 +189,7 @@ const HistoryTimeline = (props: Props) => {
                 style={{ transform: "scale(2)", transformOrigin: "top center" }}
               >
                 <Image
-                  src="https://res.cloudinary.com/dxtvfgaud/image/upload/f_auto,q_100/v1726657557/animal-impact_ygmme9.png"
+                  src="https://res.cloudinary.com/dxtvfgaud/image/upload/v1726657557/animal-impact_ygmme9.png"
                   alt="Animal Impact"
                   width={500}
                   height={500}

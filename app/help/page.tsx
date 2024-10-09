@@ -6,7 +6,6 @@ import {
   MotionH1,
   MotionDiv,
 } from "../components/SmoothScrollWrapper";
-import { motion } from "framer-motion";
 import BackToTopButton from "../components/BackToTopButton";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
