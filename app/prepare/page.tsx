@@ -212,153 +212,160 @@ const Page = () => {
         </div>
 
         {/* Survival skills section */}
-        <div className="relative py-8 flex flex-col items-center justify-center w-full">
-          <div className="absolute inset-0 bg-[url('https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/home-new.webp')] bg-[#FFFBF2] opacity-10 bg-cover bg-center brightness-75"></div>
-          <h1 className="text-3xl font-black text-center text-gray-700 mb-4">
-            Survival Skills
-          </h1>
-          <hr className="w-full max-w-lg border-gray-700 mb-2 mx-auto" />
-          <br />
-          {/* Video Section */}
-          <div className="w-full flex justify-center items-center rounded-xl mb-5 mx-4 md:mx-0 md:p-8 lg:p-12 z-10">
-            <div className="w-full flex justify-center">
-              <iframe
-                className="w-2/3 h-96 md:h-[600px] lg:h-[500px] rounded-xl object-cover shadow-lg"
-                src="https://www.youtube.com/embed/XsB8D8NQ76I"
-                title="YouTube Video"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            </div>
-          </div>
-
-          <h2 className="text-3xl font-black text-center text-gray-700 mb-4">
-            What Places Should You Watch Out For?
-          </h2>
-          <hr className="w-full max-w-lg border-gray-700 mb-2 mx-auto" />
-
-          {/* First row - Close to grass and Dense or open bush */}
-          <div className="flex flex-col md:flex-row flex-wrap items-center justify-between p-8 space-y-8 md:space-y-0 w-auto">
-            {/* Close to grass Container */}
-            <div className="flex flex-col items-center justify-center w-full md:w-1/2 p-4 space-y-8">
-              {/* Image Container */}
-              <div className="w-full max-w-md p-4">
-                <div className="transition-transform transform hover:scale-105 duration-500">
-                  <Image
-                    src="https://res.cloudinary.com/dxtvfgaud/image/upload/v1727156722/closeToGrass_xusv7e.png"
-                    alt="Paddock"
-                    className="rounded-2xl w-full h-auto animate-moveSideways"
-                    width={500}
-                    height={300}
-                  />
-                </div>
-              </div>
-              {/* Text Card */}
-              <div className="w-full bg-[#FFE6C5] p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 duration-500">
-                <h2 className="text-2xl font-semibold mb-4 text-gray-800">
-                  1) Close to or among grass
-                </h2>
-                <ul className="list-disc list-inside text-xl text-gray-700">
-                  <li>Dry, brown grass can catch fire really fast.</li>
-                  <li>Tall grass makes bigger flames.</li>
-                  <li>Grass fires spread quicker than forest fires.</li>
-                </ul>
+        <div className="flex items-center">
+          {/* Survival skills section */}
+          <div className="relative py-8 flex flex-col items-center justify-center w-full">
+            <div className="absolute inset-0 bg-[url('https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/home-new.webp')] bg-[#FFFBF2] opacity-10 bg-cover bg-center brightness-75"></div>
+            <h1 className="text-3xl font-black text-center text-gray-700 mb-4">
+              Survival Skills
+            </h1>
+            <hr className="w-full max-w-lg border-gray-700 mb-2 mx-auto" />
+            <br />
+            {/* Video Section */}
+            <div className="w-full flex justify-center items-center rounded-xl mb-5 mx-4 md:mx-0 md:p-8 lg:p-12 z-10">
+              <div className="w-full flex justify-center">
+                <iframe
+                  className="w-2/3 h-96 md:h-[600px] lg:h-[500px] rounded-xl object-cover shadow-lg"
+                  src="https://www.youtube.com/embed/XsB8D8NQ76I"
+                  title="YouTube Video"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
               </div>
             </div>
 
-            {/* Dense or open bush Container */}
-            <div className="flex flex-col items-center justify-center w-full md:w-1/2 p-4 space-y-8">
-              {/* Image Container */}
-              <div className="w-full max-w-md p-4">
-                <div className="transition-transform transform hover:scale-105 duration-500">
-                  <Image
-                    src="https://res.cloudinary.com/dxtvfgaud/image/upload/v1727156723/denseBush_dv3zu4.png"
-                    alt="Dense Bush"
-                    className="rounded-2xl w-auto h-auto animate-moveSideways"
-                    width={500}
-                    height={300}
-                  />
+            <h2 className="text-3xl font-black text-center text-gray-700 mb-4">
+              What Places Should You Watch Out For?
+            </h2>
+            <hr className="w-full max-w-lg border-gray-700 mb-2 mx-auto" />
+
+            {/* First row - Close to grass and Dense or open bush */}
+            <div className="flex flex-col md:flex-row flex-wrap items-center justify-between p-8 space-y-8 md:space-y-0 w-auto">
+              {/* Close to grass Container */}
+              <div className="flex flex-col items-center justify-center w-full md:w-1/2 p-4 space-y-8">
+                {/* Image Container */}
+                <div className="w-full p-4">
+                  <div className="transition-transform transform hover:scale-105 duration-500">
+                    <Image
+                      src="https://res.cloudinary.com/dxtvfgaud/image/upload/v1727156722/closeToGrass_xusv7e.png"
+                      alt="Paddock"
+                      className="rounded-2xl w-full h-auto animate-moveSideways"
+                      width={800}
+                      height={480}
+                    />
+                  </div>
+                </div>
+                {/* Text Card */}
+                <div className="w-full bg-[#FFE6C5] p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 duration-500">
+                  <h2 className="text-2xl font-semibold mb-4 text-gray-800">
+                    1) Close to or among grass
+                  </h2>
+                  <ul className="list-disc list-inside text-xl text-gray-700">
+                    <li>Dry, brown grass can catch fire really fast.</li>
+                    <li>Tall grass makes bigger flames.</li>
+                    <li>Grass fires spread quicker than forest fires.</li>
+                  </ul>
                 </div>
               </div>
-              {/* Text Card */}
-              <div className="w-full bg-[#FFE6C5] p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 duration-500">
-                <h2 className="text-2xl font-semibold mb-4 text-gray-800">
-                  2) Area with thick bushes
-                </h2>
-                <ul className="list-disc list-inside text-xl text-gray-700">
-                  <li>Both thick and open bush can be risky.</li>
-                  <li>
-                    Small sticks burn fast, and big logs stay hot for a long
-                    time.
-                  </li>
-                  <li>Smoke from the fire can make it hard to see.</li>
-                </ul>
+
+              {/* Dense or open bush Container */}
+              <div className="flex flex-col items-center justify-center w-full md:w-1/2 p-4 space-y-8">
+                {/* Image Container */}
+                <div className="w-full p-4">
+                  <div className="transition-transform transform hover:scale-105 duration-500">
+                    <Image
+                      src="https://res.cloudinary.com/dxtvfgaud/image/upload/v1727156723/denseBush_dv3zu4.png"
+                      alt="Dense Bush"
+                      className="rounded-2xl w-full h-auto animate-moveSideways"
+                      width={800}
+                      height={480}
+                    />
+                  </div>
+                </div>
+                {/* Text Card */}
+                <div className="w-full bg-[#FFE6C5] p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 duration-500">
+                  <h2 className="text-2xl font-semibold mb-4 text-gray-800">
+                    2) Area with thick bushes
+                  </h2>
+                  <ul className="list-disc list-inside text-xl text-gray-700">
+                    <li>Both thick and open bush can be risky.</li>
+                    <li>
+                      Small sticks burn fast, and big logs stay hot for a long
+                      time.
+                    </li>
+                    <li>Smoke from the fire can make it hard to see.</li>
+                  </ul>
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* Second row - Coastal scrub and Where suburbs meet bush */}
-          <div className="flex flex-col md:flex-row flex-wrap items-center justify-between p-8 space-y-8 md:space-y-0 w-auto">
-            {/* Coastal scrub Container */}
-            <div className="flex flex-col items-center justify-center w-full md:w-1/2 p-4 space-y-8">
-              {/* Image Container */}
-              <div className="w-full max-w-md p-4">
-                <div className="transition-transform transform hover:scale-105 duration-500">
-                  <Image
-                    src="https://res.cloudinary.com/dxtvfgaud/image/upload/v1727156723/costalScrub_li0mqf.png"
-                    alt="Coastal Scrub"
-                    className="rounded-lg w-auto h-auto animate-moveSideways"
-                    width={500}
-                    height={300}
-                  />
+            {/* Second row - Coastal scrub and Where suburbs meet bush */}
+            <div className="flex flex-col md:flex-row flex-wrap items-center justify-between p-8 space-y-8 md:space-y-0 w-auto">
+              {/* Coastal scrub Container */}
+              <div className="flex flex-col items-center justify-center w-full md:w-1/2 p-4 space-y-8">
+                {/* Image Container */}
+                <div className="w-full p-4">
+                  <div className="transition-transform transform hover:scale-105 duration-500">
+                    <Image
+                      src="https://res.cloudinary.com/dxtvfgaud/image/upload/v1727156723/costalScrub_li0mqf.png"
+                      alt="Coastal Scrub"
+                      className="rounded-lg w-full h-auto animate-moveSideways"
+                      width={800}
+                      height={480}
+                    />
+                  </div>
+                </div>
+                {/* Text Card */}
+                <div className="w-full bg-[#FFE6C5] p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 duration-500">
+                  <h2 className="text-2xl font-semibold mb-4 text-gray-800">
+                    3) Near beaches with bushes
+                  </h2>
+                  <ul className="list-disc list-inside text-xl text-gray-700">
+                    <li>
+                      The coast fires will be very hot and spread quickly.
+                    </li>
+                    <li>
+                      Ocean winds can make the fire move in surprising ways.
+                    </li>
+                    <li>
+                      Lots of small, burning pieces will be flying around.
+                    </li>
+                  </ul>
                 </div>
               </div>
-              {/* Text Card */}
-              <div className="w-full bg-[#FFE6C5] p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 duration-500">
-                <h2 className="text-2xl font-semibold mb-4 text-gray-800">
-                  3) Near beaches with bushes
-                </h2>
-                <ul className="list-disc list-inside text-xl text-gray-700">
-                  <li>The coast fires will be very hot and spread quickly.</li>
-                  <li>
-                    Ocean winds can make the fire move in surprising ways.
-                  </li>
-                  <li>Lots of small, burning pieces will be flying around.</li>
-                </ul>
-              </div>
-            </div>
 
-            {/* Where suburbs meet the bush or grasslands Container */}
-            <div className="flex flex-col items-center justify-center w-full md:w-1/2 p-4 space-y-8">
-              {/* Image Container */}
-              <div className="w-full max-w-md p-4">
-                <div className="transition-transform transform hover:scale-105 duration-500">
-                  <Image
-                    src="https://res.cloudinary.com/dxtvfgaud/image/upload/v1727156723/grassland_s5epnk.png"
-                    alt="Grassland"
-                    className="rounded-lg w-auto h-auto animate-moveSideways"
-                    width={500}
-                    height={300}
-                  />
+              {/* Where suburbs meet the bush or grasslands Container */}
+              <div className="flex flex-col items-center justify-center w-full md:w-1/2 p-4 space-y-8">
+                {/* Image Container */}
+                <div className="w-full p-4">
+                  <div className="transition-transform transform hover:scale-105 duration-500">
+                    <Image
+                      src="https://res.cloudinary.com/dxtvfgaud/image/upload/v1727156723/grassland_s5epnk.png"
+                      alt="Grassland"
+                      className="rounded-lg w-full h-auto animate-moveSideways"
+                      width={800}
+                      height={480}
+                    />
+                  </div>
                 </div>
-              </div>
-              {/* Text Card */}
-              <div className="w-full bg-[#FFE6C5] p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 duration-500">
-                <h2 className="text-2xl font-semibold mb-4 text-gray-800">
-                  4) Where suburbs meet the bush or grasslands
-                </h2>
-                <ul className="list-disc list-inside text-xl text-gray-700">
-                  <li>
-                    Fires in parks or reserves can quickly spread to nearby
-                    fences and gardens.
-                  </li>
-                  <li>Fires can jump from one house to another.</li>
-                  <li>
-                    If you live near bushes, burning pieces might land on your
-                    house.
-                  </li>
-                  <li>Strong winds can blow burning pieces from far away.</li>
-                </ul>
+                {/* Text Card */}
+                <div className="w-full bg-[#FFE6C5] p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 duration-500">
+                  <h2 className="text-2xl font-semibold mb-4 text-gray-800">
+                    4) Where suburbs meet the bush or grasslands
+                  </h2>
+                  <ul className="list-disc list-inside text-xl text-gray-700">
+                    <li>
+                      Fires in parks or reserves can quickly spread to nearby
+                      fences and gardens.
+                    </li>
+                    <li>Fires can jump from one house to another.</li>
+                    <li>
+                      If you live near bushes, burning pieces might land on your
+                      house.
+                    </li>
+                    <li>Strong winds can blow burning pieces from far away.</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -421,7 +428,7 @@ const Page = () => {
         <div className="relative py-8 flex flex-col items-center justify-center w-full">
           <div className="absolute inset-0 bg-[url('https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/3.webp')] bg-[#FFFBF2] opacity-20 bg-cover bg-center brightness-75"></div>
           <h1 className="text-3xl font-black text-center text-gray-700 mb-4">
-            Bushfire Survival Options!
+            Bushfire Survival Options
           </h1>
           <hr className="w-full max-w-lg border-gray-700 mb-4 mx-auto" />
           <div className="relative w-full flex flex-col items-center justify-center">

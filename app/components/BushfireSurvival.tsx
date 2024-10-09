@@ -1,6 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 
 const BushfireSurvival: React.FC = () => {
+  const [modalVisible, setModalVisible] = useState(false);
+  const [modalVideoSrc, setModalVideoSrc] = useState("");
+
+  const openModal = (videoSrc: string) => {
+    setModalVideoSrc(videoSrc);
+    setModalVisible(true);
+  };
+
+  const closeModal = () => {
+    setModalVisible(false);
+    setModalVideoSrc("");
+  };
+
   return (
     <div className="w-full mx-auto p-4">
       {/* Section: Leave Early */}
@@ -10,9 +23,8 @@ const BushfireSurvival: React.FC = () => {
         </h2>
         <hr className="w-auto max-w-xs border-gray-700 mb-6 mx-auto" />
 
-        <div className="flex flex-col md:flex-row gap-4">
-          {/* Leave Early Video */}
-          <div className="w-full md:w-1/2">
+        <div className="flex flex-col items-center justify-center">
+          <div className="w-full md:w-1/2 flex justify-center">
             <video
               className="w-full h-auto rounded-lg"
               loop
@@ -26,23 +38,18 @@ const BushfireSurvival: React.FC = () => {
               Your browser does not support the video tag.
             </video>
           </div>
-
-          {/* Leave Early Steps Video */}
-          <div className="w-full h-auto md:w-1/2 flex">
-            <video
-              className="w-full h-auto rounded-lg md:w-3/4 lg:w-full"
-              loop
-              autoPlay
-              playsInline
-            >
-              <source
-                src="https://res.cloudinary.com/dxtvfgaud/video/upload/q_auto:low,f_auto/v1726650163/Leave_Early_Steps_u9dppa.mp4"
-                type="video/mp4"
-              />
-              Your browser does not support the video tag.
-            </video>
-          </div>
         </div>
+
+        <button
+          className="mt-4 px-4 py-2 rounded-lg mx-auto block  bg-orange-400 text-white font-semibold shadow-md hover:bg-orange-300 transition-transform transform hover:scale-105"
+          onClick={() =>
+            openModal(
+              "https://res.cloudinary.com/dxtvfgaud/video/upload/q_auto:low,f_auto/v1726650163/Leave_Early_Steps_u9dppa.mp4"
+            )
+          }
+        >
+          Show Steps
+        </button>
       </section>
 
       {/* Section: Well Prepared */}
@@ -52,9 +59,8 @@ const BushfireSurvival: React.FC = () => {
         </h2>
         <hr className="w-auto max-w-xs border-gray-700 mb-6 mx-auto" />
 
-        <div className="flex flex-col md:flex-row gap-4">
-          {/* Well Prepared Video */}
-          <div className="w-full md:w-1/2 mb-4 md:mb-0">
+        <div className="flex flex-col items-center justify-center">
+          <div className="w-full md:w-1/2 flex justify-center">
             <video
               className="w-full h-auto rounded-lg"
               loop
@@ -68,23 +74,18 @@ const BushfireSurvival: React.FC = () => {
               Your browser does not support the video tag.
             </video>
           </div>
-
-          {/* Prepared Steps Video */}
-          <div className="w-full md:w-1/2 flex">
-            <video
-              className="w-full h-auto rounded-lg md:w-3/4 lg:w-full"
-              loop
-              autoPlay
-              playsInline
-            >
-              <source
-                src="https://res.cloudinary.com/dxtvfgaud/video/upload/q_auto:low,f_auto/v1726650342/Prepared_steps_wbby1x.mp4"
-                type="video/mp4"
-              />
-              Your browser does not support the video tag.
-            </video>
-          </div>
         </div>
+
+        <button
+          className="mt-4 px-4 py-2 rounded-lg mx-auto block  bg-orange-400 text-white font-semibold shadow-md hover:bg-orange-300 transition-transform transform hover:scale-105"
+          onClick={() =>
+            openModal(
+              "https://res.cloudinary.com/dxtvfgaud/video/upload/q_auto:low,f_auto/v1726650342/Prepared_steps_wbby1x.mp4"
+            )
+          }
+        >
+          Show Steps
+        </button>
       </section>
 
       {/* Section: Last Option */}
@@ -93,9 +94,9 @@ const BushfireSurvival: React.FC = () => {
           Last Option
         </h2>
         <hr className="w-auto max-w-xs border-gray-700 mb-6 mx-auto" />
-        <div className="flex flex-col md:flex-row gap-4">
-          {/* Last Option Video */}
-          <div className="w-full md:w-1/2 mb-4 md:mb-0">
+
+        <div className="flex flex-col items-center justify-center">
+          <div className="w-full md:w-1/2 flex justify-center">
             <video
               className="w-full h-auto rounded-lg"
               loop
@@ -109,24 +110,44 @@ const BushfireSurvival: React.FC = () => {
               Your browser does not support the video tag.
             </video>
           </div>
+        </div>
 
-          {/* Last Option Steps Video */}
-          <div className="w-full md:w-1/2 flex">
-            <video
-              className="w-full h-auto rounded-lg md:w-3/4 lg:w-full"
-              loop
-              autoPlay
-              playsInline
-            >
-              <source
-                src="https://res.cloudinary.com/dxtvfgaud/video/upload/q_auto:low,f_auto/v1726649875/Last_Resort_Flowchart_fvssdg.mp4"
-                type="video/mp4"
-              />
-              Your browser does not support the video tag.
-            </video>
+        <button
+          className="mt-4 px-4 py-2 rounded-lg mx-auto block  bg-orange-400 text-white font-semibold shadow-md hover:bg-orange-300 transition-transform transform hover:scale-105"
+          onClick={() =>
+            openModal(
+              "https://res.cloudinary.com/dxtvfgaud/video/upload/q_auto:low,f_auto/v1726649875/Last_Resort_Flowchart_fvssdg.mp4"
+            )
+          }
+        >
+          Show Steps
+        </button>
+      </section>
+
+      {/* Modal */}
+      {modalVisible && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-60 z-50">
+          <div className="relative w-full max-w-5xl p-6">
+            <div className="flex justify-end">
+              <button className="text-white text-5xl mb-4" onClick={closeModal}>
+                &times;
+              </button>
+            </div>
+            <div className="flex justify-center">
+              <video
+                className="w-full h-auto rounded-lg"
+                style={{ maxHeight: "85vh", width: "auto" }} // Adjust height and keep width auto for responsiveness
+                loop
+                autoPlay
+                playsInline
+              >
+                <source src={modalVideoSrc} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
           </div>
         </div>
-      </section>
+      )}
     </div>
   );
 };
