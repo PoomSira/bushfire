@@ -15,9 +15,9 @@ const HistoryTimeline = (props: Props) => {
   };
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 bg-[#FFFBF2] p-4 rounded-lg">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 bg-[#FFFBF2] p-4 rounded-xl">
       {/* Left Column with overflow-scroll */}
-      <div className="lg:col-span-2 md:col-span-3 sm:col-span-3 flex flex-col h-[90vh] md:h-[90vh] overflow-y-scroll p-4">
+      <div className="lg:col-span-2 md:col-span-3 sm:col-span-3 flex flex-col h-auto md:h-auto p-4">
         <div className="my-3">
           {/* 2019-20 Fire Season */}
           <div className="relative pl-8 sm:pl-32 py-6 group">
@@ -129,18 +129,19 @@ const HistoryTimeline = (props: Props) => {
 
       {/* Right Column */}
       <div className="md:col-span-1 sm:col-span-3 flex flex-col bg-[#FFE6C5] px-4 rounded-xl shadow-lg">
-        <div className="my-3 flex-1">
+        <div className="my-3 flex-1 px-2">
           <div>
-            <p className="text-2xl text-orange-600">Fact</p>
-            <p className="text-xl text-gray-800">
+            <p className="text-lg sm:text-xl md:text-2xl text-center text-orange-600 font-semibold">
+              Fact
+            </p>
+            <p className="text-xl text-gray-800 mt-2">
               Fire has been a part of Australia&apos;s environment for a very
               long time, at least 65 million years (Cary et al. 2012). People in
               Australia have also been using fire to manage the land for a long
               time. Indigenous Australians started using fire in a technique
               called &quot;fire-stick farming&quot; around 60,000 years ago.
             </p>
-            <br />
-            <p className="text-xl text-gray-800">
+            <p className="text-xl text-gray-800 mt-4">
               Today, about 3% to 10% of Australia&apos;s land burns every year
               (Western Australian Land Information Authority 2013). These fires
               are often called bushfires. A bushfire is an uncontrolled fire
@@ -149,8 +150,9 @@ const HistoryTimeline = (props: Props) => {
             </p>
           </div>
         </div>
+
         {/* Video Section */}
-        <div className="w-full max-w-5xl mx-auto mb-8 rounded-xl overflow-hidden shadow-md bg-black">
+        <div className="w-full max-w-5xl mx-auto mb-6 rounded-xl overflow-hidden shadow-md bg-black">
           <video
             controls
             className="w-full h-full object-cover"
