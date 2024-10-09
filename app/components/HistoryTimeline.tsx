@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 
 type Props = {};
@@ -13,6 +13,25 @@ const HistoryTimeline = (props: Props) => {
   const closeModal = () => {
     setOpen(false);
   };
+
+  const preventScroll = useCallback((e: WheelEvent) => {
+    e.preventDefault();
+  }, []);
+
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+      window.addEventListener("wheel", preventScroll, { passive: false });
+    } else {
+      document.body.style.overflow = "unset";
+      window.removeEventListener("wheel", preventScroll);
+    }
+
+    return () => {
+      document.body.style.overflow = "unset";
+      window.removeEventListener("wheel", preventScroll);
+    };
+  }, [open, preventScroll]);
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 bg-[#FFFBF2] p-4 rounded-lg">
@@ -156,7 +175,7 @@ const HistoryTimeline = (props: Props) => {
             poster="/api/placeholder/800/450"
           >
             <source
-              src="https://res.cloudinary.com/dxtvfgaud/video/upload/q_auto:low,f_auto/v1726649395/home_video_sug9ez.mp4"
+              src="https://res.cloudinary.com/dxtvfgaud/video/upload/q_auto,f_auto/v1726649395/home_video_sug9ez.mp4"
               type="video/mp4"
             />
             Your browser does not support the video tag.
@@ -175,24 +194,26 @@ const HistoryTimeline = (props: Props) => {
 
       {/* Popup */}
       {open && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-[1000] overflow-auto">
-          <div className="relative p-6 rounded-lg w-full h-full max-w-[90vw] max-h-[90vh] overflow-auto z-[1010]">
-            <button
-              className="fixed top-4 right-4 text-6xl font-bold text-white z-[1020]"
-              onClick={closeModal}
-            >
-              &times;
-            </button>
-            <div className="relative flex justify-center items-start w-full h-full">
-              <div
-                className="relative"
-                style={{ transform: "scale(2)", transformOrigin: "top center" }}
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-[1000]">
+          <div className="relative w-full h-full max-w-[90vw] max-h-[90vh] overflow-hidden z-[1010] flex flex-col">
+            <div className="flex justify-end p-4">
+              <button
+                className="text-5xl font-bold text-white hover:text-red-700 transition-colors"
+                onClick={closeModal}
               >
+                &times;
+              </button>
+            </div>
+            <div
+              className="flex-1 overflow-y-auto p-6"
+              onWheel={(e) => e.stopPropagation()}
+            >
+              <div className="relative flex justify-center items-start w-full h-full">
                 <Image
                   src="https://res.cloudinary.com/dxtvfgaud/image/upload/v1726657557/animal-impact_ygmme9.png"
                   alt="Animal Impact"
-                  width={500}
-                  height={500}
+                  width={1000}
+                  height={1000}
                   className="object-contain"
                 />
               </div>
