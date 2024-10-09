@@ -140,7 +140,7 @@ export default function Home() {
                         <p className="mb-4 text-lg">
                           I love helping you learn about bushfires, step by
                           step. If you stick with me, you&apos;ll definitely get
-                          a HD+ in the bushfire subject!
+                          a High grade in the bushfire subject!
                         </p>
                         <button
                           className="bg-[#FFE6C5] text-black py-2 px-4 rounded-lg hover:bg-orange-300"
@@ -351,7 +351,7 @@ export default function Home() {
                     target="_blank"
                   >
                     <button className="px-6 py-2 mt-4 text-lg font-semibold text-gray-700 border-2 border-gray-700 hover:bg-black hover:text-white transition-colors duration-300 rounded-md">
-                      Download
+                      View
                     </button>
                   </Link>
                 </div>

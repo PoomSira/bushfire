@@ -19,17 +19,17 @@ const Journey: React.FC = () => {
           />
         </div>
         <div className="p-6 flex flex-col justify-center rounded-xl">
-          <h6 className="block mb-4 font-sans text-xl antialiased font-semibold leading-relaxed tracking-normal text-gray-700 uppercase">
+          <h6 className="block mb-4 text-2xl font-bold  text-gray-700 uppercase">
             Learning About Bushfires
           </h6>
-          <p className="block mb-4 font-sans text-lg antialiased font-normal leading-relaxed text-gray-700">
-            Students will explore the scientific causes and effects of bushfires
-            in the Victorian region, gaining a deeper understanding of these
+          <p className="block mb-4 text-xl antialiased font-normal leading-relaxed text-gray-700">
+            We will explore the scientific causes and effects of bushfires in
+            the Victorian region, gaining a deeper understanding of these
             natural events.
           </p>
           <Link href="/learn" className="inline-block">
             <button className="px-6 py-2 text-lg font-semibold text-gray-700 border-2 border-gray-700 hover:bg-black hover:text-white transition-colors duration-300 rounded-md">
-              Learn More
+              Let&apos;s Go
             </button>
           </Link>
         </div>
@@ -40,17 +40,17 @@ const Journey: React.FC = () => {
         className="relative flex flex-col lg:flex-row bg-clip-border rounded-xl bg-[#FFFBF2] text-gray-700 shadow-md w-full max-w-screen-xl mx-auto my-4 transition-transform duration-300 hover:scale-105 hover:shadow-lg"
       >
         <div className="p-6 flex flex-col justify-center rounded-xl">
-          <h6 className="block mb-4 font-sans text-xl antialiased font-semibold leading-relaxed tracking-normal text-gray-700 uppercase">
+          <h6 className="block mb-4 text-2xl font-bold  text-gray-700 uppercase">
             Preparation for Bushfires
           </h6>
-          <p className="block mb-8 font-sans text-lg antialiased font-normal leading-relaxed text-gray-700">
-            Students will learn how to assess bushfire risks and recognize when
-            to be cautious. They will also gain knowledge on emergency
-            precautions and safety tips to stay safe during a bushfire.
+          <p className="block mb-4 text-xl antialiased font-normal leading-relaxed text-gray-700">
+            We will learn how to assess bushfire risks and recognize when to be
+            cautious. They will also gain knowledge on emergency precautions and
+            safety tips to stay safe during a bushfire.
           </p>
           <Link href="/prepare" className="inline-block">
             <button className="px-6 py-2 text-lg font-semibold text-gray-700 border-2 border-gray-700 hover:bg-black hover:text-white transition-colors duration-300 rounded-md">
-              Learn More
+              Let&apos;s Go
             </button>
           </Link>
         </div>
@@ -79,17 +79,17 @@ const Journey: React.FC = () => {
           />
         </div>
         <div className="p-6 flex flex-col justify-center rounded-xl">
-          <h6 className="block mb-4 font-sans text-xl antialiased font-semibold leading-relaxed tracking-normal text-gray-700 uppercase">
+          <h6 className="block mb-4 text-2xl font-bold  text-gray-700 uppercase">
             Recovery from Bushfires
           </h6>
-          <p className="block mb-8 font-sans text-lg antialiased font-normal leading-relaxed text-gray-700">
-            Students will learn how individuals and communities recover from
-            bushfire impacts, focusing on immediate response, community support,
-            and long-term rebuilding efforts.
+          <p className="block mb-4 text-xl antialiased font-normal leading-relaxed text-gray-700">
+            We will learn how individuals and communities recover from bushfire
+            impacts, focusing on immediate response, community support, and
+            long-term rebuilding efforts.
           </p>
           <Link href="/recover" className="inline-block">
             <button className="px-6 py-2 text-lg font-semibold text-gray-700 border-2 border-gray-700 hover:bg-black hover:text-white transition-colors duration-300 rounded-md">
-              Learn More
+              Let&apos;s Go
             </button>
           </Link>
         </div>
