@@ -131,7 +131,7 @@ const HistoryTimeline = (props: Props) => {
       <div className="md:col-span-1 sm:col-span-3 flex flex-col bg-[#FFE6C5] px-4 rounded-xl shadow-lg">
         <div className="my-3 flex-1 px-2">
           <div>
-            <p className="text-lg sm:text-xl md:text-2xl text-center text-orange-600 font-semibold">
+            <p className="text-xl sm:text-xl md:text-2xl text-center text-orange-600 font-semibold">
               Fact
             </p>
             <p className="text-xl text-gray-800 mt-2">

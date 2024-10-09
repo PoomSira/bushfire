@@ -41,7 +41,7 @@ const CauseBushfire = () => {
         </div>
       </div>
 
-      <div className="my-10 grid grid-cols-1 lg:grid-cols-5 gap-6">
+      <div className="mt-4 grid grid-cols-1 lg:grid-cols-5 gap-6">
         <div className="col-span-1 lg:col-span-4 flex flex-col">
           <BushfireVideo />
         </div>
