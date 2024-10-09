@@ -14,25 +14,6 @@ const HistoryTimeline = (props: Props) => {
     setOpen(false);
   };
 
-  const preventScroll = useCallback((e: WheelEvent) => {
-    e.preventDefault();
-  }, []);
-
-  useEffect(() => {
-    if (open) {
-      document.body.style.overflow = "hidden";
-      window.addEventListener("wheel", preventScroll, { passive: false });
-    } else {
-      document.body.style.overflow = "unset";
-      window.removeEventListener("wheel", preventScroll);
-    }
-
-    return () => {
-      document.body.style.overflow = "unset";
-      window.removeEventListener("wheel", preventScroll);
-    };
-  }, [open, preventScroll]);
-
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 bg-[#FFFBF2] p-4 rounded-lg">
       {/* Left Column with overflow-scroll */}
@@ -136,9 +117,10 @@ const HistoryTimeline = (props: Props) => {
                 />
               </div>
               <div className="text-lg flex-grow my-auto px-6 font-bold text-slate-900">
-                The Black Saturday bushfires were Australia’s worst, killing 173
-                people. The fires destroyed towns, 2,000 homes, 61 businesses,
-                and burned over 430,000 hectares, including parks and farms.
+                The Black Saturday bushfires were Australia&apos;s worst,
+                killing 173 people. The fires destroyed towns, 2,000 homes, 61
+                businesses, and burned over 430,000 hectares, including parks
+                and farms.
               </div>
             </div>
           </div>
@@ -196,7 +178,7 @@ const HistoryTimeline = (props: Props) => {
       {open && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-[1000]">
           <div className="relative w-full h-full max-w-[90vw] max-h-[90vh] overflow-hidden z-[1010] flex flex-col">
-            <div className="flex justify-end p-4">
+            <div className="flex justify-end">
               <button
                 className="text-5xl font-bold text-white hover:text-red-700 transition-colors"
                 onClick={closeModal}
