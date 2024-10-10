@@ -32,7 +32,7 @@ const page = () => {
                 transition={{ duration: 0.8 }}
                 className="text-4xl font-bold tracking-tight text-white sm:text-6xl"
               >
-                Become a Weather Detective with Machine Learning!
+                Bushfire Brigade watch Tower
               </MotionH1>
               <motion.p
                 initial={{ opacity: 0 }}

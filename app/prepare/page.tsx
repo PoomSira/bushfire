@@ -416,6 +416,14 @@ const Page = () => {
             Emergency Kit Packing Game
           </h1>
           <hr className="w-full max-w-lg border-gray-700 mb-4 mx-auto" />
+          <div className="w-3/4 bg-[#FFE6C5] p-6 rounded-xl shadow-lg transition-transform transform hover:scale-105 duration-500 relative z-10">
+            <p className="text-base md:text-xl lg:text-2xl text-center text-gray-700 mb-4">
+              Welcome to the Emergency Kit Adventure! 🚀 An emergency kit is
+              like a superhero&apos;s backpack. It helps you stay safe and
+              prepared in case of a fire or other emergency. Here’s what you
+              need to pack:
+            </p>
+          </div>
 
           <div className="relative w-full flex flex-col items-center justify-center">
             <DndProvider backend={HTML5Backend}>

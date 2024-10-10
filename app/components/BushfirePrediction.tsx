@@ -20,7 +20,8 @@ interface PredictionResponse {
 
 // Marks for sliders
 const stationMarks = [
-  { value: 1, label: "1" },
+  { value: 0, label: "0" },
+  { value: 5, label: "5" },
   { value: 10, label: "10" },
 ];
 
@@ -118,15 +119,49 @@ export default function BushfirePrediction() {
       </h1>
       <form onSubmit={handleSubmit}>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-12 mb-6 justify-items-center items-center">
+          {/* Station Region */}
           <div>
-            <label className="block font-semibold text-black">
-              Station Region: {formData.Station_Region}
-            </label>
+            <div className="flex items-center space-x-2">
+              <label className="block font-semibold text-black">
+                Station Region:{" "}
+                {formData.Station_Region === 0
+                  ? "0 (ALBURY)"
+                  : formData.Station_Region === 1
+                  ? "1 (BENALLA)"
+                  : formData.Station_Region === 2
+                  ? "2 (CARRYONG)"
+                  : formData.Station_Region === 3
+                  ? "3 (EDI UPPER)"
+                  : formData.Station_Region === 4
+                  ? "4 (FALLS CREEK)"
+                  : formData.Station_Region === 5
+                  ? "5 (HUNTERS HILL)"
+                  : formData.Station_Region === 6
+                  ? "6 (MOUNT BULLER)"
+                  : formData.Station_Region === 7
+                  ? "7 (RUTHERGLEN)"
+                  : formData.Station_Region === 8
+                  ? "8 (SHEPPARTON)"
+                  : formData.Station_Region === 9
+                  ? "9 (WANGARATTA)"
+                  : formData.Station_Region === 10
+                  ? "10 (YARRAWONGA)"
+                  : "Unknown Region"}
+              </label>
+              <div className="relative group">
+                <span className="inline-block bg-orange-400 text-white border rounded-full w-5 h-5 flex items-center justify-center cursor-pointer">
+                  ?
+                </span>
+                <div className="absolute left-0 bottom-6 transform translate-y-full hidden group-hover:block bg-gray-700 text-white text-xs rounded-md py-2 px-3 w-40 z-10">
+                  Station Region: Where we measure the weather.
+                </div>
+              </div>
+            </div>
             <Box sx={{ width: 300 }}>
               <Slider
                 aria-label="Station Region"
                 value={formData.Station_Region}
-                min={1}
+                min={0}
                 max={10}
                 step={1}
                 marks={stationMarks}
@@ -134,24 +169,31 @@ export default function BushfirePrediction() {
                 onChange={handleSliderChange("Station_Region")}
                 sx={{
                   width: 300,
-                  color: "orange", // Use the color name 'orange'
-                  "& .MuiSlider-thumb": {
-                    color: "orange", // Change thumb color to orange
-                  },
-                  "& .MuiSlider-track": {
-                    color: "orange", // Change track color to orange
-                  },
-                  "& .MuiSlider-rail": {
-                    color: "#ffcc80", // Optionally change the rail color to a lighter orange
-                  },
+                  color: "orange",
+                  "& .MuiSlider-thumb": { color: "orange" },
+                  "& .MuiSlider-track": { color: "orange" },
+                  "& .MuiSlider-rail": { color: "#ffcc80" },
                 }}
               />
             </Box>
           </div>
+
+          {/* Min Temperature */}
           <div>
-            <label className="block font-semibold text-black">
-              Min Temperature (°C): {formData.Temps_Min}
-            </label>
+            <div className="flex items-center space-x-2">
+              <label className="block font-semibold text-black">
+                Min Temperature (°C): {formData.Temps_Min}
+              </label>
+              <div className="relative group">
+                <span className="inline-block bg-orange-400 text-white border rounded-full w-5 h-5 flex items-center justify-center cursor-pointer">
+                  ?
+                </span>
+                <div className="absolute left-0 bottom-6 transform translate-y-full hidden group-hover:block bg-gray-700 text-white text-xs rounded-md py-2 px-3 w-40 z-10">
+                  Min Temperature: Lowest daily temp – cooler means less fire
+                  risk.
+                </div>
+              </div>
+            </div>
             <Box sx={{ width: 300 }}>
               <Slider
                 aria-label="Min Temperature"
@@ -164,24 +206,31 @@ export default function BushfirePrediction() {
                 onChange={handleSliderChange("Temps_Min")}
                 sx={{
                   width: 300,
-                  color: "orange", // Use the color name 'orange'
-                  "& .MuiSlider-thumb": {
-                    color: "orange", // Change thumb color to orange
-                  },
-                  "& .MuiSlider-track": {
-                    color: "orange", // Change track color to orange
-                  },
-                  "& .MuiSlider-rail": {
-                    color: "#ffcc80", // Optionally change the rail color to a lighter orange
-                  },
+                  color: "orange",
+                  "& .MuiSlider-thumb": { color: "orange" },
+                  "& .MuiSlider-track": { color: "orange" },
+                  "& .MuiSlider-rail": { color: "#ffcc80" },
                 }}
               />
             </Box>
           </div>
+
+          {/* Max Temperature */}
           <div>
-            <label className="block font-semibold text-black">
-              Max Temperature (°C): {formData.Temps_Max}
-            </label>
+            <div className="flex items-center space-x-2">
+              <label className="block font-semibold text-black">
+                Max Temperature (°C): {formData.Temps_Max}
+              </label>
+              <div className="relative group">
+                <span className="inline-block bg-orange-400 text-white border rounded-full w-5 h-5 flex items-center justify-center cursor-pointer">
+                  ?
+                </span>
+                <div className="absolute left-0 bottom-6 transform translate-y-full hidden group-hover:block bg-gray-700 text-white text-xs rounded-md py-2 px-3 w-40 z-10">
+                  Max Temperature: Hottest temp – hot days dry plants, making
+                  fires easier.
+                </div>
+              </div>
+            </div>
             <Box sx={{ width: 300 }}>
               <Slider
                 aria-label="Max Temperature"
@@ -194,24 +243,30 @@ export default function BushfirePrediction() {
                 onChange={handleSliderChange("Temps_Max")}
                 sx={{
                   width: 300,
-                  color: "orange", // Use the color name 'orange'
-                  "& .MuiSlider-thumb": {
-                    color: "orange", // Change thumb color to orange
-                  },
-                  "& .MuiSlider-track": {
-                    color: "orange", // Change track color to orange
-                  },
-                  "& .MuiSlider-rail": {
-                    color: "#ffcc80", // Optionally change the rail color to a lighter orange
-                  },
+                  color: "orange",
+                  "& .MuiSlider-thumb": { color: "orange" },
+                  "& .MuiSlider-track": { color: "orange" },
+                  "& .MuiSlider-rail": { color: "#ffcc80" },
                 }}
               />
             </Box>
           </div>
+
+          {/* Rain */}
           <div>
-            <label className="block font-semibold text-black">
-              Rain (mm): {formData.Rain}
-            </label>
+            <div className="flex items-center space-x-2">
+              <label className="block font-semibold text-black">
+                Rain (mm): {formData.Rain}
+              </label>
+              <div className="relative group">
+                <span className="inline-block bg-orange-400 text-white border rounded-full w-5 h-5 flex items-center justify-center cursor-pointer">
+                  ?
+                </span>
+                <div className="absolute left-0 bottom-6 transform translate-y-full hidden group-hover:block bg-gray-700 text-white text-xs rounded-md py-2 px-3 w-40 z-10">
+                  Rain: Wet ground from rain stops fires; no rain dries plants
+                </div>
+              </div>
+            </div>
             <Box sx={{ width: 300 }}>
               <Slider
                 aria-label="Rain"
@@ -224,24 +279,30 @@ export default function BushfirePrediction() {
                 onChange={handleSliderChange("Rain")}
                 sx={{
                   width: 300,
-                  color: "orange", // Use the color name 'orange'
-                  "& .MuiSlider-thumb": {
-                    color: "orange", // Change thumb color to orange
-                  },
-                  "& .MuiSlider-track": {
-                    color: "orange", // Change track color to orange
-                  },
-                  "& .MuiSlider-rail": {
-                    color: "#ffcc80", // Optionally change the rail color to a lighter orange
-                  },
+                  color: "orange",
+                  "& .MuiSlider-thumb": { color: "orange" },
+                  "& .MuiSlider-track": { color: "orange" },
+                  "& .MuiSlider-rail": { color: "#ffcc80" },
                 }}
               />
             </Box>
           </div>
+
+          {/* 9AM Humidity */}
           <div>
-            <label className="block font-semibold text-black">
-              9AM Humidity (%): {formData.AM9_RH}
-            </label>
+            <div className="flex items-center space-x-2">
+              <label className="block font-semibold text-black">
+                9AM Humidity (%): {formData.AM9_RH}
+              </label>
+              <div className="relative group">
+                <span className="inline-block bg-orange-400 text-white border rounded-full w-5 h-5 flex items-center justify-center cursor-pointer">
+                  ?
+                </span>
+                <div className="absolute left-0 bottom-6 transform translate-y-full hidden group-hover:block bg-gray-700 text-white text-xs rounded-md py-2 px-3 w-40 z-10">
+                  9AM Humidity: Water in the air – more water, less fire risk
+                </div>
+              </div>
+            </div>
             <Box sx={{ width: 300 }}>
               <Slider
                 aria-label="9AM Humidity"
@@ -254,24 +315,30 @@ export default function BushfirePrediction() {
                 onChange={handleSliderChange("AM9_RH")}
                 sx={{
                   width: 300,
-                  color: "orange", // Use the color name 'orange'
-                  "& .MuiSlider-thumb": {
-                    color: "orange", // Change thumb color to orange
-                  },
-                  "& .MuiSlider-track": {
-                    color: "orange", // Change track color to orange
-                  },
-                  "& .MuiSlider-rail": {
-                    color: "#ffcc80", // Optionally change the rail color to a lighter orange
-                  },
+                  color: "orange",
+                  "& .MuiSlider-thumb": { color: "orange" },
+                  "& .MuiSlider-track": { color: "orange" },
+                  "& .MuiSlider-rail": { color: "#ffcc80" },
                 }}
               />
             </Box>
           </div>
+
+          {/* 9AM Wind Speed */}
           <div>
-            <label className="block font-semibold text-black">
-              9AM Wind Speed (km/h): {formData.AM9_Spd}
-            </label>
+            <div className="flex items-center space-x-2">
+              <label className="block font-semibold text-black">
+                9AM Wind Speed (km/h): {formData.AM9_Spd}
+              </label>
+              <div className="relative group">
+                <span className="inline-block bg-orange-400 text-white border rounded-full w-5 h-5 flex items-center justify-center cursor-pointer">
+                  ?
+                </span>
+                <div className="absolute left-0 bottom-6 transform translate-y-full hidden group-hover:block bg-gray-700 text-white text-xs rounded-md py-2 px-3 w-40 z-10">
+                  9AM Wind Speed: Strong winds spread fire faster.
+                </div>
+              </div>
+            </div>
             <Box sx={{ width: 300 }}>
               <Slider
                 aria-label="9AM Wind Speed"
@@ -284,24 +351,31 @@ export default function BushfirePrediction() {
                 onChange={handleSliderChange("AM9_Spd")}
                 sx={{
                   width: 300,
-                  color: "orange", // Use the color name 'orange'
-                  "& .MuiSlider-thumb": {
-                    color: "orange", // Change thumb color to orange
-                  },
-                  "& .MuiSlider-track": {
-                    color: "orange", // Change track color to orange
-                  },
-                  "& .MuiSlider-rail": {
-                    color: "#ffcc80", // Optionally change the rail color to a lighter orange
-                  },
+                  color: "orange",
+                  "& .MuiSlider-thumb": { color: "orange" },
+                  "& .MuiSlider-track": { color: "orange" },
+                  "& .MuiSlider-rail": { color: "#ffcc80" },
                 }}
               />
             </Box>
           </div>
+
+          {/* 3PM Humidity */}
           <div>
-            <label className="block font-semibold text-black">
-              3PM Humidity (%): {formData.PM3_RH}
-            </label>
+            <div className="flex items-center space-x-2">
+              <label className="block font-semibold text-black">
+                3PM Humidity (%): {formData.PM3_RH}
+              </label>
+              <div className="relative group">
+                <span className="inline-block bg-orange-400 text-white border rounded-full w-5 h-5 flex items-center justify-center cursor-pointer">
+                  ?
+                </span>
+                <div className="absolute left-0 bottom-6 transform translate-y-full hidden group-hover:block bg-gray-700 text-white text-xs rounded-md py-2 px-3 w-40 z-10">
+                  3PM Humidity: Afternoon air water – drier air means higher
+                  fire risk.
+                </div>
+              </div>
+            </div>
             <Box sx={{ width: 300 }}>
               <Slider
                 aria-label="3PM Humidity"
@@ -314,22 +388,17 @@ export default function BushfirePrediction() {
                 onChange={handleSliderChange("PM3_RH")}
                 sx={{
                   width: 300,
-                  color: "orange", // Use the color name 'orange'
-                  "& .MuiSlider-thumb": {
-                    color: "orange", // Change thumb color to orange
-                  },
-                  "& .MuiSlider-track": {
-                    color: "orange", // Change track color to orange
-                  },
-                  "& .MuiSlider-rail": {
-                    color: "#ffcc80", // Optionally change the rail color to a lighter orange
-                  },
+                  color: "orange",
+                  "& .MuiSlider-thumb": { color: "orange" },
+                  "& .MuiSlider-track": { color: "orange" },
+                  "& .MuiSlider-rail": { color: "#ffcc80" },
                 }}
               />
             </Box>
           </div>
         </div>
-        {/* Centered Predict Button */}
+
+        {/* Predict Button */}
         <div className="flex justify-center">
           <button
             type="submit"
@@ -340,36 +409,37 @@ export default function BushfirePrediction() {
         </div>
       </form>
 
-      {/* Centered Prediction Results */}
+      {/* Prediction Results */}
       <div className="flex flex-col items-center mt-6">
         {loading && <p>Loading...</p>}
         {error && <p style={{ color: "red" }}>{error}</p>}
 
-        {/* {prediction !== null && (
-          <p className="text-center">Prediction: {prediction}</p>
-        )} */}
-
         {probability !== null && Array.isArray(probability[0]) && (
           <div className="text-center text-3xl font-bold w-2/3">
-            {/* Calculate the probability percentage */}
-            {/* <span>{(probability[0][1] * 100).toFixed(2)}%</span> */}
-
-            {/* Check if the probability is less than 50% */}
-            {probability[0][1] * 100 < 50 ? (
-              <p className="text-orange-400 mt-4">
-                <strong>LOW BUSHFIRE RISK!</strong> Under this weather
+            {probability[0][1] * 100 >= 60 ? (
+              <p className="text-red-500 mt-4">
+                🚨 <strong>HIGH BUSHFIRE RISK!</strong> Under this weather
                 condition, there is a{" "}
                 <span className="text-4xl font-extrabold">
                   {(probability[0][1] * 100).toFixed(2)}%
-                </span>
+                </span>{" "}
+                probability that a bushfire is likely to occur.
+              </p>
+            ) : probability[0][1] * 100 >= 50 ? (
+              <p className="text-yellow-500 mt-4">
+                ⚠️ <strong>MEDIUM BUSHFIRE RISK!</strong> Under this weather
+                condition, there is a{" "}
+                <span className="text-4xl font-extrabold">
+                  {(probability[0][1] * 100).toFixed(2)}%
+                </span>{" "}
                 probability that a bushfire is likely to occur.
               </p>
             ) : (
-              <p className="text-red-500 mt-4">
-                <strong>HIGH BUSHFIRE RISK!</strong> Under this weather
+              <p className="text-green-500 mt-4">
+                ✅ <strong>LOW BUSHFIRE RISK!</strong> Under this weather
                 condition, there is a{" "}
                 <span className="text-4xl font-extrabold">
-                  {(probability[0][1] * 100).toFixed(2)} %
+                  {(probability[0][1] * 100).toFixed(2)}%
                 </span>{" "}
                 probability that a bushfire is likely to occur.
               </p>

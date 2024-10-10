@@ -36,7 +36,7 @@ const Modal: React.FC<ModalProps> = ({
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
       <div className="bg-white p-6 rounded-lg shadow-lg text-center max-w-sm mx-auto">
-        <p className="text-lg font-semibold mb-4">{message}</p>
+        <p className="text-lg font-semibold mb-4 text-black">{message}</p>
         <button
           onClick={onClose}
           className={`${buttonClass} text-white px-4 py-2 rounded`}
