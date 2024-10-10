@@ -149,7 +149,7 @@ export default function BushfirePrediction() {
                   : "Unknown Region"}
               </label>
               <div className="relative group">
-                <span className="inline-block bg-orange-400 text-white border rounded-full w-5 h-5 flex items-center justify-center cursor-pointer">
+                <span className=" bg-orange-400 text-white border rounded-full w-5 h-5 flex items-center justify-center cursor-pointer">
                   ?
                 </span>
                 <div className="absolute left-0 bottom-6 transform translate-y-full hidden group-hover:block bg-gray-700 text-white text-xs rounded-md py-2 px-3 w-40 z-10">
@@ -185,7 +185,7 @@ export default function BushfirePrediction() {
                 Min Temperature (°C): {formData.Temps_Min}
               </label>
               <div className="relative group">
-                <span className="inline-block bg-orange-400 text-white border rounded-full w-5 h-5 flex items-center justify-center cursor-pointer">
+                <span className=" bg-orange-400 text-white border rounded-full w-5 h-5 flex items-center justify-center cursor-pointer">
                   ?
                 </span>
                 <div className="absolute left-0 bottom-6 transform translate-y-full hidden group-hover:block bg-gray-700 text-white text-xs rounded-md py-2 px-3 w-40 z-10">
@@ -222,7 +222,7 @@ export default function BushfirePrediction() {
                 Max Temperature (°C): {formData.Temps_Max}
               </label>
               <div className="relative group">
-                <span className="inline-block bg-orange-400 text-white border rounded-full w-5 h-5 flex items-center justify-center cursor-pointer">
+                <span className=" bg-orange-400 text-white border rounded-full w-5 h-5 flex items-center justify-center cursor-pointer">
                   ?
                 </span>
                 <div className="absolute left-0 bottom-6 transform translate-y-full hidden group-hover:block bg-gray-700 text-white text-xs rounded-md py-2 px-3 w-40 z-10">
@@ -259,7 +259,7 @@ export default function BushfirePrediction() {
                 Rain (mm): {formData.Rain}
               </label>
               <div className="relative group">
-                <span className="inline-block bg-orange-400 text-white border rounded-full w-5 h-5 flex items-center justify-center cursor-pointer">
+                <span className=" bg-orange-400 text-white border rounded-full w-5 h-5 flex items-center justify-center cursor-pointer">
                   ?
                 </span>
                 <div className="absolute left-0 bottom-6 transform translate-y-full hidden group-hover:block bg-gray-700 text-white text-xs rounded-md py-2 px-3 w-40 z-10">
@@ -295,7 +295,7 @@ export default function BushfirePrediction() {
                 9AM Humidity (%): {formData.AM9_RH}
               </label>
               <div className="relative group">
-                <span className="inline-block bg-orange-400 text-white border rounded-full w-5 h-5 flex items-center justify-center cursor-pointer">
+                <span className=" bg-orange-400 text-white border rounded-full w-5 h-5 flex items-center justify-center cursor-pointer">
                   ?
                 </span>
                 <div className="absolute left-0 bottom-6 transform translate-y-full hidden group-hover:block bg-gray-700 text-white text-xs rounded-md py-2 px-3 w-40 z-10">
@@ -331,7 +331,7 @@ export default function BushfirePrediction() {
                 9AM Wind Speed (km/h): {formData.AM9_Spd}
               </label>
               <div className="relative group">
-                <span className="inline-block bg-orange-400 text-white border rounded-full w-5 h-5 flex items-center justify-center cursor-pointer">
+                <span className=" bg-orange-400 text-white border rounded-full w-5 h-5 flex items-center justify-center cursor-pointer">
                   ?
                 </span>
                 <div className="absolute left-0 bottom-6 transform translate-y-full hidden group-hover:block bg-gray-700 text-white text-xs rounded-md py-2 px-3 w-40 z-10">
@@ -367,7 +367,7 @@ export default function BushfirePrediction() {
                 3PM Humidity (%): {formData.PM3_RH}
               </label>
               <div className="relative group">
-                <span className="inline-block bg-orange-400 text-white border rounded-full w-5 h-5 flex items-center justify-center cursor-pointer">
+                <span className=" bg-orange-400 text-white border rounded-full w-5 h-5 flex items-center justify-center cursor-pointer">
                   ?
                 </span>
                 <div className="absolute left-0 bottom-6 transform translate-y-full hidden group-hover:block bg-gray-700 text-white text-xs rounded-md py-2 px-3 w-40 z-10">
