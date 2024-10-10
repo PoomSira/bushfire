@@ -32,7 +32,7 @@ const page = () => {
                 transition={{ duration: 0.8 }}
                 className="text-4xl font-bold tracking-tight text-white sm:text-6xl"
               >
-                Become a Weather Detective with Machine Learning!
+                Become a Weather Detective!
               </MotionH1>
               <motion.p
                 initial={{ opacity: 0 }}
@@ -40,8 +40,8 @@ const page = () => {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="mt-6 text-xl leading-8 text-white"
               >
-                Join our exciting challenge and use real weather data to predict
-                bushfire risks!
+                Join our fun challenge and use real weather data to help predict
+                bushfire risks
               </motion.p>
             </div>
           </div>

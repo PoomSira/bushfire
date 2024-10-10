@@ -114,7 +114,7 @@ export default function BushfirePrediction() {
   return (
     <div className="p-12 bg-[#FFFBF2] rounded-lg">
       <h1 className="text-2xl text-gray-800 font-bold mb-6 text-center">
-        Predict Bushfire Risk
+        Bushfire Predictor
       </h1>
       <form onSubmit={handleSubmit}>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-12 mb-6 justify-items-center items-center">
