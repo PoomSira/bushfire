@@ -346,7 +346,7 @@ export default function Home() {
                 {/* Centering the button */}
                 <div className="flex justify-center items-center">
                   <Link
-                    href="https://drive.google.com/file/d/1dN6rMcCw57Pu0zH8t4SyR1SN1xFAYyWA/view?usp=sharing"
+                    href="https://drive.google.com/file/d/1TeRy-b31aBGdDBtbERPyoVcs1YCMR1tW/view?usp=sharing"
                     rel="noopener noreferrer"
                     target="_blank"
                   >
