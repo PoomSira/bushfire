@@ -8,6 +8,7 @@ import Image from "next/image";
 export interface CategoryItem {
   name: string;
   image: string;
+  description: string;
 }
 
 export type CategoryName =
@@ -24,78 +25,110 @@ const initialItems: CategoryItem[] = [
     name: "Change of clothes",
     image:
       "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/clothes.png",
+    description:
+      "A fresh set of clothes is essential if you need to stay somewhere overnight due to bushfire evacuation.",
   },
   {
-    name: "soap and toothpaste",
+    name: "Soap and toothpaste",
     image: "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/soap.png",
+    description:
+      "Basic hygiene items like soap and toothpaste are important for cleanliness in emergency situations.",
   },
   {
     name: "Toilet paper and tissues",
     image:
       "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/toilet-paper.png",
+    description:
+      "Toilet paper and tissues are vital for personal hygiene during an evacuation.",
   },
   {
     name: "Food that lasts a long time",
     image: "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/food.png",
+    description:
+      "Non-perishable food can keep you nourished while waiting for help or during evacuation.",
   },
   {
     name: "Passport",
     image:
       "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/passport.png",
+    description:
+      "Important identification documents like your passport should always be taken during evacuation.",
   },
   {
     name: "Photos",
     image:
       "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/profile.png",
+    description:
+      "Photos hold sentimental value and should be safeguarded in case of property damage.",
   },
   {
     name: "Will and Insurance papers",
     image: "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/will.png",
+    description:
+      "These legal documents ensure that your affairs are in order in case of an emergency.",
   },
   {
     name: "Medicines",
     image:
       "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/medicine.png",
+    description:
+      "Essential medicines are critical to take with you during an evacuation to ensure continued treatment.",
   },
   {
     name: "First Aid Kit",
     image:
       "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/firstaid.png",
+    description:
+      "A first aid kit is vital for treating minor injuries or medical emergencies during an evacuation.",
   },
   {
     name: "Mobile phone and charger",
     image:
       "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/phone.png",
+    description:
+      "Staying in touch with emergency services and loved ones is crucial, so don't forget your phone and charger.",
   },
   {
     name: "Battery-powered radio",
     image:
       "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/radio.png",
+    description:
+      "A radio allows you to listen to emergency broadcasts, even if the power goes out.",
   },
   {
     name: "Flashlight and extra batteries",
     image:
       "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/Flashlight.png",
+    description:
+      "A flashlight ensures you can see in the dark during an evacuation or power outage.",
   },
   {
     name: "Enough water for everyone",
     image:
       "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/water.png",
+    description:
+      "Having sufficient water is crucial for hydration, especially in a bushfire emergency.",
   },
   {
     name: "Woolen blankets",
     image:
       "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/blankets.png",
+    description:
+      "Woolen blankets provide warmth and can help protect you from smoke inhalation in an emergency.",
   },
   {
     name: "Doctor’s number",
     image:
       "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/emergency.png",
+    description:
+      "Having your doctor's number on hand is crucial for any medical emergencies that arise during a bushfire.",
   },
   {
     name: "Local council",
     image:
       "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/local-council.png",
+    description:
+      "Contacting the local council can provide information on evacuation routes and emergency services.",
   },
 ];
 
@@ -124,7 +157,7 @@ const EmergencyKitGame: React.FC = () => {
     const categoryItems = {
       "Overnight Bag": [
         "Change of clothes",
-        "soap and toothpaste",
+        "Soap and toothpaste",
         "Toilet paper and tissues",
         "Food that lasts a long time",
       ],
@@ -146,8 +179,8 @@ const EmergencyKitGame: React.FC = () => {
       return;
     }
 
-    // Correct item, show success modal
-    setModalMessage("Good job, you did well!");
+    // Correct item, show success modal with item description
+    setModalMessage(`Good job, you did well!! ${droppedItem.description}`);
     setButtonColor("green"); // Set button color to green for correct item
     setModalOpen(true);
 
