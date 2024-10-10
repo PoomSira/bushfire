@@ -104,6 +104,13 @@ const PasswordProtection: React.FC<PasswordProtectionProps> = ({
               </form>
             </div>
           </div>
+          {/* Footer */}
+          <footer className="absolute bottom-0 left-0 right-0 p-4 text-white text-center">
+            <p>
+              This website experience is best on desktops, laptops, and tablets.
+              We do not encourage kids to use mobile phones.
+            </p>
+          </footer>
         </div>
       ) : (
         <>{children}</>
