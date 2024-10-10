@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   SmoothScrollWrapper,
   MotionH1,
@@ -27,6 +27,10 @@ const Page = () => {
     // Toggle the visibility of the selected answer
     setVisibleAnswer((prev) => (prev === index ? null : index));
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to top when the component mounts
+  }, []);
 
   return (
     <SmoothScrollWrapper>

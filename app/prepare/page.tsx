@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   SmoothScrollWrapper,
   MotionH1,
@@ -40,6 +40,10 @@ const Page = () => {
   const toggleAnswerThree = () => {
     setIsAnswerVisibleThree(!isAnswerVisibleThree);
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to top when the component mounts
+  }, []);
 
   return (
     <SmoothScrollWrapper>
