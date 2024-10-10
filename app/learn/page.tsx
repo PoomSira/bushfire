@@ -84,7 +84,7 @@ const Page = () => {
           <div className="absolute inset-0 bg-[url('https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/class-room.webp')] bg-[#FFFBF2] opacity-20 bg-cover bg-center brightness-75"></div>
           <div className="relative">
             <h1 className="text-3xl font-black text-center text-gray-700 mb-4">
-              Cause of Bushfire
+              Causes of Bushfire
             </h1>
             <hr className="w-full max-w-lg border-gray-700 mb-4 mx-auto " />
             <div className="p-6">

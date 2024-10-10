@@ -29,8 +29,8 @@ const BushfireVideo = () => {
         <div className="flex items-center mb-6">
           <div className="ml-0 md:ml-4 p-4 bg-[#FFE6C5] rounded-xl">
             <p className="text-2xl font-semibold text-gray-700">
-              From this clip, can you explain the 2 factors that wind can spread
-              the bushfire strongly and quickly?
+              From this Clip, lets look at how wind can make bushfire spread
+              more!
             </p>
           </div>
         </div>
