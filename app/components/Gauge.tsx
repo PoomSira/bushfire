@@ -129,6 +129,14 @@ const Gauge: React.FC = () => {
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-6 rounded-lg w-full">
       {/* Left column - Image and buttons */}
       <div className="flex flex-col items-center justify-center bg-[url('https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/forest.png')] bg-cover bg-center bg-no-repeat p-6 rounded-md">
+        <h1 className="text-xl md:text-2xl font-bold mb-4 tex text-[#EA580B]">
+          Fire Danger Ratings Victoria State
+        </h1>
+        <div className="text-lg md:text-lg text-black bg-[#FFE6C5] p-6 rounded-md shadow-md text-center mb-2">
+          They are important because they help you decide what actions to take
+          to protect yourself and others from bushfires and grassfires.
+        </div>
+
         {/* Display the current image */}
         <Image
           src={currentImage}
