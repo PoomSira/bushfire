@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Image from "next/image"; // Use next/image for optimized image loading
 
 type Question = {
   questionText: string;
@@ -22,6 +23,11 @@ const QuizPopup: React.FC<Props> = ({ questions, onClose }) => {
   const [feedback, setFeedback] = useState<string | null>(null);
   const [isAnswerSelected, setIsAnswerSelected] = useState(false);
   const [showFinalScore, setShowFinalScore] = useState(false);
+
+  // Medal image paths (replace with actual image paths or URLs)
+  const bronzeMedal = "/bronze.png";
+  const silverMedal = "/silver.png";
+  const goldMedal = "/gold.png";
 
   const handleAnswerClick = (index: number) => {
     if (isAnswerSelected) return; // Prevent further clicks after an answer is selected
@@ -49,6 +55,65 @@ const QuizPopup: React.FC<Props> = ({ questions, onClose }) => {
     } else {
       setShowFinalScore(true); // End of the quiz
     }
+  };
+
+  const renderMedal = () => {
+    if (score === 10) {
+      return (
+        <>
+          <Image
+            src={goldMedal}
+            alt="Gold Medal"
+            width={80}
+            height={80}
+            className="mx-auto mt-4"
+          />
+          <p className="mt-4 text-lg text-yellow-500">
+            <strong>Gold: Bushfire Guardian</strong>
+            <br />
+            You’re the ultimate protector, fully prepared to keep your home and
+            family safe from bushfires!
+          </p>
+        </>
+      );
+    } else if (score === 9) {
+      return (
+        <>
+          <Image
+            src={silverMedal}
+            alt="Silver Medal"
+            width={80}
+            height={80}
+            className="mx-auto mt-4"
+          />
+          <p className="mt-4 text-lg text-gray-400">
+            <strong>Silver: Fire Ready Hero</strong>
+            <br />
+            You&apos;re a step ahead, well-prepared and alert to face any
+            bushfire challenges!
+          </p>
+        </>
+      );
+    } else if (score === 8) {
+      return (
+        <>
+          <Image
+            src={bronzeMedal}
+            alt="Bronze Medal"
+            width={80}
+            height={80}
+            className="mx-auto mt-4"
+          />
+          <p className="mt-4 text-lg text-orange-400">
+            <strong>Bronze: Safety Scout</strong>
+            <br />
+            You’ve taken the first steps to get ready, learning how to prepare
+            for bushfires!
+          </p>
+        </>
+      );
+    }
+    return null; // No medal for other scores
   };
 
   return (
@@ -139,6 +204,10 @@ const QuizPopup: React.FC<Props> = ({ questions, onClose }) => {
             <p className="mt-4 text-xl text-gray-700">
               Your final score is {score}/{questions.length}
             </p>
+
+            {/* Render Medal and Description */}
+            {renderMedal()}
+
             <button
               className="mt-6 bg-orange-400 p-2 text-white font-semibold rounded-lg shadow-md hover:bg-orange-300"
               onClick={() => onClose(score)}
