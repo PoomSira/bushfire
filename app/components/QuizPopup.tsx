@@ -25,9 +25,12 @@ const QuizPopup: React.FC<Props> = ({ questions, onClose }) => {
   const [showFinalScore, setShowFinalScore] = useState(false);
 
   // Medal image paths (replace with actual image paths or URLs)
-  const bronzeMedal = "/bronze.png";
-  const silverMedal = "/silver.png";
-  const goldMedal = "/gold.png";
+  const bronzeMedal =
+    "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/bronze.png";
+  const silverMedal =
+    "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/silver.png";
+  const goldMedal =
+    "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/gold.png";
 
   const handleAnswerClick = (index: number) => {
     if (isAnswerSelected) return; // Prevent further clicks after an answer is selected
