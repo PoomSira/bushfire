@@ -163,7 +163,7 @@ const RecoveryPlan: React.FC = () => {
           <button
             type="button"
             onClick={handleDownloadPDF}
-            className="w-1/5 px-4 py-2 bg-orange-400 text-white font-semibold rounded-lg shadow-md hover:bg-orange-300 transition-transform transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-1/5 px-4 py-2 bg-orange-400 text-white font-semibold rounded-lg shadow-md hover:bg-orange-300 transition-transform transform hover:scale-105 disabled:opacity-70 disabled:cursor-not-allowed z-10"
             disabled={isLoading}
           >
             {isLoading ? "Generating PDF..." : "Download your plan"}
@@ -171,7 +171,7 @@ const RecoveryPlan: React.FC = () => {
           {isLoading && (
             <div className="w-1/5 mt-4 bg-gray-300 shadow-lg rounded-full h-2.5 dark:bg-gray-700">
               <div
-                className="bg-orange-600 h-2.5 rounded-full transition-all duration-300 ease-in-out"
+                className="bg-orange-600 h-2.5 shadow-lg rounded-full transition-all duration-300 ease-in-out"
                 style={{ width: `${progress}%` }}
               ></div>
             </div>
