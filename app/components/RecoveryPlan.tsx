@@ -36,6 +36,8 @@ const toolbarOptions = [
 
 const RecoveryPlan: React.FC = () => {
   const [content, setContent] = useState<string>("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [progress, setProgress] = useState(0);
   const quillRef = useRef<any>(null);
 
   // Memoize the imageHandler function
@@ -67,6 +69,9 @@ const RecoveryPlan: React.FC = () => {
   }, [imageHandler]);
 
   const handleDownloadPDF = async () => {
+    setIsLoading(true);
+    setProgress(0);
+
     const element = document.createElement("div");
     element.innerHTML = content;
     element.style.width = "210mm";
@@ -75,27 +80,33 @@ const RecoveryPlan: React.FC = () => {
     element.style.color = "black";
     document.body.appendChild(element);
 
+    setProgress(20);
+
     const canvas = await html2canvas(element, {
-      scale: 4, // Reduced scale for smaller file size
+      scale: 4,
       logging: false,
       useCORS: true,
       backgroundColor: "#ffffff",
     });
 
+    setProgress(50);
+
     document.body.removeChild(element);
 
-    const imgData = canvas.toDataURL("image/jpeg", 0.7); // Use JPEG with 70% quality
+    const imgData = canvas.toDataURL("image/jpeg", 0.7);
+
+    setProgress(70);
 
     const pdf = new jsPDF({
       orientation: "portrait",
       unit: "mm",
       format: "a4",
-      compress: true, // Enable PDF compression
+      compress: true,
     });
 
     const logoUrl =
       "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/logo.png";
-    const logoWidth = 30; // Reduced logo size
+    const logoWidth = 30;
     const logoX = (210 - logoWidth) / 2;
     pdf.addImage(logoUrl, "PNG", logoX, 10, logoWidth, logoWidth * 0.5);
 
@@ -116,7 +127,15 @@ const RecoveryPlan: React.FC = () => {
       imgHeight * ratio
     );
 
+    setProgress(90);
+
     pdf.save("recovery-plan.pdf");
+
+    setProgress(100);
+    setTimeout(() => {
+      setIsLoading(false);
+      setProgress(0);
+    }, 1000);
   };
 
   const modules = useMemo(
@@ -140,14 +159,23 @@ const RecoveryPlan: React.FC = () => {
           />
         </div>
 
-        <div className="flex justify-center mt-4">
+        <div className="flex flex-col items-center mt-4">
           <button
             type="button"
             onClick={handleDownloadPDF}
-            className="w-1/5 px-4 py-2 bg-orange-400 text-white font-semibold rounded-lg shadow-md hover:bg-orange-300 transition-transform transform hover:scale-105"
+            className="w-1/5 px-4 py-2 bg-orange-400 text-white font-semibold rounded-lg shadow-md hover:bg-orange-300 transition-transform transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+            disabled={isLoading}
           >
-            Download your plan
+            {isLoading ? "Generating PDF..." : "Download your plan"}
           </button>
+          {isLoading && (
+            <div className="w-1/5 mt-4 bg-gray-300 shadow-lg rounded-full h-2.5 dark:bg-gray-700">
+              <div
+                className="bg-orange-600 h-2.5 rounded-full transition-all duration-300 ease-in-out"
+                style={{ width: `${progress}%` }}
+              ></div>
+            </div>
+          )}
         </div>
       </form>
     </div>
