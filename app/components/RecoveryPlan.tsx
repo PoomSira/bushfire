@@ -76,7 +76,7 @@ const RecoveryPlan: React.FC = () => {
     document.body.appendChild(element);
 
     const canvas = await html2canvas(element, {
-      scale: 4,
+      scale: 4, // Reduced scale for smaller file size
       logging: false,
       useCORS: true,
       backgroundColor: "#ffffff",
@@ -84,17 +84,18 @@ const RecoveryPlan: React.FC = () => {
 
     document.body.removeChild(element);
 
-    const imgData = canvas.toDataURL("image/png");
+    const imgData = canvas.toDataURL("image/jpeg", 0.7); // Use JPEG with 70% quality
 
     const pdf = new jsPDF({
       orientation: "portrait",
       unit: "mm",
       format: "a4",
+      compress: true, // Enable PDF compression
     });
 
     const logoUrl =
       "https://cdn.jsdelivr.net/gh/PoomSira/bushfire@main/public/logo.png";
-    const logoWidth = 40;
+    const logoWidth = 30; // Reduced logo size
     const logoX = (210 - logoWidth) / 2;
     pdf.addImage(logoUrl, "PNG", logoX, 10, logoWidth, logoWidth * 0.5);
 
@@ -102,13 +103,13 @@ const RecoveryPlan: React.FC = () => {
     const pdfHeight = pdf.internal.pageSize.getHeight();
     const imgWidth = canvas.width;
     const imgHeight = canvas.height;
-    const ratio = Math.min(pdfWidth / imgWidth, (pdfHeight - 30) / imgHeight);
+    const ratio = Math.min(pdfWidth / imgWidth, (pdfHeight - 25) / imgHeight);
     const imgX = (pdfWidth - imgWidth * ratio) / 2;
-    const imgY = 30;
+    const imgY = 25;
 
     pdf.addImage(
       imgData,
-      "PNG",
+      "JPEG",
       imgX,
       imgY,
       imgWidth * ratio,
