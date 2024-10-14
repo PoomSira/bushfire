@@ -68,6 +68,7 @@ export default function BushfirePrediction() {
   const [probability, setProbability] = useState<number[] | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
+  const [progress, setProgress] = useState<number>(0);
 
   // Handle slider input changes for Material UI sliders
   const handleSliderChange =
@@ -85,8 +86,20 @@ export default function BushfirePrediction() {
     setError(null);
     setPrediction(null);
     setProbability(null);
+    setProgress(0);
 
     try {
+      // Simulate progress
+      const progressInterval = setInterval(() => {
+        setProgress((prevProgress) => {
+          if (prevProgress >= 90) {
+            clearInterval(progressInterval);
+            return prevProgress;
+          }
+          return prevProgress + 10;
+        });
+      }, 200);
+
       const response = await fetch(
         "https://api-ml-bushfire-0a5c00156d93.herokuapp.com/predict",
         {
@@ -98,6 +111,8 @@ export default function BushfirePrediction() {
         }
       );
 
+      clearInterval(progressInterval);
+
       if (!response.ok) {
         throw new Error("Something went wrong");
       }
@@ -105,10 +120,12 @@ export default function BushfirePrediction() {
       const result: PredictionResponse = await response.json();
       setPrediction(result.prediction);
       setProbability(result.probability);
+      setProgress(100);
     } catch (error) {
       setError((error as Error).message);
     } finally {
       setLoading(false);
+      setTimeout(() => setProgress(0), 1000); // Reset progress after 1 second
     }
   };
 
@@ -402,9 +419,24 @@ export default function BushfirePrediction() {
         <div className="flex justify-center">
           <button
             type="submit"
-            className="px-4 py-2 bg-orange-500 text-white font-semibold rounded-md hover:bg-orange-600 w-1/3"
+            className="px-4 py-2 bg-orange-500 text-white font-semibold rounded-md hover:bg-orange-600 w-1/3 relative overflow-hidden"
+            onClick={handleSubmit}
+            disabled={loading}
           >
-            Predict
+            <span className={`${loading ? "opacity-0" : "opacity-100"}`}>
+              Predict
+            </span>
+            {loading && (
+              <>
+                <span className="absolute inset-0 flex items-center justify-center">
+                  Predicting...
+                </span>
+                <div
+                  className="absolute bottom-0 left-0 h-1 bg-green-500"
+                  style={{ width: `${progress}%` }}
+                ></div>
+              </>
+            )}
           </button>
         </div>
       </form>
