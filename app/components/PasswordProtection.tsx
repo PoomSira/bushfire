@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, ReactNode } from "react";
 import Image from "next/image";
+import { FiCopy, FiCheck } from "react-icons/fi"; // Import icons for copy and check
 
 interface PasswordProtectionProps {
   children: ReactNode;
@@ -12,9 +13,12 @@ const PasswordProtection: React.FC<PasswordProtectionProps> = ({
   const [password, setPassword] = useState<string>("");
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
   const [showPassword, setShowPassword] = useState<boolean>(false);
+  const [showHint, setShowHint] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
+  const [copied, setCopied] = useState<boolean>(false); // New state for copy confirmation
 
-  const correctPassword = "PleaseWeNeedHD"; // Replace with your desired password
+  const correctPassword = "PleaseWeNeedHD";
+  const hintText = "PleaseWeNeedHD"; // Define the hint text here
 
   const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPassword(e.target.value);
@@ -24,7 +28,7 @@ const PasswordProtection: React.FC<PasswordProtectionProps> = ({
     e.preventDefault();
     if (password === correctPassword) {
       setIsAuthenticated(true);
-      setError(null); // Clear error if authentication is successful
+      setError(null);
     } else {
       setError("Incorrect password. Please try again.");
     }
@@ -32,6 +36,17 @@ const PasswordProtection: React.FC<PasswordProtectionProps> = ({
 
   const toggleShowPassword = () => {
     setShowPassword(!showPassword);
+  };
+
+  const toggleHint = () => {
+    setShowHint(!showHint);
+    setCopied(false); // Reset copied state when hint is toggled
+  };
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(hintText);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000); // Reset after 2 seconds
   };
 
   return (
@@ -102,6 +117,45 @@ const PasswordProtection: React.FC<PasswordProtectionProps> = ({
                   Log in
                 </button>
               </form>
+
+              {/* Accordion for Password Hint */}
+              <div className="mt-4">
+                <button
+                  onClick={toggleHint}
+                  className="w-full flex items-center justify-between py-2 px-3 text-gray-700 font-medium border border-gray-300 rounded-md transition-colors hover:bg-gray-100 focus:outline-none"
+                >
+                  {showHint
+                    ? "Hide hint"
+                    : "Password giving you trouble? Click to reveal!"}
+                  <span
+                    className={`transform transition-transform duration-200 ${
+                      showHint ? "rotate-180" : "rotate-0"
+                    }`}
+                  >
+                    ▼
+                  </span>
+                </button>
+                {showHint && (
+                  <div className="mt-2 p-3 border-l-4 border-orange-400 bg-orange-50 text-gray-600 text-sm rounded-md shadow-sm transition-opacity duration-300 flex items-center justify-between">
+                    <span>{hintText}</span>
+                    <button
+                      onClick={handleCopy}
+                      className="ml-2 text-gray-500 hover:text-gray-700 focus:outline-none"
+                    >
+                      {copied ? (
+                        <FiCheck className="text-green-500" />
+                      ) : (
+                        <FiCopy />
+                      )}
+                    </button>
+                  </div>
+                )}
+                {copied && (
+                  <div className="text-green-500 text-xs mt-1">
+                    Copied to clipboard!
+                  </div>
+                )}
+              </div>
             </div>
           </div>
           {/* Footer */}
